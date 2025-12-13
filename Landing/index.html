@@ -1017,10 +1017,202 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
+
+        /* ===========================================
+           STICKY NAVIGATION
+           =========================================== */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 24, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-nav.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--sand);
+            text-decoration: none;
+        }
+
+        .sticky-nav .nav-logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .sticky-nav .nav-logo span {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .sticky-nav .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .sticky-nav .nav-links a {
+            color: var(--sand);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .sticky-nav .nav-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        .sticky-nav .nav-cta {
+            background: var(--gold);
+            color: var(--black) !important;
+            padding: 10px 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            opacity: 1 !important;
+        }
+
+        .sticky-nav .nav-cta:hover {
+            background: var(--sand);
+        }
+
+        /* ===========================================
+           CHAPTER CARD BADGES
+           =========================================== */
+        .chapter-card {
+            position: relative;
+        }
+
+        .chapter-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 12px;
+            border-radius: 3px;
+        }
+
+        .chapter-badge.free {
+            background: var(--teal);
+            color: var(--sand);
+        }
+
+        .chapter-badge.premium {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* ===========================================
+           HERO PATTERN OVERLAY
+           =========================================== */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='none' stroke='%23C9A227' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===========================================
+           IMPROVED AUTHOR SECTION
+           =========================================== */
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--teal);
+            color: var(--sand);
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+        }
+
+        /* ===========================================
+           RESPONSIVE NAV
+           =========================================== */
+        @media (max-width: 768px) {
+            .sticky-nav .nav-links {
+                display: none;
+            }
+
+            .sticky-nav .nav-links.mobile-visible {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 24, 0.98);
+                padding: 20px;
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- STICKY NAVIGATION -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="images/shabrang_logo.png" alt="Shabrang">
+                <span>The Liquid Fortress</span>
+            </a>
+            <div class="nav-links">
+                <a href="#mystery">The Mystery</a>
+                <a href="#framework">Framework</a>
+                <a href="#chapters">Chapters</a>
+                <a href="#preview">Preview</a>
+                <a href="/book/chapter1.html" class="nav-cta">Read Free</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -1031,8 +1223,8 @@
             Why did Persia survive 3,000 years of invasion when every other ancient civilization died?
         </p>
         <div>
-            <a href="../Book/dist/preface.html" class="cta-button">Read Chapter 1 Free</a>
-            <a href="../Book/dist/index.html" class="cta-button secondary">Explore Chapters</a>
+            <a href="/book/chapter1.html" class="cta-button">Read Chapters 1-5 Free</a>
+            <a href="/book/index.html" class="cta-button secondary">Explore All Chapters</a>
         </div>
 
         <!-- Features Row -->
@@ -1158,49 +1350,57 @@
                 <h2 class="section-title persian-border">The Chapters</h2>
             </div>
             <div class="chapters-grid">
-                <div class="chapter-card">
+                <a href="/book/chapter1.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
                     <div class="chapter-number">Chapter 1</div>
                     <h3 class="chapter-title">The Fortress and the Corridor</h3>
                     <p class="chapter-meta">Roots & Geometry</p>
-                </div>
-                <div class="chapter-card">
+                </a>
+                <a href="/book/chapter2.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
                     <div class="chapter-number">Chapter 2</div>
                     <h3 class="chapter-title">The Lens of FRC</h3>
                     <p class="chapter-meta">Methodology</p>
-                </div>
-                <div class="chapter-card">
+                </a>
+                <a href="/book/chapter3.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
                     <div class="chapter-number">Chapter 3</div>
                     <h3 class="chapter-title">The First Binary</h3>
                     <p class="chapter-meta">Asha & Druj</p>
-                </div>
-                <div class="chapter-card">
+                </a>
+                <a href="/book/chapter4.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
                     <div class="chapter-number">Chapter 4</div>
                     <h3 class="chapter-title">The Myth of the Border</h3>
                     <p class="chapter-meta">Arash & Sacrifice</p>
-                </div>
-                <div class="chapter-card">
+                </a>
+                <a href="/book/chapter5.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
                     <div class="chapter-number">Chapter 5</div>
                     <h3 class="chapter-title">The Thermodynamics of Truth</h3>
                     <p class="chapter-meta">Truth as Physics</p>
-                </div>
-                <div class="chapter-card">
+                </a>
+                <a href="/book/chapter6.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge premium">Premium</span>
                     <div class="chapter-number">Chapter 6</div>
                     <h3 class="chapter-title">The Imperial Architecture</h3>
                     <p class="chapter-meta">Cyrus & Darius</p>
-                </div>
-                <div class="chapter-card">
+                </a>
+                <a href="/book/chapter11.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge premium">Premium</span>
                     <div class="chapter-number">Chapter 11</div>
                     <h3 class="chapter-title">The Shock of Conquest</h3>
                     <p class="chapter-meta">Qadisiyah & The System Crash</p>
-                </div>
-                <div class="chapter-card">
+                </a>
+                <a href="/book/chapter16.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge premium">Premium</span>
                     <div class="chapter-number">Chapter 16</div>
                     <h3 class="chapter-title">The Architect of Light</h3>
                     <p class="chapter-meta">Suhrawardi & The Imaginal</p>
-                </div>
+                </a>
             </div>
             <p style="text-align: center; margin-top: 40px;">
-                <a href="../Book/dist/index.html" class="cta-button">Get Full Access</a>
+                <a href="/book/index.html" class="cta-button">Read the Book</a>
             </p>
         </div>
     </section>
@@ -1231,7 +1431,7 @@
                         This chapter reveals how the oldest Persian binary became the operating system
                         for a civilization that would outlast all its contemporaries.
                     </p>
-                    <a href="../Book/dist/chapter3.html" class="cta-button">Read This Chapter Free</a>
+                    <a href="/book/chapter3.html" class="cta-button">Read This Chapter Free</a>
                 </div>
             </div>
         </div>
@@ -1307,6 +1507,7 @@
     <!-- AUTHOR SECTION -->
     <section class="author" id="author">
         <div class="author-content">
+            <div class="author-avatar">HS</div>
             <h2 class="section-title persian-border">About the Author</h2>
             <p class="author-text">
                 <strong>Hadi Servat</strong> is the creator of the Fractal Resonance Coherence (FRC) framework —
@@ -1317,6 +1518,9 @@
                 <em>The Liquid Fortress</em> applies this framework to 3,000 years of Persian history,
                 revealing the structural patterns that enabled a civilization to survive what destroyed all others.
             </p>
+            <p class="author-text" style="margin-top: 30px; font-style: italic; color: var(--teal);">
+                "I wrote this book because the Persian survival story is not just history — it's a manual for any system facing entropy."
+            </p>
         </div>
     </section>
 
@@ -1324,13 +1528,12 @@
     <section class="signup" id="signup">
         <h2 class="section-title">Enter the Fortress</h2>
         <p class="signup-text">
-            Get Chapter 1 free, plus weekly insights on consciousness, complexity, and cultural survival.
+            Chapters 1-5 are completely free. Start your journey into 3,000 years of Persian survival.
         </p>
-        <form class="signup-form" action="#" method="POST">
-            <input type="email" name="email" placeholder="Your email address" required>
-            <button type="submit">Read Chapter 1</button>
-        </form>
-        <p class="signup-note">No spam. Unsubscribe anytime. Your data stays with you.</p>
+        <div style="text-align: center;">
+            <a href="/book/chapter1.html" class="cta-button" style="background: var(--gold); color: var(--black); border-color: var(--gold);">Start Reading Free</a>
+        </div>
+        <p class="signup-note">No signup required. Dive straight into the book.</p>
     </section>
 
     <!-- FOOTER -->
@@ -1338,18 +1541,44 @@
         <img src="images/shabrang_logo.png" alt="Shabrang" class="footer-logo">
         <p class="footer-text">The Mind That Could Not Be Burned</p>
         <div class="footer-links">
+            <a href="/book/index.html">Read the Book</a>
             <a href="#mystery">The Mystery</a>
             <a href="#framework">The Framework</a>
             <a href="#chapters">Chapters</a>
             <a href="#preview">Preview</a>
             <a href="#gallery">Gallery</a>
-            <a href="#media">Media</a>
         </div>
         <p class="footer-copyright">&copy; 2025 Hadi Servat. All rights reserved.</p>
     </footer>
 
-    <!-- Simple scroll animation -->
+    <!-- Scripts -->
     <script>
+        // Sticky Navigation
+        const stickyNav = document.getElementById('stickyNav');
+        const hero = document.querySelector('.hero');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > hero.offsetHeight - 100) {
+                stickyNav.classList.add('visible');
+            } else {
+                stickyNav.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
         // Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
