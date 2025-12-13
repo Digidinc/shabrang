@@ -34,7 +34,11 @@ structure:
     - chapter3
     - chapter4
     - chapter5
-    - appendices
+    - appendix-a
+    - appendix-b
+    - appendix-c
+    - appendix-d
+    - appendix-e
 
   premium_chapters:
     - chapter6
