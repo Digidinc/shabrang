@@ -1,0 +1,427 @@
+/**
+ * Shabrang Viral Sharing Styles
+ */
+
+/* =============================================================================
+   FLOATING SHARE BUTTON
+   ============================================================================= */
+
+.share-float-btn {
+    position: absolute;
+    z-index: 1500;
+    transition: all 0.2s ease-out;
+}
+
+.share-float-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+}
+
+.share-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold, #C9A227);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+    transition: all 0.2s;
+}
+
+.share-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 162, 39, 0.5);
+}
+
+.share-trigger svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* =============================================================================
+   SHARE MODAL
+   ============================================================================= */
+
+.share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.share-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.share-modal-content {
+    background: var(--background, #F5E6C8);
+    border: 2px solid var(--gold, #C9A227);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+}
+
+.share-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text, #1A1A18);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.share-close:hover {
+    opacity: 1;
+}
+
+.share-modal h3 {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text, #1A1A18);
+    margin: 0 0 20px 0;
+}
+
+/* =============================================================================
+   SIZE SELECTOR
+   ============================================================================= */
+
+.size-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.size-btn {
+    padding: 8px 20px;
+    border: 2px solid var(--accent1, #2D5A6B);
+    background: transparent;
+    color: var(--accent1, #2D5A6B);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.size-btn:hover {
+    background: rgba(45, 90, 107, 0.1);
+}
+
+.size-btn.active {
+    background: var(--accent1, #2D5A6B);
+    color: white;
+}
+
+/* =============================================================================
+   CANVAS CONTAINER
+   ============================================================================= */
+
+.canvas-container {
+    text-align: center;
+    margin-bottom: 20px;
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#quote-canvas {
+    max-width: 100%;
+    max-height: 50vh;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* =============================================================================
+   PLATFORM BUTTONS
+   ============================================================================= */
+
+.platform-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.platform-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--gold, #C9A227);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: var(--text, #1A1A18);
+}
+
+.platform-btn:hover {
+    background: var(--gold, #C9A227);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+}
+
+.platform-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Platform-specific colors on hover */
+.platform-btn[data-platform="twitter"]:hover {
+    background: #000;
+    border-color: #000;
+}
+
+.platform-btn[data-platform="whatsapp"]:hover {
+    background: #25D366;
+    border-color: #25D366;
+}
+
+.platform-btn[data-platform="telegram"]:hover {
+    background: #0088cc;
+    border-color: #0088cc;
+}
+
+/* =============================================================================
+   REFERRAL DISPLAY
+   ============================================================================= */
+
+.referral-display {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.referral-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.referral-code {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 4px 12px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--accent1, #2D5A6B);
+}
+
+/* =============================================================================
+   TOAST NOTIFICATION
+   ============================================================================= */
+
+.share-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    z-index: 4000;
+}
+
+.share-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* =============================================================================
+   MOBILE RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 768px) {
+    .share-modal-content {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .size-selector {
+        flex-wrap: wrap;
+    }
+
+    .size-btn {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+
+    .platform-buttons {
+        gap: 10px;
+    }
+
+    .platform-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    #quote-canvas {
+        max-height: 40vh;
+    }
+}
+
+/* =============================================================================
+   TEXT SELECTION HIGHLIGHT
+   ============================================================================= */
+
+::selection {
+    background: rgba(201, 162, 39, 0.3);
+}
+
+::-moz-selection {
+    background: rgba(201, 162, 39, 0.3);
+}
+
+/* =============================================================================
+   IMAGE SHARING
+   ============================================================================= */
+
+.shareable-img-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.img-share-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.shareable-img-container:hover .img-share-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.img-share-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold, #C9A227);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.shareable-img-container:hover .img-share-btn {
+    transform: translateY(0);
+}
+
+.img-share-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(201, 162, 39, 0.5);
+}
+
+.img-share-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Image Preview in Modal */
+.image-preview-container {
+    text-align: center;
+    margin-bottom: 15px;
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.image-preview-container img,
+.image-preview-container canvas,
+#image-share-canvas {
+    max-width: 100%;
+    max-height: 40vh;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-caption-preview {
+    text-align: center;
+    font-style: italic;
+    color: var(--accent2, #8B3535);
+    margin: 0 0 20px 0;
+    font-size: 14px;
+}
+
+/* Mobile: Show share button always on images */
+@media (max-width: 768px) {
+    .img-share-overlay {
+        opacity: 1;
+        background: transparent;
+        top: auto;
+        bottom: 10px;
+        left: auto;
+        right: 10px;
+        width: auto;
+        height: auto;
+    }
+
+    .img-share-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        flex-direction: row;
+        transform: none;
+    }
+
+    .img-share-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}

@@ -1,0 +1,165 @@
+# The Liquid Fortress - Shabrang Engine Configuration
+
+book:
+  title: "The Liquid Fortress"
+  subtitle: "A Structural History of the Persian Mind"
+  author: "Hadi Servat"
+  description: "Why did Persia survive 3,000 years of invasion when every other ancient civilization died? This book applies Fractal Resonance Coherence (FRC) to reveal how Persian civilization built a Liquid Fortress."
+  language: en
+  rtl: false
+  url: "https://shabrang.ca"
+  landing_url: "https://shabrang.ca"
+  twitter_handle: "@shabrangbook"
+  cover_image: "images/cover.png"
+  og_image: "images/og-cover.png"
+
+# ALETTE Palette (Persian Miniature Style)
+palette:
+  background: "#F5E6C8"      # Warm cream/aged parchment
+  background_alt: "#C9A84C"  # Burnished gold
+  text: "#1A1A18"            # Coal black
+  heading: "#1A1A18"
+  accent1: "#2D5A6B"         # Coherence/Water/Flow (Teal)
+  accent2: "#8B3535"         # Entropy/Fire/Danger (Crimson)
+  gold: "#C9A227"            # Sacred/Light/Value
+  green: "#3D5C3D"           # Nature/Growth (use sparingly)
+
+# Book Structure
+structure:
+  free_chapters:
+    - preface
+    - introduction
+    - chapter1
+    - chapter2
+    - chapter3
+    - chapter4
+    - chapter5
+    - appendices
+
+  premium_chapters:
+    - chapter6
+    - chapter7
+    - chapter8
+    - chapter9
+    - chapter10
+    - chapter11
+    - chapter12
+    - chapter13
+    - chapter14
+    - chapter15
+    - chapter16
+    - chapter17
+    - chapter18
+    - chapter19
+    - chapter20
+    - chapter21
+    - chapter22
+    - chapter23
+    - chapter24
+    - chapter25
+    - chapter26
+    - chapter27
+    - chapter28
+    - chapter29
+    - chapter30
+    - conclusion
+    - app
+
+# Experience Features (GenZ-First)
+experience:
+  ambient:
+    enabled: true
+    default_on: false
+
+  progress:
+    enabled: true
+    show_bar: true
+    show_percentage: true
+    save_position: true
+    reading_time: true
+
+  narration:
+    enabled: true
+    provider: elevenlabs
+
+  modes:
+    - light
+    - dark
+    - sepia
+
+  animations:
+    page_transitions: true
+    scroll_reveal: true
+
+# Media Console
+media:
+  enabled: true
+  tabs:
+    - text
+    - audio
+    - video
+    - slides
+
+# Viral Sharing
+sharing:
+  enabled: true
+  platforms:
+    - twitter
+    - whatsapp
+    - telegram
+    - copy
+    - download
+
+  card:
+    width: 1080
+    height: 1080
+    background: "#1a1a1d"
+    border_color: "#d4af37"
+    text_color: "#ffffff"
+    accent_color: "#4dc0b5"
+    title: "THE LIQUID FORTRESS"
+    footer: "READ THE BOOK | shabrang.com"
+
+  referral:
+    enabled: true
+    prefix: "REF"
+
+# Paywall
+paywall:
+  enabled: true
+  behavior: blur
+  cta:
+    title: "Premium Content"
+    description: "Join the Shabrang community to unlock this chapter and get access to audiobook, video explainers, and discussion."
+    button_text: "Unlock Now"
+    checkout_url: "https://app.gohighlevel.com/checkout/shabrang"
+  auth_provider: gohighlevel
+
+# Integrations
+integrations:
+  gohighlevel:
+    enabled: true
+    # Credentials in .env
+
+  elevenlabs:
+    enabled: true
+    voice_id: "persian-narrator"
+
+  analytics:
+    google_analytics: ""
+    plausible: "shabrang.com"
+
+# Build Options
+build:
+  output_dir: "dist"
+  source_format: html
+  minify_html: true
+  minify_css: true
+  minify_js: true
+
+  pwa:
+    enabled: true
+    name: "The Liquid Fortress"
+    short_name: "Shabrang"
+    theme_color: "#2D5A6B"
+    background_color: "#F5E6C8"

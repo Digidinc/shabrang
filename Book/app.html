@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Liquid Fortress App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mobile App Specific Overrides */
+        body {
+            background-color: #1a1a18;
+            /* Dark background for app feel */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .mobile-wrapper {
+            width: 375px;
+            height: 812px;
+            /* iPhone X dimensions */
+            background-color: var(--sand);
+            position: relative;
+            overflow: hidden;
+            border-radius: 40px;
+            box-shadow: 0 0 50px rgba(201, 162, 39, 0.2);
+            /* Gold glow */
+            border: 8px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Status Bar Simulation */
+        .status-bar {
+            height: 44px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            position: absolute;
+            top: 0;
+        }
+
+        /* App Header */
+        .app-header {
+            height: 60px;
+            margin-top: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--gold);
+            background: rgba(245, 230, 200, 0.9);
+            /* Sand with opacity */
+            backdrop-filter: blur(10px);
+            z-index: 90;
+        }
+
+        .app-logo {
+            font-size: 1.5em;
+            color: var(--teal);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Scrollable Content */
+        .app-content {
+            flex: 1;
+            overflow-y: scroll;
+            padding: 20px;
+            padding-bottom: 100px;
+            /* Space for nav */
+            scroll-behavior: smooth;
+        }
+
+        /* Cards with "Persian Glass" effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--gold);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .glass-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .glass-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .glass-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        /* Bottom Nav */
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 85px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--gold);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--black);
+            font-size: 0.7em;
+            gap: 5px;
+            opacity: 0.6;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            color: var(--teal);
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .nav-icon {
+            font-size: 24px;
+        }
+
+        /* Micro-Animations */
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .alive-btn {
+            background: var(--teal);
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(45, 90, 107, 0.3);
+            transition: all 0.2s;
+            display: block;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .alive-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Image overrides for app */
+        .app-img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--gold);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mobile-wrapper">
+        <div class="status-bar"></div>
+
+        <header class="app-header">
+            <div class="app-logo">
+                <img src="images/shabrang_logo.png" style="height: 40px; margin-right: 10px;" alt="Shabrang Logo">
+                SHABRANG
+            </div>
+        </header>
+
+        <main class="app-content">
+
+            <!-- Hero Card -->
+            <div class="glass-card">
+                <h2 style="margin-top:0; font-size:1.4em; color:var(--teal);">Welcome Back</h2>
+                <p style="font-size:0.9em; margin-bottom:15px;">Continue your journey into the Persian Mind.</p>
+                <div style="display:flex; gap:10px;">
+                    <div style="flex:1; height:4px; background:var(--gold); border-radius:2px;"></div>
+                    <div style="flex:2; height:4px; background:#ddd; border-radius:2px;"></div>
+                </div>
+                <p style="font-size:0.8em; color:var(--crimson); text-align:right; margin-top:5px;">33% Complete</p>
+            </div>
+
+            <!-- Chapter 1 Preview -->
+            <div class="glass-card">
+                <img src="images/qanat_cross_section_persian_miniature_1765586926394.png" class="app-img" alt="Qanat">
+                <h3 style="margin:10px 0 5px 0; color:var(--black);">The Fortress</h3>
+                <p style="font-size:0.85em; color:#666; margin-bottom:15px;">Chapter 1: Understanding the Roots (μ1).
+                </p>
+                <a href="chapter1.html" class="alive-btn">Read Chapter 1</a>
+            </div>
+
+            <!-- Chapter 2 Preview -->
+            <div class="glass-card">
+                <img src="images/lens_of_frc_miniature_1765587283175.png" class="app-img" alt="Lens">
+                <h3 style="margin:10px 0 5px 0; color:var(--black);">The Lens</h3>
+                <p style="font-size:0.85em; color:#666; margin-bottom:15px;">Chapter 2: Entropy vs Coherence.</p>
+                <a href="chapter2.html" class="alive-btn">Read Chapter 2</a>
+            </div>
+
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active">
+                <span class="nav-icon">☗</span>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">📖</span>
+                <span>Book</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span>Search</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        // Simple interactivity to visually demonstrate the 'Alive' feel
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+                item.classList.add('active');
+
+                // Add a subtle pulse effect
+                item.style.animation = 'pulse 0.3s ease';
+                setTimeout(() => item.style.animation = '', 300);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

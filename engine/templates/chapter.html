@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="{{ config.book.language | default('en') }}" {% if config.book.rtl %}dir="rtl"{% endif %}>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ chapter.title }} — {{ config.book.title }}</title>
+
+    <!-- SEO / Open Graph -->
+    <meta name="description" content="{{ chapter.description | default(config.book.description) }}">
+    <meta property="og:title" content="{{ chapter.title }} — {{ config.book.title }}">
+    <meta property="og:description" content="{{ chapter.description | default(config.book.description) }}">
+    <meta property="og:image" content="{{ config.book.og_image | default('images/og-cover.png') }}">
+    <meta property="og:url" content="{{ config.book.url }}/{{ chapter.slug }}.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    {% if config.book.twitter_handle %}
+    <meta name="twitter:site" content="{{ config.book.twitter_handle }}">
+    {% endif %}
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    {% if config.book.rtl %}
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    {% endif %}
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/social.css">
+    <link rel="stylesheet" href="css/viral.css">
+
+    <!-- Theme Variables -->
+    <style>
+        :root {
+            --background: {{ config.palette.background | default('#F5E6C8') }};
+            --text: {{ config.palette.text | default('#1A1A18') }};
+            --heading: {{ config.palette.heading | default('#1A1A18') }};
+            --accent1: {{ config.palette.accent1 | default('#2D5A6B') }};
+            --accent2: {{ config.palette.accent2 | default('#8B3535') }};
+            --gold: {{ config.palette.gold | default('#C9A227') }};
+            --green: {{ config.palette.green | default('#3D5C3D') }};
+
+            /* Aliases */
+            --teal: var(--accent1);
+            --crimson: var(--accent2);
+            --sand: var(--background);
+            --black: var(--text);
+        }
+    </style>
+
+    <!-- PWA -->
+    {% if config.build.pwa.enabled %}
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="{{ config.build.pwa.theme_color | default('#2D5A6B') }}">
+    {% endif %}
+</head>
+
+<body data-chapter="{{ chapter.slug }}" data-tier="{{ 'free' if chapter.is_free else 'premium' }}">
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <nav class="header-nav">
+            <a href="index.html" class="nav-home" title="Table of Contents">
+                <img src="images/shabrang_565.png" alt="Shabrang" class="nav-logo">
+                <span class="label">INDEX</span>
+            </a>
+            <div class="header-actions">
+                {% if chapter.prev %}
+                <a href="{{ chapter.prev }}.html" class="nav-arrow" title="Previous Chapter">&larr;</a>
+                {% endif %}
+                {% if chapter.next %}
+                <a href="{{ chapter.next }}.html" class="nav-arrow" title="Next Chapter">&rarr;</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- Audio Player Bar (Top) -->
+    <div class="audio-player-bar" id="audio-player-bar">
+        <div class="audio-player-content">
+            <button class="audio-play-btn" id="audioPlayBtn" aria-label="Play">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </button>
+            <div class="audio-progress-container">
+                <div class="audio-progress" id="audioProgress">
+                    <div class="audio-progress-fill" id="audioProgressFill"></div>
+                </div>
+                <span class="audio-time" id="audioTime">0:00 / 0:00</span>
+            </div>
+            <div class="audio-speed-controls">
+                <button class="speed-btn" data-speed="0.75">0.75x</button>
+                <button class="speed-btn active" data-speed="1">1x</button>
+                <button class="speed-btn" data-speed="1.25">1.25x</button>
+                <button class="speed-btn" data-speed="1.5">1.5x</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <a href="index.html" class="home-icon">
+                <img src="images/shabrang_565.png" alt="Home" class="home-logo">
+            </a>
+            <h1>{{ chapter.title }}</h1>
+        </div>
+
+        <!-- Media Console -->
+        {% if config.media.enabled and chapter.media %}
+        <div class="media-console">
+            <div class="media-tabs">
+                <button class="media-tab active" data-tab="text">
+                    <span class="tab-icon">&#128196;</span> Text
+                </button>
+                {% if chapter.media.audio %}
+                <button class="media-tab" data-tab="audio">
+                    <span class="tab-icon">&#127911;</span> Audio
+                </button>
+                {% endif %}
+                {% if chapter.media.video %}
+                <button class="media-tab" data-tab="video">
+                    <span class="tab-icon">&#127909;</span> Video
+                </button>
+                {% endif %}
+                {% if chapter.media.slides %}
+                <button class="media-tab" data-tab="slides">
+                    <span class="tab-icon">&#128202;</span> Slides
+                </button>
+                {% endif %}
+            </div>
+            <div class="media-panels">
+                <div class="media-panel active" data-panel="text">
+                    <p class="media-hint">Reading mode active. Scroll down to begin.</p>
+                </div>
+                {% if chapter.media.audio %}
+                <div class="media-panel" data-panel="audio">
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="{{ chapter.media.audio }}" type="audio/mpeg">
+                        </audio>
+                        <p class="media-hint">Listen to the audiobook version</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% if chapter.media.video %}
+                <div class="media-panel" data-panel="video">
+                    <div class="video-embed">
+                        <iframe src="{{ chapter.media.video }}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="media-hint">Watch the video explainer</p>
+                </div>
+                {% endif %}
+                {% if chapter.media.slides %}
+                <div class="media-panel" data-panel="slides">
+                    <div class="slides-embed">
+                        <iframe src="{{ chapter.media.slides }}" frameborder="0"></iframe>
+                    </div>
+                    <p class="media-hint">View the presentation slides</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Chapter Content -->
+        {% if chapter.is_free %}
+        <article class="chapter-content">
+{{ chapter.content | safe }}
+        </article>
+        {% else %}
+        <!-- Premium chapter: show first paragraph as preview -->
+        <article class="chapter-content chapter-preview">
+            <div class="preview-content">
+{{ chapter.first_paragraph | safe }}
+            </div>
+            <div class="preview-fade"></div>
+        </article>
+
+        <!-- Paywall Overlay (for premium chapters) -->
+        {% if config.paywall.enabled %}
+        <div class="paywall-section">
+            <div class="paywall-content glass-panel">
+                <h2>{{ config.paywall.cta.title | default('Premium Content') }}</h2>
+                <p>{{ config.paywall.cta.description | default('Join the community to unlock this chapter') }}</p>
+                <a href="{{ config.paywall.cta.checkout_url }}" class="paywall-btn">
+                    {{ config.paywall.cta.button_text | default('Unlock Now') }}
+                </a>
+                <p class="paywall-note">Already a member? <a href="#" id="login-link">Log in</a></p>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        <!-- Resource Box (Library of Context) -->
+        {% if chapter.context %}
+        <div class="resource-box">
+            <div class="resource-header">The Library of Context</div>
+            <div class="resource-list">
+                {% if chapter.context.external %}
+                <div class="resource-col">
+                    <h4>External Signals</h4>
+                    <ul>
+                        {% for link in chapter.context.external %}
+                        <li><a href="{{ link.url }}" target="_blank" class="resource-link">{{ link.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                {% if chapter.context.internal %}
+                <div class="resource-col">
+                    <h4>Internal Pathways</h4>
+                    <ul>
+                        {% for link in chapter.context.internal %}
+                        <li><a href="{{ link.href }}" class="resource-link">{{ link.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Navigation Footer -->
+        <div class="nav-footer">
+            {% if chapter.prev %}
+            <a href="{{ chapter.prev }}.html" class="nav-btn">&larr; Previous</a>
+            {% else %}
+            <span></span>
+            {% endif %}
+            {% if chapter.next %}
+            <a href="{{ chapter.next }}.html" class="nav-btn">Next &rarr;</a>
+            {% else %}
+            <a href="index.html" class="nav-btn">Return to Index &#10070;</a>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Pass config to JS
+        window.ShabrangConfig = {
+            ambient: {{ config.experience.ambient.enabled | default(true) | tojson }},
+            progress: {{ config.experience.progress.enabled | default(true) | tojson }},
+            animations: {{ config.experience.animations.page_transitions | default(true) | tojson }}
+        };
+
+        window.ShabrangViralConfig = {
+            enabled: {{ config.sharing.enabled | default(true) | tojson }},
+            platforms: {{ config.sharing.platforms | default(['twitter', 'whatsapp', 'telegram', 'copy', 'download']) | tojson }},
+            card: {
+                title: {{ config.book.title | tojson }},
+                background: {{ config.sharing.card.background | default('#1a1a1d') | tojson }},
+                borderColor: {{ config.palette.gold | default('#d4af37') | tojson }},
+                accentColor: {{ config.palette.accent1 | default('#4dc0b5') | tojson }}
+            },
+            bookUrl: {{ config.book.url | default('') | tojson }}
+        };
+    </script>
+
+    <script src="js/book.js" defer></script>
+    <script src="js/experience.js" defer></script>
+    <script src="js/social.js" defer></script>
+    <script src="js/viral.js" defer></script>
+
+    {% if config.experience.narration.enabled %}
+    <script src="js/tts.js" defer></script>
+    {% endif %}
+
+    <!-- Analytics -->
+    {% if config.integrations.analytics.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.integrations.analytics.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ config.integrations.analytics.google_analytics }}');
+    </script>
+    {% endif %}
+
+</body>
+</html>

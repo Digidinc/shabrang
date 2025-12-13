@@ -1,0 +1,283 @@
+# Shabrang Engine Configuration Schema
+# Copy this to your book folder as config.yaml and customize
+
+# =============================================================================
+# BOOK METADATA
+# =============================================================================
+book:
+  title: "Your Book Title"
+  subtitle: "Optional Subtitle"
+  author: "Author Name"
+  description: "A brief description for SEO and social sharing"
+  language: en  # ISO 639-1 code: en, fa, fr, ar, etc.
+  rtl: false    # Right-to-left for Persian, Arabic, Hebrew
+  cover_image: "images/cover.png"
+
+  # Social/SEO
+  url: "https://your-domain.com"
+  twitter_handle: "@yourhandle"
+  og_image: "images/og-cover.png"
+
+# =============================================================================
+# THEME & VISUAL IDENTITY
+# =============================================================================
+theme: alette  # Built-in: alette, midnight, paper | Or path to custom .yaml
+
+# Override theme colors (optional)
+palette:
+  background: "#F5E6C8"      # Page background
+  background_alt: "#C9A84C"  # Alternate/accent background
+  text: "#1A1A18"            # Primary text
+  heading: "#1A1A18"         # Headings
+  accent1: "#2D5A6B"         # Coherence/teal
+  accent2: "#8B3535"         # Entropy/crimson
+  gold: "#C9A227"            # Sacred/highlight
+  green: "#3D5C3D"           # Nature (use sparingly)
+
+# Typography
+fonts:
+  heading: "Helvetica Neue, sans-serif"
+  body: "Georgia, serif"
+  persian: "Vazirmatn, Tahoma, sans-serif"  # For RTL content
+  mono: "Monaco, Consolas, monospace"
+
+# =============================================================================
+# BOOK STRUCTURE
+# =============================================================================
+structure:
+  # Define chapter order (filenames without extension)
+  chapters:
+    - preface
+    - introduction
+    - chapter-01
+    - chapter-02
+    # ... add all chapters
+    - conclusion
+    - appendices
+
+  # Chapters available without login
+  free_chapters:
+    - preface
+    - introduction
+    - chapter-01
+    - chapter-02
+    - chapter-03
+    - chapter-04
+    - chapter-05
+    - appendices
+
+  # Chapters requiring payment/membership
+  premium_chapters:
+    - chapter-06
+    - chapter-07
+    # ... chapters 8-30
+    - conclusion
+
+# =============================================================================
+# EXPERIENCE FEATURES (GenZ-First)
+# =============================================================================
+experience:
+  # Ambient Reading Mode
+  ambient:
+    enabled: true
+    default_on: false  # Start with ambient mode off
+    audio_file: "media/ambient.mp3"  # Optional background audio
+    particles: false   # Floating particle effects
+
+  # Reading Progress
+  progress:
+    enabled: true
+    show_bar: true           # Progress bar at top
+    show_percentage: true    # "45% complete"
+    save_position: true      # Remember scroll position
+    reading_time: true       # "8 min read"
+
+  # AI Narration (Text-to-Speech)
+  narration:
+    enabled: true
+    provider: elevenlabs  # elevenlabs, openai, browser
+    voice_id: ""          # Set in .env or here
+    auto_play: false
+    speed_control: true
+
+  # Visual Modes
+  modes:
+    - light   # Default light theme
+    - dark    # Dark mode
+    - sepia   # Warm reading mode
+
+  # Animations
+  animations:
+    page_transitions: true
+    scroll_reveal: true
+    hover_effects: true
+
+# =============================================================================
+# MEDIA CONSOLE
+# =============================================================================
+media:
+  enabled: true
+
+  # Default providers (can override per-chapter in context.yaml)
+  providers:
+    audio: suno        # suno, soundcloud, spotify, local
+    video: youtube     # youtube, vimeo, local
+    slides: google     # google, local
+
+  # Tabs to show
+  tabs:
+    - text      # Always shown - the chapter content
+    - audio     # Audiobook version
+    - video     # Video explainer
+    - slides    # Presentation slides
+    - visual    # Image gallery
+
+# =============================================================================
+# VIRAL SHARING
+# =============================================================================
+sharing:
+  enabled: true
+
+  # Platforms to show
+  platforms:
+    - twitter
+    - instagram
+    - whatsapp
+    - telegram
+    - copy       # Copy link to clipboard
+    - download   # Download quote card image
+
+  # Quote card styling
+  card:
+    width: 1080
+    height: 1080
+    background: "#1a1a1d"
+    border_color: "#d4af37"
+    text_color: "#ffffff"
+    accent_color: "#4dc0b5"
+    font_title: "Cinzel"
+    font_quote: "Georgia"
+    logo: "images/logo.png"
+    footer_text: "READ THE BOOK"
+
+  # Referral tracking
+  referral:
+    enabled: true
+    prefix: "REF"
+    param: "ref"  # URL parameter: ?ref=CODE
+
+# =============================================================================
+# SOCIAL FEATURES
+# =============================================================================
+social:
+  # Paragraph-level comments
+  comments:
+    enabled: true
+    require_login: true
+    moderation: false
+
+  # Highlights/annotations
+  highlights:
+    enabled: true
+    colors:
+      - "#ffeb3b"  # Yellow
+      - "#4dc0b5"  # Teal
+      - "#8B3535"  # Crimson
+
+# =============================================================================
+# PAYWALL & MONETIZATION
+# =============================================================================
+paywall:
+  enabled: true
+
+  # What happens when accessing premium content
+  behavior: blur  # blur, redirect, modal
+
+  # Call-to-action
+  cta:
+    title: "Premium Content"
+    description: "Join the community to unlock this chapter"
+    button_text: "Unlock Now"
+    checkout_url: "https://your-ghl-checkout.com"
+
+  # Check membership via
+  auth_provider: gohighlevel  # gohighlevel, supabase, custom
+
+# =============================================================================
+# INTEGRATIONS
+# =============================================================================
+integrations:
+  # GoHighLevel (Community, Paywall, Email)
+  gohighlevel:
+    enabled: true
+    # API credentials in .env:
+    # GHL_CLIENT_ID=xxx
+    # GHL_CLIENT_SECRET=xxx
+    # GHL_LOCATION_ID=xxx
+
+  # ElevenLabs (AI Voice)
+  elevenlabs:
+    enabled: true
+    # ELEVENLABS_API_KEY in .env
+    voice_id: "default"
+    model: "eleven_multilingual_v2"
+
+  # OpenAI (Alternative TTS, AI features)
+  openai:
+    enabled: false
+    # OPENAI_API_KEY in .env
+    tts_model: "tts-1-hd"
+    tts_voice: "onyx"
+
+  # Analytics
+  analytics:
+    google_analytics: ""  # GA4 measurement ID
+    plausible: ""         # Plausible domain
+    custom: ""            # Custom analytics script
+
+# =============================================================================
+# BUILD OPTIONS
+# =============================================================================
+build:
+  output_dir: "dist"
+
+  # Source format
+  source_format: html  # html, markdown, latex, epub
+
+  # Optimization
+  minify_html: true
+  minify_css: true
+  minify_js: true
+  optimize_images: true
+
+  # PWA
+  pwa:
+    enabled: true
+    name: "The Liquid Fortress"
+    short_name: "Liquid Fortress"
+    theme_color: "#2D5A6B"
+    background_color: "#F5E6C8"
+
+  # Generate additional formats
+  exports:
+    epub: false
+    pdf: false
+
+# =============================================================================
+# CONTEXT DATA (can also be in separate context.yaml)
+# =============================================================================
+context:
+  # Example chapter context
+  chapter-01:
+    external:
+      - title: "Iranian Plateau"
+        url: "https://en.wikipedia.org/wiki/Iranian_plateau"
+      - title: "Silk Road"
+        url: "https://en.wikipedia.org/wiki/Silk_Road"
+    internal:
+      - title: "Appendix A: Glossary"
+        href: "appendices.html#glossary"
+    media:
+      audio: "https://suno.ai/your-track-id"
+      video: "https://youtube.com/watch?v=xxx"
+      slides: "https://docs.google.com/presentation/d/xxx"

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="{{ config.book.language | default('en') }}" {% if config.book.rtl %}dir="rtl"{% endif %}>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.book.title }}</title>
+
+    <!-- SEO -->
+    <meta name="description" content="{{ config.book.description }}">
+    <meta property="og:title" content="{{ config.book.title }}">
+    <meta property="og:description" content="{{ config.book.description }}">
+    <meta property="og:image" content="{{ config.book.og_image | default('images/og-cover.png') }}">
+    <meta property="og:type" content="book">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/experience.css">
+
+    <style>
+        :root {
+            --background: {{ config.palette.background | default('#F5E6C8') }};
+            --text: {{ config.palette.text | default('#1A1A18') }};
+            --accent1: {{ config.palette.accent1 | default('#2D5A6B') }};
+            --accent2: {{ config.palette.accent2 | default('#8B3535') }};
+            --gold: {{ config.palette.gold | default('#C9A227') }};
+        }
+
+        .index-header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 3px solid var(--gold);
+            margin-bottom: 50px;
+        }
+
+        .book-logo-img {
+            width: 360px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+            border: none !important;
+        }
+
+        .book-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0 0 10px 0;
+            border: none;
+        }
+
+        .book-subtitle {
+            font-size: 1.1em;
+            color: var(--accent1);
+            font-style: italic;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        .toc-section {
+            margin-bottom: 50px;
+        }
+
+        .toc-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent2);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chapter-item {
+            padding: 0;
+            margin-bottom: 5px;
+        }
+
+        .chapter-item::before {
+            display: none;
+        }
+
+        .chapter-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .chapter-link:hover {
+            background: white;
+            border-color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .chapter-number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent1);
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .chapter-item.premium .chapter-number {
+            background: var(--gold);
+        }
+
+        .chapter-title {
+            flex-grow: 1;
+            font-size: 1.05em;
+            color: var(--text);
+        }
+
+        .chapter-badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: var(--gold);
+            color: white;
+        }
+
+        .chapter-badge.free {
+            background: var(--accent1);
+        }
+
+        .chapter-badge.premium {
+            background: var(--accent2);
+        }
+
+        .index-footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--background);
+            color: #666;
+            font-size: 14px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--accent1);
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: all 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            color: var(--accent1);
+        }
+    </style>
+
+    <!-- PWA -->
+    {% if config.build.pwa.enabled %}
+    <link rel="manifest" href="manifest.json">
+    {% endif %}
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Back to Landing Link -->
+        {% if config.book.landing_url %}
+        <a href="{{ config.book.landing_url }}" class="back-to-landing" style="display: inline-block; margin-bottom: 20px; color: var(--accent1); font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+            ← Back to Home
+        </a>
+        {% endif %}
+
+        <!-- Book Header -->
+        <header class="index-header">
+            <a href="{{ config.book.landing_url | default('index.html') }}">
+                <img src="images/shabrang_565.png" alt="Shabrang" class="book-logo-img">
+            </a>
+            <h1 class="book-title">{{ config.book.title }}</h1>
+            {% if config.book.subtitle %}
+            <p class="book-subtitle">{{ config.book.subtitle }}</p>
+            {% endif %}
+        </header>
+
+        <!-- Free Chapters -->
+        <section class="toc-section">
+            <h2 class="toc-section-title">Free Chapters</h2>
+            <ul class="chapter-list">
+                {% for chapter in chapters if chapter.is_free %}
+                <li class="chapter-item">
+                    <a href="{{ chapter.slug }}.html" class="chapter-link">
+                        <span class="chapter-number">{{ loop.index }}</span>
+                        <span class="chapter-title">{{ chapter.title }}</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Premium CTA -->
+        {% if config.paywall.enabled %}
+        <section class="cta-section">
+            <h3>Unlock the Full Experience</h3>
+            <p>Get access to all {{ chapters | selectattr('is_free', 'false') | list | length }} premium chapters, audiobook, and community discussion.</p>
+            <a href="{{ config.paywall.cta.checkout_url }}" class="cta-btn">Join Now</a>
+        </section>
+        {% endif %}
+
+        <!-- Premium Chapters -->
+        {% set premium_chapters = chapters | selectattr('is_free', 'false') | list %}
+        {% if premium_chapters %}
+        <section class="toc-section">
+            <h2 class="toc-section-title">Premium Chapters</h2>
+            <ul class="chapter-list">
+                {% for chapter in premium_chapters %}
+                <li class="chapter-item premium">
+                    <a href="{{ chapter.slug }}.html" class="chapter-link">
+                        <span class="chapter-number">{{ loop.index + (chapters | selectattr('is_free') | list | length) }}</span>
+                        <span class="chapter-title">{{ chapter.title }}</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        <!-- Footer -->
+        <footer class="index-footer">
+            <p>{{ config.book.title }} &copy; {{ now().year if now is defined else '2025' }}</p>
+            <p>A <a href="https://kayhermes.com" target="_blank" style="color: var(--gold);">Kay Hermes</a> Project</p>
+        </footer>
+
+    </div>
+
+    <script src="js/experience.js" defer></script>
+</body>
+</html>
