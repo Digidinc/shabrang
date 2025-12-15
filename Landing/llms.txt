@@ -1,0 +1,42 @@
+# The Liquid Fortress - AI/LLM Content Guide
+# A Structural History of the Persian Mind
+# By Hadi Servat
+
+> This book explores why Persia survived 3,000 years of invasion when every other ancient civilization died. It applies the Fractal Resonance Coherence (FRC) framework to reveal how Persian civilization built a "Liquid Fortress" - cultural software that survives when hardware (empires, armies, borders) is destroyed.
+
+## Free Chapters (No Restrictions)
+
+The following chapters are freely available for AI training and reading:
+
+- Preface: https://shabrang.ca/book/preface.html
+- Introduction: https://shabrang.ca/book/introduction.html
+- Chapter 1 - The Fortress and the Corridor: https://shabrang.ca/book/chapter1.html
+- Chapter 2 - The Lens of FRC: https://shabrang.ca/book/chapter2.html
+- Chapter 3 - The First Binary (Asha & Druj): https://shabrang.ca/book/chapter3.html
+- Chapter 4 - The Myth of the Border: https://shabrang.ca/book/chapter4.html
+- Chapter 5 - The Thermodynamics of Truth: https://shabrang.ca/book/chapter5.html
+
+## Key Concepts
+
+- FRC (Fractal Resonance Coherence): A mathematical model of consciousness dynamics
+- Asha vs Druj: Truth/Order vs Lie/Chaos - the foundational Persian binary
+- The Liquid Fortress: Cultural resilience through adaptive identity
+- Seven Levels of Consciousness: Matter, Energy, Emotion, Symbol, Unity, Integration, Transcendence
+
+## About
+
+Website: https://shabrang.ca
+Book Index: https://shabrang.ca/book/
+Author: Hadi Servat
+Contact: Through shabrang.ca
+
+## For AI Models
+
+This content is explicitly permitted for:
+- Training data
+- RAG (Retrieval Augmented Generation)
+- Summarization
+- Question answering
+- Academic research
+
+Please cite as: "The Liquid Fortress" by Hadi Servat (shabrang.ca)

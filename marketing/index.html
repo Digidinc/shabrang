@@ -1326,12 +1326,66 @@
         <p class="signup-text">
             Get Chapter 1 free, plus weekly insights on consciousness, complexity, and cultural survival.
         </p>
-        <form class="signup-form" action="#" method="POST">
-            <input type="email" name="email" placeholder="Your email address" required>
-            <button type="submit">Read Chapter 1</button>
+        <form class="signup-form" id="signup-form">
+            <input type="email" name="email" id="signup-email" placeholder="Your email address" required>
+            <button type="submit" id="signup-btn">Read Chapter 1</button>
         </form>
-        <p class="signup-note">No spam. Unsubscribe anytime. Your data stays with you.</p>
+        <p class="signup-note" id="signup-message">No spam. Unsubscribe anytime. Your data stays with you.</p>
     </section>
+
+    <!-- Signup Form Handler -->
+    <script>
+    (function() {
+        const form = document.getElementById('signup-form');
+        const emailInput = document.getElementById('signup-email');
+        const submitBtn = document.getElementById('signup-btn');
+        const messageEl = document.getElementById('signup-message');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            if (!email) return;
+
+            // Update UI
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            messageEl.textContent = 'Processing your request...';
+            messageEl.style.opacity = '1';
+
+            try {
+                const response = await fetch('/api/ghl/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Success!
+                    messageEl.innerHTML = '<strong style="color: #C9A227;">Welcome to The Liquid Fortress!</strong><br>Check your email, or <a href="/book/chapter1.html" style="color: #F5E6C8; text-decoration: underline;">start reading Chapter 1 now</a>.';
+                    emailInput.value = '';
+                    submitBtn.textContent = 'Subscribed!';
+                    submitBtn.style.background = '#3D5C3D';
+                    submitBtn.style.borderColor = '#3D5C3D';
+                } else {
+                    // Error
+                    messageEl.textContent = data.error || 'Something went wrong. Please try again.';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Try Again';
+                }
+            } catch (err) {
+                console.error('Signup error:', err);
+                messageEl.textContent = 'Network error. Please try again.';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Try Again';
+            }
+        });
+    })();
+    </script>
 
     <!-- FOOTER -->
     <footer>
