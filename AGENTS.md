@@ -116,6 +116,14 @@ curl https://shabrang.pages.dev/api/health
 python3 automation/setup_command_center.py
 ```
 
+### Use Telegram bot for autopilot
+```
+/shabrang_plan - Generate weekly plan
+/shabrang_status - Show current tasks
+/shabrang_approve - Approve & publish (coming soon)
+```
+See: `/home/mumega/claude-interface/telegram/SHABRANG_AUTOPILOT.md`
+
 ## Troubleshooting
 
 **Images not loading:** Copy to `apps/site/public/` before building
