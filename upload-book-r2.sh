@@ -26,9 +26,9 @@ while IFS= read -r -d '' file; do
   fi
 
   if [ -n "$content_type" ]; then
-    wrangler r2 object put "$BUCKET/$key" --file "$file" --content-type "$content_type"
+    wrangler r2 object put "$BUCKET/$key" --file "$file" --content-type "$content_type" --remote
   else
-    wrangler r2 object put "$BUCKET/$key" --file "$file"
+    wrangler r2 object put "$BUCKET/$key" --file "$file" --remote
   fi
 done < <(find "$BOOK_DIR" -type f -print0)
 

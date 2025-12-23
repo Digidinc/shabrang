@@ -5,3 +5,6 @@ dist/
 .env
 .env.*
 static/book/
+apps/site/.astro/
+apps/site/dist/
+apps/site/node_modules/

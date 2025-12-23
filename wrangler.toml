@@ -2,9 +2,6 @@ name = "shabrang"
 compatibility_date = "2024-12-01"
 pages_build_output_dir = "./dist"
 
-# Account ID
-account_id = "e39eaf94f33092c4efd029d94ae1e9dd"
-
 # D1 Database binding
 [[d1_databases]]
 binding = "DB"
