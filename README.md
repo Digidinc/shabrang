@@ -1,16 +1,25 @@
-# Shabrang Cloudflare Pages
+# Shabrang Cloudflare Pages (Refactor)
 
 Single Cloudflare Pages project that serves:
 - `/` landing page
 - `/content/` blog (Astro build)
-- `/book/` book pages (static or R2)
+- `/book/` book pages (served from R2)
 - `/api/*` GHL + book access API (Pages Functions)
+
+## Repo Layout
+
+- `apps/site/` Astro blog (base `/content`)
+- `functions/api/` API gateway (GHL OAuth, signup, access, webhook)
+- `functions/book/` Book content from R2
+- `static/landing/` Landing page assets
+- `infra/schema.sql` D1 schema
+- `build.sh` Build + assemble output
+- `upload-book-r2.sh` R2 upload helper
 
 ## Build
 
 1) Place assets:
 - Landing: `static/landing/`
-- Book (optional): `static/book/` (large; can serve from R2 instead)
 
 2) Build:
 ```bash
@@ -28,9 +37,9 @@ Apply `infra/schema.sql` to the D1 database bound as `DB`.
 
 ## R2 (optional for book)
 
-If you do not include `static/book/`, upload the book to the `STORAGE` bucket
-under the `book/` prefix (example: `book/chapter1.html`). The `/book/*` route
-is served from R2 via `functions/book/[...path].js`.
+Upload the book to the `STORAGE` bucket under the `book/` prefix
+(example: `book/chapter1.html`). The `/book/*` route is served from R2
+via `functions/book/[...path].js`.
 
 Upload script (uses `wrangler`):
 ```bash
@@ -49,3 +58,16 @@ Upload script (uses `wrangler`):
 - `GHL_ALLOW_CONTACT_ID_TOKEN` (default: `true`)
 - `GHL_RESEND_WORKFLOW_ID`
 - `GHL_CHECKOUT_URL`
+
+## API Endpoints
+
+- `GET /api/health`
+- `GET /api/ghl/auth`
+- `GET /api/auth/callback`
+- `POST /api/ghl/signup`
+- `GET /api/ghl/status`
+- `POST /api/ghl/validate`
+- `POST /api/ghl/resend`
+- `GET /api/ghl/checkout`
+- `POST /api/ghl-webhook`
+- `GET /api/book/chapter/:num`
