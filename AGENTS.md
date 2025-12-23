@@ -1,8 +1,8 @@
 # Shabrang Refactor - Agent Notes
 
-**Status:** ✅ Deployed to Cloudflare Pages
-**Live URL:** https://shabrang.pages.dev
-**Blog URL:** https://blog.shabrang.ca/content/
+**Status:** ⚠️ Refactor ready; deploy pending (needs Pages API token)
+**Live URL:** https://shabrang.pages.dev (after deploy)
+**Blog URL:** https://shabrang.ca/content or https://blog.shabrang.ca/content (choose one)
 
 This repo is a unified Cloudflare Pages project serving landing, blog, book, and APIs.
 
@@ -47,8 +47,7 @@ Output: `dist/` directory ready for deployment
 
 ### 3. Deploy to Cloudflare Pages
 ```bash
-export CLOUDFLARE_API_TOKEN=<token>
-export CLOUDFLARE_ACCOUNT_ID=e39eaf94f33092c4efd029d94ae1e9dd
+export CLOUDFLARE_API_TOKEN=<token-with-pages-d1-r2>
 
 wrangler pages deploy dist --project-name=shabrang --commit-dirty=true
 ```
@@ -82,6 +81,14 @@ GHL_PREMIUM_TAG=shabrang-premium
 ENVIRONMENT=production
 ```
 
+## Design System Status
+
+Landing and book are standalone HTML/CSS. The blog uses Astro layouts. There is
+no shared master layout yet across `/`, `/content`, and `/book`.
+
+**Suggested refactor:** move landing into Astro and extract shared CSS tokens
+so future event pages and content share a single theme.
+
 ## Common Tasks
 
 ### Add new blog post
@@ -111,10 +118,10 @@ curl https://shabrang.pages.dev/api/health
 
 ## Migration Status
 
-✅ Cloudflare Pages deployed
+⏳ Cloudflare Pages deploy (needs Pages API token)
 ✅ D1 database created and schema applied
 ✅ R2 bucket created
 ✅ Blog syncing from Notion
-✅ Custom domain `blog.shabrang.ca` added
-⏳ Book chapters need R2 upload
+⏳ Custom domain setup (optional)
+✅ Book chapters uploaded to R2
 ⏳ VPS can be decommissioned once DNS fully migrated

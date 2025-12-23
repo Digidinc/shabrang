@@ -1,8 +1,8 @@
 # Shabrang - Cloudflare Pages
 
-**Status:** ✅ Live on Cloudflare Pages
-**Primary URL:** https://shabrang.pages.dev
-**Blog URL:** https://blog.shabrang.ca/content/
+**Status:** ⚠️ Refactor ready; deploy pending (needs Pages API token)
+**Primary URL:** https://shabrang.pages.dev (after deploy)
+**Blog URL:** https://shabrang.ca/content or https://blog.shabrang.ca/content (choose one)
 
 ## Architecture
 
@@ -25,7 +25,7 @@ Single Cloudflare Pages project serving:
 | Pages Project | `shabrang` | https://shabrang.pages.dev |
 | D1 Database | `shabrang-db` | `22db9a55-f30e-40c6-b0f3-08c6a855c9f9` |
 | R2 Bucket | `shabrang-assets` | Storage for book/images |
-| Custom Domain | `blog.shabrang.ca` | CNAME → shabrang.pages.dev |
+| Custom Domain | optional | CNAME → shabrang.pages.dev |
 
 ## Directory Structure
 
@@ -63,8 +63,7 @@ Output → `dist/`
 
 ### 2. Deploy to Cloudflare Pages
 ```bash
-export CLOUDFLARE_API_TOKEN=<your-token>
-export CLOUDFLARE_ACCOUNT_ID=e39eaf94f33092c4efd029d94ae1e9dd
+export CLOUDFLARE_API_TOKEN=<token-with-pages-d1-r2>
 
 wrangler pages deploy dist --project-name=shabrang
 ```
@@ -76,7 +75,7 @@ wrangler pages deploy dist --project-name=shabrang
 
 ## Database Setup (D1)
 
-The D1 database is already created and schema applied.
+The D1 database is created and schema applied (re-run if needed).
 
 **Tables:**
 - `users` - User accounts (synced from GHL contacts)
@@ -111,7 +110,7 @@ Set in Cloudflare Pages → Settings → Environment Variables:
 
 ## API Endpoints
 
-All endpoints are accessible at `https://shabrang.pages.dev/api/` or `https://blog.shabrang.ca/api/`
+All endpoints are accessible at the Pages domain or your configured custom domain.
 
 ### GHL Integration
 - `GET /api/health` - Health check
@@ -161,9 +160,19 @@ Edit: `/opt/shabrang/repo/Book/` then upload to R2:
 ./upload-book-r2.sh /opt/shabrang/repo/Book/dist shabrang-assets book
 ```
 
+## Design System Status
+
+The landing page and book are currently standalone HTML/CSS. The blog uses its
+own Astro layout. There is no shared master layout or theme across all sections
+yet.
+
+**Recommended next step:** move the landing into Astro and extract shared CSS
+tokens (colors/typography/spacing) so future pages and events use one design
+system.
+
 ## Custom Domain Setup
 
-**Current:** `blog.shabrang.ca` → Cloudflare Pages
+**Optional:** configure `shabrang.ca` or `blog.shabrang.ca`
 
 **DNS Record:**
 - Type: CNAME
