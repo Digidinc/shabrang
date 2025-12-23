@@ -1,0 +1,21 @@
+name = "shabrang"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "./dist"
+
+# Account ID
+account_id = "e39eaf94f33092c4efd029d94ae1e9dd"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "shabrang-db"
+database_id = "22db9a55-f30e-40c6-b0f3-08c6a855c9f9"
+
+# R2 Bucket binding
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "shabrang-assets"
+
+[vars]
+ENVIRONMENT = "production"
+GHL_LOCATION_ID = "GH7DEHSQgknGHmLCSzo3"

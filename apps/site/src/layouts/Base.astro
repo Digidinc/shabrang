@@ -1,0 +1,388 @@
+---
+import siteConfig from 'virtual:site-config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+}
+
+const { title, description, lang = 'en' } = Astro.props;
+const isRTL = lang === 'fa';
+const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.seo?.title || siteConfig.name;
+const pageDesc = description || siteConfig.seo?.description || '';
+---
+
+<!DOCTYPE html>
+<html lang={lang} dir={isRTL ? 'rtl' : 'ltr'}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={pageDesc} />
+  <title>{pageTitle}</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDesc} />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts: Editorial style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Persian font -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="sitemap" href="/content/sitemap-index.xml" />
+  <link rel="alternate" type="application/rss+xml" title={siteConfig.name} href="/content/rss.xml" />
+</head>
+<body class:list={[{ rtl: isRTL }]}>
+  <!-- Minimal header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/content/" class="logo">{siteConfig.name}</a>
+      <nav class="main-nav">
+        <a href="/content/">Articles</a>
+        <a href="/book/">Book</a>
+        <a href="/">Home</a>
+        {lang === 'en' ? (
+          <a href="/content/fa/" class="lang-switch">فارسی</a>
+        ) : (
+          <a href="/content/" class="lang-switch">English</a>
+        )}
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">{siteConfig.name}</span>
+        <p>A space for deep inquiry into consciousness, code, and coherence.</p>
+      </div>
+      <div class="footer-nav">
+        <a href="/">Main Site</a>
+        <a href="/book/">Read the Book</a>
+        <a href="/content/rss.xml">RSS</a>
+      </div>
+      <p class="copyright">&copy; {new Date().getFullYear()} {siteConfig.name}</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle?.addEventListener('click', () => nav?.classList.toggle('open'));
+  </script>
+</body>
+</html>
+
+<style>
+  /* ========================================
+     DESIGN SYSTEM - Editorial Magazine Style
+     ======================================== */
+  :root {
+    /* Typography Scale */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Sans 3', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-persian: 'Vazirmatn', 'Tahoma', sans-serif;
+
+    /* Colors - Refined palette */
+    --color-ink: #1a1a1a;
+    --color-ink-light: #4a4a4a;
+    --color-ink-lighter: #6a6a6a;
+    --color-paper: #fafaf8;
+    --color-paper-dark: #f0efe9;
+    --color-accent: #c9a227;
+    --color-accent-dark: #a88a1f;
+    --color-teal: #1a4a4a;
+    --color-crimson: #8b2525;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+
+    /* Layout */
+    --max-width: 1200px;
+    --content-width: 680px;
+  }
+
+  /* Reset */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* RTL Support */
+  body.rtl {
+    font-family: var(--font-persian);
+    direction: rtl;
+  }
+
+  body.rtl .site-header,
+  body.rtl .site-footer {
+    font-family: var(--font-persian);
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+  }
+
+  body.rtl h1,
+  body.rtl h2,
+  body.rtl h3 {
+    font-family: var(--font-persian);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  a {
+    color: var(--color-teal);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-crimson);
+  }
+
+  /* ========================================
+     HEADER - Clean, minimal
+     ======================================== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-paper);
+    border-bottom: 1px solid var(--color-paper-dark);
+  }
+
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    letter-spacing: 0.02em;
+  }
+
+  body.rtl .logo {
+    font-family: var(--font-persian);
+  }
+
+  .logo:hover {
+    color: var(--color-accent-dark);
+  }
+
+  .main-nav {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .main-nav a:hover {
+    color: var(--color-ink);
+  }
+
+  .lang-switch {
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--color-ink-lighter);
+    border-radius: 2px;
+    font-size: 0.85rem !important;
+  }
+
+  .lang-switch:hover {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-paper) !important;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-ink);
+  }
+
+  /* ========================================
+     MAIN CONTENT
+     ======================================== */
+  main {
+    flex: 1;
+    width: 100%;
+  }
+
+  /* ========================================
+     FOOTER - Understated elegance
+     ======================================== */
+  .site-footer {
+    margin-top: auto;
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  body.rtl .footer-logo {
+    font-family: var(--font-persian);
+  }
+
+  .footer-brand p {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    max-width: 300px;
+    line-height: 1.6;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: right;
+  }
+
+  body.rtl .footer-nav {
+    text-align: left;
+  }
+
+  .footer-nav a {
+    color: var(--color-paper);
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  .footer-nav a:hover {
+    opacity: 1;
+    color: var(--color-accent);
+  }
+
+  .copyright {
+    grid-column: 1 / -1;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+
+    .header-inner {
+      padding: var(--space-md);
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .main-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-paper);
+      flex-direction: column;
+      padding: var(--space-lg);
+      gap: var(--space-md);
+      border-bottom: 1px solid var(--color-paper-dark);
+      display: none;
+    }
+
+    .main-nav.open {
+      display: flex;
+    }
+
+    .footer-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-brand p {
+      max-width: none;
+    }
+
+    .footer-nav {
+      text-align: center;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+</style>

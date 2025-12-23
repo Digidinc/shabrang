@@ -1,0 +1,334 @@
+---
+import Base from '../../layouts/Base.astro';
+import siteConfig from 'virtual:site-config';
+
+const posts = await Astro.glob('../../content/posts/*.mdx');
+const farsiPosts = posts
+  .filter((post: any) => !post.frontmatter.draft && post.frontmatter.lang === 'fa')
+  .sort((a: any, b: any) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+
+const featuredPost = farsiPosts[0];
+const recentPosts = farsiPosts.slice(1, 5);
+---
+
+<Base lang="fa">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-label">قلعه‌ی سیال</p>
+      <h1 class="hero-title">کاوش در آگاهی،<br />کد و انسجام</h1>
+      <p class="hero-subtitle">پژوهشی عمیق در الگوهایی که ذهن، ماشین و معنا را به هم پیوند می‌دهند.</p>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  {featuredPost && (
+    <section class="featured">
+      <div class="featured-inner">
+        <span class="section-label">ویژه</span>
+        <a href={`/content/fa/posts/${featuredPost.file.split('/').pop()?.replace('.mdx', '')}/`} class="featured-card">
+          <div class="featured-content">
+            <h2 class="featured-title">{featuredPost.frontmatter.title}</h2>
+            {featuredPost.frontmatter.description && (
+              <p class="featured-desc">{featuredPost.frontmatter.description}</p>
+            )}
+            <div class="featured-meta">
+              <time datetime={featuredPost.frontmatter.date}>
+                {new Date(featuredPost.frontmatter.date).toLocaleDateString('fa-IR', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric'
+                })}
+              </time>
+              <span class="read-more">← مطالعه مقاله</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- Recent Articles -->
+  <section class="recent">
+    <div class="recent-inner">
+      <span class="section-label">مقالات اخیر</span>
+      {farsiPosts.length > 0 ? (
+        <div class="articles-grid">
+          {farsiPosts.map((post: any) => (
+            <a href={`/content/fa/posts/${post.file.split('/').pop()?.replace('.mdx', '')}/`} class="article-card">
+              <time datetime={post.frontmatter.date}>
+                {new Date(post.frontmatter.date).toLocaleDateString('fa-IR', {
+                  month: 'short',
+                  day: 'numeric'
+                })}
+              </time>
+              <h3>{post.frontmatter.title}</h3>
+              {post.frontmatter.description && (
+                <p>{post.frontmatter.description}</p>
+              )}
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="empty">مقالات به‌زودی اضافه خواهند شد.</p>
+      )}
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-inner">
+      <h2>درباره این فضا</h2>
+      <p>این فضایی است برای کاوش عمیق — جایی که آگاهی با کد تلاقی می‌کند و انسجام از پیچیدگی پدیدار می‌شود. این جستارها با الهام از چارچوب شانزده‌بُعدی که در <em>قلعه‌ی سیال</em> توسعه یافته، سرزمین میان خرد کهن و فناوری نوظهور را نقشه‌برداری می‌کنند.</p>
+      <a href="/book/" class="cta-link">← مطالعه کتاب</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Same styles as English index but inherits RTL from Base */
+  .hero {
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-paper-dark);
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-label {
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-lg);
+    font-weight: 600;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-ink-light);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .section-label {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--color-ink-lighter);
+    margin-bottom: var(--space-lg);
+    font-weight: 600;
+  }
+
+  .featured {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-paper-dark);
+  }
+
+  .featured-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .featured-card {
+    display: block;
+    background: var(--color-paper);
+    padding: var(--space-xl);
+    border-radius: 4px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .featured-card:hover {
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+
+  .featured-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    margin-bottom: var(--space-md);
+    color: var(--color-ink);
+    line-height: 1.4;
+  }
+
+  .featured-card:hover .featured-title {
+    color: var(--color-teal);
+  }
+
+  .featured-desc {
+    font-size: 1.1rem;
+    color: var(--color-ink-light);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+    max-width: 700px;
+  }
+
+  .featured-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-paper-dark);
+  }
+
+  .featured-meta time {
+    font-size: 0.9rem;
+    color: var(--color-ink-lighter);
+  }
+
+  .read-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-teal);
+  }
+
+  .featured-card:hover .read-more {
+    color: var(--color-crimson);
+  }
+
+  .recent {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .recent-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .article-card {
+    display: block;
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--color-paper-dark);
+    transition: border-color 0.2s ease;
+  }
+
+  .article-card:hover {
+    border-color: var(--color-accent);
+  }
+
+  .article-card time {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-ink-lighter);
+    margin-bottom: var(--space-sm);
+  }
+
+  .article-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-ink);
+    line-height: 1.5;
+    transition: color 0.2s ease;
+  }
+
+  .article-card:hover h3 {
+    color: var(--color-teal);
+  }
+
+  .article-card p {
+    font-size: 0.95rem;
+    color: var(--color-ink-light);
+    line-height: 1.7;
+  }
+
+  .empty {
+    color: var(--color-ink-lighter);
+  }
+
+  .about {
+    padding: var(--space-2xl) var(--space-lg);
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .about-inner {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about h2 {
+    color: var(--color-paper);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .about p {
+    font-size: 1.05rem;
+    line-height: 2;
+    opacity: 0.85;
+    margin-bottom: var(--space-lg);
+  }
+
+  .about em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+
+  .cta-link {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    padding: var(--space-sm) 0;
+    border-bottom: 2px solid var(--color-accent);
+    transition: all 0.2s ease;
+  }
+
+  .cta-link:hover {
+    color: var(--color-paper);
+    border-color: var(--color-paper);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .featured {
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    .featured-card {
+      padding: var(--space-lg);
+    }
+
+    .featured-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    .recent {
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    .articles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about {
+      padding: var(--space-xl) var(--space-md);
+    }
+  }
+</style>
