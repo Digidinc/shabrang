@@ -75,6 +75,13 @@ The Resident AI uses **working memory** approach instead of traditional RAG:
 - Marketing materials
 - Book cover variations
 
+**Visual Style:** Persian miniature aesthetic (see `VISUAL_STYLE_GUIDE.md`)
+- Flat perspective (NO 3D rendering)
+- Strict color palette: Cream `#F5E6C8`, Black `#1A1A18`, Teal `#1A4A4A`, Crimson `#8B3535`, Gold `#C9A227`
+- Clean black outlines, solid fills (NO gradients)
+- Simple geometric Persian border frames (teal + gold)
+- High contrast for print readability
+
 ### 5. LLM Council (Karpathy)
 **Source:** https://github.com/karpathy/llm-council
 **Purpose:** Multi-model consensus for high-stakes decisions
