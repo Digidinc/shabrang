@@ -197,6 +197,10 @@ Check environment variables are set in Cloudflare Pages dashboard
 ### Book chapters 404
 Upload book files to R2 using `./upload-book-r2.sh`
 
+## References
+
+Official model/tool sources are tracked in `docs/model-sources.md`.
+
 ## Migration from VPS
 
 **Before (VPS):**

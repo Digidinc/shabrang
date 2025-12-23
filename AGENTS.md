@@ -116,6 +116,10 @@ curl https://shabrang.pages.dev/api/health
 **522 Error:** DNS CNAME must point to `shabrang.pages.dev`
 **D1 connection error:** Check bindings in wrangler.toml match dashboard
 
+## References
+
+Model/tool sources: `docs/model-sources.md`.
+
 ## Migration Status
 
 ⏳ Cloudflare Pages deploy (needs Pages API token)
