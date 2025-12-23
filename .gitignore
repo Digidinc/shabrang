@@ -8,3 +8,4 @@ static/book/
 apps/site/.astro/
 apps/site/dist/
 apps/site/node_modules/
+automation/command-center.json

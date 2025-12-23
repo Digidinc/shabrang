@@ -67,6 +67,8 @@ wrangler pages deploy dist --project-name=shabrang --commit-dirty=true
 | `infra/schema.sql` | D1 database schema |
 | `apps/site/astro.config.mjs` | Astro config (base: '/content') |
 | `.dev.vars` | Local env vars (gitignored) |
+| `automation/setup_command_center.py` | Creates Sheets + Docs command center |
+| `automation/command-center.json` | Stored IDs for command center |
 
 ## Environment Variables
 
@@ -109,6 +111,11 @@ so future event pages and content share a single theme.
 curl https://shabrang.pages.dev/api/health
 ```
 
+### Initialize command center
+```bash
+python3 automation/setup_command_center.py
+```
+
 ## Troubleshooting
 
 **Images not loading:** Copy to `apps/site/public/` before building
@@ -116,9 +123,34 @@ curl https://shabrang.pages.dev/api/health
 **522 Error:** DNS CNAME must point to `shabrang.pages.dev`
 **D1 connection error:** Check bindings in wrangler.toml match dashboard
 
+## Resident AI Architecture
+
+See `AI_ARCHITECTURE.md` for full technical specification.
+
+**Philosophy:** Working memory approach (not RAG) - book + FRC + 16D loaded as core memory
+
+**Verified AI Tools:**
+- **Veo 3** - Text-to-video with native audio (deepmind.google/models/veo/)
+- **Gemini 3 Pro** - Production content generation (ai.google.dev/gemini-api/docs/gemini-3)
+- **Gemini Flash** - Development/testing (cheap: $0.075/1M tokens)
+- **Nano Banana Pro** - Image generation with excellent text rendering (ai.google.dev/gemini-api/docs/nanobanana)
+- **LLM Council** - Multi-model consensus for planning (github.com/karpathy/llm-council)
+- **Gemini File Search** - Optional RAG fallback (ai.google.dev/gemini-api/docs/file-search)
+
+**Auto-Publishing Flow:**
+1. LLM Council generates weekly plan (Sunday 8 PM)
+2. Telegram notification for approval
+3. AI executes via GHL social scheduler
+4. Engagement tracked in D1
+
+**Cost:** ~$50-100/month active, or $300/month with Google AI Ultra
+
+**Next Phase:** Media indexing (slides, videos, podcasts, audiobook) + translation system
+
 ## References
 
-Model/tool sources: `docs/model-sources.md`.
+- AI Architecture: `AI_ARCHITECTURE.md`
+- Model/tool sources: `docs/model-sources.md`
 
 ## Migration Status
 

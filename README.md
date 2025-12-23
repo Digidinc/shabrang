@@ -160,6 +160,18 @@ Edit: `/opt/shabrang/repo/Book/` then upload to R2:
 ./upload-book-r2.sh /opt/shabrang/repo/Book/dist shabrang-assets book
 ```
 
+## Command Center (Sheets + Docs)
+
+The resident model can use Google Sheets + Docs as its command center.
+
+Setup (creates the sheet + weekly plan doc in the Shabrang Drive folder):
+```bash
+python3 automation/setup_command_center.py
+```
+
+Generated IDs are stored in:
+- `automation/command-center.json`
+
 ## Design System Status
 
 The landing page and book are currently standalone HTML/CSS. The blog uses its
