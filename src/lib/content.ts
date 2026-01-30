@@ -1146,7 +1146,7 @@ export function extractWikilinks(body: string): WikiLink[] {
 
 const SITE_URL = 'https://shabrang.ca';
 
-export type ContentType = 'papers' | 'articles' | 'concepts' | 'books' | 'blog' | 'topics' | 'people';
+export type ContentType = 'papers' | 'articles' | 'concepts' | 'books' | 'blog' | 'topics' | 'people' | 'art';
 
 /** Check if content exists in a specific language */
 export function contentExistsInLang(type: ContentType, lang: string, id: string): boolean {
@@ -1158,6 +1158,7 @@ export function contentExistsInLang(type: ContentType, lang: string, id: string)
     blog: getBlogPost,
     topics: getTopic,
     people: getPerson,
+    art: getArtItem,
   } as const;
   return getters[type](lang, id) !== null;
 }
