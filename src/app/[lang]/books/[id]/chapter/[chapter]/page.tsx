@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const fm = book.frontmatter;
   const author = fm.author || 'H. Servat';
-  const bookUrl = `https://fractalresonance.com/${lang}/books/${fm.id}`;
+  const bookUrl = `https://shabrang.ca/${lang}/books/${fm.id}`;
   const chapterUrl = `${bookUrl}/chapter/${ch.slug}`;
   const alternates = getAlternateLanguages('books', fm.id);
 

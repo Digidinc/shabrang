@@ -9,7 +9,7 @@
  * Data-level: Dataset
  */
 
-const SITE_URL = 'https://fractalresonance.com';
+const SITE_URL = 'https://shabrang.ca';
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 

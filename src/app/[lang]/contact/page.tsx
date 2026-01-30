@@ -3,7 +3,7 @@ import { getLanguages } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Connect with the Fractal Resonance Cognition team for collaborations and inquiries.',
+  description: 'Connect with Shabrang for inquiries and collaborations.',
 };
 
 export function generateStaticParams() {
@@ -20,34 +20,33 @@ export default function ContactPage() {
 
       <section className="border border-frc-blue p-8 space-y-6">
         <p className="text-frc-text leading-relaxed">
-          We welcome inquiries, collaborations, and discussions related to Fractal Resonance Cognition (FRC).
-          If you have questions about the framework, want to explore research partnerships, or wish to share
-          your insights, feel free to reach out.
+          We welcome inquiries, collaborations, and discussions related to Shabrang and The Liquid Fortress.
+          If you have questions, want to explore partnerships, or wish to share your thoughts,
+          feel free to reach out.
         </p>
 
         <div className="space-y-3 text-frc-text-dim">
           <p>
-            <span className="text-frc-text">Email:</span>{' '}
-            <a className="hover:text-frc-gold" href="mailto:publish@fractalresonance.com">
-              publish@fractalresonance.com
-            </a>
-          </p>
-          <p>
             <span className="text-frc-text">Website:</span>{' '}
-            <a className="hover:text-frc-gold" href="https://fractalresonance.com" target="_blank" rel="noopener noreferrer">
-              fractalresonance.com
+            <a className="hover:text-frc-gold" href="https://shabrang.ca" target="_blank" rel="noopener noreferrer">
+              shabrang.ca
             </a>
           </p>
           <p>
-            <span className="text-frc-text">Author:</span> Hadi Servat
+            <span className="text-frc-text">Author:</span> Kay Hermes
+          </p>
+          <p>
+            <span className="text-frc-text">Book:</span>{' '}
+            <a className="hover:text-frc-gold" href="https://www.amazon.com/LIQUID-FORTRESS-Structural-History-Persian-ebook/dp/B0GBJ47F5X" target="_blank" rel="noopener noreferrer">
+              The Liquid Fortress on Amazon Kindle
+            </a>
           </p>
         </div>
 
         <p className="text-xs text-frc-text-dim leading-relaxed">
-          We strive to respond promptly. Thank you for your interest in FRC.
+          Thank you for your interest in Shabrang.
         </p>
       </section>
     </main>
   );
 }
-

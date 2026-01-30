@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fm = artifact.frontmatter;
   const author = fm.author || 'H. Servat';
   const norm = normalizeContentPerspective(fm.perspective);
-  const canonicalUrl = `https://fractalresonance.com/${lang}/art/${fm.id}`;
+  const canonicalUrl = `https://shabrang.ca/${lang}/art/${fm.id}`;
   const alternates = getAlternateLanguages('articles', fm.id); // Artifacts use the article-like meta for now
 
   return {
