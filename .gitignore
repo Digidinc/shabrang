@@ -34,14 +34,7 @@ playwright-report/
 # CONTENT PIPELINE — Raw sources (local only)
 # ═══════════════════════════════════════════
 # Raw materials stay local, only processed outputs go to git
-sources/slides/
-sources/images/
-sources/papers/
-sources/videos/
-sources/notes/
-sources/infographics/
-# Keep the README tracked:
-!sources/README.md
+sources/
 
 # Legacy inbox
 content/inbox/
