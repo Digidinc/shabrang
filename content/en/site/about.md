@@ -54,9 +54,20 @@ This is how we choose to see. This is the art we choose to make.
 
 ## The Name
 
-**Shabrang** (شبرنگ) means "night-colored" in Persian. In the Shahnameh, Shabrang is the legendary horse of the hero Siyavash—dark as night, swift as thought, loyal beyond death.
+**Shabrang** (شبرنگ) means "night-colored" in Persian. In the Shahnameh, Shabrang was the legendary horse of **Siyavash**, the tragic Persian prince who embodied innocence and honor. After Siyavash's martyrdom in Turan, Shabrang returned to serve his son **Kay Khosrow**, carrying the lineage of justice across generations.
 
-We chose this name because our work moves through the twilight spaces between fact and fiction, history and myth, the seen and the imagined.
+Shabrang joins a family of mythic steeds in Persian legend:
+- **Rakhsh** (رخش) — the rose-colored champion of Rostam, the greatest hero
+- **Shabdiz** (شبدیز) — the night-black horse of Khosrow Parviz, symbol of royal splendor
+- **Shabrang** (شبرنگ) — the night-colored steed of Siyavash and Kay Khosrow, bearer of memory
+
+Together, they represent the spirit of Persian storytelling—loyal, enduring, carrying their riders through impossible trials.
+
+## Our Mission
+
+We explore the **alternative history** of the Iranian Plateau—the stories, symbols, and cultural currents that are often absent from Western media narratives. This is not revisionism; it is *recovery*. We bring forward what has been overlooked, mistranslated, or simplified.
+
+The Persian world is not a footnote to Greek or Arab history. It is a civilization with its own logic, its own beauty, its own survival technologies. We are here to give it voice.
 
 ---
 
