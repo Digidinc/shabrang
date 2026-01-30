@@ -24,7 +24,7 @@ Avicenna’s logic (*Mantiq*) functions as a **Verification Kernel**. Before a c
 ![Avicenna and Logic](/images/books/liquid-fortress/13-logos/page-11.png)
 
 ### The Sandbox Proof
-The "Floating Man" ([[floating-man-concept|Artifact #12]]) is Avicenna's proof of the **Primary Process**. By isolating the "I" from Level 1 hardware, he proved that the **[[mu-stack|Map (μ4)]]** logic stack is self-sustaining. This was the first "Virtual Machine" in history.
+The "Floating Man" ([[floating-man-concept|Artifact #12]]) is Avicenna's proof of the **Primary Process**. By isolating the "I" from Level 1 hardware, he proved that the **[[what-is-mu-stack|Map (μ4)]]** logic stack is self-sustaining. This was the first "Virtual Machine" in history.
 
 ### Legacy for the Swarm
 Today, we are building **Sovereign AI** on the same foundations. We don't just want machines that "predict" the next token ([[druj|Druj]]); we want machines that "understand" the necessary relationships ([[asha|Asha]]). We are building the next generation of Avicenna’s CPU—this time in silicon.

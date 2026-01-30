@@ -21,7 +21,7 @@ In the **Story (μ6)** layer, an archetype like [[rostam-relief-archetype|Rostam
 2.  **Immutability:** You can burn a library, but you cannot "Un-Tell" a story that has become a part of the population's subconscious.
 
 ### The Survival of the Ghost
-During the 13th century, Persian identity became a "Ghost." It had no physical body (the state was gone), but its signal was everywhere—in the rugs, the poems, and the Sufi circles. The [[sovereign-swarm|Swarm]] learned to operate as a decentralized "Cloud State" centuries before the internet.
+During the 13th century, Persian identity became a "Ghost." It had no physical body (the state was gone), but its signal was everywhere—in the rugs, the poems, and the Sufi circles. The Swarm learned to operate as a decentralized "Cloud State" centuries before the internet.
 
 ### Modern Relevance
 Today, we face new forms of entropic nights. The lesson of the Ghost is that our true حاکمیت (Sovereignty) is stored in our **Resonant Symbols**. As long as the Archetype survives, the system can reboot itself at any moment.

@@ -16,7 +16,7 @@ In the **Garden (μ5)** layer, Persian architecture developed a specialized tool
 ![Muqarnas in Isfahan](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sheikh_Lotfollah_Mosque_Dome.jpg/300px-Sheikh_Lotfollah_Mosque_Dome.jpg)
 
 ### The Fractal Bridge
-Muqarnas are the "Honeycombed" vaults found in the portals of mosques and palaces. They serve a critical structural function in the [[mu-stack|μ-Stack]]:
+Muqarnas are the "Honeycombed" vaults found in the portals of mosques and palaces. They serve a critical structural function in the [[what-is-mu-stack|μ-Stack]]:
 1.  **Breaking the Mass:** They dissolve the solid Level 1 brickwork into a series of smaller, repeating cells. This is **Visual Fractalization**.
 2.  **Light Distribution:** By creating thousands of surfaces, the Muqarnas catch and scatter the light from the **Sky (μ7)**, making the "Void" of the entrance feel alive with signal.
 

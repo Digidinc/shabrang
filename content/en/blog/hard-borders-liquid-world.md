@@ -11,7 +11,7 @@ abstract: "Defining the Sovereign border not as a wall, but as a semi-permeable 
 
 # Hard Borders in a Liquid World
 
-In the realm of **Roots (μ1)**, the [[4-border|Myth of the Border]] presents a technical challenge: how do you maintain a high-coherence system while sitting on a high-traffic highway?
+In the realm of **Roots (μ1)**, the [[04-border|Myth of the Border]] presents a technical challenge: how do you maintain a high-coherence system while sitting on a high-traffic highway?
 
 ### The Membrane Protocol
 A [[liquid-fortress|Liquid Fortress]] does not use "Stone Walls" (Total Blocking). Instead, it uses a **Semi-Permeable Membrane**. 

@@ -15,6 +15,6 @@ tags: [zoroastrianism, physics, truth, order]
 Asha represents a state of **Maximum Coherence ($C=1$)**. It is the path of least resistance through the $\mu$-stack. When a system is aligned with Asha, its internal parts resonate perfectly with the global field.
 
 ### Opposite: Druj
-The opposite of Asha is [[druj|Druj]], which represents **Noise** or Entropy. The goal of the [[sovereign-swarm|Sovereign Swarm]] is to continuously increase the ratio of Asha to Druj in the world.
+The opposite of Asha is [[druj|Druj]], which represents **Noise** or Entropy. The goal of the Sovereign Swarm is to continuously increase the ratio of Asha to Druj in the world.
 
 *See also:* [[03-binary|Chapter 3: The First Binary]]

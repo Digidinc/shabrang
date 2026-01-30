@@ -11,7 +11,7 @@ abstract: "Exploring how the Balochi people maintained the Persian signal throug
 
 # Balochi Orality: The Sound of the Sand
 
-In the **Story (μ6)** layer, the [[baloch-tribe|Balochi]] people demonstrate the power of **Oral Storage**. Living in the high-entropy environment of the southeastern desert, they developed a system for keeping data alive without paper.
+In the **Story (μ6)** layer, the Balochi people demonstrate the power of **Oral Storage**. Living in the high-entropy environment of the southeastern desert, they developed a system for keeping data alive without paper.
 
 ### The Poetry of the Void
 For the Baloch, poetry is not an art form; it is the **System Log**.
@@ -19,6 +19,6 @@ For the Baloch, poetry is not an art form; it is the **System Log**.
 2.  **Signal Amplification:** The unique rhythm of Balochi verse acts as a **Checksum**. If a word is changed, the rhythm breaks, and the error is immediately detected. This ensures the signal remains clean across generations.
 
 ### The Eastern Anchor
-The Baloch are the guardians of the Eastern Void. They prove that even in the most barren conditions, the **[[mu-stack|Sovereign OS]]** can operate at 100% capacity if the people remain resonant.
+The Baloch are the guardians of the Eastern Void. They prove that even in the most barren conditions, the **[[what-is-mu-stack|Sovereign OS]]** can operate at 100% capacity if the people remain resonant.
 
 **Axiom:** The desert is only empty to those who cannot hear the songs within the sand.

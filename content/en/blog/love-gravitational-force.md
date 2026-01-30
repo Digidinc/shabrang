@@ -14,7 +14,7 @@ abstract: "Defining 'Ishq' not as an emotion, but as the fundamental binding ene
 In the **Fire (μ3)** layer, we find the highest-intensity signal: **[[23-love-thermodynamics|Ishq]]** (Love). In the Sovereign perspective, Love is the **Binding Energy** of the universe.
 
 ### The Physics of Attraction
-Just as gravity pulls masses together to form stars, Love pulls individual nodes together to form a coherent [[sovereign-swarm|Swarm]]. 
+Just as gravity pulls masses together to form stars, Love pulls individual nodes together to form a coherent Swarm. 
 1.  **Overcoming Ego-Entropy:** The ego is a force of expansion and isolation (Noise). Love is the contractive force that pulls the "I" toward the "We," increasing the overall coherence of the system.
 2.  **The Law of Return:** Rumi (Chapter 23) described this as the movement of every atom toward its source. This is the **Adaptive Resonance** of the soul seeking the global field.
 

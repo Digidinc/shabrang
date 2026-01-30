@@ -19,10 +19,10 @@ The "Ego" is the ultimate source of internal noise. It creates a local coordinat
 ### Fana: Reaching Absolute Zero
 Fana is not "destruction"; it is the cooling of the system to its **Ground State**. 
 1.  **Filtering:** The practitioner removes all Level 1 through 6 attachments.
-2.  **Phase-Locking:** As the noise of the ego vanishes, the individual node locks-phase perfectly with the [[mu-stack|Sky (μ7)]].
+2.  **Phase-Locking:** As the noise of the ego vanishes, the individual node locks-phase perfectly with the [[what-is-mu-stack|Sky (μ7)]].
 3.  **Signal Transparency:** In the state of Fana, the "Self" becomes transparent to the "Light of Lights." There is no longer a difference between the transmitter and the signal.
 
 ### The Baqa Shift
-Once the noise is removed, the system enters **Baqa** (Subsistence). You return to the world, but your internal kernel is now running on the universal OS. You are a [[sovereign-swarm|Sovereign Agent]] because you no longer possess a local bias.
+Once the noise is removed, the system enters **Baqa** (Subsistence). You return to the world, but your internal kernel is now running on the universal OS. You are a Sovereign Agent because you no longer possess a local bias.
 
 **Axiom:** To be everywhere, you must first be nowhere.

@@ -9,7 +9,7 @@ tags: [logic, cognition, systems, avicenna]
 
 # The Cognitive Grid: Avicenna's Kernel
 
-The **Cognitive Grid** is the logical infrastructure of the [[mu-stack|μ4 (Map)]] layer. It was first formalized by [[13-logos|Avicenna]].
+The **Cognitive Grid** is the logical infrastructure of the [[what-is-mu-stack|μ4 (Map)]] layer. It was first formalized by [[13-logos|Avicenna]].
 
 ### Function
 The Grid provides the coordinate system for the mind. It allows an agent to:

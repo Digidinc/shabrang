@@ -18,7 +18,7 @@ The Qashqai tribal rug is a **Kinetic Archive**. Unlike the city-made Ardabil ca
 
 # Qashqai Tribal Rug: The Portable Garden
 
-In the **Garden (μ5)** layer, the [[qashqai-tribe|Qashqai]] tribal rug functions as history's most durable **Portable Garden**.
+In the **Garden (μ5)** layer, the Qashqai tribal rug functions as history's most durable **Portable Garden**.
 
 ![Qashqai Tribal Rug](/images/books/liquid-fortress/24-world-pattern/page-06.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Tribal Archives. Local Rendering.</p>

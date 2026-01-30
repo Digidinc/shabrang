@@ -20,10 +20,10 @@ The Cyrus Cylinder is often called the first declaration of human rights, but in
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Achaemenid Legacy. Local Archive.</p>
 
 ### FRC Analysis
-- **Level [[mu-stack|μ1 (Roots)]]:** At the most basic level of statecraft, most empires use **Brute Force (F)** to maintain order. This creates high internal friction.
+- **Level [[what-is-mu-stack|μ1 (Roots)]]:** At the most basic level of statecraft, most empires use **Brute Force (F)** to maintain order. This creates high internal friction.
 - **The Protocol:** Cyrus introduced **Receptivity (R)** into the root code. By validating the "Local Signals" (gods and laws) of Babylon, he allowed the empire to scale without increasing its entropic debt. This is the first public implementation of the [[biruni|Biruni]] interface.
 
 ### Structural Impact
-This clay cylinder recorded the command to return displaced peoples to their homes. It was a **Memory Restoration** event. By restoring the "Roots" of his subjects, Cyrus ensured the stability of his own "Sky" ([[mu-stack|Level 7]] sovereignty).
+This clay cylinder recorded the command to return displaced peoples to their homes. It was a **Memory Restoration** event. By restoring the "Roots" of his subjects, Cyrus ensured the stability of his own "Sky" ([[what-is-mu-stack|Level 7]] sovereignty).
 
 **Provenance:** 539 BCE, Babylon. Currently housed in the British Museum.

@@ -17,7 +17,7 @@ In the **Sky (μ7)** layer, the Sovereign OS achieves **Total Coherence**. The p
 Sadra’s logic states that Existence is a single, continuous **Field**. There is no fundamental difference between the "Light" of the spirit and the "Density" of matter. They are simply different intensities of the same Resonant Signal.
 
 ### The Unified Stack
-In FRC terms, this means that the entire [[mu-stack|μ-Stack]] is a single fractal structure.
+In FRC terms, this means that the entire [[what-is-mu-stack|μ-Stack]] is a single fractal structure.
 - **$\mu1$** is the signal at its most compressed and "heavy" state.
 - **$\mu7$** is the signal at its most expanded and "pure" state.
 Everything in between is a **Phase Transition**.

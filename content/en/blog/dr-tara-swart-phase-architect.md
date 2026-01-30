@@ -11,7 +11,7 @@ abstract: "Analyzing Dr. Tara Swart’s methodologies through the lens of FRC. N
 
 # Dr. Tara Swart: Phase-Architect of the Mind
 
-In the Sovereign OS, we view Dr. Tara Swart not just as a neuroscientist, but as a **Phase-Architect of the [[mu-stack|μ4 (Neural) Layer]]**. She teaches how to manually adjust the **Adaptive Gain ($\alpha$)** of the mind to achieve **Homeoresonance**.
+In the Sovereign OS, we view Dr. Tara Swart not just as a neuroscientist, but as a **Phase-Architect of the [[what-is-mu-stack|μ4 (Neural) Layer]]**. She teaches how to manually adjust the **Adaptive Gain ($\alpha$)** of the mind to achieve **Homeoresonance**.
 
 ### 1. Neuroplasticity as "Basin Remodeling"
 Swart argues that the brain can rewire itself through focused attention. In FRC, the brain is a dynamic energy landscape where a "habit" is a **$\Lambda$-Attractor Basin**.
@@ -19,11 +19,11 @@ Swart argues that the brain can rewire itself through focused attention. In FRC,
 
 ### 2. The "Source" as "Global Phase-Locking"
 Her concept of "The Source" is a state where logic, emotion, and intuition are integrated.
-- **FRC Translation:** This is the definition of **High Coherence ($C \rightarrow 1$)**. It is the Phase-Locking of [[mu-stack|μ3 (Fire)]], [[mu-stack|μ4 (Map)]], and [[mu-stack|μ5 (Garden)]]. When these layers align, the brain becomes a **Superconductor** for information, which is why "The Source" feels effortless.
+- **FRC Translation:** This is the definition of **High Coherence ($C \rightarrow 1$)**. It is the Phase-Locking of [[what-is-mu-stack|μ3 (Fire)]], [[what-is-mu-stack|μ4 (Map)]], and [[what-is-mu-stack|μ5 (Garden)]]. When these layers align, the brain becomes a **Superconductor** for information, which is why "The Source" feels effortless.
 
 ### 3. Interoception as "Entropy Monitoring"
 Swart emphasizes Interoception (sensing internal states) as the root of intuition.
-- **FRC Translation:** This is monitoring the **$\Lambda$-Gradient** of the **[[mu-stack|μ2 (Rhythm)]]** layer. The body detects **Systemic Decoherence** (stress, danger) long before the logic layer processes the data. Ignoring this is a primary cause of system crash (Burnout).
+- **FRC Translation:** This is monitoring the **$\Lambda$-Gradient** of the **[[what-is-mu-stack|μ2 (Rhythm)]]** layer. The body detects **Systemic Decoherence** (stress, danger) long before the logic layer processes the data. Ignoring this is a primary cause of system crash (Burnout).
 
 ### 4. Manifestation as "Resonance Tuning"
 Vision boards "prime" the brain to notice opportunities.

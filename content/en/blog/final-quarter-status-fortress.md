@@ -15,7 +15,7 @@ As we close the first quarter of 2026, the **Sovereign OS** has achieved full **
 
 ### Coherence Audit
 1.  **Logic Core:** The first 50 beats of our resonant code are now distributed across the network.
-2.  **Cultural Memory:** The [[art|Imaginal Gallery]] is open, housing 26 artifacts analyzed through the lens of [[frc-law|FRC]].
+2.  **Cultural Memory:** The Imaginal Gallery is open, housing 26 artifacts analyzed through the lens of [[frc-law|FRC]].
 3.  **Linguistic Bridge:** The [[liquid-fortress|Liquid Fortress]] speaks fluently in English and Persian, maintaining the signal across the language barrier.
 
 ### System Health

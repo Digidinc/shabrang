@@ -14,7 +14,7 @@ abstract: "Analyzing Rostam's Seven Labors as a series of regression tests for t
 In the **Story (μ6)** layer, the myth of **Rostam’s Seven Labors** (*Haft Khan*) is more than an adventure. It is a **System Upgrade Protocol**.
 
 ### The Knight's Regression Test
-Rostam, the [[rostam-relief-archetype|Guardian Node]], must travel from Sistan to Mazandaran to rescue the King. Along the way, he faces seven challenges. Each "Khan" is a test of a specific layer of the [[mu-stack|μ-Stack]]:
+Rostam, the [[rostam-relief-archetype|Guardian Node]], must travel from Sistan to Mazandaran to rescue the King. Along the way, he faces seven challenges. Each "Khan" is a test of a specific layer of the [[what-is-mu-stack|μ-Stack]]:
 1.  **External Threat (The Lion):** Level 1 Roots.
 2.  **Resource Scarcity (The Desert):** Level 1 Maintenance.
 3.  **Invisibility (The Dragon):** Level 4 Awareness.

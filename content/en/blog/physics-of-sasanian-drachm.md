@@ -11,7 +11,7 @@ abstract: "Analyzing the Sasanian silver coin as a high-fidelity 'Proof of Coher
 
 # The Physics of the Sasanian Drachm
 
-In the **Roots (μ1)** layer, the [[8-codex|Sasanian State]] utilized a specialized device to maintain its economic signal: the **Silver Drachm**.
+In the **Roots (μ1)** layer, the [[08-codex|Sasanian State]] utilized a specialized device to maintain its economic signal: the **Silver Drachm**.
 
 ![Sasanian Coin](/images/art/peacock-throne.md) <!-- Placeholder link to art -->
 

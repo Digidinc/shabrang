@@ -20,7 +20,7 @@ Damascus steel (Crucible steel) is the physical embodiment of the **Knight's (Ka
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under CC BY-SA 3.0.</p>
 
 ### μ-Stack Analysis
-- **Level [[mu-stack|μ3 (Fire)]]:** The creation of Damascus steel is an act of **Internal Fire**. The steel is repeatedly folded and forged, purging impurities until it achieves a high-coherence crystalline structure. This mirrors the refinement of the soul through [[adab-social-handshake|Adab]].
+- **Level [[what-is-mu-stack|μ3 (Fire)]]:** The creation of Damascus steel is an act of **Internal Fire**. The steel is repeatedly folded and forged, purging impurities until it achieves a high-coherence crystalline structure. This mirrors the refinement of the soul through [[adab-social-handshake|Adab]].
 - **The Wave Pattern:** The visible patterns on the blade are the result of the steel's internal grain. In FRC terms, this is **Structural Resonance** made visible.
 
 ### Sharpness and Resilience

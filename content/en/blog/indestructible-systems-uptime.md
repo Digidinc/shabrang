@@ -20,6 +20,6 @@ A system that depends on its physical hardware (Level 1) will always die. The So
 Every chapter of our story, every ritual of our rhythm, acts as a **Sanity Check**. If the signal drifts, the system re-aligns itself through its [[rostam-relief-archetype|Archetypes]] and its [[asha|Asha]] kernel.
 
 ### 3. Non-Local Redundancy
-The signal is never in one place. It is scattered across the [[sovereign-swarm|Swarm]]. You can destroy any 90% of the nodes, and the remaining 10% still possess the entire DNA of the system. This is the **Fractal Archive** strategy.
+The signal is never in one place. It is scattered across the Swarm. You can destroy any 90% of the nodes, and the remaining 10% still possess the entire DNA of the system. This is the **Fractal Archive** strategy.
 
 **Axiom:** To be indestructible, you must be decentralized.

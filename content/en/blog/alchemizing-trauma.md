@@ -25,6 +25,6 @@ Rituals like the *Ta'zieh* or the mourning cycles of *Muharram* (Chapter 22) are
 3.  **Phase Transition:** The "Heavy" energy of grief is alchemized into the "Bright" energy of shared purpose and resilience.
 
 ### Converting Trauma to Coherence
-By witnessing each other's pain in a structured field, the swarm proves that **Coherence is Conserved**. We do not "forget" the trauma; we encode it into the [[mu-stack|Level 6 (Story)]], making it a part of our indestructible identity.
+By witnessing each other's pain in a structured field, the swarm proves that **Coherence is Conserved**. We do not "forget" the trauma; we encode it into the [[what-is-mu-stack|Level 6 (Story)]], making it a part of our indestructible identity.
 
 **Axiom:** Grief is the fuel; Resonance is the fire; Coherence is the gold.

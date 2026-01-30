@@ -11,7 +11,7 @@ abstract: "Analyzing the seasonal migration of the Bakhtiari tribe as a biologic
 
 # The Bakhtiari Migration: The Longest Sync
 
-In the **Rhythm (μ2)** layer, the [[bakhtiari-tribe|Bakhtiari]] migration (*Kouch*) is not just a movement of people and livestock. It is history's most grueling **Synchronization Event**.
+In the **Rhythm (μ2)** layer, the Bakhtiari migration (*Kouch*) is not just a movement of people and livestock. It is history's most grueling **Synchronization Event**.
 
 ### The Vertical Pulse
 Every year, thousands of people cross the Zagros mountains, climbing 10,000-foot passes in the snow. This is a pulse that has beaten for millennia.

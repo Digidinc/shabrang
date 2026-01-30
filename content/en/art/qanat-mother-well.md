@@ -20,7 +20,7 @@ The Qanat system is the **Hardware of Coherence** for the Iranian plateau. It is
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: UNESCO Heritage Archive. Local Rendering.</p>
 
 ### μ-Stack Analysis
-- **Level [[mu-stack|μ1 (Roots)]]:** While the throne is the center of the *state*, the Qanat is the center of the *land*. It is the infrastructure that allows Level 1 survival in an arid environment.
+- **Level [[what-is-mu-stack|μ1 (Roots)]]:** While the throne is the center of the *state*, the Qanat is the center of the *land*. It is the infrastructure that allows Level 1 survival in an arid environment.
 - **The Network Protocol:** The shafts visible from above look like a "Chain of Nodes." This is a decentralized architecture. If one shaft is blocked, the flow can often be diverted. It is the physical blueprint of the [[andaruni|Andaruni]] and the **[[liquid-fortress|Liquid Fortress]]**.
 
 ### Social Trust

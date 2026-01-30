@@ -16,7 +16,7 @@ In the realm of **Roots (μ1)**, economic prosperity is a function of **Flow**. 
 ### The High-Bandwidth Highway
 Persia, serving as the central "Router" of this network, developed protocols to ensure the signal remained clean across thousands of miles.
 1.  **Standardization:** The [[gold-daric|Gold Daric]] (Artifact #14) acted as a universal currency, reducing the "Noise" of differing value systems.
-2.  **Infrastructure Nodes:** The [[caravanserai|Caravanserai]] system functioned like "Data Repeaters," providing a safe space for agents to recharge and verify their "integrity" before moving to the next node.
+2.  **Infrastructure Nodes:** The Caravanserai system functioned like "Data Repeaters," providing a safe space for agents to recharge and verify their "integrity" before moving to the next node.
 3.  **Low-Friction Protocols:** The development of credit systems and letters of exchange (*Suftaja*) allowed wealth to move as a "Liquid Signal" rather than a heavy physical mass.
 
 ### The Sovereign Lesson

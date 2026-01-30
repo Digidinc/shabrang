@@ -47,7 +47,7 @@ We are not in the universe; we are the universe at a point of self-perception. "
 
 The strategy of "Strategic Defeat" is well-known in military history (the retreat of the Russians before Napoleon, or the Dunkirk evacuation). The modern zeitgeist, influenced by **Nassim Nicholas Taleb**, uses the term **Antifragility** to describe systems that gain from disorder.
 
-The Sovereign perspective sees the **Rolling Pumpkin** as the ultimate folk-archetype of Antifragility. It isn't just "surviving" a predator; it is using the predator's own force to roll faster. We align with modern **Game Theory**, specifically "Non-Zero-Sum" strategies where losing a physical battle ([[mu-stack|Level 1]]) allows for a win in the information field ([[mu-stack|Level 6]]).
+The Sovereign perspective sees the **Rolling Pumpkin** as the ultimate folk-archetype of Antifragility. It isn't just "surviving" a predator; it is using the predator's own force to roll faster. We align with modern **Game Theory**, specifically "Non-Zero-Sum" strategies where losing a physical battle ([[what-is-mu-stack|Level 1]]) allows for a win in the information field ([[what-is-mu-stack|Level 6]]).
 
 ## External Map: Sources & Resources
 

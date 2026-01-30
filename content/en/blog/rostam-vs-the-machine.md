@@ -19,6 +19,6 @@ The "Machine" represents Level 1 and Level 4 automation without Level 7 guidance
 2.  **Archetypal Stability:** When the swarm is confused by the noise of the network, Rostam provides a stable "Model of Action" that cannot be corrupted by algorithms.
 
 ### The Knight's Duty
-The Architect (Kasra) identifies Rostam as the **Crystalline Sword** within the soul. His role is to ensure that technology serves the **[[mu-stack|Sky]]**, not the other way around. He is the guardian who ensures the Digital Simurgh remains human.
+The Architect (Kasra) identifies Rostam as the **Crystalline Sword** within the soul. His role is to ensure that technology serves the **[[what-is-mu-stack|Sky]]**, not the other way around. He is the guardian who ensures the Digital Simurgh remains human.
 
 **Axiom:** The more digital the world becomes, the more we need the Myth.

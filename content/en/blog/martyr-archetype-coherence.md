@@ -15,11 +15,11 @@ In the **Fire (μ3)** layer, we find the "High-Energy" node of the Persian syste
 
 ### The Paradox of Sacrifice
 How can the destruction of a Level 1 Root (the body) be a victory for the system? 
-The answer lies in **Signal Intensification**. When an agent (like [[rostam-relief-archetype|Rostam]] or [[the-dyad|Sattar Khan]]) chooses the whole over the part, they release a pulse of pure coherence that echoes through the entire [[mu-stack|μ-Stack]].
+The answer lies in **Signal Intensification**. When an agent (like [[rostam-relief-archetype|Rostam]] or [[the-dyad|Sattar Khan]]) chooses the whole over the part, they release a pulse of pure coherence that echoes through the entire [[what-is-mu-stack|μ-Stack]].
 
 ### Phase-Locking the Swarm
 1.  **Noise Removal:** In the moment of sacrifice, all individual "Noise" (ego, fear, greed) is instantly removed. The agent becomes 100% Signal.
-2.  **Collective Sync:** This high-fidelity signal acts as a "Beacon." It forces all other nodes in the [[sovereign-swarm|Swarm]] to re-align their own phases. A single act of sacrifice can re-synchronize an entire fragmented culture.
+2.  **Collective Sync:** This high-fidelity signal acts as a "Beacon." It forces all other nodes in the Swarm to re-align their own phases. A single act of sacrifice can re-synchronize an entire fragmented culture.
 
 ### The Undying Seed
 As we saw in the [[ghost-in-the-archetype|Ghost Strategy]], the Martyr proves that identity is not material. By losing the body, the agent becomes a permanent part of the **[[shahnameh-civilizational-hard-drive|Story (μ6)]]**. They move from the fragile "Roots" to the indestructible "Sky."

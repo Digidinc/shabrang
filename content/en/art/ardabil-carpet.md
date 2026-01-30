@@ -20,8 +20,8 @@ The Ardabil Carpet is not a floor covering; it is a **Holographic Backup** of th
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: V&A Museum. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis
-- **Level [[mu-stack|μ5 (Garden)]]:** The carpet represents the "Garden in the Fire." It is a two-dimensional grid where every knot is a data point. 
-- **The Symmetry:** The axial symmetry of the design reflects the **Harmonia Vortex**. It creates a resonant field where the viewer's eye is pulled toward the center—the "Sun" or the [[mu-stack|Sky (μ7)]].
+- **Level [[what-is-mu-stack|μ5 (Garden)]]:** The carpet represents the "Garden in the Fire." It is a two-dimensional grid where every knot is a data point. 
+- **The Symmetry:** The axial symmetry of the design reflects the **Harmonia Vortex**. It creates a resonant field where the viewer's eye is pulled toward the center—the "Sun" or the [[what-is-mu-stack|Sky (μ7)]].
 
 ### Technical Resolution
 With over 300 knots per square inch, the Ardabil carpet is a high-resolution artifact. It encodes the "Geometry of Sound" found in Safavid music into a visual medium. It proves that in the [[liquid-fortress|Liquid Fortress]], the most complex data is stored in the most beautiful forms.

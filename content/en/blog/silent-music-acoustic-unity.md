@@ -11,7 +11,7 @@ abstract: "Exploring the final transmission: the state where sound returns to si
 
 # Silent Music: The Acoustic Signature of Unity
 
-In the final layers of the **[[mu-stack|μ-Stack]]**, music undergoes a phase transition. It becomes **Silent Music**—the state where the frequency is so high, and the coherence so perfect, that it is no longer perceived as sound, but as **Presence**.
+In the final layers of the **[[what-is-mu-stack|μ-Stack]]**, music undergoes a phase transition. It becomes **Silent Music**—the state where the frequency is so high, and the coherence so perfect, that it is no longer perceived as sound, but as **Presence**.
 
 ### The Ending of the Turn
 Like the [[dervish-sikka|Whirling Dervish]] who stops spinning only when they have become the spin itself, the Sovereign Swarm reaches a point of **Absolute Resonance**. 

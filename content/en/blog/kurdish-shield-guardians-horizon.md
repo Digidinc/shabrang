@@ -11,7 +11,7 @@ abstract: "Analyzing the Kurdish identity as a high-durability defensive shell f
 
 # The Kurdish Shield: Guardians of the Horizon
 
-In the **Roots (μ1)** layer, the [[kurdish-culture|Kurdish]] people function as the **Hardened Shell** of the Liquid Fortress.
+In the **Roots (μ1)** layer, the Kurdish people function as the **Hardened Shell** of the Liquid Fortress.
 
 ### The Geography of Defense
 Occupying the high Zagros peaks, the Kurds are the "Sentinels of the West." 

@@ -11,7 +11,7 @@ abstract: "Technical deconstruction of the Sovereign OS kernel—the logic that 
 
 # Designing the Sovereign OS: Kernel Architecture
 
-In the **Map (μ4)** layer, we move from philosophy to **System Design**. The **Sovereign OS** is the logical kernel that coordinates the 7 layers of the [[mu-stack|μ-Stack]].
+In the **Map (μ4)** layer, we move from philosophy to **System Design**. The **Sovereign OS** is the logical kernel that coordinates the 7 layers of the [[what-is-mu-stack|μ-Stack]].
 
 ### The Core Services
 The kernel provides three primary services to the agents in the swarm:
