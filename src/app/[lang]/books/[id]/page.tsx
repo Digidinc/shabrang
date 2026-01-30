@@ -2,16 +2,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SchemaScript } from '@/components/SchemaScript';
-import { MarkdownContent } from '@/components/MarkdownContent';
-import { ContentDigest } from '@/components/ContentDigest';
 import { BooksSidebar } from '@/components/BooksSidebar';
-import { TableOfContents } from '@/components/TableOfContents';
-import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
-import { estimateReadTime, getBook, getBooks, getLanguages, toPaperMeta, buildBacklinks, getGlossary, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
+import { getBook, getBooks, getLanguages, toPaperMeta, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
 import { schemaPaperPage } from '@/lib/schema';
 import { getChapterList } from '@/lib/bookChapters';
-import { renderMarkdown } from '@/lib/markdown';
 
 interface Props {
   params: Promise<{ lang: string; id: string }>;
@@ -70,22 +65,8 @@ export default async function BookPage({ params }: Props) {
 
   const basePath = `/${lang}`;
   const meta = toPaperMeta(book);
-  const backlinks = buildBacklinks(lang);
-  const pageBacklinks = backlinks[id] || [];
-  const glossary = getGlossary(lang, { basePath, view: 'kasra' });
   const fm = book.frontmatter;
-  const readTime = fm.read_time || estimateReadTime(book.body);
-
-  const staticTargets = new Set(['about', 'articles', 'papers', 'books', 'formulas', 'positioning', 'mu-levels', 'graph', 'privacy', 'terms']);
-  const prereqLinks = (fm.prerequisites || []).map((pid) => {
-    if (staticTargets.has(pid)) return { id: pid, title: pid, href: `${basePath}/${pid}` };
-    const item = glossary[pid];
-    return { id: pid, title: item?.title || pid, href: item?.url || `${basePath}/concepts/${pid}` };
-  });
-
-  const renderedBody = renderMarkdown(book.body, lang, glossary, basePath);
   const chapterItems = getChapterList(book.body);
-  const tocItems = chapterItems.map((c) => ({ id: c.anchorId, text: c.title, level: 1 }));
 
   return (
     <>
@@ -94,76 +75,51 @@ export default async function BookPage({ params }: Props) {
       <PageShell
         leftMobile={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} basePath={basePath} view="kasra" variant="mobile" />}
         leftDesktop={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} basePath={basePath} view="kasra" />}
-        right={<TableOfContents items={tocItems} minBreakpoint="md" title="Book index" />}
       >
           {/* Breadcrumb */}
-          <nav className="text-sm text-frc-text-dim mb-8">
-            <a href={basePath} className="hover:text-frc-gold">FRC</a>
+          <nav className="text-sm text-shabrang-ink-dim mb-8">
+            <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
             <span className="mx-2">/</span>
-            <a href={`${basePath}/books`} className="hover:text-frc-gold">Books</a>
+            <a href={`${basePath}/books`} className="hover:text-shabrang-gold">Books</a>
             <span className="mx-2">/</span>
-            <span className="text-frc-text">{book.frontmatter.title}</span>
+            <span className="text-shabrang-ink">{book.frontmatter.title}</span>
           </nav>
 
           {/* Header */}
-          <header className="mb-8">
-            <h1 className="text-3xl font-light text-frc-gold mb-3">
+          <header className="mb-12 text-center">
+            <h1 className="font-display text-4xl md:text-5xl text-shabrang-ink mb-4 uppercase tracking-wide">
               {book.frontmatter.title}
             </h1>
-            <div className="flex flex-wrap gap-4 text-sm text-frc-text-dim">
-              <span>{book.frontmatter.author || 'H. Servat'}</span>
+            <p className="text-lg text-shabrang-ink-dim italic max-w-2xl mx-auto mb-6">
+              {book.frontmatter.abstract}
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-shabrang-ink-dim">
+              <span>{book.frontmatter.author || 'Kay Hermes'}</span>
               {book.frontmatter.date && <span>{book.frontmatter.date}</span>}
-              <span className="font-mono text-xs">{readTime}</span>
+              <span>{chapterItems.length} chapters</span>
             </div>
-            {book.frontmatter.tags && (
-              <div className="flex flex-wrap gap-2 mt-3">
-                {book.frontmatter.tags.map(tag => (
-                  <Link
-                    key={tag}
-                    href={`${basePath}/tags/${encodeURIComponent(tag)}`}
-                    className="tag hover:text-frc-gold hover:border-frc-gold transition-colors"
-                  >
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-            )}
           </header>
 
-          <ContentDigest
-            tldr={fm.tldr}
-            keyPoints={fm.key_points}
-            prerequisites={prereqLinks}
-            readTime={readTime}
-          />
-
-          {/* Abstract */}
-          {book.frontmatter.abstract && (
-            <blockquote className="border-l-3 border-frc-gold pl-4 text-frc-text-dim italic mb-8">
-              {book.frontmatter.abstract}
-            </blockquote>
-          )}
-
-          <InlineToc items={tocItems} title="Book index" />
-
-          {/* Chapter view */}
+          {/* Chapter Grid */}
           {chapterItems.length > 0 && (
-            <section className="mb-8">
-              <h2 className="text-xs text-frc-steel uppercase tracking-widest mb-3">Chapters</h2>
-              <div className="grid sm:grid-cols-2 gap-3">
+            <section>
+              <h2 className="text-xs text-shabrang-teal uppercase tracking-[0.2em] mb-6 text-center">Table of Contents</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
                 {chapterItems.map((c, idx) => (
                   <Link
                     key={c.slug}
                     href={`${basePath}/books/${id}/chapter/${c.slug}`}
-                    className="card block p-4 group"
+                    className="group block p-5 bg-shabrang-white border-2 border-shabrang-teal/20 hover:border-shabrang-gold transition-all duration-300"
                   >
-                    <div className="flex items-start gap-3">
-                      <span className="font-mono text-xs text-frc-steel shrink-0 tabular-nums mt-0.5">
+                    <div className="flex items-start gap-4">
+                      <span className="font-mono text-lg text-shabrang-gold font-bold shrink-0 tabular-nums">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
-                      <span className="text-sm text-frc-text group-hover:text-frc-gold transition-colors">
-                        {c.title}
-                      </span>
+                      <div>
+                        <span className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors font-display uppercase tracking-wide">
+                          {c.title}
+                        </span>
+                      </div>
                     </div>
                   </Link>
                 ))}
@@ -171,34 +127,15 @@ export default async function BookPage({ params }: Props) {
             </section>
           )}
 
-          <div className="content-body" suppressHydrationWarning>
-            <MarkdownContent html={renderedBody} glossary={glossary} />
+          {/* CTA */}
+          <div className="mt-16 text-center">
+            <Link
+              href={`${basePath}/books/${id}/chapter/${chapterItems[0]?.slug}`}
+              className="inline-block px-8 py-3 bg-shabrang-teal text-shabrang-white font-display uppercase tracking-wider hover:bg-shabrang-gold hover:text-shabrang-ink transition-all"
+            >
+              Start Reading
+            </Link>
           </div>
-
-          {/* Backlinks */}
-          {pageBacklinks.length > 0 && (
-            <section className="backlinks">
-              <h3 className="text-sm font-medium text-frc-text-dim uppercase tracking-wider mb-3">
-                Linked from
-              </h3>
-              <ul className="space-y-1">
-                {pageBacklinks.map(linkId => {
-                  const item = glossary[linkId];
-                  const href = item?.url || `${basePath}/papers/${linkId}`;
-                  return (
-                    <li key={linkId}>
-                      <a
-                        href={href}
-                        className="text-frc-gold hover:underline text-sm"
-                      >
-                        {item?.title || linkId}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          )}
       </PageShell>
     </>
   );

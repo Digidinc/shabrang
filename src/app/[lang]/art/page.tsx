@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import { getLanguages } from '@/lib/content';
-import { ArticlesIndex } from '@/components/pages/ArticlesIndex';
-import { ArticlesSidebar } from '@/components/ArticlesSidebar';
+import { MuseumIndex } from '@/components/pages/MuseumIndex';
 
 export const metadata: Metadata = {
-  title: 'Articles',
-  description: 'Research articles and publications on Fractal Resonance Cognition — exploring consciousness, entropy, and quantum foundations.',
+  title: 'The Imaginal Gallery | Museum of Coherence',
+  description: 'Reading history through the FRC lens. A collection of Persian artifacts analyzed through the physics of resonance and survival.',
 };
 
 export function generateStaticParams() {
@@ -16,15 +15,13 @@ interface Props {
   params: Promise<{ lang: string }>;
 }
 
-export default async function ArticlesPage({ params }: Props) {
+export default async function ArtPage({ params }: Props) {
   const { lang } = await params;
   const basePath = `/${lang}`;
   return (
-    <main className="min-h-screen flex flex-col lg:flex-row">
-      <ArticlesSidebar lang={lang} basePath={basePath} view="kasra" variant="mobile" />
-      <ArticlesSidebar lang={lang} basePath={basePath} view="kasra" />
-      <div className="flex-1 min-w-0">
-        <ArticlesIndex lang={lang} basePath={basePath} view="kasra" includePapers={false} embedded />
+    <main className="shabrang-page">
+      <div className="shabrang-container">
+        <MuseumIndex lang={lang} basePath={basePath} view="kasra" />
       </div>
     </main>
   );

@@ -52,8 +52,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       type: 'article',
-      title: fm.title,
-      description: fm.abstract,
+      title: fm.title as string,
+      description: fm.abstract as string,
       publishedTime: fm.date,
       locale: lang,
     },
@@ -72,12 +72,13 @@ export default async function BlogPostPage({ params }: Props) {
   const pageBacklinks = backlinks[id] || [];
   const glossary = getGlossary(lang, { basePath, view: 'kasra' });
   const fm = post.frontmatter;
+  const fmExt = fm as unknown as Record<string, unknown>;
   const readTime = fm.read_time || estimateReadTime(post.body);
   const tocItems = extractTocItems(post.body).filter((t) => t.level === 2);
   const renderedBody = renderMarkdown(post.body, lang, glossary, basePath);
 
   const staticTargets = new Set(['about', 'articles', 'papers', 'books', 'blog', 'formulas', 'positioning', 'mu-levels', 'graph', 'privacy', 'terms']);
-  const prereqLinks = (fm.prerequisites || []).map((pid) => {
+  const prereqLinks = ((fmExt.prerequisites as string[]) || []).map((pid) => {
     if (staticTargets.has(pid)) return { id: pid, title: pid, href: `${basePath}/${pid}` };
     const item = glossary[pid];
     return { id: pid, title: item?.title || pid, href: item?.url || `${basePath}/concepts/${pid}` };
@@ -105,9 +106,16 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Header */}
         <header className="mb-8">
-          <h1 className="text-3xl font-light text-frc-gold mb-3">
-            {post.frontmatter.title}
-          </h1>
+          <div className="flex items-center gap-3 mb-3">
+            {typeof fmExt.level === 'string' && (
+              <span className="bg-frc-gold/10 text-frc-gold border border-frc-gold/30 px-2 py-0.5 text-xs font-mono font-bold uppercase rounded">
+                {fmExt.level}
+              </span>
+            )}
+            <h1 className="text-3xl font-light text-frc-gold">
+              {post.frontmatter.title}
+            </h1>
+          </div>
           <div className="flex flex-wrap gap-4 text-sm text-frc-text-dim items-center">
             <VoiceTag voice={voice} />
             {post.frontmatter.date && <span>{post.frontmatter.date}</span>}

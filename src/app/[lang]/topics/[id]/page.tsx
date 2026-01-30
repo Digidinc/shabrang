@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!topic) return { title: 'Not Found' };
 
   const fm = topic.frontmatter;
-  const author = fm.author || 'FRC';
+  const author = fm.author || 'Shabrang';
   const url = `https://fractalresonance.com/${lang}/topics/${fm.id}`;
   const alternates = getAlternateLanguages('topics', fm.id);
 
@@ -85,8 +85,8 @@ function SpectrumBlock({
   children: ReactNode;
 }) {
   return (
-    <section className="border border-frc-blue rounded-lg p-5">
-      <h2 className="text-xs uppercase tracking-wider text-frc-steel mb-3">{title}</h2>
+    <section className="border-2 border-shabrang-teal/30 bg-shabrang-white p-5">
+      <h2 className="text-xs uppercase tracking-wider text-shabrang-teal mb-3">{title}</h2>
       {children}
     </section>
   );
@@ -157,7 +157,7 @@ export default async function TopicPage({ params }: Props) {
           tags: fm.tags || [],
           lang,
           date: fm.date,
-          author: fm.author || 'FRC',
+          author: fm.author || 'Shabrang',
         })}
       />
 
@@ -166,21 +166,21 @@ export default async function TopicPage({ params }: Props) {
         leftDesktop={<TopicsSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" />}
         right={<TableOfContents items={tocItems} />}
       >
-        <nav className="text-sm text-frc-text-dim mb-8">
-          <a href={basePath} className="hover:text-frc-gold">FRC</a>
+        <nav className="text-sm text-shabrang-ink-dim mb-8">
+          <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
           <span className="mx-2">/</span>
-          <a href={`${basePath}/topics`} className="hover:text-frc-gold">Topics</a>
+          <a href={`${basePath}/topics`} className="hover:text-shabrang-gold">Topics</a>
           <span className="mx-2">/</span>
-          <span className="text-frc-text">{fm.title}</span>
+          <span className="text-shabrang-ink">{fm.title}</span>
         </nav>
 
         <header className="mb-8">
-          <h1 className="text-3xl font-light text-frc-gold mb-3">{fm.title}</h1>
-          <div className="flex flex-wrap gap-4 text-sm text-frc-text-dim">
-            <span>{fm.author || 'FRC'}</span>
+          <h1 className="font-display text-3xl md:text-4xl text-shabrang-ink mb-4 uppercase tracking-wide">{fm.title}</h1>
+          <div className="flex flex-wrap gap-4 text-sm text-shabrang-ink-dim">
+            <span>{fm.author || 'Shabrang'}</span>
             {voiceId && (
               voicePerson ? (
-                <Link href={`${basePath}/people/${voicePerson.frontmatter.id}`} className="hover:text-frc-gold transition-colors">
+                <Link href={`${basePath}/people/${voicePerson.frontmatter.id}`} className="hover:text-shabrang-gold transition-colors">
                   Voice: {voicePerson.frontmatter.title}
                 </Link>
               ) : (
@@ -197,7 +197,7 @@ export default async function TopicPage({ params }: Props) {
                 <Link
                   key={tag}
                   href={`${basePath}/tags/${encodeURIComponent(tag)}`}
-                  className="tag hover:text-frc-gold hover:border-frc-gold transition-colors"
+                  className="text-[0.65rem] uppercase tracking-wider px-2.5 py-1 border-2 border-shabrang-teal/30 text-shabrang-ink-dim hover:text-shabrang-gold hover:border-shabrang-gold transition-colors"
                 >
                   {tag}
                 </Link>
@@ -219,13 +219,13 @@ export default async function TopicPage({ params }: Props) {
           <section className="grid gap-4 mb-10">
             {fm.question && (
               <SpectrumBlock title="Question">
-                <p className="text-frc-text leading-relaxed">{fm.question}</p>
+                <p className="text-shabrang-ink leading-relaxed">{fm.question}</p>
               </SpectrumBlock>
             )}
 
             {fm.short_answer && (
               <SpectrumBlock title="Short Answer">
-                <p className="text-frc-text-dim leading-relaxed">{fm.short_answer}</p>
+                <p className="text-shabrang-ink-dim leading-relaxed italic">{fm.short_answer}</p>
               </SpectrumBlock>
             )}
 
@@ -233,11 +233,11 @@ export default async function TopicPage({ params }: Props) {
               <SpectrumBlock title="Authority">
                 <ul className="space-y-3 text-sm">
                   {authorities.map((a, idx) => (
-                    <li key={idx} className="border border-frc-blue/60 rounded-md p-3">
+                    <li key={idx} className="border-2 border-shabrang-teal/20 p-3">
                       <div className="flex items-center justify-between gap-3">
                         <div className="min-w-0">
-                          <div className="text-frc-text truncate">{a.title || a.name || 'Source'}</div>
-                          <div className="text-xs text-frc-text-dim truncate">
+                          <div className="text-shabrang-ink truncate">{a.title || a.name || 'Source'}</div>
+                          <div className="text-xs text-shabrang-ink-dim truncate">
                             {[a.publisher, a.name].filter(Boolean).join(' • ')}
                             {a.published_at ? ` • ${a.published_at}` : ''}
                           </div>
@@ -247,14 +247,14 @@ export default async function TopicPage({ params }: Props) {
                             href={a.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs font-mono text-frc-gold hover:underline shrink-0"
+                            className="text-xs font-mono text-shabrang-gold hover:underline shrink-0"
                           >
                             link
                           </a>
                         )}
                       </div>
                       {a.quote && (
-                        <blockquote className="mt-2 text-frc-text-dim italic border-l-2 border-frc-gold/60 pl-3">
+                        <blockquote className="mt-2 text-shabrang-ink-dim italic border-l-2 border-shabrang-gold/60 pl-3">
                           {a.quote}
                         </blockquote>
                       )}
@@ -272,7 +272,7 @@ export default async function TopicPage({ params }: Props) {
                       <a
                         key={g.key}
                         href={`#lens-${encodeURIComponent(g.key)}`}
-                        className="text-[0.65rem] uppercase tracking-wider px-2.5 py-1 rounded-md border border-frc-blue text-frc-text-dim hover:text-frc-text hover:border-frc-gold-light transition-colors"
+                        className="text-[0.65rem] uppercase tracking-wider px-2.5 py-1 border-2 border-shabrang-teal/30 text-shabrang-ink-dim hover:text-shabrang-ink hover:border-shabrang-gold transition-colors"
                       >
                         {g.label}
                       </a>
@@ -282,31 +282,31 @@ export default async function TopicPage({ params }: Props) {
 
                 <div className="space-y-4">
                   {answerGroups.map((g) => (
-                    <section key={g.key} id={`lens-${g.key}`} className="border border-frc-blue/60 rounded-md p-3">
-                      <h3 className="text-sm text-frc-text mb-2">{g.label}</h3>
+                    <section key={g.key} id={`lens-${g.key}`} className="border-2 border-shabrang-teal/20 p-3">
+                      <h3 className="text-sm text-shabrang-ink mb-2 font-display uppercase tracking-wide">{g.label}</h3>
                       <div className="space-y-3">
                         {g.items.map((ans, idx) => (
-                          <div key={idx} className="border border-frc-blue/40 rounded-md p-3">
+                          <div key={idx} className="border border-shabrang-teal/20 p-3">
                             <div className="flex items-center justify-between gap-3">
                               <div className="min-w-0">
-                                <div className="text-frc-text truncate">
+                                <div className="text-shabrang-ink truncate">
                                   {ans.by || ans.role || 'Answer'}
-                                  {ans.stance ? <span className="text-frc-text-dim"> — {ans.stance}</span> : null}
+                                  {ans.stance ? <span className="text-shabrang-ink-dim"> — {ans.stance}</span> : null}
                                 </div>
-                                {ans.role && ans.by && <div className="text-xs text-frc-text-dim truncate">{ans.role}</div>}
+                                {ans.role && ans.by && <div className="text-xs text-shabrang-ink-dim truncate">{ans.role}</div>}
                               </div>
                               {ans.url && (
                                 <a
                                   href={ans.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-xs font-mono text-frc-gold hover:underline shrink-0"
+                                  className="text-xs font-mono text-shabrang-gold hover:underline shrink-0"
                                 >
                                   link
                                 </a>
                               )}
                             </div>
-                            {ans.answer && <p className="mt-2 text-frc-text-dim text-sm leading-relaxed">{ans.answer}</p>}
+                            {ans.answer && <p className="mt-2 text-shabrang-ink-dim text-sm leading-relaxed italic">{ans.answer}</p>}
                           </div>
                         ))}
                       </div>
@@ -323,17 +323,17 @@ export default async function TopicPage({ params }: Props) {
         </div>
 
         {pageBacklinks.length > 0 && (
-          <section className="backlinks">
-            <h3 className="text-sm font-medium text-frc-text-dim uppercase tracking-wider mb-3">
+          <section className="mt-16 pt-8 border-t border-shabrang-teal/20">
+            <h3 className="text-xs uppercase tracking-wider text-shabrang-ink-dim mb-4">
               Linked from
             </h3>
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               {pageBacklinks.map((linkId) => {
                 const item = glossary[linkId];
                 const href = item?.url || `${basePath}/papers/${linkId}`;
                 return (
                   <li key={linkId}>
-                    <a href={href} className="text-frc-gold hover:underline text-sm">
+                    <a href={href} className="text-shabrang-gold hover:text-shabrang-crimson transition-colors text-sm">
                       {item?.title || linkId}
                     </a>
                   </li>

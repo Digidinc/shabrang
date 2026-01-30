@@ -33,19 +33,21 @@ export function TopicsIndex({
   });
 
   const content = (
-    <div className="max-w-6xl mx-auto px-6 py-16">
-      <header className="mb-12">
-        <div className="flex items-center gap-4 mb-6">
-          <h1 className="text-3xl font-light text-frc-gold tracking-tight">Topics</h1>
-          <div className="h-px flex-1 bg-gradient-to-r from-frc-blue to-transparent" />
+    <div className="max-w-4xl mx-auto py-16 px-6">
+      <header className="mb-12 text-center">
+        <div className="inline-block px-4 py-1.5 border-2 border-shabrang-gold text-shabrang-gold text-[10px] uppercase tracking-[0.3em] mb-8">
+          Knowledge Garden
         </div>
-        <p className="text-frc-text-dim max-w-2xl leading-relaxed">
+        <h1 className="font-display text-4xl md:text-5xl text-shabrang-ink mb-6 uppercase tracking-wider">
+          Topics
+        </h1>
+        <p className="text-shabrang-ink-dim text-lg max-w-2xl mx-auto leading-relaxed italic">
           Questions, summaries, and spectrum views: authority citations, FRC answers, and multiple perspectives.
         </p>
       </header>
 
       {topics.length === 0 ? (
-        <section className="border border-frc-blue rounded-lg p-6 text-sm text-frc-text-dim">
+        <section className="border-2 border-shabrang-teal/30 p-8 text-center text-shabrang-ink-dim">
           No topics yet.
         </section>
       ) : (
@@ -57,4 +59,3 @@ export function TopicsIndex({
   if (embedded) return content;
   return <main>{content}</main>;
 }
-

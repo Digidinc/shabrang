@@ -1,6 +1,19 @@
 User-agent: *
 Allow: /
 
+# LLM/AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 Sitemap: https://fractalresonance.com/sitemap.xml
 
 # AI/LLM discovery

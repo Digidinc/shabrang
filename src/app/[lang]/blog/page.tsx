@@ -21,11 +21,15 @@ export default async function BlogPage({ params }: Props) {
   const basePath = `/${lang}`;
 
   return (
-    <main className="min-h-screen flex flex-col lg:flex-row">
-      <BlogSidebar lang={lang} basePath={basePath} view="kasra" variant="mobile" />
-      <BlogSidebar lang={lang} basePath={basePath} view="kasra" />
-      <div className="flex-1 min-w-0">
-        <BlogIndex lang={lang} basePath={basePath} view="kasra" embedded />
+    <main className="shabrang-page">
+      <div className="shabrang-container">
+        <div className="shabrang-layout">
+          <BlogSidebar lang={lang} basePath={basePath} view="kasra" variant="mobile" />
+          <BlogSidebar lang={lang} basePath={basePath} view="kasra" />
+          <div className="shabrang-content-full">
+            <BlogIndex lang={lang} basePath={basePath} view="kasra" embedded />
+          </div>
+        </div>
       </div>
     </main>
   );

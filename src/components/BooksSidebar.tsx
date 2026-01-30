@@ -32,88 +32,80 @@ export function BooksSidebar({ lang, currentId, chapters, activeChapterSlug, bas
       data-sidebar
       className={
         isMobile
-          ? 'w-full border-b border-frc-blue block lg:hidden'
-          : 'w-60 xl:w-72 shrink-0 border-r border-frc-blue hidden lg:block'
+          ? 'w-full border-b border-shabrang-teal/30 block lg:hidden'
+          : 'w-60 xl:w-72 shrink-0 border-r border-shabrang-teal/30 hidden lg:block'
       }
     >
       <details open={!isMobile}>
         {isMobile && (
-          <summary className="px-4 py-3 text-sm text-frc-text cursor-pointer select-none">
-            <span className="text-xs uppercase tracking-wider text-frc-steel">Browse books</span>
+          <summary className="px-4 py-3 text-sm text-shabrang-ink cursor-pointer select-none">
+            <span className="text-xs uppercase tracking-wider text-shabrang-ink-dim">Browse chapters</span>
           </summary>
         )}
         <nav className={isMobile ? 'py-3 px-4 text-sm' : 'py-6 px-4 text-sm sticky top-0'}>
-          <div className="mb-4">
-            <h3 className="text-xs uppercase tracking-wider text-frc-steel mb-2 px-2">Books</h3>
-            <ul className="space-y-0.5 max-h-[70vh] overflow-y-auto pr-1">
-              {books.map((book) => (
-                <li key={book.frontmatter.id}>
-                  <Link
-                    href={`${base}/books/${book.frontmatter.id}`}
-                    className={`block px-2 py-1 rounded transition-colors truncate ${
-                      currentId === book.frontmatter.id
-                        ? 'text-frc-gold bg-frc-blue/30'
-                        : 'text-frc-text-dim hover:text-frc-text hover:bg-frc-blue/20'
-                    }`}
-                    title={book.frontmatter.title}
-                  >
-                    {book.frontmatter.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {showChapters && (
-            <div className="mt-6 pt-4 border-t border-frc-blue">
-              <h3 className="text-xs uppercase tracking-wider text-frc-steel mb-2 px-2">In this book</h3>
-              <ul className="space-y-0.5 max-h-[50vh] overflow-y-auto pr-1">
-                <li>
-                  <Link
-                    href={bookPath}
-                    className={`block px-2 py-1 rounded transition-colors truncate ${
-                      !activeChapterSlug
-                        ? 'text-frc-gold bg-frc-blue/30'
-                        : 'text-frc-text-dim hover:text-frc-text hover:bg-frc-blue/20'
-                    }`}
-                    title="Full book"
-                  >
-                    Full book
-                  </Link>
-                </li>
-                {chapters?.map((c) => (
-                  <li key={c.anchorId}>
+          {/* Books list - only show if not viewing a specific book */}
+          {!currentId && (
+            <div className="mb-4">
+              <h3 className="text-xs uppercase tracking-wider text-shabrang-ink-dim mb-3 px-2">Books</h3>
+              <ul className="space-y-0.5 max-h-[70vh] overflow-y-auto pr-1">
+                {books.map((book) => (
+                  <li key={book.frontmatter.id}>
                     <Link
-                      href={`${bookPath}/chapter/${c.slug}`}
-                      className={`block px-2 py-1 rounded transition-colors truncate ${
-                        activeChapterSlug === c.slug
-                          ? 'text-frc-gold bg-frc-blue/30'
-                          : 'text-frc-text-dim hover:text-frc-text hover:bg-frc-blue/20'
-                      }`}
-                      title={c.title}
+                      href={`${base}/books/${book.frontmatter.id}`}
+                      className="block px-2 py-1.5 rounded transition-colors text-shabrang-ink-dim hover:text-shabrang-ink hover:bg-shabrang-teal/10"
+                      title={book.frontmatter.title}
                     >
-                      {c.title}
+                      {book.frontmatter.title}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
           )}
-          <div className="mt-6 pt-4 border-t border-frc-blue">
-            <Link href={`${base}/blog`} className="block px-2 py-1 text-frc-text-dim hover:text-frc-gold transition-colors">
-              Blog
+
+          {/* Chapters - show when viewing a book */}
+          {showChapters && (
+            <div>
+              <Link
+                href={bookPath}
+                className="block px-2 py-1 mb-3 text-xs uppercase tracking-wider text-shabrang-gold hover:text-shabrang-crimson transition-colors"
+              >
+                ← Back to Index
+              </Link>
+              <h3 className="text-xs uppercase tracking-wider text-shabrang-ink-dim mb-3 px-2">Chapters</h3>
+              <ul className="space-y-0.5 max-h-[60vh] overflow-y-auto pr-1">
+                {chapters?.map((c, idx) => (
+                  <li key={c.anchorId}>
+                    <Link
+                      href={`${bookPath}/chapter/${c.slug}`}
+                      className={`block px-2 py-1.5 rounded transition-colors ${
+                        activeChapterSlug === c.slug
+                          ? 'text-shabrang-gold bg-shabrang-teal/20 border-l-2 border-shabrang-gold'
+                          : 'text-shabrang-ink-dim hover:text-shabrang-ink hover:bg-shabrang-teal/10'
+                      }`}
+                      title={c.title}
+                    >
+                      <span className="text-[10px] text-shabrang-gold font-mono mr-2">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <span className="truncate">{c.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Quick links */}
+          <div className="mt-6 pt-4 border-t border-shabrang-teal/20">
+            <Link href={`${base}/art`} className="block px-2 py-1 text-shabrang-ink-dim hover:text-shabrang-gold transition-colors">
+              Art Gallery
             </Link>
-            <Link href={`${base}/topics`} className="block px-2 py-1 text-frc-text-dim hover:text-frc-gold transition-colors">
+            <Link href={`${base}/topics`} className="block px-2 py-1 text-shabrang-ink-dim hover:text-shabrang-gold transition-colors">
               Topics
             </Link>
-            <Link href={`${base}/articles`} className="block px-2 py-1 text-frc-text-dim hover:text-frc-gold transition-colors">
-              Articles
-            </Link>
-            <Link href={`${base}/papers`} className="block px-2 py-1 text-frc-text-dim hover:text-frc-gold transition-colors">
-              Papers
-            </Link>
-            <Link href={`${base}/concepts`} className="block px-2 py-1 text-frc-text-dim hover:text-frc-gold transition-colors">
-              Concepts
+            <Link href={`${base}/blog`} className="block px-2 py-1 text-shabrang-ink-dim hover:text-shabrang-gold transition-colors">
+              Blog
             </Link>
           </div>
         </nav>

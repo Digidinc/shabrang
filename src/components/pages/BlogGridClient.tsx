@@ -12,14 +12,31 @@ export interface BlogGridItem {
   href: string;
   tags: string[];
   voice?: string;
+  level?: string;
   readTime: string;
   ordinal: number;
 }
 
-export function BlogGridClient({ items }: { items: BlogGridItem[] }) {
+export function BlogGridClient({ items, lang = 'en' }: { items: BlogGridItem[]; lang?: string }) {
   const [query, setQuery] = useState('');
   const [tag, setTag] = useState<string>('All');
   const [voice, setVoice] = useState<string>('All');
+
+  const isFA = lang === 'fa';
+  const t = {
+    search: isFA ? 'جستجو در یادداشت‌ها…' : 'Search blog posts…',
+    showing: isFA ? 'نمایش' : 'Showing',
+    of: isFA ? 'از' : 'of',
+    allVoices: isFA ? 'تمام صداها' : 'All voices',
+    allLevels: isFA ? 'تمام سطوح' : 'All levels',
+    allTags: isFA ? 'تمام برچسب‌ها' : 'All',
+    noResults: isFA ? 'نتیجه‌ای یافت نشد. کلمه کلیدی یا برچسب دیگری را امتحان کنید.' : 'No results. Try a different keyword or tag.',
+  };
+
+  const levels = useMemo(() => {
+    const l = Array.from(new Set(items.map((i) => i.level).filter(Boolean) as string[]));
+    return ['All', ...l.sort()];
+  }, [items]);
 
   const tags = useMemo(() => {
     const t = Array.from(new Set(items.flatMap((i) => i.tags || []))).sort((a, b) => a.localeCompare(b));
@@ -55,12 +72,12 @@ export function BlogGridClient({ items }: { items: BlogGridItem[] }) {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search blog posts…"
+            placeholder={t.search}
             className="w-full sm:max-w-md bg-frc-void-light border border-frc-blue rounded-md px-3 py-2 text-sm text-frc-text placeholder:text-frc-text-dim focus:outline-none focus:border-frc-gold"
-            aria-label="Search blog posts"
+            aria-label={t.search}
           />
           <div className="text-xs text-frc-text-dim">
-            Showing <span className="text-frc-text">{filtered.length}</span> of{' '}
+            {t.showing} <span className="text-frc-text">{filtered.length}</span> {t.of}{' '}
             <span className="text-frc-text">{items.length}</span>
           </div>
         </div>
@@ -77,25 +94,39 @@ export function BlogGridClient({ items }: { items: BlogGridItem[] }) {
                   : 'border-frc-blue text-frc-text-dim hover:text-frc-text hover:border-frc-gold-light'
               }`}
             >
-              {v === 'All' ? 'All voices' : v}
+              {v === 'All' ? t.allVoices : v}
             </button>
           ))}
         </div>
 
+        {levels.length > 1 && (
+          <div className="flex flex-wrap gap-2">
+            {levels.map((l) => (
+              <button
+                key={l}
+                type="button"
+                className={`text-[0.65rem] uppercase tracking-wider px-2.5 py-1 rounded-md border border-frc-blue text-frc-text-dim opacity-50 cursor-not-allowed`}
+              >
+                {l === 'All' ? t.allLevels : l.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        )}
+
         {tags.length > 1 && (
           <div className="flex flex-wrap gap-2">
-            {tags.slice(0, 18).map((t) => (
+            {tags.slice(0, 18).map((tagVal) => (
               <button
-                key={t}
+                key={tagVal}
                 type="button"
-                onClick={() => setTag(t)}
+                onClick={() => setTag(tagVal)}
                 className={`text-[0.65rem] uppercase tracking-wider px-2.5 py-1 rounded-md border transition-colors ${
-                  tag === t
+                  tag === tagVal
                     ? 'border-frc-gold text-frc-gold bg-frc-blue/20'
                     : 'border-frc-blue text-frc-text-dim hover:text-frc-text hover:border-frc-gold-light'
                 }`}
               >
-                {t}
+                {tagVal === 'All' ? t.allTags : tagVal}
               </button>
             ))}
           </div>
@@ -104,16 +135,23 @@ export function BlogGridClient({ items }: { items: BlogGridItem[] }) {
 
       {filtered.length === 0 ? (
         <div className="border border-frc-blue rounded-lg p-6 text-sm text-frc-text-dim">
-          No results. Try a different keyword or tag.
+          {t.noResults}
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 gap-5">
           {filtered.map((item) => (
             <Link key={item.id} href={item.href} className="card block p-6 group">
               <div className="flex items-start gap-4">
-                <span className="font-mono text-xs text-frc-steel shrink-0 mt-1 tabular-nums">
-                  {String(item.ordinal).padStart(2, '0')}
-                </span>
+                <div className="flex flex-col items-center gap-2">
+                  <span className="font-mono text-xs text-frc-steel shrink-0 mt-1 tabular-nums">
+                    {String(item.ordinal).padStart(2, '0')}
+                  </span>
+                  {item.level && (
+                    <span className="bg-frc-gold/10 text-frc-gold border border-frc-gold/30 px-1 py-0.5 text-[8px] font-mono font-bold uppercase rounded tabular-nums">
+                      {item.level}
+                    </span>
+                  )}
+                </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2">
                     <VoiceTag voice={item.voice} />

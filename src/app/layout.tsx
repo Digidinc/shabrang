@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TextSharePopover } from '@/components/TextSharePopover';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import { CommandPalette } from '@/components/CommandPalette';
 import { schemaSiteGraph, schemaDataset } from '@/lib/schema';
 import './globals.css';
 
@@ -53,10 +54,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Vazirmatn:wght@300;400;500;600&display=swap"
           rel="stylesheet"
         />
+        <link rel="help" href="/llms.txt" type="text/plain" title="Machine-readable site summary" />
         <SchemaScript data={schemaSiteGraph()} />
         <SchemaScript data={schemaDataset()} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="antialiased min-h-screen flex flex-col text-shabrang-ink bg-shabrang-parchment">
         <GoogleAnalytics />
         <ThemeProvider>
           <ModeProvider>
@@ -65,6 +67,7 @@ export default function RootLayout({
               {children}
             </div>
             <Footer />
+            <CommandPalette />
             <TextSharePopover />
           </ModeProvider>
         </ThemeProvider>

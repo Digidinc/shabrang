@@ -20,11 +20,15 @@ export default async function BooksPage({ params }: Props) {
   const { lang } = await params;
   const basePath = `/${lang}`;
   return (
-    <main className="min-h-screen flex flex-col lg:flex-row">
-      <BooksSidebar lang={lang} basePath={basePath} view="kasra" variant="mobile" />
-      <BooksSidebar lang={lang} basePath={basePath} view="kasra" />
-      <div className="flex-1 min-w-0">
-        <BooksIndex lang={lang} basePath={basePath} view="kasra" embedded />
+    <main className="shabrang-page">
+      <div className="shabrang-container">
+        <div className="shabrang-layout">
+          <BooksSidebar lang={lang} basePath={basePath} view="kasra" variant="mobile" />
+          <BooksSidebar lang={lang} basePath={basePath} view="kasra" />
+          <div className="shabrang-content-full">
+            <BooksIndex lang={lang} basePath={basePath} view="kasra" embedded />
+          </div>
+        </div>
       </div>
     </main>
   );

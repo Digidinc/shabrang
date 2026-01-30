@@ -17,13 +17,17 @@ export function PageShell({
 }) {
   return (
     <>
-      <main className="min-h-screen flex flex-col lg:flex-row">
-        {leftMobile}
-        {leftDesktop}
-        <article className={`flex-1 max-w-3xl mx-auto px-6 py-12 min-w-0 ${articleClassName}`}>
-          {children}
-        </article>
-        {right}
+      <main className="shabrang-page">
+        <div className="shabrang-container">
+          <div className="shabrang-layout">
+            {leftMobile}
+            {leftDesktop}
+            <article className={`shabrang-content ${articleClassName}`}>
+              {children}
+            </article>
+            {right}
+          </div>
+        </div>
       </main>
       {withReadingMode ? <ReadingMode /> : null}
     </>

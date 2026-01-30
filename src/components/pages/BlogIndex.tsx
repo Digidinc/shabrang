@@ -20,6 +20,7 @@ export function BlogIndex({
     const fm = post.frontmatter;
     const readTime = fm.read_time || estimateReadTime(post.body);
     const voice = fm.voice || (fm.perspective === 'river' ? 'river' : fm.perspective === 'kasra' ? 'kasra' : undefined);
+    const level = (fm as any).level || undefined;
     return {
       id: fm.id,
       title: fm.title,
@@ -28,6 +29,7 @@ export function BlogIndex({
       href: `${basePath}/blog/${fm.id}`,
       tags: fm.tags || [],
       voice,
+      level,
       readTime,
       ordinal: idx + 1,
     };
@@ -50,7 +52,7 @@ export function BlogIndex({
           No blog posts yet.
         </section>
       ) : (
-        <BlogGridClient items={items} />
+        <BlogGridClient items={items} lang={lang} />
       )}
     </div>
   );
