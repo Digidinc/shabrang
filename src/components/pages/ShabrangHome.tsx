@@ -33,6 +33,27 @@ export function ShabrangHome({ lang }: { lang: string }) {
             --white: #FFFEF9;
         }
 
+        /* Dark mode palette */
+        .dark {
+            --sand: #0D1A1A;
+            --sand-light: #142424;
+            --sand-dark: #071212;
+            --parchment: #0D1A1A;
+            --gold: #D4A84B;
+            --gold-light: #E4B85B;
+            --gold-dark: #B8922B;
+            --teal: #3D7A8B;
+            --teal-dark: #2D5A6B;
+            --teal-light: #4D8A9B;
+            --crimson: #A04545;
+            --crimson-dark: #8B3535;
+            --crimson-light: #B55555;
+            --ink: #F5E6C8;
+            --ink-light: #E8D4A8;
+            --green: #4D6C4D;
+            --white: #1A1A18;
+        }
+
         /* ===========================================
            SHABRANG HORSE SILHOUETTE (SVG Data URI)
            =========================================== */

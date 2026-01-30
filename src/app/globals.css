@@ -64,6 +64,30 @@
   --shabrang-crimson: #A04545;
   --shabrang-green: #4D6C4D;
   --shabrang-white: #1A1A18;
+
+  /* Override Tailwind theme variables for dark mode */
+  --color-shabrang-parchment: #0D1A1A;
+  --color-shabrang-parchment-dark: #142424;
+  --color-shabrang-ink: #F5E6C8;
+  --color-shabrang-ink-dim: #B8A88A;
+  --color-shabrang-teal: #2D5A6B;
+  --color-shabrang-teal-dark: #3D6A7B;
+  --color-shabrang-gold: #D4A84B;
+  --color-shabrang-gold-light: #E4B85B;
+  --color-shabrang-crimson: #A04545;
+  --color-shabrang-green: #4D6C4D;
+  --color-shabrang-white: #1A1A18;
+
+  /* Legacy FRC aliases for dark mode */
+  --color-frc-void: #0D1A1A;
+  --color-frc-void-light: #142424;
+  --color-frc-text: #F5E6C8;
+  --color-frc-text-dim: #B8A88A;
+  --color-frc-blue: #2D5A6B;
+  --color-frc-blue-light: #3D6A7B;
+  --color-frc-gold: #D4A84B;
+  --color-frc-gold-light: #E4B85B;
+  --color-frc-steel: #B8A88A;
 }
 
 /* ═══════════════════════════════════════════════════════════════
