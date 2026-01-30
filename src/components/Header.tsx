@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-50 bg-shabrang-parchment/95 backdrop-blur-sm border-b-2 border-shabrang-teal ${isRTL ? 'font-farsi' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Main navigation - Persian miniature aesthetic */}
-      <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+      <div className="max-w-3xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
         {/* Logo and brand */}
         <Link href={basePath} className="flex items-center gap-4 group">
           <Image

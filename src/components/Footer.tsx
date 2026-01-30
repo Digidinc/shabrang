@@ -23,7 +23,7 @@ export function Footer() {
       <div className="h-1 bg-gradient-to-r from-shabrang-crimson via-shabrang-gold to-shabrang-crimson" />
 
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-8 py-20">
+      <div className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-16">
           {/* Brand & Identity */}
           <div className="lg:col-span-1">
@@ -113,7 +113,7 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-shabrang-parchment/10 bg-shabrang-ink">
-        <div className="max-w-7xl mx-auto px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <span className="font-farsi text-sm text-shabrang-gold" dir="rtl">
               دژ مایع: بیداریِ سیمرغ

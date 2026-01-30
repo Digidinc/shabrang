@@ -150,7 +150,7 @@ function MuSection({ level, isReversed }: { level: typeof MU_LEVELS[0]; isRevers
         backgroundSize: '20px 20px'
       }} />
 
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-3xl mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className={`flex items-center gap-6 mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className={`w-20 h-20 rounded-full ${colorClasses[level.color as keyof typeof colorClasses]} flex items-center justify-center shadow-lg`}>
@@ -168,64 +168,56 @@ function MuSection({ level, isReversed }: { level: typeof MU_LEVELS[0]; isRevers
           </span>
         </div>
 
-        {/* Content grid */}
-        <div className={`grid lg:grid-cols-12 gap-8 lg:gap-12 items-start ${isReversed ? 'lg:grid-flow-dense' : ''}`}>
-          {/* Image column */}
-          <div className={`lg:col-span-5 ${isReversed ? 'lg:col-start-8' : ''} transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-x-0' : isReversed ? 'opacity-0 translate-x-12' : 'opacity-0 -translate-x-12'}`}>
-            <div className="relative group">
-              {/* Decorative offset frame */}
-              <div className={`absolute -top-4 ${isReversed ? '-right-4' : '-left-4'} w-full h-full border-2 ${colorClasses[level.color as keyof typeof colorClasses].replace('bg-', 'border-')} opacity-30 group-hover:opacity-60 transition-opacity`} />
-
-              {/* Main image */}
-              <div className="relative border-4 border-shabrang-ink shadow-2xl overflow-hidden">
-                <Image
-                  src={level.image}
-                  alt={level.part}
-                  width={600}
-                  height={450}
-                  className="w-full transform group-hover:scale-105 transition-transform duration-700"
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-shabrang-ink/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+        {/* Full-width image */}
+        <div className={`mb-12 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="relative group">
+            {/* Main image - full width */}
+            <div className="relative border-4 border-shabrang-ink shadow-2xl overflow-hidden">
+              <Image
+                src={level.image}
+                alt={level.part}
+                width={900}
+                height={600}
+                className="w-full transform group-hover:scale-[1.02] transition-transform duration-700"
+              />
             </div>
           </div>
+        </div>
 
-          {/* Content column */}
-          <div className={`lg:col-span-7 ${isReversed ? 'lg:col-start-1' : ''} transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-x-0' : isReversed ? 'opacity-0 -translate-x-12' : 'opacity-0 translate-x-12'}`}>
-            {/* Part title */}
-            <p className="font-display text-sm text-shabrang-gold uppercase tracking-[0.2em] mb-6">
-              {level.part}
+        {/* Content */}
+        <div className={`transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {/* Part title */}
+          <p className="font-display text-sm text-shabrang-gold uppercase tracking-[0.2em] mb-6">
+            {level.part}
+          </p>
+
+          {/* Quote */}
+          <blockquote className="relative mb-10">
+            <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-shabrang-gold via-shabrang-gold to-transparent" />
+            <p className="text-2xl sm:text-3xl text-shabrang-teal-dark font-body italic leading-relaxed pl-6">
+              &ldquo;{level.quote}&rdquo;
             </p>
+            <cite className="block mt-4 pl-6 text-shabrang-crimson font-display text-sm uppercase tracking-wider not-italic">
+              — The Liquid Fortress
+            </cite>
+          </blockquote>
 
-            {/* Quote */}
-            <blockquote className="relative mb-10">
-              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-shabrang-gold via-shabrang-gold to-transparent" />
-              <p className="text-2xl sm:text-3xl text-shabrang-teal-dark font-body italic leading-relaxed pl-6">
-                &ldquo;{level.quote}&rdquo;
-              </p>
-              <cite className="block mt-4 pl-6 text-shabrang-crimson font-display text-sm uppercase tracking-wider not-italic">
-                — The Liquid Fortress
-              </cite>
-            </blockquote>
+          {/* Description */}
+          <p className="text-lg text-shabrang-ink-dim leading-relaxed mb-10">
+            {level.description}
+          </p>
 
-            {/* Description */}
-            <p className="text-lg text-shabrang-ink-dim leading-relaxed mb-10 max-w-xl">
-              {level.description}
-            </p>
-
-            {/* Video embed */}
-            <div className="relative group">
-              <div className="absolute -inset-2 border border-shabrang-teal/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="aspect-video border-2 border-shabrang-teal overflow-hidden shadow-lg">
-                <iframe
-                  src={`https://www.youtube.com/embed/${level.video}`}
-                  title={level.part}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
+          {/* Video embed */}
+          <div className="relative group">
+            <div className="absolute -inset-2 border border-shabrang-teal/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="aspect-video border-2 border-shabrang-teal overflow-hidden shadow-lg">
+              <iframe
+                src={`https://www.youtube.com/embed/${level.video}`}
+                title={level.part}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
             </div>
           </div>
         </div>

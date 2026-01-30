@@ -18,8 +18,9 @@ import {
   getAlternateLanguages,
   matchesPerspectiveView,
 } from '@/lib/content';
-import { schemaPaperPage } from '@/lib/schema';
-import { deriveChaptersFromMarkdown, findChapterBySlug, getChapterList } from '@/lib/bookChapters';
+import { findChapterBySlug, deriveChaptersFromMarkdown } from '@/lib/bookChapters';
+import { schemaPaperPage, schemaChapter } from '@/lib/schema';
+import { getChapterList } from '@/lib/bookChapters';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
 
 interface Props {
@@ -66,23 +67,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Avoid duplicate-content SEO issues: chapter pages are for UX/digestibility.
   return {
-    title: `${fm.title} — ${ch.title}`,
+    title: `${ch.title} | ${fm.title}`,
     description: fm.abstract,
-    keywords: [...(fm.tags || []), 'chapter'],
+    keywords: [...(fm.tags || []), 'chapter', 'persian philosophy'],
     authors: [{ name: author }],
     alternates: {
-      canonical: bookUrl,
+      canonical: chapterUrl,
       languages: alternates,
     },
-    robots: { index: false, follow: true },
+    robots: { index: true, follow: true },
     openGraph: {
       type: 'book',
-      title: `${fm.title} — ${ch.title}`,
+      title: `${ch.title} | ${fm.title}`,
       description: fm.abstract,
       authors: [author],
       tags: fm.tags,
       locale: lang,
       url: chapterUrl,
+      images: [`/images/chapters/${ch.slug}.png`],
     },
   };
 }
@@ -111,9 +113,20 @@ export default async function BookChapterPage({ params }: Props) {
   const tocItems = extractTocItems(current.markdown).filter((t) => t.level === 2);
   const chapterItems = getChapterList(book.body);
 
+  const chapterMeta = {
+    id: current.slug,
+    title: current.title,
+    bookId: id,
+    bookTitle: book.frontmatter.title,
+    author: book.frontmatter.author || 'Kay Hermes',
+    date: book.frontmatter.date || '2026-01-30',
+    lang,
+    slug: current.slug,
+  };
+
   return (
     <>
-      <SchemaScript data={schemaPaperPage(meta)} />
+      <SchemaScript data={schemaChapter(chapterMeta)} />
 
       <PageShell
         leftMobile={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} activeChapterSlug={chapter} basePath={basePath} view="kasra" variant="mobile" />}
