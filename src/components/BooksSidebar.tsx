@@ -22,9 +22,9 @@ export function BooksSidebar({ lang, currentId, chapters, activeChapterSlug, bas
   const bookPath = currentId ? `${base}/books/${currentId}` : '';
   const showChapters = Boolean(
     currentId &&
-      chapters &&
-      chapters.length > 0 &&
-      !(chapters.length === 1 && chapters[0]?.slug === 'full')
+    chapters &&
+    chapters.length > 0 &&
+    !(chapters.length === 1 && chapters[0]?.slug === 'full')
   );
 
   return (
@@ -78,17 +78,16 @@ export function BooksSidebar({ lang, currentId, chapters, activeChapterSlug, bas
                   <li key={c.anchorId}>
                     <Link
                       href={`${bookPath}/chapter/${c.slug}`}
-                      className={`block px-2 py-1.5 rounded transition-colors ${
-                        activeChapterSlug === c.slug
+                      className={`block px-2 py-1.5 rounded transition-colors ${activeChapterSlug === c.slug
                           ? 'text-shabrang-gold bg-shabrang-teal/20 border-l-2 border-shabrang-gold'
                           : 'text-shabrang-ink-dim hover:text-shabrang-ink hover:bg-shabrang-teal/10'
-                      }`}
+                        }`}
                       title={c.title}
                     >
                       <span className="text-[10px] text-shabrang-gold font-mono mr-2">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
-                      <span className="truncate">{c.title}</span>
+                      <span className="whitespace-normal">{c.title}</span>
                     </Link>
                   </li>
                 ))}

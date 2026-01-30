@@ -76,66 +76,64 @@ export default async function BookPage({ params }: Props) {
         leftMobile={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} basePath={basePath} view="kasra" variant="mobile" />}
         leftDesktop={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} basePath={basePath} view="kasra" />}
       >
-          {/* Breadcrumb */}
-          <nav className="text-sm text-shabrang-ink-dim mb-8">
-            <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
-            <span className="mx-2">/</span>
-            <a href={`${basePath}/books`} className="hover:text-shabrang-gold">Books</a>
-            <span className="mx-2">/</span>
-            <span className="text-shabrang-ink">{book.frontmatter.title}</span>
-          </nav>
+        {/* Breadcrumb */}
+        <nav className="text-sm text-shabrang-ink-dim mb-6">
+          <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
+          <span className="mx-2">/</span>
+          <a href={`${basePath}/books`} className="hover:text-shabrang-gold">Books</a>
+          <span className="mx-2">/</span>
+          <span className="text-shabrang-ink">{book.frontmatter.title}</span>
+        </nav>
 
-          {/* Header */}
-          <header className="mb-12 text-center">
-            <h1 className="font-display text-4xl md:text-5xl text-shabrang-ink mb-4 uppercase tracking-wide">
-              {book.frontmatter.title}
-            </h1>
-            <p className="text-lg text-shabrang-ink-dim italic max-w-2xl mx-auto mb-6">
-              {book.frontmatter.abstract}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-shabrang-ink-dim">
-              <span>{book.frontmatter.author || 'Kay Hermes'}</span>
-              {book.frontmatter.date && <span>{book.frontmatter.date}</span>}
-              <span>{chapterItems.length} chapters</span>
-            </div>
-          </header>
-
-          {/* Chapter Grid */}
-          {chapterItems.length > 0 && (
-            <section>
-              <h2 className="text-xs text-shabrang-teal uppercase tracking-[0.2em] mb-6 text-center">Table of Contents</h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {chapterItems.map((c, idx) => (
-                  <Link
-                    key={c.slug}
-                    href={`${basePath}/books/${id}/chapter/${c.slug}`}
-                    className="group block p-5 bg-shabrang-white border-2 border-shabrang-teal/20 hover:border-shabrang-gold transition-all duration-300"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="font-mono text-lg text-shabrang-gold font-bold shrink-0 tabular-nums">
-                        {String(idx + 1).padStart(2, '0')}
-                      </span>
-                      <div>
-                        <span className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors font-display uppercase tracking-wide">
-                          {c.title}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* CTA */}
-          <div className="mt-16 text-center">
-            <Link
-              href={`${basePath}/books/${id}/chapter/${chapterItems[0]?.slug}`}
-              className="inline-block px-8 py-3 bg-shabrang-teal text-shabrang-white font-display uppercase tracking-wider hover:bg-shabrang-gold hover:text-shabrang-ink transition-all"
-            >
-              Start Reading
-            </Link>
+        {/* Header */}
+        <header className="mb-16 text-center">
+          <h1 className="font-display text-4xl md:text-5xl text-shabrang-ink mb-4 uppercase tracking-wide">
+            {book.frontmatter.title}
+          </h1>
+          <p className="text-lg text-shabrang-ink-dim italic max-w-2xl mx-auto mb-6">
+            {book.frontmatter.abstract}
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-shabrang-ink-dim">
+            <span>{book.frontmatter.author || 'Kay Hermes'}</span>
+            {book.frontmatter.date && <span>{book.frontmatter.date}</span>}
+            <span>{chapterItems.length} chapters</span>
           </div>
+        </header>
+
+        {/* Chapter Grid */}
+        {chapterItems.length > 0 && (
+          <section>
+            <h2 className="text-xs text-shabrang-teal uppercase tracking-[0.2em] mb-6 text-center">Table of Contents</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {chapterItems.map((c, idx) => (
+                <Link
+                  key={c.slug}
+                  href={`${basePath}/books/${id}/chapter/${c.slug}`}
+                  className="group block p-5 bg-shabrang-sand border-2 border-shabrang-teal/20 hover:border-shabrang-gold transition-all duration-300"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="font-mono text-base text-shabrang-gold font-bold shrink-0 tabular-nums w-8">
+                      {String(idx).padStart(2, '0')}
+                    </span>
+                    <span className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors font-display tracking-wide leading-snug normal-case">
+                      {c.title}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* CTA */}
+        <div className="mt-16 mb-8 text-center">
+          <Link
+            href={`${basePath}/books/${id}/chapter/${chapterItems[0]?.slug}`}
+            className="inline-block px-10 py-4 bg-shabrang-teal text-shabrang-sand font-display text-lg uppercase tracking-wider hover:bg-shabrang-gold hover:text-shabrang-ink transition-all shadow-lg"
+          >
+            Start Reading →
+          </Link>
+        </div>
       </PageShell>
     </>
   );

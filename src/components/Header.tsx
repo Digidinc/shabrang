@@ -208,18 +208,22 @@ export function Header() {
         /* Mobile menu */
         .mobile-menu {
           display: none;
-          position: absolute;
-          top: 100%;
+          position: fixed;
+          top: 54px; /* Height of header approximately */
           left: 0;
           right: 0;
+          bottom: 0;
           background: var(--parchment, #F9F3E3);
-          border-bottom: 2px solid var(--gold, #C9A227);
-          padding: 16px 24px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-top: 2px solid var(--gold, #C9A227);
+          padding: 24px;
+          z-index: 100;
+          overflow-y: auto;
         }
 
         .mobile-menu.open {
-          display: block;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
         }
 
         @media (min-width: 768px) {
@@ -231,14 +235,15 @@ export function Header() {
         .mobile-nav-link {
           display: block;
           font-family: 'Cinzel', serif;
-          font-size: 0.875rem;
+          font-size: 1.25rem;
           text-transform: uppercase;
           letter-spacing: 0.1em;
           color: var(--teal-dark, #1A4A4A);
           text-decoration: none;
-          padding: 12px 0;
+          padding: 16px 0;
           border-bottom: 1px solid var(--gold, #C9A227);
           transition: color 0.3s ease;
+          text-align: center;
         }
 
         .mobile-nav-link:hover {
@@ -321,22 +326,22 @@ export function Header() {
               )}
             </button>
           </div>
-
-          {/* Mobile menu */}
-          <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-            {navLinks.map(link => (
-              <Link
-                key={link.path}
-                href={`${basePath}${link.path}`}
-                className="mobile-nav-link"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </nav>
       </header>
+
+      {/* Mobile menu - placed outside header to escape stacking context */}
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        {navLinks.map(link => (
+          <Link
+            key={link.path}
+            href={`${basePath}${link.path}`}
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
     </>
   );
 }
