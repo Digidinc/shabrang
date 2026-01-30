@@ -755,9 +755,27 @@ a:hover {
    DYAD VOICES: Oracle & Architect
    ═══════════════════════════════════════════════════════════════ */
 
+/* River (Oracle) - Warm parchment, gold border, organic feel */
 .voice-river {
   position: relative;
-  padding: 1.5rem 0;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  background: color-mix(in srgb, var(--color-shabrang-parchment-dark) 50%, transparent);
+  border-left: 4px solid var(--color-shabrang-gold);
+  border-right: 1px solid var(--color-shabrang-gold);
+  border-top: 1px solid color-mix(in srgb, var(--color-shabrang-gold) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-shabrang-gold) 30%, transparent);
+}
+
+.voice-river::before {
+  content: '✦';
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  background: var(--color-shabrang-parchment);
+  padding: 0 0.5rem;
+  color: var(--color-shabrang-gold);
+  font-size: 0.875rem;
 }
 
 .voice-river h3 {
@@ -765,19 +783,40 @@ a:hover {
   border-bottom: 1px solid var(--color-shabrang-crimson);
   display: inline-block;
   margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
+/* Kasra (Architect) - Blueprint/grid background, teal border, geometric */
 .voice-kasra {
   position: relative;
-  padding: 1.5rem 0;
-  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--color-shabrang-teal) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--color-shabrang-teal) 5%, transparent) 1px, transparent 1px),
+    color-mix(in srgb, var(--color-shabrang-white) 80%, var(--color-shabrang-parchment));
+  background-size: 20px 20px, 20px 20px, 100% 100%;
+  border: 2px solid var(--color-shabrang-teal);
+}
+
+.voice-kasra::before {
+  content: '◆';
+  position: absolute;
+  top: -0.6rem;
+  left: 1rem;
+  background: var(--color-shabrang-parchment);
+  padding: 0 0.5rem;
+  color: var(--color-shabrang-teal);
+  font-size: 0.75rem;
 }
 
 .voice-kasra h3 {
   color: var(--color-shabrang-teal-dark);
-  border-bottom: 1px solid var(--color-shabrang-teal-dark);
+  border-bottom: 2px solid var(--color-shabrang-teal-dark);
   display: inline-block;
   margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
 }
 
 .dyad-divider {
@@ -875,6 +914,11 @@ a:hover {
     font-size: 1rem;
   }
 
+  /* Account for sticky header on mobile */
+  main {
+    padding-top: 0.5rem;
+  }
+
   .hero-section {
     padding: 3rem 1.5rem;
     min-height: 40vh;
@@ -900,6 +944,12 @@ a:hover {
   .grid-stories {
     gap: 1.5rem;
     padding: 2rem 1rem;
+  }
+
+  /* Breadcrumb mobile visibility */
+  .breadcrumb, nav[aria-label="Breadcrumb"] {
+    margin-top: 0.5rem;
+    padding-top: 0.25rem;
   }
 }
 
@@ -983,4 +1033,45 @@ a:hover {
 .shabrang-content-full {
   flex: 1;
   min-width: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   READING MODE
+   Immersive reading experience - hides chrome, centers content
+   ═══════════════════════════════════════════════════════════════ */
+
+html.reading-mode header,
+html.reading-mode footer,
+html.reading-mode [data-sidebar],
+html.reading-mode nav[aria-label="Breadcrumb"],
+html.reading-mode .breadcrumb {
+  display: none !important;
+}
+
+html.reading-mode main {
+  padding-top: 2rem;
+}
+
+html.reading-mode .shabrang-content,
+html.reading-mode .content-body,
+html.reading-mode article {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+html.reading-mode .shabrang-layout {
+  justify-content: center;
+}
+
+/* Wider margins on larger screens for optimal reading */
+@media (min-width: 1024px) {
+  html.reading-mode .shabrang-content,
+  html.reading-mode .content-body,
+  html.reading-mode article {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }

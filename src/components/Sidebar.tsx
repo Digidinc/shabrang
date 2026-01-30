@@ -134,7 +134,7 @@ function SidebarSection({
           <li key={paper.frontmatter.id}>
             <Link
               href={`${base}/papers/${paper.frontmatter.id}`}
-              className={`block px-2 py-1 rounded transition-colors truncate ${
+              className={`block px-2 py-1.5 rounded transition-colors whitespace-normal leading-snug ${
                 currentId === paper.frontmatter.id
                   ? 'text-frc-gold bg-frc-blue/30'
                   : 'text-frc-text-dim hover:text-frc-text hover:bg-frc-blue/20'

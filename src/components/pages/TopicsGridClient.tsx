@@ -85,7 +85,7 @@ export function TopicsGridClient({ items }: { items: TopicsGridItem[] }) {
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors font-display uppercase tracking-wide">
+                  <h3 className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors font-display tracking-wide">
                     {t.title}
                   </h3>
                   <div className="flex items-center gap-3 mt-1 text-xs text-shabrang-ink-dim">

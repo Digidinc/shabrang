@@ -148,20 +148,10 @@ export function Header() {
           letter-spacing: 0.05em;
         }
 
-        /* Desktop nav */
+        /* Desktop nav - Tailwind handles visibility via hidden/flex md:flex */
         .nav-links {
-          display: none;
           align-items: center;
           gap: 8px;
-        }
-
-        @media (min-width: 768px) {
-          .nav-links {
-            display: flex;
-          }
-          .mobile-menu-btn {
-            display: none !important;
-          }
         }
 
         .nav-link {
@@ -289,8 +279,8 @@ export function Header() {
               <span className="logo-text">Shabrang</span>
             </Link>
 
-            {/* Desktop nav */}
-            <div className="nav-links">
+            {/* Desktop nav - hidden on mobile, flex on md+ */}
+            <div className="nav-links hidden md:flex">
               {navLinks.map(link => (
                 <Link
                   key={link.path}
@@ -300,9 +290,9 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              
-              <button 
-                onClick={toggleSearch} 
+
+              <button
+                onClick={toggleSearch}
                 className="search-trigger ml-4"
                 title="Search (Cmd+K)"
               >
@@ -314,9 +304,9 @@ export function Header() {
               </button>
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu button - visible on mobile, hidden on md+ */}
             <button
-              className="mobile-menu-btn"
+              className="mobile-menu-btn flex md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >

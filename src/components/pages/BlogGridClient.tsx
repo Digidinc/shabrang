@@ -114,13 +114,13 @@ export function BlogGridClient({ items, lang = 'en' }: { items: BlogGridItem[]; 
         )}
 
         {tags.length > 1 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5 leading-relaxed">
             {tags.slice(0, 18).map((tagVal) => (
               <button
                 key={tagVal}
                 type="button"
                 onClick={() => setTag(tagVal)}
-                className={`text-[0.65rem] uppercase tracking-wider px-2.5 py-1 rounded-md border transition-colors ${
+                className={`text-[0.65rem] uppercase tracking-wider px-3 py-1.5 rounded-md border transition-colors ${
                   tag === tagVal
                     ? 'border-frc-gold text-frc-gold bg-frc-blue/20'
                     : 'border-frc-blue text-frc-text-dim hover:text-frc-text hover:border-frc-gold-light'
