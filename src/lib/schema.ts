@@ -490,6 +490,44 @@ export function schemaPaperPage(paper: PaperMeta) {
   };
 }
 
+// ─── Chapter-Level Schemas ──────────────────────────────────────────────────
+
+export interface ChapterMeta {
+  id: string;
+  title: string;
+  bookId: string;
+  bookTitle: string;
+  author: string;
+  date: string;
+  lang: string;
+  slug: string;
+}
+
+/** Chapter — individual book chapter */
+export function schemaChapter(chapter: ChapterMeta) {
+  const chapterUrl = `${SITE_URL}/${chapter.lang}/books/${chapter.bookId}/chapter/${chapter.slug}`;
+  const bookUrl = `${SITE_URL}/${chapter.lang}/books/${chapter.bookId}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Chapter',
+    '@id': chapterUrl,
+    name: chapter.title,
+    isPartOf: {
+      '@type': 'Book',
+      '@id': bookUrl,
+      name: chapter.bookTitle,
+    },
+    author: {
+      '@type': 'Person',
+      name: chapter.author,
+    },
+    datePublished: chapter.date,
+    inLanguage: chapter.lang,
+    url: chapterUrl,
+  };
+}
+
 /** Generate all schemas for a concept page */
 export function schemaConceptPage(concept: ConceptMeta) {
   const breadcrumbs = schemaBreadcrumbList([
