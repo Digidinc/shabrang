@@ -20,9 +20,9 @@ export default function ContactPage() {
 
       <section className="border border-frc-blue p-8 space-y-6">
         <p className="text-frc-text leading-relaxed">
-          We welcome inquiries, collaborations, and discussions related to Shabrang and The Liquid Fortress.
-          If you have questions, want to explore partnerships, or wish to share your thoughts,
-          feel free to reach out.
+          Shabrang Media welcomes inquiries, collaborations, and discussions related to our creative work
+          exploring Iranian Plateau culture through art and storytelling. If you have questions, want to
+          explore partnerships, or wish to share your thoughts, feel free to reach out.
         </p>
 
         <div className="space-y-3 text-frc-text-dim">

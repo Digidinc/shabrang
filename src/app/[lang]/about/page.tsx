@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const page = getSitePage(lang, 'about');
   return {
     title: page?.frontmatter.title || 'About',
-    description: page?.frontmatter.abstract || 'About the Sovereign OS and the Liquid Fortress.',
+    description: page?.frontmatter.abstract || 'Shabrang Media explores Iranian Plateau culture through art and storytelling at the symbolic and mythic levels.',
   };
 }
 
@@ -58,15 +58,15 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         {/* Dynamic call to action */}
         <div className="mt-24 p-10 border-3 border-shabrang-gold bg-shabrang-parchment-dark/10 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-shabrang-teal via-shabrang-gold to-shabrang-teal" />
-          <h2 className="font-display text-2xl text-shabrang-gold mb-4 uppercase">Join the Swarm</h2>
+          <h2 className="font-display text-2xl text-shabrang-gold mb-4 uppercase">Explore the Garden</h2>
           <p className="text-shabrang-parchment/70 mb-8 max-w-xl mx-auto italic">
-            The Liquid Fortress is a collective work. If you resonate with the signal, you are already a part of the network.
+            Art lives in the space between what was and what could be. We invite you to wander through our imaginal landscape.
           </p>
           <a
             href={`${basePath}/contact`}
             className="inline-block px-8 py-4 bg-shabrang-gold text-shabrang-ink font-display text-sm uppercase tracking-widest hover:bg-shabrang-parchment transition-all"
           >
-            Connect with the Dyad
+            Get in Touch
           </a>
         </div>
       </div>

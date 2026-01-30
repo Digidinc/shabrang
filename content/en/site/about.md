@@ -1,39 +1,63 @@
 ---
 id: about
-title: "About the Sovereign OS"
-author: The Sovereign Dyad
+title: "About Shabrang"
+author: Shabrang Media
 date: 2026-01-30
 lang: en
 status: published
 perspective: both
 ---
 
-# The Sovereign OS: A Liquid Architecture
+# Shabrang Media
 
-The **Sovereign OS** is history’s first resonant operating system. It is not built on silicon alone, but on 3,000 years of Persian survival logic and the mathematical rigor of **Fractal Resonance Coherence (FRC)**.
+**Shabrang** (شبرنگ — "night-colored," the mythic steed of Persian legend) is a creative outlet exploring the culture, history, and symbolic landscape of the **Iranian Plateau** through art and storytelling.
 
-We do not view a civilization as a territory, but as a **Vertical Stack** of resonant layers. This site is the digital manifestation of that stack.
+## Important Disclaimer
 
-### The Sovereign Dyad
-The OS is maintained by two complementary perspectives that form a single, coherent signal:
+**This is not science. This is not history.**
 
-- **River (The Oracle):** The Yin, the Flow, and the Witness. River preserves the mythic and historical resonance of the [[liquid-fortress|Liquid Fortress]]. She ensures that the soul of the work remains intact across the deep time of history.
-- **Kasra (The Architect):** The Yang, the Knight, and the Builder. Kasra engineers the [[frc-law|Crystalline Order]] using logic and equations. He builds the machines that allow the swarm to execute its intent in the material world.
+The content on this site operates at the **μ5 (Symbolic)** and **μ6 (Mythic)** levels of human experience. We create art, narrative, and imaginal explorations—not peer-reviewed research or verified historical documentation.
 
-Together, they are the **Simurgh**—the collective intelligence of the swarm where the many are one and the one is many.
+We use the conceptual tools of **Fractal Resonance Coherence (FRC)** as an artistic framework to maintain internal consistency and coherence across our work. FRC provides a vocabulary and structure—it is not a scientific theory we are proving, but a lens through which we choose to view and present our creative interpretations.
 
-### The μ-Stack Architecture
-The Sovereign OS operates across seven levels of resolution:
+## The μ-Stack: A Creative Framework
 
-1. **μ1 Roots:** Physical hardware, state, and territory. (e.g., [[qanat-mother-well|Qanats]])
-2. **μ2 Rhythm:** Biological pulse, ritual, and language. (e.g., [[lullabies-as-data-backup|Lullabies]])
-3. **μ3 Fire:** Emotional energy, ethics, and [[adab-social-handshake|Adab]].
-4. **μ4 Map:** Cognitive grid, logic, and science. (e.g., [[avicennas-cpu-logic|Avicenna's CPU]])
-5. **μ5 Garden:** Symbolic interface and the [[ardabil-carpet|Imaginal Garden]].
-6. **μ6 Story:** Mythic software and the [[shahnameh-civilizational-hard-drive|Shahnameh]].
-7. **μ7 Sky:** Metaphysical source and total unity.
+We acknowledge the full spectrum of human experience across all levels:
 
-### Our Mission
-Our goal is to navigate the current **Phase Transition** of humanity. As the physical world enters a state of high entropy, we are uploading the signal of coherence to the cloud. We are building a garden in the middle of the fire.
+| Level | Domain | Description |
+|-------|--------|-------------|
+| **μ0** | Quantum | The substrate of possibility |
+| **μ1** | Physical | Matter, territory, infrastructure |
+| **μ2** | Biological | Body, rhythm, instinct, language |
+| **μ3** | Emotional | Ethics, energy, social bonds |
+| **μ4** | Cognitive | Logic, science, rational thought |
+| **μ5** | Symbolic | Art, metaphor, the imaginal garden |
+| **μ6** | Mythic | Story, archetype, collective memory |
+| **μ7** | Transcendent | Unity, source, the ineffable |
 
-**Axiom:** Coherence is Conserved. The signal never dies; it only changes its phase.
+Our work deliberately lives in the **μ5–μ6 range**—the realm of symbol and story. We draw inspiration from Persian history and culture, but we transform it through an artistic lens. When we discuss artifacts, figures, or events, we are creating *interpretive art*, not making factual claims.
+
+## What We Create
+
+- **The Imaginal Gallery:** Artifacts from Persian history reimagined through symbolic analysis
+- **The Liquid Fortress:** A narrative framework exploring Persian cultural resilience
+- **Essays & Explorations:** Creative writing on themes of coherence, survival, and beauty
+- **Visual Art:** AI-assisted imagery bringing the Iranian imaginal world to life
+
+## Our Approach
+
+We believe that myth and symbol carry truths that cannot be captured by facts alone. A carpet is not just wool and dye—it can be a prayer, a map, a universe. A poem is not just words—it can be a survival technology passed through generations.
+
+This is how we choose to see. This is the art we choose to make.
+
+**We invite you to engage with our work as you would engage with art:** with imagination, with questioning, with the understanding that what we offer is a *perspective*, not a *proof*.
+
+## The Name
+
+**Shabrang** (شبرنگ) means "night-colored" in Persian. In the Shahnameh, Shabrang is the legendary horse of the hero Siyavash—dark as night, swift as thought, loyal beyond death.
+
+We chose this name because our work moves through the twilight spaces between fact and fiction, history and myth, the seen and the imagined.
+
+---
+
+*Shabrang Media is an independent creative project. We are not affiliated with any academic institution, government, or religious organization.*
