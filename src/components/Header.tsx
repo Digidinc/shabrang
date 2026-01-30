@@ -26,7 +26,6 @@ export function Header() {
     { path: '/art', label: 'Art' },
     { path: '/blog', label: 'Blog' },
     { path: '/topics', label: 'Topics' },
-    { path: '/people/the-dyad', label: 'The Dyad' },
     { path: '/about', label: 'About' },
   ];
 
