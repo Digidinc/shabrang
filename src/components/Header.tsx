@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSelector } from './LanguageSelector';
-import { ModeToggleCompact } from './ModeToggle';
 import { getDictionary } from '@/lib/dictionaries';
 import { getLangFromPathname } from '@/lib/site';
 
@@ -19,41 +18,24 @@ export function Header() {
   const isRTL = RTL_LANGUAGES.includes(lang);
   const dict = getDictionary(lang);
 
+  // Shabrang navigation - focused on artsy content
   const navLinks = [
-    { path: '/about', label: dict.nav.about },
-    { path: '/articles', label: dict.nav.articles },
-    { path: '/blog', label: dict.nav.blog },
-    { path: '/topics', label: dict.nav.topics },
-    { path: '/people', label: dict.nav.people },
-    { path: '/papers', label: dict.nav.papers },
-    { path: '/books', label: dict.nav.books },
-    { path: '/graph', label: dict.nav.graph },
-    { path: '/formulas', label: dict.nav.formulas },
-    { path: null, href: 'https://notebooklm.google.com/notebook/c2da28c7-5c58-4904-9807-807584bd7f13', label: dict.nav.askAi },
-    { path: '/positioning', label: dict.nav.positioning },
-    { path: '/mu-levels', label: dict.nav.muLevels },
+    { path: '/books', label: dict.nav.books || 'Book' },
+    { path: '/articles', label: dict.nav.articles || 'Articles' },
+    { path: '/blog', label: dict.nav.blog || 'Blog' },
+    { path: '/topics', label: dict.nav.topics || 'Topics' },
+    { path: '/about', label: dict.nav.about || 'About' },
   ];
 
   return (
     <header className={`sticky top-0 z-50 bg-frc-void/95 backdrop-blur-sm ${isRTL ? 'font-farsi' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Top micro-bar with coordinates */}
+      {/* Top micro-bar */}
       <div className="border-b border-frc-blue/50">
         <div className="max-w-6xl mx-auto px-6 py-1 flex items-center justify-between">
           <span className="font-mono text-[0.625rem] text-frc-steel tracking-wider">
-            FRC.v2 — fractalresonance.com
+            شبرنگ — shabrang.ca
           </span>
           <div className="flex items-center gap-3">
-            <a
-              href="https://orcid.org/0009-0004-7412-5129"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-[0.625rem] text-frc-steel hover:text-frc-gold tracking-wider hidden sm:block"
-            >
-              ORCID:0009-0004-7412-5129
-            </a>
-            <span className="text-frc-blue hidden sm:block">|</span>
-            <ModeToggleCompact />
-            <span className="text-frc-blue">|</span>
             <LanguageSelector />
             <span className="text-frc-blue">|</span>
             <ThemeToggle />
@@ -66,38 +48,26 @@ export function Header() {
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <Link href={basePath} className="flex items-center gap-3 group">
             <Image
-              src="/brand/sigil-64.png"
-              alt="FRC"
+              src="/brand/logo.png"
+              alt="Shabrang"
               width={32}
               height={32}
               className="opacity-80 group-hover:opacity-100 transition-opacity"
             />
             <div className="hidden sm:block">
-              <span className="text-frc-gold text-sm font-medium tracking-wide">FRC</span>
+              <span className="text-frc-gold text-lg font-medium tracking-wide">Shabrang</span>
             </div>
           </Link>
 
           <nav className="flex items-center">
             {navLinks.map(link => (
-              link.path ? (
-                <Link
-                  key={link.path}
-                  href={`${basePath}${link.path}`}
-                  className="text-frc-text-dim hover:text-frc-gold text-xs uppercase tracking-wider px-3 py-2 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-frc-text-dim hover:text-frc-gold text-xs uppercase tracking-wider px-3 py-2 transition-colors"
-                >
-                  {link.label}
-                </a>
-              )
+              <Link
+                key={link.path}
+                href={`${basePath}${link.path}`}
+                className="text-frc-text-dim hover:text-frc-gold text-xs uppercase tracking-wider px-3 py-2 transition-colors"
+              >
+                {link.label}
+              </Link>
             ))}
           </nav>
         </div>

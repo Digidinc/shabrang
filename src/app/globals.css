@@ -20,35 +20,39 @@
 }
 
 /* ═══════════════════════════════════════════════════
-   THEME: Light
+   THEME: Light (Shabrang — Persian Miniature)
+   Warm parchment aesthetic with teal/gold accents
    ═══════════════════════════════════════════════════ */
 
 :root {
-  --frc-void: #FAFBFC;
-  --frc-void-light: #F0F2F5;
-  --frc-text: #1A1D23;
-  --frc-text-dim: #4B5563;
-  --frc-blue: #CBD5E1;
-  --frc-blue-light: #94A3B8;
-  --frc-gold: #96780A;
-  --frc-gold-light: #A8871E;
-  --frc-steel: #64748B;
+  --frc-void: #F5E6C8;           /* Warm cream parchment */
+  --frc-void-light: #EDE0C0;     /* Slightly darker cream */
+  --frc-text: #1A1A18;           /* Coal black */
+  --frc-text-dim: #5A6170;       /* Muted text */
+  --frc-blue: #1A4A4A;           /* Deep teal (water/coherence) */
+  --frc-blue-light: #2D5A6B;     /* Lighter teal */
+  --frc-gold: #C9A227;           /* Antique gold (sacred) */
+  --frc-gold-light: #D4A84B;     /* Lighter gold */
+  --frc-steel: #5A6170;          /* Neutral gray */
+  --frc-crimson: #8B3535;        /* Persian crimson (fire/entropy) */
 }
 
 /* ═══════════════════════════════════════════════════
-   THEME: Dark (brand default)
+   THEME: Dark (Shabrang — Night Mode)
+   Deep teal background with warm accents
    ═══════════════════════════════════════════════════ */
 
 .dark {
-  --frc-void: #0B1020;
-  --frc-void-light: #0E1428;
-  --frc-text: #E6E8EC;
-  --frc-text-dim: #9CA3AF;
-  --frc-blue: #1F3A5F;
-  --frc-blue-light: #2E4A7D;
-  --frc-gold: #C9A227;
-  --frc-gold-light: #D4A84B;
-  --frc-steel: #6B7280;
+  --frc-void: #0D1A1A;           /* Deep teal-black */
+  --frc-void-light: #142424;     /* Slightly lighter */
+  --frc-text: #F5E6C8;           /* Cream text */
+  --frc-text-dim: #9CA3AF;       /* Muted cream */
+  --frc-blue: #2D5A6B;           /* Teal accent */
+  --frc-blue-light: #3D6A7B;     /* Lighter teal */
+  --frc-gold: #D4A84B;           /* Warm gold */
+  --frc-gold-light: #E4B85B;     /* Brighter gold */
+  --frc-steel: #6B7280;          /* Gray */
+  --frc-crimson: #A04545;        /* Lighter crimson */
 }
 
 /* ═══════════════════════════════════════════════════

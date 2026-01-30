@@ -11,25 +11,25 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Fractal Resonance Cognition',
-    template: '%s | FRC',
+    default: 'Shabrang — The Liquid Fortress',
+    template: '%s | Shabrang',
   },
-  description: 'Research platform for the Fractal Resonance Cognition framework — exploring consciousness, coherence, and quantum foundations.',
-  keywords: ['FRC', 'fractal resonance', 'coherence', 'consciousness', 'quantum mechanics', 'entropy', 'reciprocity'],
+  description: 'Art, philosophy, and the Persian spirit. The Liquid Fortress book, albums, and explorations of coherence through Persian aesthetics.',
+  keywords: ['Shabrang', 'Liquid Fortress', 'Persian art', 'Persian philosophy', 'coherence', 'miniature', 'Hadi Servat'],
   authors: [{ name: 'Hadi Servat' }],
-  metadataBase: new URL('https://fractalresonance.com'),
+  metadataBase: new URL('https://shabrang.ca'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Fractal Resonance Cognition',
-    title: 'Fractal Resonance Cognition',
-    description: 'Research platform exploring the reciprocal relationship between entropy and coherence.',
+    siteName: 'Shabrang',
+    title: 'Shabrang — The Liquid Fortress',
+    description: 'Art, philosophy, and the Persian spirit. Explore The Liquid Fortress and albums.',
     images: [{ url: '/brand/banner.jpg', width: 1024, height: 572 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractal Resonance Cognition',
-    description: 'Research platform exploring the reciprocal relationship between entropy and coherence.',
+    title: 'Shabrang — The Liquid Fortress',
+    description: 'Art, philosophy, and the Persian spirit.',
   },
   robots: {
     index: true,
