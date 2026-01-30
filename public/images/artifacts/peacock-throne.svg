@@ -1,0 +1,75 @@
+
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A18;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D0D0C;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C9A227" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)" />
+  <rect width="800" height="1000" fill="url(#grid)" />
+  
+  <!-- Ornamental Border -->
+  <rect x="40" y="40" width="720" height="920" fill="none" stroke="#C9A227" stroke-width="2" opacity="0.3" />
+  <rect x="60" y="60" width="680" height="880" fill="none" stroke="#C9A227" stroke-width="1" opacity="0.1" />
+  
+  <!-- Main Symbol Container -->
+  <circle cx="400" cy="450" r="250" fill="none" stroke="#C9A227" stroke-width="1" opacity="0.2" />
+  
+  <!-- Procedural Geometry (Star) -->
+  <g transform="translate(400, 450)">
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(0)" opacity="0.4" />
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(45)" opacity="0.4" />
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(90)" opacity="0.4" />
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(135)" opacity="0.4" />
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(180)" opacity="0.4" />
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(225)" opacity="0.4" />
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(270)" opacity="0.4" />
+    
+      <rect x="-150" y="-150" width="300" height="300" 
+            fill="none" stroke="#C9A227" stroke-width="2" 
+            transform="rotate(315)" opacity="0.4" />
+    
+  </g>
+  
+  <!-- Central Icon/ID -->
+  <text x="400" y="470" font-family="Cinzel, serif" font-size="24" fill="#C9A227" text-anchor="middle" letter-spacing="10" opacity="0.8">
+    PEACOCK THRONE
+  </text>
+  
+  <text x="400" y="520" font-family="monospace" font-size="12" fill="#C9A227" text-anchor="middle" letter-spacing="2" opacity="0.5">
+    SOVEREIGN OS // ARTIFACT NODE
+  </text>
+
+  <!-- Corner Brackets -->
+  <path d="M 40 100 L 40 40 L 100 40" fill="none" stroke="#C9A227" stroke-width="4" />
+  <path d="M 700 40 L 760 40 L 760 100" fill="none" stroke="#C9A227" stroke-width="4" />
+  <path d="M 760 900 L 760 960 L 700 960" fill="none" stroke="#C9A227" stroke-width="4" />
+  <path d="M 100 960 L 40 960 L 40 900" fill="none" stroke="#C9A227" stroke-width="4" />
+</svg>
