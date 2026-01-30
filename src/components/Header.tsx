@@ -28,43 +28,48 @@ export function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 bg-shabrang-parchment/95 backdrop-blur-sm border-b-2 border-shabrang-teal ${isRTL ? 'font-farsi' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Main navigation - Persian miniature aesthetic */}
-      <div className="max-w-3xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-        {/* Logo and brand */}
-        <Link href={basePath} className="flex items-center gap-4 group">
-          <Image
-            src="/brand/logo.png"
-            alt="Shabrang"
-            width={48}
-            height={48}
-            className="opacity-90 group-hover:opacity-100 transition-opacity"
-          />
-          <div className="flex flex-col">
-            <span className="font-display text-2xl text-shabrang-teal tracking-wide">Shabrang</span>
-            <span className="font-farsi text-sm text-shabrang-crimson" dir="rtl">شبرنگ</span>
+    <header className={`sticky top-0 z-50 bg-frc-void/95 backdrop-blur-sm ${isRTL ? 'font-farsi' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
+      {/* Top micro-bar */}
+      <div className="border-b border-frc-blue/50">
+        <div className="max-w-6xl mx-auto px-6 py-1 flex items-center justify-between">
+          <span className="font-mono text-[0.625rem] text-frc-steel tracking-wider">
+            شبرنگ — shabrang.ca
+          </span>
+          <div className="flex items-center gap-3">
+            <LanguageSelector />
+            <span className="text-frc-blue">|</span>
+            <ThemeToggle />
           </div>
-        </Link>
+        </div>
+      </div>
 
-        {/* Navigation links - larger, bolder */}
-        <nav className="hidden md:flex items-center gap-2">
-          {navLinks.map(link => (
-            <Link
-              key={link.path}
-              href={`${basePath}${link.path}`}
-              className="font-display text-base text-shabrang-ink hover:text-shabrang-crimson uppercase tracking-wider px-4 py-2 transition-colors relative group"
-            >
-              {link.label}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-shabrang-gold group-hover:w-full transition-all duration-300" />
-            </Link>
-          ))}
-        </nav>
+      {/* Main navigation */}
+      <div className="border-b border-frc-blue">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <Link href={basePath} className="flex items-center gap-3 group">
+            <Image
+              src="/brand/logo.png"
+              alt="Shabrang"
+              width={32}
+              height={32}
+              className="opacity-80 group-hover:opacity-100 transition-opacity"
+            />
+            <div className="hidden sm:block">
+              <span className="text-frc-gold text-lg font-medium tracking-wide">Shabrang</span>
+            </div>
+          </Link>
 
-        {/* Language and theme controls */}
-        <div className="flex items-center gap-4">
-          <LanguageSelector />
-          <span className="w-px h-6 bg-shabrang-teal/30" />
-          <ThemeToggle />
+          <nav className="flex items-center">
+            {navLinks.map(link => (
+              <Link
+                key={link.path}
+                href={`${basePath}${link.path}`}
+                className="text-frc-text-dim hover:text-frc-gold text-xs uppercase tracking-wider px-3 py-2 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </header>

@@ -598,6 +598,20 @@ export function getHomeConfig(lang: string = 'en'): HomeConfig | null {
   return null;
 }
 
+/** Get a single site-level page by id (from site/ directory) */
+export function getSitePage(lang: string, id: string): ParsedContent | null {
+  const p = path.join(CONTENT_DIR, lang, 'site', `${id}.md`);
+  if (!fs.existsSync(p)) {
+    // Fallback to English
+    const fallback = path.join(CONTENT_DIR, 'en', 'site', `${id}.md`);
+    if (!fs.existsSync(fallback)) return null;
+    const raw = fs.readFileSync(fallback, 'utf-8');
+    return parseFrontmatter(raw);
+  }
+  const raw = fs.readFileSync(p, 'utf-8');
+  return parseFrontmatter(raw);
+}
+
 /** Get a single article by id */
 export function getArticle(lang: string, id: string): ParsedContent | null {
   const dir = path.join(CONTENT_DIR, lang, 'articles');
@@ -663,7 +677,7 @@ export interface GlossaryItem {
 export interface PersonWorkItem {
   id: string;
   title: string;
-  type: 'paper' | 'concept' | 'book' | 'article' | 'blog' | 'topic';
+  type: 'paper' | 'concept' | 'book' | 'article' | 'blog' | 'topic' | 'art';
   url: string;
   date?: string;
 }
@@ -737,6 +751,7 @@ export function getWorkForPerson(
   consider(getArticles(lang), 'article');
   consider(getBlogPosts(lang), 'blog');
   consider(getBooks(lang), 'book');
+  consider(getArtItems(lang), 'art');
   consider(getConcepts(lang), 'concept');
   consider(getTopics(lang), 'topic');
 
@@ -753,6 +768,34 @@ export function getWorkForPerson(
 
 export type ContentPerspective = 'kasra' | 'river' | 'both';
 export type PerspectiveView = 'kasra' | 'river';
+
+/** Get all art/artifacts for a language */
+export function getArtItems(lang: string = 'en'): ParsedContent[] {
+  const dir = path.join(CONTENT_DIR, lang, 'art');
+  if (!fs.existsSync(dir)) return [];
+
+  return fs.readdirSync(dir)
+    .filter(f => f.endsWith('.md'))
+    .map(f => {
+      const raw = fs.readFileSync(path.join(dir, f), 'utf-8');
+      return parseFrontmatter(raw);
+    })
+    .sort((a, b) => (a.frontmatter.date || '').localeCompare(b.frontmatter.date || ''));
+}
+
+/** Get a single art item by id */
+export function getArtItem(lang: string, id: string): ParsedContent | null {
+  const dir = path.join(CONTENT_DIR, lang, 'art');
+  if (!fs.existsSync(dir)) return null;
+
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
+  for (const f of files) {
+    const raw = fs.readFileSync(path.join(dir, f), 'utf-8');
+    const parsed = parseFrontmatter(raw);
+    if (parsed.frontmatter.id === id) return parsed;
+  }
+  return null;
+}
 
 export function normalizeContentPerspective(p: unknown): ContentPerspective {
   if (p === 'kasra' || p === 'river' || p === 'both') return p;
@@ -872,6 +915,21 @@ export function getGlossary(
       excerpt: fm.abstract || fm.short_answer || 'No description available.',
       type: 'topic',
       url: `${urlBase}/topics/${fm.id}`,
+      perspective: normalizeContentPerspective(fm.perspective),
+    };
+  }
+
+  // Process Art
+  const artItems = getArtItems(lang);
+  for (const a of artItems) {
+    const fm = a.frontmatter;
+    const urlBase = pickBase(fm.perspective);
+    glossary[fm.id] = {
+      id: fm.id,
+      title: fm.title,
+      excerpt: fm.abstract || 'Artifact analysis.',
+      type: 'article', // Re-use article type for styling or add 'art' to GlossaryItem type
+      url: `${urlBase}/art/${fm.id}`,
       perspective: normalizeContentPerspective(fm.perspective),
     };
   }
@@ -1086,7 +1144,7 @@ export function extractWikilinks(body: string): WikiLink[] {
 
 // ─── SEO Helpers ────────────────────────────────────────────────────────────
 
-const SITE_URL = 'https://fractalresonance.com';
+const SITE_URL = 'https://shabrang.ca';
 
 export type ContentType = 'papers' | 'articles' | 'concepts' | 'books' | 'blog' | 'topics' | 'people';
 

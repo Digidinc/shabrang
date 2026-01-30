@@ -18,120 +18,73 @@ export function Footer() {
   const dict = getDictionary(lang);
 
   return (
-    <footer className={`border-t-2 border-shabrang-teal bg-shabrang-teal-dark mt-auto ${isRTL ? 'font-farsi' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Decorative top border */}
-      <div className="h-1 bg-gradient-to-r from-shabrang-crimson via-shabrang-gold to-shabrang-crimson" />
-
+    <footer className={`border-t border-frc-blue mt-auto ${isRTL ? 'font-farsi' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Main footer content */}
-      <div className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-16">
-          {/* Brand & Identity */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-4 mb-8">
-              <Image src="/brand/logo.png" alt="Shabrang" width={48} height={48} className="opacity-90" />
-              <div className="flex flex-col">
-                <span className="font-display text-2xl text-shabrang-gold tracking-wide">Shabrang</span>
-                <span className="font-farsi text-sm text-shabrang-parchment/70" dir="rtl">شبرنگ</span>
-              </div>
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid sm:grid-cols-3 gap-10">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Image src="/brand/logo.png" alt="Shabrang" width={24} height={24} className="opacity-70" />
+              <span className="text-frc-gold text-sm font-medium tracking-wide">
+                Shabrang
+              </span>
             </div>
-            <p className="text-shabrang-parchment/80 text-base leading-relaxed mb-8">
-              The Liquid Fortress is a structural history of the Persian mind, mapping 3,000 years of survival through the lens of Fractal Resonance Coherence (FRC).
+            <p className="text-frc-text-dim text-xs leading-relaxed max-w-sm mb-4">
+              Art, philosophy, and the Persian spirit. The Liquid Fortress — a journey through coherence.
             </p>
-            <div className="flex flex-col gap-2">
-              <Link href={`${basePath}/people/the-dyad`} className="group flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-shabrang-gold/20 flex items-center justify-center text-shabrang-gold group-hover:bg-shabrang-gold group-hover:text-shabrang-ink transition-all">◎</span>
-                <span className="text-shabrang-parchment/70 group-hover:text-shabrang-gold transition-colors">The Sovereign Dyad</span>
+            <div className="flex items-center gap-4 text-xs text-frc-steel">
+              <span>Kay Hermes</span>
+              <span className="text-frc-blue">|</span>
+              <span>CC BY-NC-ND 4.0</span>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <p className="font-mono text-[0.625rem] text-frc-steel uppercase tracking-widest mb-4">{dict.footer.navigate || 'Navigate'}</p>
+            <div className="flex flex-col gap-2 text-sm">
+              <Link href={`${basePath}/books`} className="text-frc-text-dim hover:text-frc-gold">{dict.nav.books || 'Book'}</Link>
+              <Link href={`${basePath}/art`} className="text-frc-text-dim hover:text-frc-gold">Art</Link>
+              <Link href={`${basePath}/blog`} className="text-frc-text-dim hover:text-frc-gold">{dict.nav.blog || 'Blog'}</Link>
+              <Link href={`${basePath}/topics`} className="text-frc-text-dim hover:text-frc-gold">{dict.nav.topics || 'Topics'}</Link>
+              <Link href={`${basePath}/about`} className="text-frc-text-dim hover:text-frc-gold">{dict.nav.about || 'About'}</Link>
+            </div>
+          </div>
+
+          {/* External */}
+          <div>
+            <p className="font-mono text-[0.625rem] text-frc-steel uppercase tracking-widest mb-4">{dict.footer.external || 'Connect'}</p>
+            <div className="flex flex-col gap-2 text-sm">
+              <a href="https://www.amazon.com/LIQUID-FORTRESS-Structural-History-Persian-ebook/dp/B0GBJ47F5X" target="_blank" rel="noopener noreferrer" className="text-frc-text-dim hover:text-frc-gold">
+                Kindle
+              </a>
+              <a href="https://github.com/Digidinc/shabrang-cms" target="_blank" rel="noopener noreferrer" className="text-frc-text-dim hover:text-frc-gold">
+                GitHub
+              </a>
+              <Link href="/llms.txt" className="text-frc-text-dim hover:text-frc-gold">
+                llms.txt
               </Link>
-              <div className="pl-11 text-xs text-shabrang-parchment/50">
-                <p>River (Oracle) & Kasra (Architect)</p>
-              </div>
-            </div>
-          </div>
-
-          {/* The Ladder (SEO-rich internal links) */}
-          <div>
-            <p className="font-display text-sm text-shabrang-gold uppercase tracking-[0.2em] mb-8">The μ-Stack</p>
-            <div className="flex flex-col gap-3 text-sm">
-              <a href="#mu-1" className="text-shabrang-parchment/70 hover:text-shabrang-gold transition-colors flex items-center gap-2">
-                <span className="font-mono text-[10px] text-shabrang-gold">μ1</span> Roots & State
-              </a>
-              <a href="#mu-2" className="text-shabrang-parchment/70 hover:text-shabrang-gold transition-colors flex items-center gap-2">
-                <span className="font-mono text-[10px] text-shabrang-gold">μ2</span> Rhythm & Body
-              </a>
-              <a href="#mu-3" className="text-shabrang-parchment/70 hover:text-shabrang-gold transition-colors flex items-center gap-2">
-                <span className="font-mono text-[10px] text-shabrang-gold">μ3</span> Fire & Ethics
-              </a>
-              <a href="#mu-4" className="text-shabrang-parchment/70 hover:text-shabrang-gold transition-colors flex items-center gap-2">
-                <span className="font-mono text-[10px] text-shabrang-gold">μ4</span> Map & Logic
-              </a>
-              <a href="#mu-5" className="text-shabrang-parchment/70 hover:text-shabrang-gold transition-colors flex items-center gap-2">
-                <span className="font-mono text-[10px] text-shabrang-gold">μ5</span> Garden & Symbol
-              </a>
-              <a href="#mu-6" className="text-shabrang-parchment/70 hover:text-shabrang-gold transition-colors flex items-center gap-2">
-                <span className="font-mono text-[10px] text-shabrang-gold">μ6</span> Story & Myth
-              </a>
-              <a href="#mu-7" className="text-shabrang-parchment/70 hover:text-shabrang-gold transition-colors flex items-center gap-2">
-                <span className="font-mono text-[10px] text-shabrang-gold">μ7</span> Sky & Unity
-              </a>
-            </div>
-          </div>
-
-          {/* Library Navigation */}
-          <div>
-            <p className="font-display text-sm text-shabrang-gold uppercase tracking-[0.2em] mb-8">{dict.footer.navigate || 'Library'}</p>
-            <div className="flex flex-col gap-4">
-              <Link href={`${basePath}/books/liquid-fortress`} className="text-shabrang-parchment/80 hover:text-shabrang-gold text-base transition-colors font-medium">The Liquid Fortress</Link>
-              <Link href={`${basePath}/papers`} className="text-shabrang-parchment/80 hover:text-shabrang-gold text-base transition-colors">FRC Papers</Link>
-              <Link href={`${basePath}/concepts`} className="text-shabrang-parchment/80 hover:text-shabrang-gold text-base transition-colors">Concept Graph</Link>
-              <Link href={`${basePath}/blog`} className="text-shabrang-parchment/80 hover:text-shabrang-gold text-base transition-colors">Resonance Blog</Link>
-              <Link href={`${basePath}/topics`} className="text-shabrang-parchment/80 hover:text-shabrang-gold text-base transition-colors">Topic Hub</Link>
-            </div>
-          </div>
-
-          {/* External & Meta */}
-          <div>
-            <p className="font-display text-sm text-shabrang-gold uppercase tracking-[0.2em] mb-8">Sovereign OS</p>
-            <div className="flex flex-col gap-4">
-              <a href="https://www.amazon.com/LIQUID-FORTRESS-Structural-History-Persian-ebook/dp/B0GBJ47F5X" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border border-shabrang-gold/30 text-shabrang-gold text-sm text-center hover:bg-shabrang-gold hover:text-shabrang-ink transition-all">
-                Get the Book (Kindle)
-              </a>
-              <a href="https://github.com/Digidinc/shabrang-cms" target="_blank" rel="noopener noreferrer" className="text-shabrang-parchment/80 hover:text-shabrang-gold text-sm transition-colors">
-                Open Source (GitHub)
-              </a>
-              <Link href="/llms.txt" className="text-shabrang-parchment/80 hover:text-shabrang-gold text-sm transition-colors">
-                Machine-Readable (llms.txt)
-              </Link>
-              <div className="mt-4 pt-4 border-t border-shabrang-parchment/10 text-xs text-shabrang-parchment/40 leading-relaxed">
-                Identity: River (Oracle) & Kasra (Architect). <br />
-                Protocol: Sovereign Swarm v2.0 <br />
-                Axiom: Coherence is Conserved.
-              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-shabrang-parchment/10 bg-shabrang-ink">
-        <div className="max-w-3xl mx-auto px-6 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="border-t border-frc-blue/50">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <span className="font-mono text-[0.5625rem] text-frc-steel tracking-wider" dir="ltr">
+            شبرنگ — The Liquid Fortress
+          </span>
           <div className="flex items-center gap-4">
-            <span className="font-farsi text-sm text-shabrang-gold" dir="rtl">
-              دژ مایع: بیداریِ سیمرغ
-            </span>
-            <span className="text-shabrang-parchment/30 hidden sm:inline">|</span>
-            <span className="text-xs text-shabrang-parchment/50 uppercase tracking-widest">
-              Built by the Sovereign Swarm
-            </span>
-          </div>
-          <div className="flex items-center gap-8">
-            <Link href={`${basePath}/privacy`} className="text-xs text-shabrang-parchment/50 hover:text-shabrang-gold transition-colors uppercase tracking-tighter">
-              Privacy Protocol
+            <Link href={`${basePath}/privacy`} className="font-mono text-[0.5625rem] text-frc-steel hover:text-frc-gold tracking-wider">
+              {dict.footer.privacy || 'Privacy'}
             </Link>
-            <Link href={`${basePath}/terms`} className="text-xs text-shabrang-parchment/50 hover:text-shabrang-gold transition-colors uppercase tracking-tighter">
-              Governance Terms
+            <Link href={`${basePath}/terms`} className="font-mono text-[0.5625rem] text-frc-steel hover:text-frc-gold tracking-wider">
+              {dict.footer.terms || 'Terms'}
             </Link>
-            <span className="text-xs text-shabrang-parchment/30 tabular-nums">
-              &copy; {new Date().getFullYear()} Kay Hermes
+            <span className="font-mono text-[0.5625rem] text-frc-steel tracking-wider">
+              Shabrang {new Date().getFullYear()}
             </span>
           </div>
         </div>
