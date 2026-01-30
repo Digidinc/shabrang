@@ -42,7 +42,7 @@ export function TopicsIndex({
           Topics
         </h1>
         <p className="text-shabrang-ink-dim text-lg max-w-2xl mx-auto leading-relaxed italic">
-          Questions, summaries, and spectrum views: authority citations, FRC answers, and multiple perspectives.
+          Questions, summaries, and spectrum views: authority citations, Shabrang answers, and multiple perspectives.
         </p>
       </header>
 

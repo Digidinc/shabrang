@@ -113,7 +113,7 @@ export default async function ArtifactPage({ params }: Props) {
       >
           {/* Breadcrumb */}
           <nav className="text-sm text-frc-text-dim mb-8">
-            <a href={basePath} className="hover:text-frc-gold">FRC</a>
+            <a href={basePath} className="hover:text-frc-gold">Shabrang</a>
             <span className="mx-2">/</span>
             <a href={`${basePath}/art`} className="hover:text-frc-gold">Imaginal Gallery</a>
             <span className="mx-2">/</span>

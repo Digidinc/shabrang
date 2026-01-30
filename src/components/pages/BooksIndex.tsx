@@ -19,7 +19,7 @@ export function BooksIndex({
       <header className="mb-12">
         <h1 className="text-3xl font-light text-frc-gold mb-3">Books</h1>
         <p className="text-frc-text-dim">
-          Longer-form writing (textbooks, primers, and narrative frames) for the FRC project.
+          Longer-form writing (textbooks, primers, and narrative frames) for Shabrang.
         </p>
       </header>
 

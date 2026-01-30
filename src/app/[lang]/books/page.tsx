@@ -5,7 +5,7 @@ import { BooksSidebar } from '@/components/BooksSidebar';
 
 export const metadata: Metadata = {
   title: 'Books',
-  description: 'Longer-form writing for the FRC project (primers, textbooks, and narrative frames).',
+  description: 'Longer-form writing for Shabrang (primers, textbooks, and narrative frames).',
 };
 
 export function generateStaticParams() {

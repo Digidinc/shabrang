@@ -4,7 +4,7 @@ import { MuseumIndex, type ArtifactItem } from '@/components/pages/MuseumIndex';
 
 export const metadata: Metadata = {
   title: 'The Imaginal Gallery | Museum of Coherence',
-  description: 'Reading history through the FRC lens. A collection of Persian artifacts analyzed through the physics of resonance and survival.',
+  description: 'Reading history through the Shabrang lens. A collection of Persian artifacts analyzed through the physics of resonance and survival.',
 };
 
 export function generateStaticParams() {

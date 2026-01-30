@@ -89,7 +89,7 @@ export function ArticlesIndex({
               <div className="relative w-full aspect-video overflow-hidden bg-frc-void-light">
                 <iframe
                   src="https://www.youtube.com/embed/acrYUKagkyM"
-                  title="FRC Introduction"
+                  title="Shabrang Introduction"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full"

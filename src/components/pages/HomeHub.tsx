@@ -55,7 +55,7 @@ export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveV
               <div className="flex items-center gap-4 mb-8">
                 <Image
                   src="/brand/sigil-64.png"
-                  alt="FRC Attractor"
+                  alt="Shabrang Sigil"
                   width={56}
                   height={56}
                   className="opacity-90"
@@ -104,7 +104,7 @@ export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveV
                 href={`${basePath}/about`}
                 className="px-6 py-3 border border-frc-blue hover:border-frc-text-dim text-frc-text-dim hover:text-frc-text text-sm tracking-wide uppercase transition-all duration-200"
               >
-                About FRC
+                About
               </Link>
             </div>
           </div>
@@ -156,7 +156,7 @@ export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveV
               <div className="relative w-full aspect-video overflow-hidden bg-frc-void-light">
                 <iframe
                   src="https://www.youtube.com/embed/acrYUKagkyM"
-                  title="FRC Introduction"
+                  title="Shabrang Introduction"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full"

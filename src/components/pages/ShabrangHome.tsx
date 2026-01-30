@@ -762,7 +762,7 @@ export function ShabrangHome({ lang }: { lang: string }) {
             <div className="section-header">
               <h2 className="section-title">The Book</h2>
               <p className="section-description">
-                30 illustrated chapters exploring 3,000 years of Persian cultural survival through the FRC framework.
+                30 illustrated chapters exploring 3,000 years of Persian cultural survival through the Shabrang framework.
               </p>
             </div>
             <div className="book-feature">

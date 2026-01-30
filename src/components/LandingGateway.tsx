@@ -35,7 +35,7 @@ export function LandingGateway() {
         <div className="mb-8 animate-fade-up">
           <Image
             src="/brand/sigil-64.png"
-            alt="FRC"
+            alt="Shabrang"
             width={64}
             height={64}
             className="mx-auto opacity-80"
@@ -131,7 +131,7 @@ export function LandingGateway() {
       {/* Bottom attribution */}
       <div className="absolute bottom-6 left-0 right-0 text-center">
         <p className="text-frc-steel text-xs font-mono">
-          FRC — H. Servat — 2024
+          Shabrang — Kay Hermes — 2025
         </p>
       </div>
     </main>

@@ -134,7 +134,7 @@ export default async function BookChapterPage({ params }: Props) {
         right={<TableOfContents items={tocItems} minBreakpoint="lg" title="In this chapter" />}
       >
           <nav className="text-sm text-frc-text-dim mb-8">
-            <a href={basePath} className="hover:text-frc-gold">FRC</a>
+            <a href={basePath} className="hover:text-frc-gold">Shabrang</a>
             <span className="mx-2">/</span>
             <a href={`${basePath}/books`} className="hover:text-frc-gold">Books</a>
             <span className="mx-2">/</span>
