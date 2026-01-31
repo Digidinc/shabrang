@@ -1,0 +1,225 @@
+name: Moderate Discussion Comments
+
+on:
+  discussion_comment:
+    types: [created]
+
+jobs:
+  moderate:
+    runs-on: ubuntu-latest
+    permissions:
+      discussions: write
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get discussion and comment details
+        id: get_details
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { discussion_comment, discussion } = context.payload;
+
+            // Extract page ID from discussion title
+            // Expected format: "chapter-slug", "blog-id", "art-id"
+            const pageId = discussion.title;
+
+            // Get comment body and author
+            const comment = discussion_comment.body;
+            const author = discussion_comment.user.login;
+            const commentId = discussion_comment.id;
+            const discussionId = discussion.number;
+
+            core.setOutput('pageId', pageId);
+            core.setOutput('comment', comment);
+            core.setOutput('author', author);
+            core.setOutput('commentId', commentId);
+            core.setOutput('discussionId', discussionId);
+
+            console.log('Processing comment:', {
+              pageId,
+              author,
+              commentId,
+              discussionId
+            });
+
+      - name: Call AI Council for moderation
+        id: moderate
+        env:
+          COMMENT_BODY: ${{ steps.get_details.outputs.comment }}
+          AUTHOR: ${{ steps.get_details.outputs.author }}
+          PAGE_ID: ${{ steps.get_details.outputs.pageId }}
+          COMMENT_ID: ${{ steps.get_details.outputs.commentId }}
+          DISCUSSION_ID: ${{ steps.get_details.outputs.discussionId }}
+          AI_COUNCIL_URL: ${{ secrets.AI_COUNCIL_URL }}
+        run: |
+          # Create JSON payload securely using jq
+          PAYLOAD=$(jq -n \
+            --arg comment "$COMMENT_BODY" \
+            --arg author "$AUTHOR" \
+            --arg pageId "$PAGE_ID" \
+            --argjson commentId "$COMMENT_ID" \
+            --argjson discussionId "$DISCUSSION_ID" \
+            '{
+              comment: $comment,
+              author: $author,
+              pageId: $pageId,
+              commentId: $commentId,
+              discussionId: $discussionId
+            }')
+
+          # Call Cloudflare Worker to moderate the comment
+          RESPONSE=$(curl -s -X POST "${AI_COUNCIL_URL}/moderate" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD")
+
+          echo "AI Response: $RESPONSE"
+
+          # Parse response
+          DECISION=$(echo "$RESPONSE" | jq -r '.decision // "pending"')
+          REASON=$(echo "$RESPONSE" | jq -r '.reason // "Unknown"')
+          CONFIDENCE=$(echo "$RESPONSE" | jq -r '.confidence // 0.5')
+          LABELS=$(echo "$RESPONSE" | jq -r '.suggestedLabels // [] | join(",")')
+
+          echo "decision=$DECISION" >> $GITHUB_OUTPUT
+          echo "reason=$REASON" >> $GITHUB_OUTPUT
+          echo "confidence=$CONFIDENCE" >> $GITHUB_OUTPUT
+          echo "labels=$LABELS" >> $GITHUB_OUTPUT
+
+          echo "Moderation decision: $DECISION (confidence: $CONFIDENCE)"
+          echo "Reason: $REASON"
+          echo "Suggested labels: $LABELS"
+
+      - name: Apply moderation labels
+        uses: actions/github-script@v7
+        env:
+          DECISION: ${{ steps.moderate.outputs.decision }}
+          REASON: ${{ steps.moderate.outputs.reason }}
+          CONFIDENCE: ${{ steps.moderate.outputs.confidence }}
+          LABELS: ${{ steps.moderate.outputs.labels }}
+        with:
+          script: |
+            const { discussion_comment, discussion, repository } = context.payload;
+            const decision = process.env.DECISION;
+            const reason = process.env.REASON;
+            const confidence = parseFloat(process.env.CONFIDENCE);
+            const suggestedLabels = process.env.LABELS.split(',').filter(Boolean);
+
+            // Determine status label
+            let statusLabel;
+            switch (decision) {
+              case 'approved':
+                statusLabel = 'approved';
+                break;
+              case 'rejected':
+                statusLabel = 'rejected';
+                break;
+              default:
+                statusLabel = 'pending-review';
+            }
+
+            // Add status label to the discussion
+            try {
+              await github.rest.issues.addLabels({
+                owner: repository.owner.login,
+                repo: repository.name,
+                issue_number: discussion.number,
+                labels: [statusLabel]
+              });
+              console.log(`Added label: ${statusLabel}`);
+            } catch (error) {
+              console.error(`Failed to add status label: ${error.message}`);
+            }
+
+            // Add dialectic labels if suggested (only for approved comments)
+            if (decision === 'approved' && suggestedLabels.length > 0) {
+              const dialecticLabels = suggestedLabels.filter(l =>
+                ['thesis', 'antithesis', 'synthesis'].includes(l)
+              );
+
+              if (dialecticLabels.length > 0) {
+                try {
+                  await github.rest.issues.addLabels({
+                    owner: repository.owner.login,
+                    repo: repository.name,
+                    issue_number: discussion.number,
+                    labels: dialecticLabels
+                  });
+                  console.log(`Added dialectic labels: ${dialecticLabels.join(', ')}`);
+                } catch (error) {
+                  console.error(`Failed to add dialectic labels: ${error.message}`);
+                }
+              }
+            }
+
+            // Post a comment with the moderation decision (only for pending/rejected)
+            if (decision !== 'approved') {
+              const emoji = decision === 'rejected' ? '❌' : '⏳';
+              const status = decision === 'rejected' ? 'REJECTED' : 'PENDING REVIEW';
+
+              const moderationComment = `${emoji} **Comment ${status}**
+
+**AI Council Decision:** ${decision}
+**Confidence:** ${(confidence * 100).toFixed(0)}%
+**Reason:** ${reason}
+
+${decision === 'pending'
+  ? 'This comment will be reviewed by a human moderator within 24 hours.'
+  : 'This comment does not meet the dialectic standards. Please review the [contribution guidelines](https://github.com/${repository.owner.login}/${repository.name}/blob/main/docs/DIALECTIC_GUIDE.md).'}
+
+If you believe this decision is incorrect, please reply with \`@appeal\` and explain why.`;
+
+              try {
+                await github.rest.discussions.createDiscussionComment({
+                  owner: repository.owner.login,
+                  repo: repository.name,
+                  discussion_number: discussion.number,
+                  body: moderationComment
+                });
+                console.log('Posted moderation comment');
+              } catch (error) {
+                console.error(`Failed to post moderation comment: ${error.message}`);
+              }
+            } else {
+              console.log('Comment approved - no moderation message posted');
+            }
+
+      - name: Notify maintainers (if pending)
+        if: steps.moderate.outputs.decision == 'pending'
+        uses: actions/github-script@v7
+        env:
+          AUTHOR: ${{ steps.get_details.outputs.author }}
+          REASON: ${{ steps.moderate.outputs.reason }}
+          CONFIDENCE: ${{ steps.moderate.outputs.confidence }}
+        with:
+          script: |
+            const { discussion, repository } = context.payload;
+            const author = process.env.AUTHOR;
+            const reason = process.env.REASON;
+            const confidence = process.env.CONFIDENCE;
+
+            // Create an issue for human review
+            try {
+              await github.rest.issues.create({
+                owner: repository.owner.login,
+                repo: repository.name,
+                title: `[Moderation] Review comment in ${discussion.title}`,
+                body: `A comment requires human review.
+
+**Discussion:** ${discussion.title}
+**Author:** @${author}
+**Link:** ${discussion.html_url}
+
+**AI Reason:** ${reason}
+**Confidence:** ${confidence}
+
+Please review the comment and add the appropriate label (\`approved\`, \`rejected\`, or leave as \`pending-review\`).`,
+                labels: ['moderation', 'pending-review']
+              });
+              console.log('Created moderation review issue');
+            } catch (error) {
+              console.error(`Failed to create review issue: ${error.message}`);
+            }
