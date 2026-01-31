@@ -81,12 +81,9 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
 
         const allComments = await commentsResponse.json();
 
-        // Filter for approved comments only
-        const approvedComments = allComments.filter((comment: any) =>
-          comment.labels?.some((label: any) => label.name === 'approved')
-        );
-
-        setComments(approvedComments);
+        // For now, show all comments (we'll add moderation filtering later)
+        // TODO: Implement moderation via discussion categories or special comments
+        setComments(allComments);
       } catch (err) {
         console.error('Error loading comments:', err);
         setError(err instanceof Error ? err.message : 'Unknown error');
@@ -173,7 +170,18 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
 }
 
 function CommentCard({ comment }: { comment: GitHubComment }) {
-  const dialecticLabel = getDialecticLabel(comment);
+  // For now, determine label from comment text (simple heuristic)
+  // TODO: Implement proper moderation system
+  const commentText = comment.body.toLowerCase();
+  let dialecticLabel: 'thesis' | 'antithesis' | 'synthesis' | null = null;
+
+  if (commentText.includes('synthesis') || commentText.includes('both')) {
+    dialecticLabel = 'synthesis';
+  } else if (commentText.includes('scientific') || commentText.includes('technical')) {
+    dialecticLabel = 'thesis';
+  } else if (commentText.includes('mystic') || commentText.includes('poetic')) {
+    dialecticLabel = 'antithesis';
+  }
 
   // Sanitize HTML from GitHub to prevent XSS
   const sanitizedHtml = useMemo(() => {
