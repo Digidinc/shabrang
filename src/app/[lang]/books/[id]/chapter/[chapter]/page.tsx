@@ -5,9 +5,9 @@ import { SchemaScript } from '@/components/SchemaScript';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { ContentDigest } from '@/components/ContentDigest';
 import { BooksSidebar } from '@/components/BooksSidebar';
-import { TableOfContents } from '@/components/TableOfContents';
 import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
+import { DramaStream } from '@/components/DramaStream';
 import {
   estimateReadTime,
   getBook,
@@ -17,6 +17,7 @@ import {
   getGlossary,
   getAlternateLanguages,
   matchesPerspectiveView,
+  getDramaForChapter,
 } from '@/lib/content';
 import { findChapterBySlug, deriveChaptersFromMarkdown } from '@/lib/bookChapters';
 import { schemaPaperPage, schemaChapter } from '@/lib/schema';
@@ -61,8 +62,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const fm = book.frontmatter;
   const author = fm.author || 'H. Servat';
-  const bookUrl = `https://shabrang.ca/${lang}/books/${fm.id}`;
+  
+  // Logical Canonical: Technical FRC books point to fractalresonance.com, 
+  // while the primary narrative (Liquid Fortress) is canonical to shabrang.ca
+  const isTechnicalFrc = fm.id.startsWith('frc-');
+  const canonicalBase = isTechnicalFrc ? 'https://fractalresonance.com' : 'https://shabrang.ca';
+  const bookUrl = `${canonicalBase}/${lang}/books/${fm.id}`;
   const chapterUrl = `${bookUrl}/chapter/${ch.slug}`;
+  
   const alternates = getAlternateLanguages('books', fm.id);
 
   // Avoid duplicate-content SEO issues: chapter pages are for UX/digestibility.
@@ -112,6 +119,7 @@ export default async function BookChapterPage({ params }: Props) {
   const renderedBody = renderMarkdown(current.markdown, lang, glossary, basePath);
   const tocItems = extractTocItems(current.markdown).filter((t) => t.level === 2);
   const chapterItems = getChapterList(book.body);
+  const drama = getDramaForChapter(lang, id, chapter);
 
   const chapterMeta = {
     id: current.slug,
@@ -131,69 +139,86 @@ export default async function BookChapterPage({ params }: Props) {
       <PageShell
         leftMobile={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} activeChapterSlug={chapter} basePath={basePath} view="kasra" variant="mobile" />}
         leftDesktop={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} activeChapterSlug={chapter} basePath={basePath} view="kasra" />}
-        right={<TableOfContents items={tocItems} minBreakpoint="lg" title="In this chapter" />}
+        articleClassName="shabrang-content-full"
       >
-          <nav className="text-sm text-frc-text-dim mb-8">
-            <a href={basePath} className="hover:text-frc-gold">Shabrang</a>
-            <span className="mx-2">/</span>
-            <a href={`${basePath}/books`} className="hover:text-frc-gold">Books</a>
-            <span className="mx-2">/</span>
-            <a href={`${basePath}/books/${id}`} className="hover:text-frc-gold">{book.frontmatter.title}</a>
-            <span className="mx-2">/</span>
-            <span className="text-frc-text">{current.title}</span>
-          </nav>
+        <div className="bifocal-container">
+          {/* Left Column: The Signal (Untouched Book Content) */}
+          <div className="bifocal-signal">
+            <nav className="text-sm text-shabrang-ink-dim mb-8">
+              <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
+              <span className="mx-2">/</span>
+              <a href={`${basePath}/books`} className="hover:text-shabrang-gold">Books</a>
+              <span className="mx-2">/</span>
+              <a href={`${basePath}/books/${id}`} className="hover:text-shabrang-gold">{book.frontmatter.title}</a>
+              <span className="mx-2">/</span>
+              <span className="text-shabrang-ink">{current.title}</span>
+            </nav>
 
-          <header className="mb-8">
-            <h1 className="text-2xl font-light text-frc-gold mb-2">{book.frontmatter.title}</h1>
-            <p className="text-frc-text-dim">{current.title}</p>
+            <header className="mb-8">
+              <div className="text-sm font-light text-shabrang-gold mb-2 uppercase tracking-wide">{book.frontmatter.title}</div>
+              <h1 className="text-2xl text-shabrang-ink mb-3">{current.title}</h1>
 
-            <div className="flex flex-wrap gap-4 text-sm text-frc-text-dim mt-3">
-              <span>{book.frontmatter.author || 'H. Servat'}</span>
-              {book.frontmatter.date && <span>{book.frontmatter.date}</span>}
-              <span className="font-mono text-xs">{readTime}</span>
-              <Link href={`${basePath}/books/${id}`} className="tag hover:text-frc-gold hover:border-frc-gold transition-colors">
-                Full book
-              </Link>
+              <div className="flex flex-wrap gap-4 text-sm text-shabrang-ink-dim mt-3">
+                <span>{book.frontmatter.author || 'H. Servat'}</span>
+                {book.frontmatter.date && <span>{book.frontmatter.date}</span>}
+                <span className="font-mono text-xs">{readTime}</span>
+                <Link href={`${basePath}/books/${id}`} className="tag hover:text-shabrang-gold hover:border-shabrang-gold transition-colors">
+                  Full book
+                </Link>
+              </div>
+            </header>
+
+            <ContentDigest
+              tldr={fm.tldr}
+              keyPoints={fm.key_points}
+              prerequisites={(fm.prerequisites || []).map((pid) => ({ id: pid, title: pid, href: `${basePath}/concepts/${pid}` }))}
+              readTime={readTime}
+            />
+
+            <div className="flex items-center justify-between gap-4 my-8">
+              {prev ? (
+                <Link className="text-sm text-shabrang-ink-dim hover:text-shabrang-gold" href={`${basePath}/books/${id}/chapter/${prev.slug}`}>
+                  ← {prev.title}
+                </Link>
+              ) : (
+                <span />
+              )}
+              {next ? (
+                <Link className="text-sm text-shabrang-ink-dim hover:text-shabrang-gold text-right" href={`${basePath}/books/${id}/chapter/${next.slug}`}>
+                  {next.title} →
+                </Link>
+              ) : (
+                <span />
+              )}
             </div>
-          </header>
 
-          <ContentDigest
-            tldr={fm.tldr}
-            keyPoints={fm.key_points}
-            prerequisites={(fm.prerequisites || []).map((pid) => ({ id: pid, title: pid, href: `${basePath}/concepts/${pid}` }))}
-            readTime={readTime}
-          />
+            <InlineToc items={tocItems} />
 
-          <div className="flex items-center justify-between gap-4 my-8">
-            {prev ? (
-              <Link className="text-sm text-frc-text-dim hover:text-frc-gold" href={`${basePath}/books/${id}/chapter/${prev.slug}`}>
-                ← {prev.title}
-              </Link>
-            ) : (
-              <span />
-            )}
-            {next ? (
-              <Link className="text-sm text-frc-text-dim hover:text-frc-gold text-right" href={`${basePath}/books/${id}/chapter/${next.slug}`}>
-                {next.title} →
-              </Link>
-            ) : (
-              <span />
+            <article className="prose prose-invert max-w-none">
+              <MarkdownContent 
+                html={renderedBody} 
+                bookId={id} 
+                chapterSlug={chapter} 
+                lang={lang} 
+                glossary={glossary} 
+                drama={drama}
+              />
+            </article>
+
+            {next && (
+              <div className="mt-12 pt-8 border-t border-shabrang-teal/20">
+                <Link className="inline-flex items-center gap-2 text-shabrang-teal hover:text-shabrang-gold hover:underline" href={`${basePath}/books/${id}/chapter/${next.slug}`}>
+                  Continue: {next.title} →
+                </Link>
+              </div>
             )}
           </div>
 
-          <InlineToc items={tocItems} />
-
-          <article className="prose prose-invert max-w-none">
-            <MarkdownContent html={renderedBody} />
-          </article>
-
-          {next && (
-            <div className="mt-12 pt-8 border-t border-frc-blue/30">
-              <Link className="inline-flex items-center gap-2 text-frc-gold hover:underline" href={`${basePath}/books/${id}/chapter/${next.slug}`}>
-                Continue: {next.title} →
-              </Link>
-            </div>
-          )}
+          {/* Right Column: The Drama (Opinions & Perspectives) */}
+          <div className="bifocal-drama">
+            <DramaStream drama={drama} lang={lang} />
+          </div>
+        </div>
       </PageShell>
     </>
   );

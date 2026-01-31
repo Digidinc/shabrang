@@ -5,6 +5,7 @@ author: Kay Hermes
 date: 2025-01-01
 lang: en
 status: published
+cover: /images/books/liquid-fortress/cover.png
 abstract: A journey through Persian philosophy, coherence, and the architecture of meaning. The Liquid Fortress explores ancient wisdom through modern eyes.
 tags: [book, persian-philosophy, coherence, qanat]
 ---

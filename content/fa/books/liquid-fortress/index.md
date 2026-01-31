@@ -6,6 +6,7 @@ date: 2026-01-30
 lang: fa
 status: published
 perspective: both
+cover: /images/books/liquid-fortress/cover.png
 abstract: سفری به اعماقِ فلسفه‌یِ ایرانی، همدوسی و معماریِ معنا. دژِ مایع حکمتِ باستان را از دریچه‌یِ فیزیکِ مدرن بازخوانی می‌کند.
 tags: [book, persian-philosophy, coherence, quantum, resonance]
 ---

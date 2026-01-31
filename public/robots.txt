@@ -14,7 +14,7 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-Sitemap: https://fractalresonance.com/sitemap.xml
+Sitemap: https://shabrang.ca/sitemap.xml
 
 # AI/LLM discovery
-# See: https://fractalresonance.com/llms.txt
+# See: https://shabrang.ca/llms.txt

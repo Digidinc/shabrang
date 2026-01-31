@@ -1036,6 +1036,65 @@ a:hover {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   BIFOCAL LAYOUT: Signal & Drama
+   ═══════════════════════════════════════════════════════════════ */
+
+.bifocal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .bifocal-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .bifocal-signal {
+    flex: 1;
+    min-width: 0;
+    max-width: 750px;
+    border-right: 1px solid var(--color-shabrang-gold);
+    padding-right: 3rem;
+  }
+
+  .bifocal-drama {
+    width: 400px;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding-left: 1rem;
+  }
+}
+
+.drama-card {
+  background: var(--color-shabrang-white);
+  border: 1px solid var(--color-shabrang-gold);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.drama-card:hover {
+  box-shadow: 4px 4px 0 var(--color-shabrang-gold);
+}
+
+.drama-horse-tag {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    READING MODE
    Immersive reading experience - hides chrome, centers content
    ═══════════════════════════════════════════════════════════════ */

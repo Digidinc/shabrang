@@ -8,8 +8,16 @@ function getBasePath(lang: string, view: PerspectiveView): string {
   return view === 'river' ? `/${lang}/river` : `/${lang}`;
 }
 
+/** Map horse perspectives to their base UI layouts */
+function getLayoutKey(view: PerspectiveView): 'river' | 'kasra' {
+  if (view === 'shabrang' || view === 'shabdiz') return 'river';
+  if (view === 'rakhsh') return 'kasra';
+  return view;
+}
+
 export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveView }) {
   const basePath = getBasePath(lang, view);
+  const layoutKey = getLayoutKey(view);
   const papers = getPapers(lang);
   const glossary = getGlossary(lang, { basePath, view });
   const home = getHomeConfig(lang);
@@ -25,7 +33,7 @@ export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveV
     return `${basePath}/concepts/${target}`;
   };
 
-  const startHere = (home?.startHere?.[view] || []).map((it, idx) => ({
+  const startHere = (home?.startHere?.[layoutKey] || []).map((it, idx) => ({
     k: it.k || String(idx + 1).padStart(2, '0'),
     title: it.title || '',
     desc: it.desc || '',
@@ -74,8 +82,8 @@ export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveV
                 through coherence.
               </p>
               <p className="text-frc-text-dim text-sm sm:text-base leading-relaxed font-light">
-                {home?.intros?.[view] ||
-                  (view === 'river'
+                {home?.intros?.[layoutKey] ||
+                  (layoutKey === 'river'
                     ? 'River mode: meaning first. Start with the narrative arc, then use the equations as anchors.'
                     : 'Kasra mode: equations first. Start from reciprocity, then follow UCC dynamics into falsifiable predictions.')}
               </p>

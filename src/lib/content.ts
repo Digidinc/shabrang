@@ -14,14 +14,14 @@ const CONTENT_DIR = path.join(process.cwd(), 'content');
 
 // ─── Frontmatter Parser ────────────────────────────────────────────────────
 
-interface RawFrontmatter {
+export interface RawFrontmatter {
   title: string;
   id: string;
   series?: string;
   author?: string;
   date?: string;
   status?: string;
-  perspective?: 'kasra' | 'river' | 'both';
+  perspective?: 'kasra' | 'river' | 'both' | 'shabrang' | 'rakhsh' | 'shabdiz';
   // Authorial voice used for labeling content (independent of visibility perspective).
   voice?: string;
   // Multiple voices (preferred over `voice` when present).
@@ -48,6 +48,7 @@ interface RawFrontmatter {
     url?: string;
   }>;
   tags?: string[];
+  cover?: string;
   abstract?: string;
   tldr?: string;
   key_points?: string[];
@@ -533,6 +534,42 @@ export function getBookChapters(lang: string, id: string): BookChapter[] {
   });
 }
 
+export type HorseType = 'shabrang' | 'rakhsh' | 'shabdiz';
+
+export interface DramaEntry {
+  horse: HorseType;
+  content: string;
+  source?: string;
+  date?: string;
+}
+
+export interface DramaSet {
+  shabrang: DramaEntry | null;
+  rakhsh: DramaEntry | null;
+  shabdiz: DramaEntry | null;
+}
+
+/** Get all drama/commentary for a specific chapter to be pre-rendered */
+export function getDramaForChapter(lang: string, bookId: string, chapterSlug: string): Record<string, DramaSet> {
+  const dramaDir = path.join(CONTENT_DIR, lang, 'drama', bookId, chapterSlug);
+  const results: Record<string, DramaSet> = {};
+
+  if (!fs.existsSync(dramaDir)) return results;
+
+  const files = fs.readdirSync(dramaDir).filter(f => f.endsWith('.json'));
+  for (const f of files) {
+    const anchorId = f.replace('.json', '');
+    try {
+      const data = fs.readFileSync(path.join(dramaDir, f), 'utf-8');
+      results[anchorId] = JSON.parse(data);
+    } catch (e) {
+      // Skip invalid JSON
+    }
+  }
+
+  return results;
+}
+
 function sortChapterFilenames(a: string, b: string): number {
   const numA = a.match(/(\d+)/)?.[1];
   const numB = b.match(/(\d+)/)?.[1];
@@ -766,8 +803,8 @@ export function getWorkForPerson(
   return results;
 }
 
-export type ContentPerspective = 'kasra' | 'river' | 'both';
-export type PerspectiveView = 'kasra' | 'river';
+export type ContentPerspective = 'kasra' | 'river' | 'both' | 'shabrang' | 'rakhsh' | 'shabdiz';
+export type PerspectiveView = 'kasra' | 'river' | 'shabrang' | 'rakhsh' | 'shabdiz';
 
 /** Get all art/artifacts for a language */
 export function getArtItems(lang: string = 'en'): ParsedContent[] {
@@ -798,13 +835,17 @@ export function getArtItem(lang: string, id: string): ParsedContent | null {
 }
 
 export function normalizeContentPerspective(p: unknown): ContentPerspective {
-  if (p === 'kasra' || p === 'river' || p === 'both') return p;
+  if (p === 'kasra' || p === 'river' || p === 'both' || p === 'shabrang' || p === 'rakhsh' || p === 'shabdiz') return p;
   // Default: current corpus is Kasra unless explicitly marked otherwise.
   return 'kasra';
 }
 
 export function matchesPerspectiveView(p: unknown, view: PerspectiveView): boolean {
   const norm = normalizeContentPerspective(p);
+  // Horse views show their own content + 'both'
+  if (view === 'shabrang' || view === 'rakhsh' || view === 'shabdiz') {
+    return norm === view || norm === 'both';
+  }
   // River view is a "digest layer" over the whole corpus: it includes Kasra + River content by default.
   // Kasra view remains strict: only Kasra + Both.
   if (view === 'river') return true;

@@ -10,6 +10,8 @@ import sanitizeHtml from 'sanitize-html';
 import { createPortal } from 'react-dom';
 import renderMathInElement from 'katex/contrib/auto-render';
 import 'katex/dist/katex.min.css';
+import { ThreeHorseDrama } from './ThreeHorseDrama';
+import type { DramaSet } from '@/lib/content';
 
 interface GlossaryItem {
   id: string;
@@ -22,6 +24,10 @@ interface GlossaryItem {
 interface MarkdownContentProps {
   html: string;
   glossary?: Record<string, GlossaryItem>;
+  bookId?: string;
+  chapterSlug?: string;
+  lang?: string;
+  drama?: Record<string, DramaSet>;
 }
 
 const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
@@ -58,10 +64,12 @@ const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   },
 };
 
-export function MarkdownContent({ html, glossary }: MarkdownContentProps) {
+export function MarkdownContent({ html, glossary, bookId, chapterSlug, lang = 'en', drama }: MarkdownContentProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [sanitizedHtml, setSanitizedHtml] = useState('');
-  
+  // CRITICAL for SEO: Sanitize immediately so content is available in initial render for crawlers
+  const [sanitizedHtml, setSanitizedHtml] = useState(() => sanitizeHtml(html, SANITIZE_OPTIONS));
+  const [h3Elements, setH3Elements] = useState<Array<{id: string, el: HTMLElement}>>([]);
+
   // Tooltip state
   const [hoveredLink, setHoveredLink] = useState<{
     id: string;
@@ -69,14 +77,20 @@ export function MarkdownContent({ html, glossary }: MarkdownContentProps) {
   } | null>(null);
 
   useEffect(() => {
-    // Sanitize on mount/change to avoid hydration mismatch if we used dangerouslySetInnerHTML directly with SSR
-    // But since this is a client component receiving HTML string, we can just sanitize and set.
-    setSanitizedHtml(sanitizeHtml(html, SANITIZE_OPTIONS));
+    // Re-sanitize if HTML changes (for client-side navigation)
+    const sanitized = sanitizeHtml(html, SANITIZE_OPTIONS);
+    setSanitizedHtml(sanitized);
   }, [html]);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+
+    // Detect H3s for drama injection
+    if (bookId && chapterSlug) {
+      const h3s = Array.from(container.querySelectorAll('h3'));
+      setH3Elements(h3s.map(h => ({ id: h.id, el: h })));
+    }
 
     // Math: render $...$ and $$...$$ using KaTeX auto-render.
     // Content is local markdown, so we can keep options permissive.
@@ -143,6 +157,19 @@ export function MarkdownContent({ html, glossary }: MarkdownContentProps) {
           rect={hoveredLink.rect} 
         />
       )}
+      {bookId && chapterSlug && h3Elements.map(({ id, el }) => (
+        createPortal(
+          <ThreeHorseDrama 
+            key={id}
+            lang={lang}
+            bookId={bookId}
+            chapterSlug={chapterSlug}
+            headerId={id}
+            entries={drama?.[id] || { shabrang: null, rakhsh: null, shabdiz: null }}
+          />,
+          el.parentElement!,
+        )
+      ))}
     </>
   );
 }

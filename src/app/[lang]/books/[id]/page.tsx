@@ -35,7 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const fm = book.frontmatter;
   const author = fm.author || 'H. Servat';
-  const bookUrl = `https://shabrang.ca/${lang}/books/${fm.id}`;
+  
+  // Logical Canonical: Technical FRC books point to fractalresonance.com, 
+  // while the primary narrative (Liquid Fortress) is canonical to shabrang.ca
+  const isTechnicalFrc = fm.id.startsWith('frc-');
+  const canonicalBase = isTechnicalFrc ? 'https://fractalresonance.com' : 'https://shabrang.ca';
+  const bookUrl = `${canonicalBase}/${lang}/books/${fm.id}`;
+  
   const alternates = getAlternateLanguages('books', fm.id);
 
   return {
