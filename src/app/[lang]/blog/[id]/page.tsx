@@ -10,6 +10,7 @@ import { TableOfContents } from '@/components/TableOfContents';
 import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
 import { VoiceTag } from '@/components/VoiceTag';
+import { GitHubDialectic } from '@/components/GitHubDialectic';
 import { estimateReadTime, getBlogPost, getBlogPosts, getLanguages, toPaperMeta, buildBacklinks, getGlossary, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
 
@@ -93,7 +94,15 @@ export default async function BlogPostPage({ params }: Props) {
       <PageShell
         leftMobile={<BlogSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" variant="mobile" />}
         leftDesktop={<BlogSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" />}
-        right={<TableOfContents items={tocItems} />}
+        right={
+          <>
+            <GitHubDialectic
+              pageId={`blog-${id}`}
+              pageTitle={fm.title as string}
+            />
+            <TableOfContents items={tocItems} />
+          </>
+        }
       >
         {/* Breadcrumb */}
         <nav className="text-sm text-frc-text-dim mb-8">

@@ -8,6 +8,7 @@ import { BooksSidebar } from '@/components/BooksSidebar';
 import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
 import { DramaStream } from '@/components/DramaStream';
+import { GitHubDialectic } from '@/components/GitHubDialectic';
 import {
   estimateReadTime,
   getBook,
@@ -216,6 +217,10 @@ export default async function BookChapterPage({ params }: Props) {
 
           {/* Right Column: The Drama (Opinions & Perspectives) */}
           <div className="bifocal-drama">
+            <GitHubDialectic
+              pageId={`chapter-${current.slug}`}
+              pageTitle={current.title}
+            />
             <DramaStream drama={drama} lang={lang} />
           </div>
         </div>

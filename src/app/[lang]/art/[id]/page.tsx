@@ -9,6 +9,7 @@ import { TableOfContents } from '@/components/TableOfContents';
 import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
 import { VoiceTag } from '@/components/VoiceTag';
+import { GitHubDialectic } from '@/components/GitHubDialectic';
 import {
   estimateReadTime,
   getArtItem,
@@ -109,7 +110,15 @@ export default async function ArtifactPage({ params }: Props) {
       <PageShell
         leftMobile={<ArtSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" variant="mobile" />}
         leftDesktop={<ArtSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" />}
-        right={<TableOfContents items={tocItems} />}
+        right={
+          <>
+            <GitHubDialectic
+              pageId={`art-${id}`}
+              pageTitle={fm.title as string}
+            />
+            <TableOfContents items={tocItems} />
+          </>
+        }
       >
           {/* Breadcrumb */}
           <nav className="text-sm text-frc-text-dim mb-8">
