@@ -40,15 +40,53 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
         setLoading(true);
         setError(null);
 
-        // Fetch from API route (server-side to avoid CORS)
-        const response = await fetch(`/api/dialectic/comments?pageId=${encodeURIComponent(pageId)}`);
+        // Fetch discussions from GitHub API directly
+        const discussionsResponse = await fetch(
+          'https://api.github.com/repos/Digidinc/shabrang/discussions',
+          {
+            headers: {
+              'Accept': 'application/vnd.github.v3+json',
+            },
+          }
+        );
 
-        if (!response.ok) {
+        if (!discussionsResponse.ok) {
+          throw new Error('Failed to fetch discussions');
+        }
+
+        const discussions = await discussionsResponse.json();
+
+        // Find discussion matching this pageId
+        const discussion = discussions.find((d: any) => d.title === pageId);
+
+        if (!discussion) {
+          setComments([]);
+          setLoading(false);
+          return;
+        }
+
+        // Fetch comments for this discussion
+        const commentsResponse = await fetch(
+          `https://api.github.com/repos/Digidinc/shabrang/discussions/${discussion.number}/comments`,
+          {
+            headers: {
+              'Accept': 'application/vnd.github.v3+json',
+            },
+          }
+        );
+
+        if (!commentsResponse.ok) {
           throw new Error('Failed to fetch comments');
         }
 
-        const data = await response.json();
-        setComments(data.comments || []);
+        const allComments = await commentsResponse.json();
+
+        // Filter for approved comments only
+        const approvedComments = allComments.filter((comment: any) =>
+          comment.labels?.some((label: any) => label.name === 'approved')
+        );
+
+        setComments(approvedComments);
       } catch (err) {
         console.error('Error loading comments:', err);
         setError(err instanceof Error ? err.message : 'Unknown error');
