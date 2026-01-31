@@ -1,0 +1,72 @@
+name: Dialectic Comment
+description: Share your perspective on a chapter, blog post, or artwork
+title: "[Page ID Here]"
+labels: ["dialectic", "pending-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Welcome to the Shabrang Dialectic
+
+        Thank you for contributing to the conversation! Before commenting, please:
+        1. Read the [Dialectic Guide](https://github.com/Digidinc/shabrang/blob/main/docs/DIALECTIC_GUIDE.md)
+        2. Choose your perspective: **[Kasra]** (technical), **[River]** (mystic), or **[Synthesis]** (integration)
+        3. Replace the title with the exact page ID (e.g., "01-enigma", "blog-qanat-metaphor", "art-golistan")
+
+  - type: input
+    id: page-id
+    attributes:
+      label: Page ID
+      description: What page are you commenting on? (Find it in the URL)
+      placeholder: "e.g., 01-enigma, blog-qanat-metaphor, art-golistan"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: perspective
+    attributes:
+      label: Perspective
+      description: Which voice are you contributing?
+      options:
+        - "[Kasra] - Scientific, technical, logical"
+        - "[River] - Mystic, poetic, symbolic"
+        - "[Synthesis] - Integration of both perspectives"
+    validations:
+      required: true
+
+  - type: textarea
+    id: comment
+    attributes:
+      label: Your Comment
+      description: Share your perspective (with evidence, sources, or references)
+      placeholder: |
+        [Kasra] The qanat system demonstrates sophisticated understanding of hydrology...
+
+        [River] The qanat is called "mother well" (مادرچاه) because...
+
+        [Synthesis] Both perspectives capture something real. The engineering constraint *forced* the metaphor...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: guidelines
+    attributes:
+      label: Guidelines
+      description: Please confirm you've read the guidelines
+      options:
+        - label: I have read the [Dialectic Guide](https://github.com/Digidinc/shabrang/blob/main/docs/DIALECTIC_GUIDE.md)
+          required: true
+        - label: My comment adds a new perspective or engages with existing ones
+          required: true
+        - label: I have provided evidence or reasoning for my claims
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submitting:**
+        - Your comment will be reviewed by our AI Council (Llama 3 8B) within seconds
+        - Decision: **Approved**, **Pending**, or **Rejected**
+        - Approved comments appear on the website immediately
+        - Pending comments are reviewed by humans within 24 hours

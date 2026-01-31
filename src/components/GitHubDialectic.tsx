@@ -56,8 +56,11 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
 
         const issues = await issuesResponse.json();
 
-        // Find issue matching this pageId
-        const issue = issues.find((i: any) => i.title === pageId);
+        // Find issue matching this pageId AND has 'dialectic' label
+        const issue = issues.find((i: any) =>
+          i.title === pageId &&
+          i.labels?.some((l: any) => l.name === 'dialectic')
+        );
 
         if (!issue) {
           setComments([]);
