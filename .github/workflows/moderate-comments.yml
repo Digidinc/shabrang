@@ -1,7 +1,7 @@
-name: Moderate Discussion Comments
+name: Moderate Issue Comments
 
 on:
-  discussion_comment:
+  issue_comment:
     types: [created]
 
 jobs:
@@ -16,34 +16,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get discussion and comment details
+      - name: Get issue and comment details
         id: get_details
         uses: actions/github-script@v7
         with:
           script: |
-            const { discussion_comment, discussion } = context.payload;
+            const { comment, issue } = context.payload;
 
-            // Extract page ID from discussion title
+            // Extract page ID from issue title
             // Expected format: "chapter-slug", "blog-id", "art-id"
-            const pageId = discussion.title;
+            const pageId = issue.title;
 
             // Get comment body and author
-            const comment = discussion_comment.body;
-            const author = discussion_comment.user.login;
-            const commentId = discussion_comment.id;
-            const discussionId = discussion.number;
+            const commentBody = comment.body;
+            const author = comment.user.login;
+            const commentId = comment.id;
+            const issueNumber = issue.number;
 
             core.setOutput('pageId', pageId);
-            core.setOutput('comment', comment);
+            core.setOutput('comment', commentBody);
             core.setOutput('author', author);
             core.setOutput('commentId', commentId);
-            core.setOutput('discussionId', discussionId);
+            core.setOutput('issueNumber', issueNumber);
 
             console.log('Processing comment:', {
               pageId,
               author,
               commentId,
-              discussionId
+              issueNumber
             });
 
       - name: Call AI Council for moderation
@@ -53,7 +53,7 @@ jobs:
           AUTHOR: ${{ steps.get_details.outputs.author }}
           PAGE_ID: ${{ steps.get_details.outputs.pageId }}
           COMMENT_ID: ${{ steps.get_details.outputs.commentId }}
-          DISCUSSION_ID: ${{ steps.get_details.outputs.discussionId }}
+          ISSUE_NUMBER: ${{ steps.get_details.outputs.issueNumber }}
           AI_COUNCIL_URL: ${{ secrets.AI_COUNCIL_URL }}
         run: |
           # Create JSON payload securely using jq
@@ -62,13 +62,13 @@ jobs:
             --arg author "$AUTHOR" \
             --arg pageId "$PAGE_ID" \
             --argjson commentId "$COMMENT_ID" \
-            --argjson discussionId "$DISCUSSION_ID" \
+            --argjson issueNumber "$ISSUE_NUMBER" \
             '{
               comment: $comment,
               author: $author,
               pageId: $pageId,
               commentId: $commentId,
-              discussionId: $discussionId
+              issueNumber: $issueNumber
             }')
 
           # Call Cloudflare Worker to moderate the comment
@@ -102,7 +102,7 @@ jobs:
           LABELS: ${{ steps.moderate.outputs.labels }}
         with:
           script: |
-            const { discussion_comment, discussion, repository } = context.payload;
+            const { comment, issue, repository } = context.payload;
             const decision = process.env.DECISION;
             const reason = process.env.REASON;
             const confidence = parseFloat(process.env.CONFIDENCE);
@@ -121,12 +121,12 @@ jobs:
                 statusLabel = 'pending-review';
             }
 
-            // Add status label to the discussion
+            // Add status label to the issue
             try {
               await github.rest.issues.addLabels({
                 owner: repository.owner.login,
                 repo: repository.name,
-                issue_number: discussion.number,
+                issue_number: issue.number,
                 labels: [statusLabel]
               });
               console.log(`Added label: ${statusLabel}`);
@@ -145,7 +145,7 @@ jobs:
                   await github.rest.issues.addLabels({
                     owner: repository.owner.login,
                     repo: repository.name,
-                    issue_number: discussion.number,
+                    issue_number: issue.number,
                     labels: dialecticLabels
                   });
                   console.log(`Added dialectic labels: ${dialecticLabels.join(', ')}`);
@@ -173,10 +173,10 @@ ${decision === 'pending'
 If you believe this decision is incorrect, please reply with \`@appeal\` and explain why.`;
 
               try {
-                await github.rest.discussions.createDiscussionComment({
+                await github.rest.issues.createComment({
                   owner: repository.owner.login,
                   repo: repository.name,
-                  discussion_number: discussion.number,
+                  issue_number: issue.number,
                   body: moderationComment
                 });
                 console.log('Posted moderation comment');
@@ -196,22 +196,22 @@ If you believe this decision is incorrect, please reply with \`@appeal\` and exp
           CONFIDENCE: ${{ steps.moderate.outputs.confidence }}
         with:
           script: |
-            const { discussion, repository } = context.payload;
+            const { issue, repository } = context.payload;
             const author = process.env.AUTHOR;
             const reason = process.env.REASON;
             const confidence = process.env.CONFIDENCE;
 
-            // Create an issue for human review
+            // Create a review issue for human moderation
             try {
               await github.rest.issues.create({
                 owner: repository.owner.login,
                 repo: repository.name,
-                title: `[Moderation] Review comment in ${discussion.title}`,
+                title: `[Moderation] Review comment in ${issue.title}`,
                 body: `A comment requires human review.
 
-**Discussion:** ${discussion.title}
+**Issue:** ${issue.title}
 **Author:** @${author}
-**Link:** ${discussion.html_url}
+**Link:** ${issue.html_url}
 
 **AI Reason:** ${reason}
 **Confidence:** ${confidence}

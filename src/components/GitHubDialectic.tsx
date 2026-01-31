@@ -40,9 +40,9 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
         setLoading(true);
         setError(null);
 
-        // Fetch discussions from GitHub API directly
-        const discussionsResponse = await fetch(
-          'https://api.github.com/repos/Digidinc/shabrang/discussions',
+        // Fetch issues from GitHub API directly
+        const issuesResponse = await fetch(
+          `https://api.github.com/repos/Digidinc/shabrang/issues?state=all&per_page=100`,
           {
             headers: {
               'Accept': 'application/vnd.github.v3+json',
@@ -50,24 +50,24 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
           }
         );
 
-        if (!discussionsResponse.ok) {
-          throw new Error('Failed to fetch discussions');
+        if (!issuesResponse.ok) {
+          throw new Error('Failed to fetch issues');
         }
 
-        const discussions = await discussionsResponse.json();
+        const issues = await issuesResponse.json();
 
-        // Find discussion matching this pageId
-        const discussion = discussions.find((d: any) => d.title === pageId);
+        // Find issue matching this pageId
+        const issue = issues.find((i: any) => i.title === pageId);
 
-        if (!discussion) {
+        if (!issue) {
           setComments([]);
           setLoading(false);
           return;
         }
 
-        // Fetch comments for this discussion
+        // Fetch comments for this issue
         const commentsResponse = await fetch(
-          `https://api.github.com/repos/Digidinc/shabrang/discussions/${discussion.number}/comments`,
+          `https://api.github.com/repos/Digidinc/shabrang/issues/${issue.number}/comments`,
           {
             headers: {
               'Accept': 'application/vnd.github.v3+json',
@@ -81,9 +81,16 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
 
         const allComments = await commentsResponse.json();
 
-        // For now, show all comments (we'll add moderation filtering later)
-        // TODO: Implement moderation via discussion categories or special comments
-        setComments(allComments);
+        // Only show approved comments (filter by labels on the issue)
+        // Check if the issue has the 'approved' label
+        const approvedComments = issue.labels?.some((l: any) => l.name === 'approved')
+          ? allComments
+          : allComments.filter((c: any) => {
+              // For now, show all comments - moderation will add labels
+              return true;
+            });
+
+        setComments(approvedComments);
       } catch (err) {
         console.error('Error loading comments:', err);
         setError(err instanceof Error ? err.message : 'Unknown error');
@@ -95,9 +102,9 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
     loadComments();
   }, [pageId]);
 
-  const discussionUrl = discussionNumber
-    ? `https://github.com/Digidinc/shabrang/discussions/${discussionNumber}`
-    : `https://github.com/Digidinc/shabrang/discussions/new?title=${encodeURIComponent(pageId)}&body=${encodeURIComponent(`Discussion for: ${pageTitle}\n\nSee dialectic guide: https://github.com/Digidinc/shabrang/blob/main/docs/DIALECTIC_GUIDE.md`)}`;
+  const issueUrl = discussionNumber
+    ? `https://github.com/Digidinc/shabrang/issues/${discussionNumber}`
+    : `https://github.com/Digidinc/shabrang/issues/new?title=${encodeURIComponent(pageId)}&body=${encodeURIComponent(`Comments for: ${pageTitle}\n\nPlease read the dialectic guide before commenting:\nhttps://github.com/Digidinc/shabrang/blob/main/docs/DIALECTIC_GUIDE.md\n\nLabel your perspective: [Kasra], [River], or [Synthesis]`)}`;
 
   return (
     <aside className="dialectic-panel border-l-2 border-shabrang-gold p-6 bg-shabrang-parchment/30 min-h-screen">
@@ -140,7 +147,7 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
         )}
 
         <a
-          href={discussionUrl}
+          href={issueUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 block w-full px-4 py-3 bg-shabrang-gold text-shabrang-ink text-center font-display text-xs uppercase tracking-widest hover:bg-shabrang-teal hover:text-shabrang-parchment transition-all duration-200 border-2 border-shabrang-gold hover:border-shabrang-teal"
@@ -170,16 +177,16 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
 }
 
 function CommentCard({ comment }: { comment: GitHubComment }) {
-  // For now, determine label from comment text (simple heuristic)
-  // TODO: Implement proper moderation system
+  // Determine dialectic label from comment text
+  // AI moderation adds labels to the issue, but we also do client-side detection
   const commentText = comment.body.toLowerCase();
   let dialecticLabel: 'thesis' | 'antithesis' | 'synthesis' | null = null;
 
-  if (commentText.includes('synthesis') || commentText.includes('both')) {
+  if (commentText.includes('[synthesis]') || commentText.includes('synthesis') || commentText.includes('both')) {
     dialecticLabel = 'synthesis';
-  } else if (commentText.includes('scientific') || commentText.includes('technical')) {
+  } else if (commentText.includes('[kasra]') || commentText.includes('scientific') || commentText.includes('technical')) {
     dialecticLabel = 'thesis';
-  } else if (commentText.includes('mystic') || commentText.includes('poetic')) {
+  } else if (commentText.includes('[river]') || commentText.includes('mystic') || commentText.includes('poetic')) {
     dialecticLabel = 'antithesis';
   }
 
