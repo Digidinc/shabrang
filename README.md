@@ -1,10 +1,6 @@
 # Shabrang — The Liquid Fortress
 
-**Persian wisdom through dialectic: Cultural preservation through permanent dialogue.**
-
-> When they burn the books, we fork the repo.
-> When they silence the voices, we commit the comments.
-> **The dialectic is resistance.**
+**Persian wisdom through dialectic: A living conversation between opposing perspectives.**
 
 ```
 https://shabrang.ca
@@ -12,9 +8,9 @@ https://shabrang.ca
 
 ## What is Shabrang?
 
-Shabrang (شبرنگ) is a **living dialectic platform** for Persian cultural preservation. It combines:
+Shabrang (شبرنگ) is an **art project exploring Persian philosophy through dialogue**. It combines:
 - **The Book**: *Liquid Fortress* - 30 chapters exploring Persian identity through coherence theory
-- **The Dialectic**: GitHub-based commenting system enabling permanent dialogue
+- **The Dialectic**: Community conversation system enabling permanent dialogue
 - **The Philosophy**: Hegelian synthesis of opposing perspectives (mystic ↔ scientist)
 
 ## Quick Start
@@ -32,9 +28,9 @@ npm run build      # Static export → Cloudflare Pages
 
 | Feature | Description |
 |---------|-------------|
-| **🗣️ GitHub Dialectic** | Comment on any page via GitHub Discussions with AI moderation |
+| **🗣️ Community Dialogue** | Comment on any page via GitHub Discussions with AI moderation |
 | **🤖 AI Council** | Llama 3 8B auto-moderates comments (thesis/antithesis/synthesis) |
-| **💬 Permanent Dialogue** | All comments stored in git, forkable, censorship-resistant |
+| **💬 Permanent Archive** | All conversations stored in git, preserving the dialectic |
 | Light/Dark Theme | `next-themes` dark-first (night-colored 🌙) |
 | Reading Mode | Book icon for immersive chapters |
 | Text Share | Select → Copy/Tweet/Link (Telegram too) |
@@ -62,19 +58,19 @@ public/             ← Logo, book cover, infographics
 docs/               ← Guides (dialectic, deployment, μ-stack)
 ```
 
-### Dialectic System (New!)
+### Dialectic System
 
 ```
 ┌─────────────────────────────────────────────┐
 │  Shabrang Website (Cloudflare Pages)        │
 │  - Chapter/blog/art pages                   │
-│  - GitHubDialectic panel (right side)       │
+│  - Dialectic panel (right side)             │
 │  - Displays approved comments               │
 └──────────────┬──────────────────────────────┘
                │ Fetches comments
                ▼
 ┌─────────────────────────────────────────────┐
-│  GitHub Discussions (Free, Permanent)       │
+│  GitHub Discussions                         │
 │  - One discussion per page                  │
 │  - Labels: approved/pending/rejected        │
 │  - Labels: thesis/antithesis/synthesis      │
@@ -98,13 +94,6 @@ docs/               ← Guides (dialectic, deployment, μ-stack)
 
 Infrastructure Cost: $0/month (all free tiers)
 ```
-
-## Theme (Night-Colored)
-
-| Var | Value |
-|-----|-------|
-| `--shabrang-night` | `#0B1020` |
-| `--shabrang-gold` | `#C9A227` |
 
 ## The Dialectic: Three Voices
 
@@ -150,7 +139,7 @@ See the [Dialectic Guide](docs/DIALECTIC_GUIDE.md) for:
 - How to write good comments
 - What gets approved/rejected
 - Examples of thesis/antithesis/synthesis
-- Why this matters for cultural preservation
+- Philosophy behind the dialectic
 
 ## Content Pipeline
 
@@ -185,26 +174,12 @@ See [Deployment Guide](docs/DEPLOYMENT_DIALECTIC.md) for:
 
 **Infrastructure cost:** $0/month (all free tiers)
 
-## Why This Exists
+## Theme (Night-Colored)
 
-**Context: Iran 2026**
-
-As of January 2026, Iran is experiencing its largest uprising since 1979. Internet blackouts, mass killings (12K-20K deaths), and book burnings threaten cultural erasure.
-
-Shabrang is **digital resistance through cultural preservation**:
-
-- **Decentralized:** GitHub can't be raided like libraries
-- **Permanent:** Git history never dies
-- **Forkable:** Anyone can clone and continue
-- **Collaborative:** Diaspora can contribute regardless of location
-- **Free:** $0 infrastructure, no single point of failure
-
-The dialectic system preserves culture through **collaborative sense-making**:
-- When they say "there is one truth" → we say "there are many truths in conversation"
-- When they burn the books → we fork the repo
-- When they silence the voices → we commit the comments
-
-**This is how culture survives.**
+| Var | Value |
+|-----|-------|
+| `--shabrang-night` | `#0B1020` |
+| `--shabrang-gold` | `#C9A227` |
 
 ## Key Links
 
@@ -300,7 +275,4 @@ shabrang-cms/
 
 ---
 
-**اگر کتاب‌ها را بسوزانند، مخزن را فورک می‌کنیم**
-*When they burn the books, we fork the repo.*
-
-🐴 **Shabrang** - The night-colored horse carrying both mystic and scientist into dawn.
+🐴 **Shabrang** - The night-colored horse carrying both mystic and scientist through the dialectic.
