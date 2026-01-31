@@ -1,0 +1,7 @@
+# Cloudflare Worker Development Variables
+# Copy this to .dev.vars and fill in your values
+
+# GitHub Personal Access Token with repo read permissions
+# Create at: https://github.com/settings/tokens
+# Required scopes: repo (for private repos) or public_repo (for public repos)
+GITHUB_TOKEN=ghp_your_token_here

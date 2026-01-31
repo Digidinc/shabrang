@@ -73,7 +73,7 @@ export default {
     // CORS headers
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     };
 
@@ -82,16 +82,156 @@ export default {
       return new Response(null, { headers: corsHeaders });
     }
 
-    // Only accept POST requests
-    if (request.method !== 'POST') {
-      return new Response('Method not allowed', {
-        status: 405,
-        headers: corsHeaders,
-      });
+    const url = new URL(request.url);
+
+    // Route: GET /health - check worker status
+    if (request.method === 'GET' && url.pathname === '/health') {
+      return new Response(
+        JSON.stringify({
+          status: 'ok',
+          hasGitHubToken: !!env.GITHUB_TOKEN,
+          tokenLength: env.GITHUB_TOKEN ? env.GITHUB_TOKEN.length : 0,
+          repoOwner: env.REPO_OWNER,
+          repoName: env.REPO_NAME,
+        }),
+        {
+          status: 200,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
-    try {
-      const body = await request.json() as ModerateRequest;
+    // Route: GET /comments?pageId={pageId}
+    if (request.method === 'GET' && url.pathname === '/comments') {
+      return handleGetComments(url, env, corsHeaders);
+    }
+
+    // Route: POST /moderate (existing moderation endpoint)
+    if (request.method === 'POST' && url.pathname === '/moderate') {
+      return handleModerate(request, env, corsHeaders);
+    }
+
+    // Default route for backward compatibility
+    if (request.method === 'POST') {
+      return handleModerate(request, env, corsHeaders);
+    }
+
+    return new Response('Not found', {
+      status: 404,
+      headers: corsHeaders,
+    });
+  },
+};
+
+async function handleGetComments(
+  url: URL,
+  env: Env,
+  corsHeaders: Record<string, string>
+): Promise<Response> {
+  try {
+    const pageId = url.searchParams.get('pageId');
+
+    if (!pageId) {
+      return new Response(
+        JSON.stringify({ error: 'Missing pageId parameter' }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    // Fetch issues from GitHub
+    const token = (env.GITHUB_TOKEN || '').replace(/\s+/g, '');
+    const issuesResponse = await fetch(
+      `https://api.github.com/repos/${env.REPO_OWNER}/${env.REPO_NAME}/issues?state=all&per_page=100`,
+      {
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+          'Authorization': `token ${token}`,
+          'User-Agent': 'Shabrang-AI-Council',
+        },
+      }
+    );
+
+    if (!issuesResponse.ok) {
+      throw new Error(`GitHub API error: ${issuesResponse.status}`);
+    }
+
+    const issues = await issuesResponse.json() as any[];
+
+    // Find issue matching pageId with 'dialectic' label
+    const issue = issues.find((i: any) =>
+      i.title === pageId &&
+      i.labels?.some((l: any) => l.name === 'dialectic')
+    );
+
+    if (!issue) {
+      return new Response(
+        JSON.stringify({ comments: [], issue: null }),
+        {
+          status: 200,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    // Fetch comments for this issue
+    const commentsResponse = await fetch(
+      `https://api.github.com/repos/${env.REPO_OWNER}/${env.REPO_NAME}/issues/${issue.number}/comments`,
+      {
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+          'Authorization': `token ${token}`,
+          'User-Agent': 'Shabrang-AI-Council',
+        },
+      }
+    );
+
+    if (!commentsResponse.ok) {
+      throw new Error(`GitHub API error: ${commentsResponse.status}`);
+    }
+
+    const comments = await commentsResponse.json();
+
+    return new Response(
+      JSON.stringify({
+        comments,
+        issue: {
+          number: issue.number,
+          title: issue.title,
+          labels: issue.labels,
+          html_url: issue.html_url,
+        },
+      }),
+      {
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    );
+
+  } catch (error) {
+    console.error('Error fetching comments:', error);
+    return new Response(
+      JSON.stringify({
+        error: 'Failed to fetch comments',
+        message: error instanceof Error ? error.message : 'Unknown error',
+      }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    );
+  }
+}
+
+async function handleModerate(
+  request: Request,
+  env: Env,
+  corsHeaders: Record<string, string>
+): Promise<Response> {
+  try {
+    const body = await request.json() as ModerateRequest;
 
       if (!body.comment || !body.author || !body.pageId) {
         return new Response(
@@ -163,26 +303,25 @@ Evaluate this comment and respond in JSON format.`;
         result.reason = `${result.reason} (Low confidence - requires human review)`;
       }
 
-      return new Response(
-        JSON.stringify(result),
-        {
-          status: 200,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        }
-      );
+    return new Response(
+      JSON.stringify(result),
+      {
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    );
 
-    } catch (error) {
-      console.error('Error in moderation:', error);
-      return new Response(
-        JSON.stringify({
-          error: 'Internal server error',
-          message: error instanceof Error ? error.message : 'Unknown error',
-        }),
-        {
-          status: 500,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        }
-      );
-    }
-  },
-};
+  } catch (error) {
+    console.error('Error in moderation:', error);
+    return new Response(
+      JSON.stringify({
+        error: 'Internal server error',
+        message: error instanceof Error ? error.message : 'Unknown error',
+      }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    );
+  }
+}

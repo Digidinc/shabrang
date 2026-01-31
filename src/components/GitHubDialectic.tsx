@@ -40,60 +40,31 @@ export function GitHubDialectic({ pageId, pageTitle, discussionNumber }: GitHubD
         setLoading(true);
         setError(null);
 
-        // Fetch issues from GitHub API directly
-        const issuesResponse = await fetch(
-          `https://api.github.com/repos/Digidinc/shabrang/issues?state=all&per_page=100`,
+        // Fetch comments from Cloudflare Worker (proxies GitHub API)
+        const workerUrl = process.env.NEXT_PUBLIC_AI_COUNCIL_URL || 'https://shabrang-ai-council.weathered-scene-2272.workers.dev';
+        const response = await fetch(
+          `${workerUrl}/comments?pageId=${encodeURIComponent(pageId)}`,
           {
             headers: {
-              'Accept': 'application/vnd.github.v3+json',
+              'Accept': 'application/json',
             },
           }
         );
 
-        if (!issuesResponse.ok) {
-          throw new Error('Failed to fetch issues');
+        if (!response.ok) {
+          throw new Error('Failed to fetch comments from worker');
         }
 
-        const issues = await issuesResponse.json();
+        const data = await response.json();
 
-        // Find issue matching this pageId AND has 'dialectic' label
-        const issue = issues.find((i: any) =>
-          i.title === pageId &&
-          i.labels?.some((l: any) => l.name === 'dialectic')
-        );
-
-        if (!issue) {
+        if (!data.issue) {
           setComments([]);
           setLoading(false);
           return;
         }
 
-        // Fetch comments for this issue
-        const commentsResponse = await fetch(
-          `https://api.github.com/repos/Digidinc/shabrang/issues/${issue.number}/comments`,
-          {
-            headers: {
-              'Accept': 'application/vnd.github.v3+json',
-            },
-          }
-        );
-
-        if (!commentsResponse.ok) {
-          throw new Error('Failed to fetch comments');
-        }
-
-        const allComments = await commentsResponse.json();
-
-        // Only show approved comments (filter by labels on the issue)
-        // Check if the issue has the 'approved' label
-        const approvedComments = issue.labels?.some((l: any) => l.name === 'approved')
-          ? allComments
-          : allComments.filter((c: any) => {
-              // For now, show all comments - moderation will add labels
-              return true;
-            });
-
-        setComments(approvedComments);
+        // Show all comments (moderation handles filtering)
+        setComments(data.comments || []);
       } catch (err) {
         console.error('Error loading comments:', err);
         setError(err instanceof Error ? err.message : 'Unknown error');
