@@ -1,6 +1,7 @@
 name = "shabrang-ai-council"
 main = "index.ts"
 compatibility_date = "2024-01-01"
+account_id = "e39eaf94f33092c4efd029d94ae1e9dd"
 
 # Cloudflare Workers AI binding
 [ai]
