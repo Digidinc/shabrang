@@ -1,24 +1,92 @@
-# Shabrang AI Council - Comment Moderation Worker
+# Shabrang AI Council Worker
 
-Cloudflare Worker that uses Workers AI (Llama 3 8B) to automatically moderate GitHub Discussion comments based on dialectic principles.
+Cloudflare Worker that provides:
+1. **AI moderation** of GitHub issue comments using Llama 3 8B
+2. **Comment proxy** for fetching comments from public/private repos
 
 ## Architecture
 
 ```
-GitHub Discussion Comment
-    ↓
-GitHub Actions Workflow (on comment created)
-    ↓
-Cloudflare Worker (AI Council)
-    ↓
-Cloudflare Workers AI (Llama 3 8B)
-    ↓
-GitHub API (add labels, post moderation response)
+┌─────────────────────────────────────┐
+│  Shabrang Website                   │
+│  Fetches comments via worker        │
+└──────────────┬──────────────────────┘
+               │ GET /comments?pageId=...
+               ▼
+┌─────────────────────────────────────┐
+│  Cloudflare Worker (AI Council)     │
+│  - Proxies GitHub API (auth)        │
+│  - Moderates comments (AI)          │
+└──────────────┬──────────────────────┘
+               │ Authenticates with
+               ▼ GITHUB_TOKEN
+┌─────────────────────────────────────┐
+│  GitHub Issues API                  │
+│  - Stores comments                  │
+│  - Applies labels                   │
+└─────────────────────────────────────┘
+```
+
+## Endpoints
+
+### POST /moderate
+Moderate a comment using AI Council.
+
+**Request:**
+```json
+{
+  "comment": "Comment text",
+  "author": "username",
+  "pageId": "01-enigma",
+  "commentId": 123,
+  "issueNumber": 32
+}
+```
+
+**Response:**
+```json
+{
+  "decision": "approved|pending|rejected",
+  "reason": "Explanation",
+  "confidence": 0.9,
+  "suggestedLabels": ["approved", "synthesis"]
+}
+```
+
+### GET /comments?pageId={pageId}
+Fetch comments for a specific page from GitHub Issues (supports private repos).
+
+**Response:**
+```json
+{
+  "issue": {
+    "number": 32,
+    "title": "01-enigma",
+    "labels": [...],
+    "html_url": "https://github.com/..."
+  },
+  "comments": [...]
+}
+```
+
+### GET /health
+Check worker status and configuration.
+
+**Response:**
+```json
+{
+  "status": "ok",
+  "hasGitHubToken": true,
+  "tokenLength": 40,
+  "repoOwner": "Digidinc",
+  "repoName": "shabrang"
+}
 ```
 
 ## Features
 
 - **AI-Powered Moderation**: Uses Llama 3 8B to evaluate comments
+- **Private Repo Support**: Worker proxies GitHub API for private repos
 - **Dialectic Labels**: Automatically suggests thesis/antithesis/synthesis labels
 - **Three Decision States**:
   - `approved` - Shows on website immediately
@@ -52,19 +120,29 @@ npm run deploy
 
 This will deploy to: `https://shabrang-ai-council.<your-subdomain>.workers.dev`
 
-### 4. Set Secrets
+### 4. Create GitHub Personal Access Token
 
-Set the GitHub token for API access:
+1. Go to https://github.com/settings/tokens/new
+2. Create a token with:
+   - **Scopes:** `repo` (for private repos) or `public_repo` (for public repos only)
+   - **Expiration:** Set based on your security policy
+   - **Note:** "Shabrang AI Council Worker"
+
+### 5. Set Cloudflare Worker Secrets
+
+Set the GitHub token:
 
 ```bash
-npx wrangler secret put GITHUB_TOKEN
-# Paste your GitHub personal access token with `repo` and `discussions` scopes
+echo "YOUR_GITHUB_TOKEN" | npx wrangler secret put GITHUB_TOKEN
 ```
 
-Optional: Set webhook secret (for future webhook-based triggers):
+**Note:** Make sure the token has NO whitespace. The worker automatically strips whitespace, but it's best to paste the raw token.
 
+### 6. Configure Environment Variables
+
+Create `.dev.vars` for local development (copy from `.dev.vars.example`):
 ```bash
-npx wrangler secret put GITHUB_WEBHOOK_SECRET
+GITHUB_TOKEN=ghp_your_token_here
 ```
 
 ### 5. Configure GitHub Actions
@@ -213,7 +291,33 @@ GitHub API authentication issue.
 1. Verify workflow file is in `.github/workflows/moderate-comments.yml`
 2. Check Actions tab for errors
 3. Ensure `AI_COUNCIL_URL` secret is set
-4. Verify discussion_comment events are enabled
+4. GitHub Issues webhooks (`issue_comment`) should work automatically for public repos
+
+### 401 Error from GitHub API
+
+The worker returns "GitHub API error: 401" when fetching comments.
+
+**Solution:**
+1. Check if GITHUB_TOKEN is set: `curl https://your-worker.workers.dev/health`
+2. Verify token has correct scopes:
+   - For public repos: `public_repo` scope
+   - For private repos: Full `repo` scope
+3. Test token manually:
+   ```bash
+   curl -H "Authorization: token YOUR_TOKEN" https://api.github.com/user
+   ```
+4. If token is expired, generate a new one and update the secret:
+   ```bash
+   echo "NEW_TOKEN" | npx wrangler secret put GITHUB_TOKEN
+   ```
+
+### Comments not showing on website
+
+**Solution:**
+1. Check that issue exists with `dialectic` label: `gh issue list --label dialectic`
+2. Verify issue title EXACTLY matches pageId
+3. Test worker endpoint: `curl "https://your-worker.workers.dev/comments?pageId=01-enigma"`
+4. Check browser console for errors
 
 ## Architecture Decisions
 
