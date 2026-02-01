@@ -51,7 +51,8 @@ export function renderMarkdown(
     const safeAlt = escapeHtml(String(alt || ''));
     const safeUrl = escapeHtml(String(url || ''));
     const safeTitle = title ? ` title="${escapeHtml(String(title))}"` : '';
-    return `<img src="${safeUrl}" alt="${safeAlt}"${safeTitle} />`;
+    // Add loading="lazy" for better performance and style for responsive images
+    return `<img src="${safeUrl}" alt="${safeAlt}"${safeTitle} loading="lazy" style="max-width: 100%; height: auto;" />`;
   });
 
   // Wikilinks with display text: [[ID|text]]

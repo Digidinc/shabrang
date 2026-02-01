@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
 
 const VERSION = '5.0.0';
@@ -753,7 +754,14 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
                 </div>
               </div>
               <div className="hero-image">
-                <img src="/images/landing/poster.png" alt="The Liquid Fortress - Persian Miniature" />
+                <Image
+                  src="/images/landing/poster.png"
+                  alt="The Liquid Fortress - Persian Miniature"
+                  width={2048}
+                  height={2048}
+                  priority
+                  style={{ maxWidth: '500px', width: '100%', height: 'auto' }}
+                />
                 <div className="hero-image-caption">Persian Miniature Tradition</div>
               </div>
             </div>
@@ -776,7 +784,13 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
             </div>
             <div className="book-feature">
               <div className="book-cover">
-                <img src="/images/landing/qanat.png" alt="The Qanat - Underground water system" />
+                <Image
+                  src="/images/landing/qanat.png"
+                  alt="The Qanat - Underground water system"
+                  width={5734}
+                  height={3200}
+                  style={{ maxWidth: '400px', width: '100%', height: 'auto' }}
+                />
               </div>
               <div className="book-info">
                 <h3>The Liquid Fortress</h3>
@@ -850,7 +864,13 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
             {/* The Ladder Overview */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
               <div>
-                <img src="/images/landing/ladder.png" alt="The Ladder of Consciousness" style={{ width: '100%', border: '4px solid var(--gold)', boxShadow: '8px 8px 0 var(--teal)' }} />
+                <Image
+                  src="/images/landing/ladder.png"
+                  alt="The Ladder of Consciousness"
+                  width={5734}
+                  height={3200}
+                  style={{ width: '100%', height: 'auto', border: '4px solid var(--gold)', boxShadow: '8px 8px 0 var(--teal)' }}
+                />
               </div>
               <div>
                 <h3 style={{ color: 'var(--gold)', fontFamily: "'Cinzel', serif", fontSize: '1.75rem', marginBottom: '24px' }}>The Ladder of Consciousness</h3>

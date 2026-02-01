@@ -19,7 +19,10 @@
     "content:new-blog": "node scripts/new-blog.js",
     "content:new-topic": "node scripts/new-topic.js",
     "content:sync-media": "node scripts/sync-media.js",
-    "content:process-inbox": "node scripts/process-inbox.js"
+    "content:process-inbox": "node scripts/process-inbox.js",
+    "images:optimize": "node scripts/optimize-images.js public/images",
+    "images:optimize-all": "node scripts/optimize-images.js public",
+    "images:verify": "node scripts/verify-images.js"
   },
   "dependencies": {
     "@types/d3": "^7.4.3",

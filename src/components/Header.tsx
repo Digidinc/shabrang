@@ -304,6 +304,7 @@ export function Header() {
                 width={36}
                 height={36}
                 className="logo-img"
+                priority
               />
               <span className="logo-text">Shabrang</span>
             </Link>
