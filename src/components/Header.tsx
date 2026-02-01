@@ -107,6 +107,17 @@ export function Header() {
           opacity: 0.5;
         }
 
+        .micro-bar-link {
+          display: flex;
+          align-items: center;
+          color: var(--teal-dark, #1A4A4A);
+          transition: color 0.3s ease;
+        }
+
+        .micro-bar-link:hover {
+          color: var(--crimson, #8B3535);
+        }
+
         /* Main navigation */
         .main-nav {
           border-bottom: 2px solid var(--gold, #C9A227);
@@ -263,6 +274,19 @@ export function Header() {
               شبرنگ — shabrang.ca
             </span>
             <div className="micro-bar-right">
+              <a
+                href="/feed.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="micro-bar-link"
+                title="RSS Feed"
+                aria-label="Subscribe via RSS"
+              >
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/>
+                </svg>
+              </a>
+              <span className="micro-bar-divider">|</span>
               <LanguageSelector />
               <span className="micro-bar-divider">|</span>
               <ThemeToggle />

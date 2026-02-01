@@ -11,6 +11,8 @@ import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
 import { VoiceTag } from '@/components/VoiceTag';
 import { GitHubDialectic } from '@/components/GitHubDialectic';
+import { RelatedPosts } from '@/components/RelatedPosts';
+import { FeaturedSidebar } from '@/components/FeaturedSidebar';
 import { estimateReadTime, getBlogPost, getBlogPosts, getLanguages, toPaperMeta, buildBacklinks, getGlossary, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
 
@@ -87,6 +89,22 @@ export default async function BlogPostPage({ params }: Props) {
 
   const voice = fm.voice || (fm.perspective === 'river' ? 'river' : fm.perspective === 'kasra' ? 'kasra' : undefined);
 
+  // Get featured posts for sidebar
+  const essentialIds = ['adab-social-handshake', 'taarof-game-theory', 'qanats-decentralized-grid', 'shahnameh-civilizational-hard-drive', 'simurgh-swarm-intelligence'];
+  const allBlogPosts = getBlogPosts(lang).filter((p) => matchesPerspectiveView(p.frontmatter.perspective, 'kasra'));
+  const featuredSidebarPosts = essentialIds
+    .map((essId) => {
+      const p = allBlogPosts.find((bp) => bp.frontmatter.id === essId);
+      if (!p || p.frontmatter.id === id) return null; // Exclude current post
+      return {
+        id: p.frontmatter.id,
+        title: p.frontmatter.title,
+        readTime: p.frontmatter.read_time || estimateReadTime(p.body),
+      };
+    })
+    .filter((p) => p !== null)
+    .slice(0, 5);
+
   return (
     <>
       <SchemaScript data={schemaPaperPage(meta)} />
@@ -101,6 +119,13 @@ export default async function BlogPostPage({ params }: Props) {
               pageTitle={fm.title as string}
             />
             <TableOfContents items={tocItems} />
+            {featuredSidebarPosts.length > 0 && (
+              <FeaturedSidebar
+                posts={featuredSidebarPosts as { id: string; title: string; readTime: string }[]}
+                basePath={basePath}
+                title="Essential Reading"
+              />
+            )}
           </>
         }
       >
@@ -163,6 +188,15 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="content-body" suppressHydrationWarning>
           <MarkdownContent html={renderedBody} glossary={glossary} />
         </div>
+
+        <RelatedPosts
+          lang={lang}
+          currentId={id}
+          currentTags={fm.tags || []}
+          basePath={basePath}
+          view="kasra"
+          maxResults={3}
+        />
 
         {pageBacklinks.length > 0 && (
           <section className="backlinks">

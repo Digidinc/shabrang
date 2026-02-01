@@ -1,11 +1,20 @@
 'use client';
 
 import Link from 'next/link';
+import { FeaturedPosts } from '@/components/FeaturedPosts';
 
 const VERSION = '5.0.0';
 const BUILD_DATE = '2026-01-30';
 
-export function ShabrangHome({ lang }: { lang: string }) {
+interface FeaturedPost {
+  id: string;
+  title: string;
+  abstract?: string;
+  readTime: string;
+  tags: string[];
+}
+
+export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featuredPosts?: FeaturedPost[] }) {
   return (
     <>
       <style jsx global>{`
@@ -800,6 +809,22 @@ export function ShabrangHome({ lang }: { lang: string }) {
                   <a href="https://www.amazon.com/LIQUID-FORTRESS-Structural-History-Persian-ebook/dp/B0GBJ47F5X" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Kindle Edition</a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ESSENTIAL READING */}
+        <section className="section section-sand">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Essential Reading</h2>
+              <p className="section-description">
+                Start here: The core ideas of the Liquid Fortress explained through everyday Persian cultural artifacts.
+              </p>
+            </div>
+            <FeaturedPosts posts={featuredPosts} basePath={`/${lang}`} />
+            <div style={{ textAlign: 'center', marginTop: '48px' }}>
+              <Link href={`/${lang}/blog`} className="btn btn-primary">View All Blog Posts</Link>
             </div>
           </div>
         </section>

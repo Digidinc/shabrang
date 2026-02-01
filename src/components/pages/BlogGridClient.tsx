@@ -134,8 +134,37 @@ export function BlogGridClient({ items, lang = 'en' }: { items: BlogGridItem[]; 
       </div>
 
       {filtered.length === 0 ? (
-        <div className="border border-frc-blue rounded-lg p-6 text-sm text-frc-text-dim">
-          {t.noResults}
+        <div className="border border-frc-blue rounded-lg p-12 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-frc-blue/10 mb-4">
+            <svg className="w-8 h-8 text-frc-text-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <h3 className="text-lg font-medium text-frc-text mb-2">No posts found</h3>
+          <p className="text-sm text-frc-text-dim max-w-md mx-auto mb-4">
+            {query && <span>No posts match "<strong className="text-frc-text">{query}</strong>". </span>}
+            {(tag !== 'All' || voice !== 'All') && (
+              <span>Try adjusting your filters or search term.</span>
+            )}
+            {!query && tag === 'All' && voice === 'All' && (
+              <span>No posts available in this language.</span>
+            )}
+          </p>
+          {(query || tag !== 'All' || voice !== 'All') && (
+            <button
+              onClick={() => {
+                setQuery('');
+                setTag('All');
+                setVoice('All');
+              }}
+              className="inline-flex items-center gap-2 text-sm text-frc-gold hover:text-frc-gold-light transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              Clear all filters
+            </button>
+          )}
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 gap-5">

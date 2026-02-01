@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { TextSharePopover } from '@/components/TextSharePopover';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { CommandPalette } from '@/components/CommandPalette';
+import { ReadingProgress } from '@/components/ReadingProgress';
 import { schemaSiteGraph, schemaDataset } from '@/lib/schema';
 import './globals.css';
 
@@ -55,11 +56,13 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="help" href="/llms.txt" type="text/plain" title="Machine-readable site summary" />
+        <link rel="alternate" type="application/rss+xml" title="Shabrang Blog RSS Feed" href="/feed.xml" />
         <SchemaScript data={schemaSiteGraph()} />
         <SchemaScript data={schemaDataset()} />
       </head>
       <body className="antialiased min-h-screen flex flex-col text-shabrang-ink bg-shabrang-parchment">
         <GoogleAnalytics />
+        <ReadingProgress />
         <ThemeProvider>
           <ModeProvider>
             <Header />
