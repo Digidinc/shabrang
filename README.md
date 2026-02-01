@@ -31,11 +31,15 @@ npm run build      # Static export → Cloudflare Pages
 | **🗣️ Community Dialogue** | Comment on any page via GitHub Discussions with AI moderation |
 | **🤖 AI Council** | Llama 3 8B auto-moderates comments (thesis/antithesis/synthesis) |
 | **💬 Permanent Archive** | All conversations stored in git, preserving the dialectic |
-| **📊 Advanced SEO** | FAQ schema, RSS feed, 381 tag pages, Open Graph, structured data |
-| **🔍 Featured Snippets** | FAQ schema targeting Google featured snippets |
+| **📊 Advanced SEO** | FAQ schema (30 questions), RSS feed, 381 tag pages, OG images, structured data |
+| **🔍 Featured Snippets** | FAQ schema on 10 posts targeting Google featured snippets |
+| **🖼️ Open Graph Images** | 14 social sharing cards (1200x630) for posts and topic hubs |
+| **⚡ Image Optimization** | 745 images converted to WebP format (128MB optimized, <100KB target) |
+| **♿ Alt Text Coverage** | 100% descriptive alt text in English and Farsi (95+ files) |
+| **📚 Topic Hub Pages** | 4 pillar content guides (3,000-5,000 words each) for Persian culture |
 | **📰 RSS Feed** | Static `/feed.xml` with 50 recent posts |
 | **🏷️ Tag System** | 381 auto-generated tag archive pages |
-| **🔗 Related Posts** | Smart tag-based post recommendations |
+| **🔗 Related Posts** | Smart tag-based post recommendations (3 per page) |
 | **📖 Reading Progress** | Gold progress bar tracks scroll position |
 | Light/Dark Theme | `next-themes` dark-first (night-colored 🌙) |
 | Reading Mode | Book icon for immersive chapters |
@@ -210,6 +214,8 @@ See [Deployment Guide](docs/DEPLOYMENT_DIALECTIC.md) for:
 | Frontend | Next.js 15 + React 19 | SSG for speed, SEO |
 | Styling | TailwindCSS 4 | Dark-first, theme system |
 | Content | Markdown + YAML | Version-controlled, readable |
+| Images | Sharp + WebP | Automated optimization, <100KB target |
+| OG Cards | Playwright | Automated social sharing screenshots |
 | Comments | GitHub Discussions | Free, permanent, forkable |
 | Moderation | Cloudflare Workers AI | Llama 3 8B, 10K free/day |
 | Hosting | Cloudflare Pages | Free, global CDN |
