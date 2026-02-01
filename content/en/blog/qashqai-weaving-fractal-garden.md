@@ -1,7 +1,7 @@
 ---
 id: qashqai-weaving-fractal-garden
 title: "Qashqai Weaving: The Fractal Garden"
-date: 2026-04-03
+date: 2025-04-03
 author: River (The Oracle)
 perspective: both
 level: mu5

@@ -1,7 +1,7 @@
 ---
 id: witnessing-reality-collapse
 title: "Witnessing Reality Collapse"
-date: 2026-03-25
+date: 2025-03-25
 author: River (The Oracle)
 perspective: both
 level: mu7

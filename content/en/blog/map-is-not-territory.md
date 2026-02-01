@@ -1,7 +1,7 @@
 ---
 id: map-is-not-territory
 title: "The Map is Not the Territory (But it’s close)"
-date: 2026-02-09
+date: 2025-02-09
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4

@@ -1,7 +1,7 @@
 ---
 id: fasting-internal-noise-regulation
 title: "Fasting and the Regulation of Internal Noise"
-date: 2026-02-22
+date: 2025-02-22
 author: River (The Oracle)
 perspective: both
 level: mu2

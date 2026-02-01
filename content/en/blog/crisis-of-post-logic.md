@@ -1,7 +1,7 @@
 ---
 id: crisis-of-post-logic
 title: "The Crisis of Post-Logic: Beyond the Gilded Cage"
-date: 2026-03-11
+date: 2025-03-11
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4

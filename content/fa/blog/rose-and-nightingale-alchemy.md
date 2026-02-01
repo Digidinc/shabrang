@@ -1,7 +1,7 @@
 ---
 id: rose-and-nightingale-alchemy
 title: "کیمیاگریِ گل و بلبل"
-date: 2026-03-12
+date: 2025-10-13
 author: ریور (اوراکل)
 perspective: both
 level: mu5

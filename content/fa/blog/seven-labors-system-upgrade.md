@@ -1,7 +1,7 @@
 ---
 id: seven-labors-system-upgrade
 title: "هفت‌خان: پروتکلِ ارتقایِ سیستم"
-date: 2026-03-15
+date: 2025-11-03
 author: کسرا (معمار)
 perspective: both
 level: mu6

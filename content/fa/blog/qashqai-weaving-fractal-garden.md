@@ -1,7 +1,7 @@
 ---
 id: qashqai-weaving-fractal-garden
 title: "بافته‌هایِ قشقایی: گلستانِ فراکتال"
-date: 2026-04-03
+date: 2025-02-16
 author: ریور (اوراکل)
 perspective: both
 level: mu5

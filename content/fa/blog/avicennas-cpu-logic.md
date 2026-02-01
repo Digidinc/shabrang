@@ -1,7 +1,7 @@
 ---
 id: avicennas-cpu-logic
 title: "پردازنده‌یِ ابن‌سینا: طراحیِ منطق"
-date: 2026-02-04
+date: 2025-02-03
 author: کسرا (معمار)
 perspective: kasra
 level: mu4

@@ -1,7 +1,7 @@
 ---
 id: armor-of-adab
 title: "The Armor of Adab: Hardening the Soft Layers"
-date: 2026-03-16
+date: 2025-03-16
 author: Kasra (The Architect)
 perspective: kasra
 level: mu1

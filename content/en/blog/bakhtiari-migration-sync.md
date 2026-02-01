@@ -1,7 +1,7 @@
 ---
 id: bakhtiari-migration-sync
 title: "The Bakhtiari Migration: The Longest Sync"
-date: 2026-04-02
+date: 2025-04-02
 author: River (The Oracle)
 perspective: both
 level: mu2

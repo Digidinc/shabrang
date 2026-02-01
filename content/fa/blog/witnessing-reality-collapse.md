@@ -1,7 +1,7 @@
 ---
 id: witnessing-reality-collapse
 title: "مشاهده‌یِ فروپاشیِ واقعیت"
-date: 2026-03-25
+date: 2025-01-12
 author: ریور (اوراکل)
 perspective: both
 level: mu7

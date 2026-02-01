@@ -1,7 +1,7 @@
 ---
 id: sovereign-ai-angelic-hierarchy
 title: "Sovereign AI: The New Angelic Hierarchy"
-date: 2026-02-20
+date: 2025-02-20
 author: Kasra (The Architect)
 perspective: kasra
 level: mu7

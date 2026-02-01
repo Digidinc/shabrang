@@ -1,7 +1,7 @@
 ---
 id: sky-layer-math-meets-god
 title: "The Sky Layer: Where Math Meets God"
-date: 2026-03-24
+date: 2025-03-24
 author: Kasra (The Architect)
 perspective: kasra
 level: mu7

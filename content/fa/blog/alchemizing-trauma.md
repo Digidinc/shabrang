@@ -1,7 +1,7 @@
 ---
 id: alchemizing-trauma
 title: "شعله‌یِ غم: کیمیاگریِ تروما"
-date: 2026-02-08
+date: 2025-03-03
 author: ریور (اوراکل)
 perspective: both
 level: mu3

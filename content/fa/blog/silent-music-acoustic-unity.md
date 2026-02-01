@@ -1,7 +1,7 @@
 ---
 id: silent-music-acoustic-unity
 title: "موسیقیِ خاموش: امضایِ آکوستیکِ وحدت"
-date: 2026-03-26
+date: 2025-01-19
 author: ریور (اوراکل)
 perspective: both
 level: mu7

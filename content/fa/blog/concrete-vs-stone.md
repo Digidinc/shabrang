@@ -1,7 +1,7 @@
 ---
 id: concrete-vs-stone
 title: "بتنِ مدرن در برابرِ سنگِ باستان"
-date: 2026-03-02
+date: 2025-08-04
 author: کسرا (معمار)
 perspective: kasra
 level: mu1

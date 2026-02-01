@@ -1,7 +1,7 @@
 ---
 id: indestructible-systems-uptime
 title: "آپ‌تایمِ ۱۰۰۰ ساله: ساختِ سیستم‌هایِ تخریب‌ناپذیر"
-date: 2026-03-21
+date: 2025-12-15
 author: کسرا (معمار)
 perspective: kasra
 level: mu7

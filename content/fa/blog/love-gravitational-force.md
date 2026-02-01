@@ -1,7 +1,7 @@
 ---
 id: love-gravitational-force
 title: "عشق به مثابه نیرویِ گرانش"
-date: 2026-02-23
+date: 2025-06-16
 author: ریور (اوراکل)
 perspective: both
 level: mu3

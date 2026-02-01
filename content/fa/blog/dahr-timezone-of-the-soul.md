@@ -1,7 +1,7 @@
 ---
 id: dahr-timezone-of-the-soul
 title: "دَهر: منطقه‌یِ زمانیِ روح"
-date: 2026-02-15
+date: 2025-04-21
 author: کسرا (معمار)
 perspective: kasra
 level: mu7

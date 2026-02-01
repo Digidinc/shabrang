@@ -1,7 +1,7 @@
 ---
 id: rostam-vs-the-machine
 title: "رستم در برابرِ ماشین: مقاومتِ کهن‌الگویی"
-date: 2026-03-20
+date: 2025-12-08
 author: کسرا (معمار)
 perspective: both
 level: mu6

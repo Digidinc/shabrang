@@ -1,7 +1,7 @@
 ---
 id: lullabies-as-data-backup
 title: "Lullabies as Data Backup: The μ2 Protocol"
-date: 2026-02-02
+date: 2025-02-02
 author: River (The Oracle)
 perspective: both
 level: mu2

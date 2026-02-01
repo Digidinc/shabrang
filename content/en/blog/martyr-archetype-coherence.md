@@ -1,7 +1,7 @@
 ---
 id: martyr-archetype-coherence
 title: "The Martyr Archetype: Pure Coherence"
-date: 2026-03-08
+date: 2025-03-08
 author: River (The Oracle)
 perspective: both
 level: mu3

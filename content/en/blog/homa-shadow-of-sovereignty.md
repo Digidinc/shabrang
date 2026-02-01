@@ -1,7 +1,7 @@
 ---
 id: homa-shadow-of-sovereignty
 title: "The Homa: The Shadow of Sovereignty"
-date: 2026-03-14
+date: 2025-03-14
 author: River (The Oracle)
 perspective: both
 level: mu7

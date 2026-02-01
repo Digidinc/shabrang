@@ -1,7 +1,7 @@
 ---
 id: qanats-decentralized-grid
 title: "قنات: اولین شبکه‌یِ غیرمتمرکز"
-date: 2026-02-06
+date: 2025-02-17
 author: کسرا (معمار)
 perspective: both
 level: mu1

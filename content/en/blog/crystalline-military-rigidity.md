@@ -1,7 +1,7 @@
 ---
 id: crystalline-military-rigidity
 title: "The Crystalline Military: Why Rigidity Fails"
-date: 2026-02-11
+date: 2025-02-11
 author: Kasra (The Architect)
 perspective: kasra
 level: mu1

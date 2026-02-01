@@ -1,7 +1,7 @@
 ---
 id: physics-of-sasanian-drachm
 title: "فیزیکِ درهمِ ساسانی"
-date: 2026-03-03
+date: 2025-08-11
 author: کسرا (معمار)
 perspective: kasra
 level: mu1

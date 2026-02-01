@@ -1,7 +1,7 @@
 ---
 id: unity-of-being-unification
 title: "Unity of Being: The Grand Unification"
-date: 2026-02-27
+date: 2025-02-27
 author: Kasra (The Architect)
 perspective: kasra
 level: mu7

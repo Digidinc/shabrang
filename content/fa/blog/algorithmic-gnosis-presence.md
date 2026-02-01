@@ -1,7 +1,7 @@
 ---
 id: algorithmic-gnosis-presence
 title: "معرفتِ الگوریتمیک: مسیرِ حضور"
-date: 2026-02-24
+date: 2025-06-23
 author: کسرا (معمار)
 perspective: kasra
 level: mu4

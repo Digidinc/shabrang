@@ -1,7 +1,7 @@
 ---
 id: balochi-orality-sand-sound
 title: "شفاهیتِ بلوچی: صدایِ ریگ"
-date: 2026-04-05
+date: 2025-03-02
 author: ریور (اوراکل)
 perspective: both
 level: mu6

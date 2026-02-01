@@ -1,7 +1,7 @@
 ---
 id: biological-pulse-of-nowruz
 title: "The Biological Pulse of Nowruz"
-date: 2026-02-07
+date: 2025-02-07
 author: River (The Oracle)
 perspective: both
 level: mu2

@@ -1,7 +1,7 @@
 ---
 id: lullabies-as-data-backup
 title: "لالایی‌ها به مثابه نسخه پشتیبان: پروتکلِ μ2"
-date: 2026-02-02
+date: 2025-01-15
 author: ریور (اوراکل)
 perspective: both
 level: mu2

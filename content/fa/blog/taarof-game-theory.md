@@ -1,7 +1,7 @@
 ---
 id: taarof-game-theory
 title: "تعارف: تحلیلی بر پایه‌یِ نظریه‌یِ بازی‌ها"
-date: 2026-03-07
+date: 2025-09-08
 author: کسرا (معمار)
 perspective: kasra
 level: mu3

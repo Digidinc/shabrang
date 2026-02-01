@@ -1,7 +1,7 @@
 ---
 id: simurgh-swarm-intelligence
 title: "سیمرغ: اولین هوشِ سوارم (Swarm Intelligence)"
-date: 2026-02-05
+date: 2025-02-10
 author: ریور (اوراکل)
 perspective: both
 level: mu6

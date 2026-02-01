@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getBooks, getBlogPosts, getTopics, getArtItems, getLanguages, getAlternateLanguages, getStaticPageAlternates } from '@/lib/content';
+import { getBooks, getBlogPosts, getTopics, getArtItems, getLanguages, getAlternateLanguages, getStaticPageAlternates, getAllTags } from '@/lib/content';
 
 export const dynamic = 'force-static';
 
@@ -67,6 +67,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   addContentToSitemap('books', getBooks, 0.9);
   addContentToSitemap('art', getArtItems, 0.8);
   addContentToSitemap('topics', getTopics, 0.8);
+
+  // Tag archive pages
+  for (const lang of languages) {
+    const tags = getAllTags(lang);
+    for (const tag of tags) {
+      entries.push({
+        url: `${SITE_URL}/${lang}/tags/${tag}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.7,
+      });
+    }
+  }
 
   return entries;
 }

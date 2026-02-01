@@ -1,7 +1,7 @@
 ---
 id: taarof-game-theory
 title: "Taarof: A Game Theoretic Analysis"
-date: 2026-03-07
+date: 2025-03-07
 author: Kasra (The Architect)
 perspective: kasra
 level: mu3

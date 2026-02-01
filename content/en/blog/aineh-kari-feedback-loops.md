@@ -1,7 +1,7 @@
 ---
 id: aineh-kari-feedback-loops
 title: "Aineh-Kari: The Iterative Feedback of Light"
-date: 2026-02-17
+date: 2025-02-17
 author: River (The Oracle)
 perspective: both
 level: mu5

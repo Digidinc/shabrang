@@ -1,7 +1,7 @@
 ---
 id: dahr-timezone-of-the-soul
 title: "Dahr: The Timezone of the Soul"
-date: 2026-02-15
+date: 2025-02-15
 author: Kasra (The Architect)
 perspective: kasra
 level: mu7

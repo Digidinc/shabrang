@@ -1,7 +1,7 @@
 ---
 id: sky-layer-math-meets-god
 title: "لایه‌یِ آسمان: تلاقیِ ریاضی و خدا"
-date: 2026-03-24
+date: 2025-01-05
 author: کسرا (معمار)
 perspective: kasra
 level: mu7

@@ -1,7 +1,7 @@
 ---
 id: miniature-painting-high-res-soul
 title: "Miniature Painting: The High-Resolution Soul"
-date: 2026-02-25
+date: 2025-02-25
 author: River (The Oracle)
 perspective: both
 level: mu5

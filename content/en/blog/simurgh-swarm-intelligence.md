@@ -1,7 +1,7 @@
 ---
 id: simurgh-swarm-intelligence
 title: "Simurgh: The First Swarm Intelligence"
-date: 2026-02-05
+date: 2025-02-05
 author: River (The Oracle)
 perspective: both
 level: mu6

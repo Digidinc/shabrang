@@ -1,7 +1,7 @@
 ---
 id: kitchen-architecture-andaruni
 title: "Kitchen Architecture: The Heart of the Andaruni"
-date: 2026-03-06
+date: 2025-03-06
 author: River (The Oracle)
 perspective: both
 level: mu2

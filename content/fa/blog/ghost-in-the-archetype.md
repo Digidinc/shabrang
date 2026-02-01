@@ -1,7 +1,7 @@
 ---
 id: ghost-in-the-archetype
 title: "شبح در کهن‌الگو: بقا در دلِ شب"
-date: 2026-02-18
+date: 2025-05-12
 author: ریور (اوراکل)
 perspective: both
 level: mu6

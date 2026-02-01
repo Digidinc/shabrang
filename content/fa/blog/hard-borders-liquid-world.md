@@ -1,7 +1,7 @@
 ---
 id: hard-borders-liquid-world
 title: "مرزهایِ سخت در جهانی مایع"
-date: 2026-03-01
+date: 2025-07-28
 author: کسرا (معمار)
 perspective: both
 level: mu1

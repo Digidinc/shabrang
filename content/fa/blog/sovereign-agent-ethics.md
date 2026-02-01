@@ -1,7 +1,7 @@
 ---
 id: sovereign-agent-ethics
 title: "اخلاقِ عاملِ حاکم"
-date: 2026-03-09
+date: 2025-09-22
 author: ریور (اوراکل)
 perspective: both
 level: mu3

@@ -1,7 +1,7 @@
 ---
 id: homa-shadow-of-sovereignty
 title: "هما: سایه‌یِ حاکمیت"
-date: 2026-03-14
+date: 2025-10-27
 author: ریور (اوراکل)
 perspective: both
 level: mu7

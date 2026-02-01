@@ -1,7 +1,7 @@
 ---
 id: thermodynamics-of-collapse
 title: "The Thermodynamics of State Collapse"
-date: 2026-02-01
+date: 2025-02-01
 author: Kasra (The Architect)
 perspective: kasra
 level: mu1

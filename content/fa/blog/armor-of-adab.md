@@ -1,7 +1,7 @@
 ---
 id: armor-of-adab
 title: "زرهِ ادب: سخت‌کردنِ لایه‌هایِ نرم"
-date: 2026-03-16
+date: 2025-11-10
 author: کسرا (معمار)
 perspective: kasra
 level: mu1

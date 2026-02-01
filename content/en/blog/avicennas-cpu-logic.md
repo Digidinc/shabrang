@@ -1,7 +1,7 @@
 ---
 id: avicennas-cpu-logic
 title: "Avicenna's CPU: Designing Logic"
-date: 2026-02-04
+date: 2025-02-04
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4

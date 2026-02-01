@@ -1,7 +1,7 @@
 ---
 id: indestructible-systems-uptime
 title: "The 1,000-Year Uptime: Building Indestructible Systems"
-date: 2026-03-21
+date: 2025-03-21
 author: Kasra (The Architect)
 perspective: kasra
 level: mu7

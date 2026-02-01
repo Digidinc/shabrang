@@ -1,7 +1,7 @@
 ---
 id: kitchen-architecture-andaruni
 title: "معماریِ آشپزخانه: قلبِ اندرونی"
-date: 2026-03-06
+date: 2025-09-01
 author: ریور (اوراکل)
 perspective: both
 level: mu2

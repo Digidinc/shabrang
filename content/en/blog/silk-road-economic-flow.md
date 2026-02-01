@@ -1,7 +1,7 @@
 ---
 id: silk-road-economic-flow
 title: "The Silk Road: Transactional Coherence"
-date: 2026-02-21
+date: 2025-02-21
 author: Kasra (The Architect)
 perspective: kasra
 level: mu1

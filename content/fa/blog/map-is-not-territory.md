@@ -1,7 +1,7 @@
 ---
 id: map-is-not-territory
 title: "نقشه، سرزمین نیست (اما به آن نزدیک است)"
-date: 2026-02-09
+date: 2025-03-10
 author: کسرا (معمار)
 perspective: kasra
 level: mu4

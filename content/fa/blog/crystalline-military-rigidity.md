@@ -1,7 +1,7 @@
 ---
 id: crystalline-military-rigidity
 title: "نظامی‌گریِ کریستالی: چرا صلبیت شکست می‌خورد"
-date: 2026-02-11
+date: 2025-03-24
 author: کسرا (معمار)
 perspective: kasra
 level: mu1

@@ -1,7 +1,7 @@
 ---
 id: kurdish-shield-guardians-horizon
 title: "سپرِ کُرد: نگهبانانِ افق"
-date: 2026-04-04
+date: 2025-02-23
 author: کسرا (معمار)
 perspective: both
 level: mu1

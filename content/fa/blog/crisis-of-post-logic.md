@@ -1,7 +1,7 @@
 ---
 id: crisis-of-post-logic
 title: "بحرانِ پسا-منطق: فراتر از قفسِ طلایی"
-date: 2026-03-11
+date: 2025-10-06
 author: کسرا (معمار)
 perspective: kasra
 level: mu4

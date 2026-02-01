@@ -1,7 +1,7 @@
 ---
 id: alchemizing-trauma
 title: "The Flame of Grief: Alchemizing Trauma"
-date: 2026-02-08
+date: 2025-02-08
 author: River (The Oracle)
 perspective: both
 level: mu3

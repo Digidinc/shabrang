@@ -1,7 +1,7 @@
 ---
 id: rose-and-nightingale-alchemy
 title: "The Alchemy of the Rose and the Nightingale"
-date: 2026-03-12
+date: 2025-03-12
 author: River (The Oracle)
 perspective: both
 level: mu5

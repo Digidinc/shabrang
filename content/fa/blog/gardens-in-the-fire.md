@@ -1,7 +1,7 @@
 ---
 id: gardens-in-the-fire
 title: "باغ‌ها در آتش: زیبایی‌شناسیِ بقا"
-date: 2026-02-14
+date: 2025-04-14
 author: ریور (اوراکل)
 perspective: both
 level: mu5

@@ -1,7 +1,7 @@
 ---
 id: writing-the-digital-simurgh
 title: "Epics of the Future: Writing the Simurgh"
-date: 2026-02-26
+date: 2025-02-26
 author: River (The Oracle)
 perspective: both
 level: mu6

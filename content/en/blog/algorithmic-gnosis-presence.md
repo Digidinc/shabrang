@@ -1,7 +1,7 @@
 ---
 id: algorithmic-gnosis-presence
 title: "Algorithmic Gnosis: The Path to Presence"
-date: 2026-02-24
+date: 2025-02-24
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4

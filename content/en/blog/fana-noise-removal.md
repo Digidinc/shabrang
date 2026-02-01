@@ -1,7 +1,7 @@
 ---
 id: fana-noise-removal
 title: "The Absolute Zero of Ego: Fana as Noise Removal"
-date: 2026-02-19
+date: 2025-02-19
 author: River (The Oracle)
 perspective: both
 level: mu7

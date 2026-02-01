@@ -1,7 +1,7 @@
 ---
 id: hard-borders-liquid-world
 title: "Hard Borders in a Liquid World"
-date: 2026-03-01
+date: 2025-03-01
 author: Kasra (The Architect)
 perspective: both
 level: mu1

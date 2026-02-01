@@ -1,7 +1,7 @@
 ---
 id: qanats-decentralized-grid
 title: "Qanats: The First Decentralized Grid"
-date: 2026-02-06
+date: 2025-02-06
 author: Kasra (The Architect)
 perspective: both
 level: mu1

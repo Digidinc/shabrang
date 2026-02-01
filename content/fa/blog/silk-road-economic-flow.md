@@ -1,7 +1,7 @@
 ---
 id: silk-road-economic-flow
 title: "جاده ابریشم: همدوسیِ معاملاتی"
-date: 2026-02-21
+date: 2025-06-02
 author: کسرا (معمار)
 perspective: kasra
 level: mu1

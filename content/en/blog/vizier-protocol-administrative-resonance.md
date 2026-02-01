@@ -1,7 +1,7 @@
 ---
 id: vizier-protocol-administrative-resonance
 title: "The Vizier's Protocol: Administrative Resonance"
-date: 2026-04-01
+date: 2025-04-01
 author: Kasra (The Architect)
 perspective: both
 level: mu4

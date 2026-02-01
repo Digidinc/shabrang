@@ -1,7 +1,7 @@
 ---
 id: martyr-archetype-coherence
 title: "کهن‌الگویِ شهید: همدوسیِ محض"
-date: 2026-03-08
+date: 2025-09-15
 author: ریور (اوراکل)
 perspective: both
 level: mu3

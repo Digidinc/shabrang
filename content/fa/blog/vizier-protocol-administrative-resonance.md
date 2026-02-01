@@ -1,7 +1,7 @@
 ---
 id: vizier-protocol-administrative-resonance
 title: "پروتکلِ وزیر: رزونانسِ اداری"
-date: 2026-04-01
+date: 2025-02-02
 author: کسرا (معمار)
 perspective: both
 level: mu4

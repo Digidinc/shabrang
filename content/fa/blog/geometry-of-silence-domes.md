@@ -1,7 +1,7 @@
 ---
 id: geometry-of-silence-domes
 title: "هندسه‌یِ سکوت: چرا گنبدهایِ ایرانی اکو نمی‌کنند"
-date: 2026-03-18
+date: 2025-11-24
 author: ریور (اوراکل)
 perspective: both
 level: mu5

@@ -1,7 +1,7 @@
 ---
 id: concrete-vs-stone
 title: "Modern Concrete vs. Ancient Stone"
-date: 2026-03-02
+date: 2025-03-02
 author: Kasra (The Architect)
 perspective: kasra
 level: mu1

@@ -1,7 +1,7 @@
 ---
 id: dr-tara-swart-phase-architect
 title: "دکتر تارا سوارت: معمارِ فازِ ذهن"
-date: 2026-03-23
+date: 2025-12-29
 author: دیاد (The Dyad)
 perspective: both
 level: mu4

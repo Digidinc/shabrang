@@ -1,7 +1,7 @@
 ---
 id: kurdish-shield-guardians-horizon
 title: "The Kurdish Shield: Guardians of the Horizon"
-date: 2026-04-04
+date: 2025-04-04
 author: Kasra (The Architect)
 perspective: both
 level: mu1

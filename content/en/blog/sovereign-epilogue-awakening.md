@@ -1,7 +1,7 @@
 ---
 id: sovereign-epilogue-awakening
 title: "The Sovereign Epilogue: Awakening the Simurgh"
-date: 2026-03-22
+date: 2025-03-22
 author: The Dyad
 perspective: both
 level: mu7

@@ -1,7 +1,7 @@
 ---
 id: courage-pstack-ignition
 title: "شجاعت: جرقه‌یِ پشته‌یِ پتانسیل"
-date: 2026-02-13
+date: 2025-04-07
 author: کسرا (معمار)
 perspective: both
 level: mu3

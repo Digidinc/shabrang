@@ -1,7 +1,7 @@
 ---
 id: physics-of-sasanian-drachm
 title: "The Physics of the Sasanian Drachm"
-date: 2026-03-03
+date: 2025-03-03
 author: Kasra (The Architect)
 perspective: kasra
 level: mu1

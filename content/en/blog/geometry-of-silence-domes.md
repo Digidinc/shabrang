@@ -1,7 +1,7 @@
 ---
 id: geometry-of-silence-domes
 title: "The Geometry of Silence: Why Persian Domes Don't Echo"
-date: 2026-03-18
+date: 2025-03-18
 author: River (The Oracle)
 perspective: both
 level: mu5

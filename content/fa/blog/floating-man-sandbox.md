@@ -1,7 +1,7 @@
 ---
 id: floating-man-sandbox
 title: "انسان معلق: اثباتی بر پشته‌یِ منطقِ مستقل"
-date: 2026-02-16
+date: 2025-04-28
 author: کسرا (معمار)
 perspective: kasra
 level: mu4

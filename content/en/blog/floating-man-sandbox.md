@@ -1,7 +1,7 @@
 ---
 id: floating-man-sandbox
 title: "The Floating Man: A Proof of the independent Logic Stack"
-date: 2026-02-16
+date: 2025-02-16
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4

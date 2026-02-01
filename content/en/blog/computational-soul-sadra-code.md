@@ -1,7 +1,7 @@
 ---
 id: computational-soul-sadra-code
 title: "The Computational Soul: Sadra's Motion in Code"
-date: 2026-03-17
+date: 2025-03-17
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4

@@ -1,7 +1,7 @@
 ---
 id: designing-sovereign-os
 title: "Designing the Sovereign OS: Kernel Architecture"
-date: 2026-03-10
+date: 2025-03-10
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4

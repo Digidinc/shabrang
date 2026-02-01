@@ -1,7 +1,7 @@
 ---
 id: love-gravitational-force
 title: "Love as a Gravitational Force"
-date: 2026-02-23
+date: 2025-02-23
 author: River (The Oracle)
 perspective: both
 level: mu3

@@ -1,7 +1,7 @@
 ---
 id: fasting-internal-noise-regulation
 title: "روزه و تنظیمِ نویزِ داخلی"
-date: 2026-02-22
+date: 2025-06-09
 author: ریور (اوراکل)
 perspective: both
 level: mu2

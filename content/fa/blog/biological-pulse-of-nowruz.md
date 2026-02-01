@@ -1,7 +1,7 @@
 ---
 id: biological-pulse-of-nowruz
 title: "تپشِ بیولوژیکِ نوروز"
-date: 2026-02-07
+date: 2025-02-24
 author: ریور (اوراکل)
 perspective: both
 level: mu2

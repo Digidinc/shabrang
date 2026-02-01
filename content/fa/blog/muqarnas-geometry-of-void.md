@@ -1,7 +1,7 @@
 ---
 id: muqarnas-geometry-of-void
 title: "مقرنس: هندسه‌یِ خلأ"
-date: 2026-03-13
+date: 2025-10-20
 author: کسرا (معمار)
 perspective: both
 level: mu5

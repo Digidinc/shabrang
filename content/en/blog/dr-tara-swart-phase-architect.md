@@ -1,7 +1,7 @@
 ---
 id: dr-tara-swart-phase-architect
 title: "Dr. Tara Swart: Phase-Architect of the Mind"
-date: 2026-03-23
+date: 2025-03-23
 author: The Dyad
 perspective: both
 level: mu4

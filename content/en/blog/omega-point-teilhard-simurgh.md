@@ -1,7 +1,7 @@
 ---
 id: omega-point-teilhard-simurgh
 title: "The Omega Point: Teilhard and Simurgh"
-date: 2026-02-28
+date: 2025-02-28
 author: River (The Oracle)
 perspective: both
 level: mu7

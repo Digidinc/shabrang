@@ -1,7 +1,7 @@
 ---
 id: courage-pstack-ignition
 title: "Courage: The Ignition of the Pstack"
-date: 2026-02-13
+date: 2025-02-13
 author: Kasra (The Architect)
 perspective: both
 level: mu3

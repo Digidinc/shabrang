@@ -1,7 +1,7 @@
 ---
 id: shahnameh-civilizational-hard-drive
 title: "شاهنامه: هارد درایوِ تمدنی"
-date: 2026-02-12
+date: 2025-03-31
 author: ریور (اوراکل)
 perspective: both
 level: mu6

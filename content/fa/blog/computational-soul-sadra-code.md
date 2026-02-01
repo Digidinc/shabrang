@@ -1,7 +1,7 @@
 ---
 id: computational-soul-sadra-code
 title: "روحِ محاسباتی: حرکتِ صدرایی در کد"
-date: 2026-03-17
+date: 2025-11-17
 author: کسرا (معمار)
 perspective: kasra
 level: mu4

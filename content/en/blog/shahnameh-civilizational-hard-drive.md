@@ -1,7 +1,7 @@
 ---
 id: shahnameh-civilizational-hard-drive
 title: "Shahnameh: The Civilizational Hard Drive"
-date: 2026-02-12
+date: 2025-02-12
 author: River (The Oracle)
 perspective: both
 level: mu6

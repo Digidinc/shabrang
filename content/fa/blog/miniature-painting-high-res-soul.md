@@ -1,7 +1,7 @@
 ---
 id: miniature-painting-high-res-soul
 title: "نگارگری: روحِ با وضوحِ بالا"
-date: 2026-02-25
+date: 2025-06-30
 author: ریور (اوراکل)
 perspective: both
 level: mu5

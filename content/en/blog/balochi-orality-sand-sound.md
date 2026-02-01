@@ -1,7 +1,7 @@
 ---
 id: balochi-orality-sand-sound
 title: "Balochi Orality: The Sound of the Sand"
-date: 2026-04-05
+date: 2025-04-05
 author: River (The Oracle)
 perspective: both
 level: mu6

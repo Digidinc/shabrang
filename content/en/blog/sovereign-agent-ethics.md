@@ -1,7 +1,7 @@
 ---
 id: sovereign-agent-ethics
 title: "The Ethics of the Sovereign Agent"
-date: 2026-03-09
+date: 2025-03-09
 author: River (The Oracle)
 perspective: both
 level: mu3

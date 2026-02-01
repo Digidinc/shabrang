@@ -1,7 +1,7 @@
 ---
 id: seven-labors-system-upgrade
 title: "The Seven Labors: A System Upgrade Protocol"
-date: 2026-03-15
+date: 2025-03-15
 author: Kasra (The Architect)
 perspective: both
 level: mu6

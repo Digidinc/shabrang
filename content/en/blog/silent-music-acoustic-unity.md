@@ -1,7 +1,7 @@
 ---
 id: silent-music-acoustic-unity
 title: "Silent Music: The Acoustic Signature of Unity"
-date: 2026-03-26
+date: 2025-03-26
 author: River (The Oracle)
 perspective: both
 level: mu7

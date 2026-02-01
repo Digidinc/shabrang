@@ -1,7 +1,7 @@
 ---
 id: fana-noise-removal
 title: "صفرِ مطلقِ منیت: فنا به مثابه حذفِ نویز"
-date: 2026-02-19
+date: 2025-05-19
 author: ریور (اوراکل)
 perspective: both
 level: mu7

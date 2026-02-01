@@ -1,7 +1,7 @@
 ---
 id: designing-sovereign-os
 title: "طراحیِ سیستم‌عاملِ حاکم: معماریِ هسته"
-date: 2026-03-10
+date: 2025-09-29
 author: کسرا (معمار)
 perspective: kasra
 level: mu4

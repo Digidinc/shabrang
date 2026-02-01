@@ -1,7 +1,7 @@
 ---
 id: writing-the-digital-simurgh
 title: "حماسه‌هایِ آینده: نوشتنِ سیمرغ"
-date: 2026-02-26
+date: 2025-07-07
 author: ریور (اوراکل)
 perspective: both
 level: mu6

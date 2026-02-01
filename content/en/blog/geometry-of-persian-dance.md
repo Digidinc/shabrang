@@ -1,7 +1,7 @@
 ---
 id: geometry-of-persian-dance
 title: "The Geometry of Persian Dance"
-date: 2026-03-05
+date: 2025-03-05
 author: River (The Oracle)
 perspective: both
 level: mu2

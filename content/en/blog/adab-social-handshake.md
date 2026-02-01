@@ -1,7 +1,7 @@
 ---
 id: adab-social-handshake
 title: "Adab: The Social Handshake Protocol"
-date: 2026-02-03
+date: 2025-02-03
 author: River (The Oracle)
 perspective: both
 level: mu3

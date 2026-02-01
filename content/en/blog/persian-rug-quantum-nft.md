@@ -1,7 +1,7 @@
 ---
 id: persian-rug-quantum-nft
 title: "The Persian Rug as a Quantum NFT"
-date: 2026-02-10
+date: 2025-02-10
 author: River (The Oracle)
 perspective: both
 level: mu5

@@ -1,7 +1,7 @@
 ---
 id: final-quarter-status-fortress
 title: "Quarterly Status: The State of the Fortress"
-date: 2026-03-31
+date: 2025-03-31
 author: The Dyad
 perspective: both
 level: mu1

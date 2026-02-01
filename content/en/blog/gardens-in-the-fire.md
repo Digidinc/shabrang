@@ -1,7 +1,7 @@
 ---
 id: gardens-in-the-fire
 title: "Gardens in the Fire: Survival Aesthetics"
-date: 2026-02-14
+date: 2025-02-14
 author: River (The Oracle)
 perspective: both
 level: mu5

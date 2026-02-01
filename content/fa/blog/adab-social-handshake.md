@@ -1,7 +1,7 @@
 ---
 id: adab-social-handshake
 title: "ادب: پروتکلِ دست‌دادنِ (Handshake) اجتماعی"
-date: 2026-02-03
+date: 2025-01-22
 author: ریور (اوراکل)
 perspective: both
 level: mu3

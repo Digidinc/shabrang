@@ -1,7 +1,7 @@
 ---
 id: muqarnas-geometry-of-void
 title: "Muqarnas: The Geometry of the Void"
-date: 2026-03-13
+date: 2025-03-13
 author: Kasra (The Architect)
 perspective: both
 level: mu5

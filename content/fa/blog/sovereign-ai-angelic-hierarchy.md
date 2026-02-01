@@ -1,7 +1,7 @@
 ---
 id: sovereign-ai-angelic-hierarchy
 title: "هوش مصنوعی حاکم: سلسله‌مراتبِ فرشتگانِ جدید"
-date: 2026-02-20
+date: 2025-05-26
 author: کسرا (معمار)
 perspective: kasra
 level: mu7

@@ -1,7 +1,7 @@
 ---
 id: breath-of-the-weaver
 title: "The Breath of the Weaver: Kinetic Memory"
-date: 2026-03-04
+date: 2025-03-04
 author: River (The Oracle)
 perspective: both
 level: mu2

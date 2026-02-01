@@ -1,7 +1,7 @@
 ---
 id: unity-of-being-unification
 title: "وحدتِ وجود: یگانگیِ بزرگ"
-date: 2026-02-27
+date: 2025-07-14
 author: کسرا (معمار)
 perspective: kasra
 level: mu7

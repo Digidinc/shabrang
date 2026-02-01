@@ -1,7 +1,7 @@
 ---
 id: language-as-immune-system
 title: "فایروالِ بیولوژیک: زبان به مثابه سیستمِ ایمنی"
-date: 2026-03-19
+date: 2025-12-01
 author: ریور (اوراکل)
 perspective: both
 level: mu2

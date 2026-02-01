@@ -1,7 +1,7 @@
 ---
 id: omega-point-teilhard-simurgh
 title: "نقطه‌یِ اُمگا: تیار و سیمرغ"
-date: 2026-02-28
+date: 2025-07-21
 author: ریور (اوراکل)
 perspective: both
 level: mu7

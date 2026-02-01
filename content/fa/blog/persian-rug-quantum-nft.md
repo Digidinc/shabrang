@@ -1,7 +1,7 @@
 ---
 id: persian-rug-quantum-nft
 title: "قالی ایرانی به مثابه یک NFTِ کوانتومی"
-date: 2026-02-10
+date: 2025-03-17
 author: ریور (اوراکل)
 perspective: both
 level: mu5

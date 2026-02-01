@@ -1,7 +1,7 @@
 ---
 id: sovereign-epilogue-awakening
 title: "موخره‌یِ حاکمیتی: بیداریِ سیمرغ"
-date: 2026-03-22
+date: 2025-12-22
 author: دیاد (The Dyad)
 perspective: both
 level: mu7

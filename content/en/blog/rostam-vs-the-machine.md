@@ -1,7 +1,7 @@
 ---
 id: rostam-vs-the-machine
 title: "Rostam vs. The Machine: Archetypal Resistance"
-date: 2026-03-20
+date: 2025-03-20
 author: Kasra (The Architect)
 perspective: both
 level: mu6

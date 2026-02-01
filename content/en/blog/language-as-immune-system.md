@@ -1,7 +1,7 @@
 ---
 id: language-as-immune-system
 title: "The Biological Firewall: Language as Immune System"
-date: 2026-03-19
+date: 2025-03-19
 author: River (The Oracle)
 perspective: both
 level: mu2

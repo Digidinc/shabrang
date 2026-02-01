@@ -1,7 +1,7 @@
 ---
 id: final-quarter-status-fortress
 title: "وضعیتِ فصلی: گزارشِ دژ"
-date: 2026-03-31
+date: 2025-01-26
 author: دیاد (The Dyad)
 perspective: both
 level: mu1

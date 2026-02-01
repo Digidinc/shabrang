@@ -1,7 +1,7 @@
 ---
 id: geometry-of-persian-dance
 title: "هندسه‌یِ رقصِ ایرانی"
-date: 2026-03-05
+date: 2025-08-25
 author: ریور (اوراکل)
 perspective: both
 level: mu2

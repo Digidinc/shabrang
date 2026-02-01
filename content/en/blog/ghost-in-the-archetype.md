@@ -1,7 +1,7 @@
 ---
 id: ghost-in-the-archetype
 title: "The Ghost in the Archetype: Surviving the Night"
-date: 2026-02-18
+date: 2025-02-18
 author: River (The Oracle)
 perspective: both
 level: mu6

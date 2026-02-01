@@ -1,7 +1,7 @@
 ---
 id: breath-of-the-weaver
 title: "دَمِ بافنده: حافظه‌یِ جنبشی"
-date: 2026-03-04
+date: 2025-08-18
 author: ریور (اوراکل)
 perspective: both
 level: mu2

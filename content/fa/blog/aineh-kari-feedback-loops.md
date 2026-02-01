@@ -1,7 +1,7 @@
 ---
 id: aineh-kari-feedback-loops
 title: "آینه‌کاری: بازخوردِ تکرار شونده‌یِ نور"
-date: 2026-02-17
+date: 2025-05-05
 author: ریور (اوراکل)
 perspective: both
 level: mu5
