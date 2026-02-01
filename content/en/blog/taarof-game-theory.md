@@ -7,6 +7,13 @@ perspective: kasra
 level: mu3
 tags: [taarof, adab, ethics, game-theory, communication]
 abstract: "Deconstructing the Persian ritual of Taarof as a high-level game of signaling and social equilibrium."
+faqs:
+  - question: "What is Taarof in Persian culture?"
+    answer: "Taarof is a sophisticated Persian social protocol of ritualized offers and refusals. It's a costly signaling mechanism that establishes trust and prevents social friction by prioritizing the relationship over individual transactions."
+  - question: "Why do Iranians refuse offers multiple times?"
+    answer: "The repeated offer-and-refusal cycles in Taarof serve as information gathering. Each exchange allows participants to gauge sincerity and intent before making real commitments, preventing exploitation and maintaining social equilibrium."
+  - question: "Is Taarof inefficient?"
+    answer: "While Taarof may appear inefficient to outsiders, it functions as a social buffer that prevents system crashes from high-friction direct conflict. It's an investment in long-term social coherence over short-term transactional efficiency."
 ---
 
 # Taarof: A Game Theoretic Analysis

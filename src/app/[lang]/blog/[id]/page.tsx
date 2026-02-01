@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SchemaScript } from '@/components/SchemaScript';
-import { schemaPaperPage } from '@/lib/schema';
+import { schemaPaperPage, schemaFAQ, type FAQItem } from '@/lib/schema';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { ContentDigest } from '@/components/ContentDigest';
 import { BlogSidebar } from '@/components/BlogSidebar';
@@ -105,9 +105,15 @@ export default async function BlogPostPage({ params }: Props) {
     .filter((p) => p !== null)
     .slice(0, 5);
 
+  // Check for FAQ data in frontmatter
+  const faqData = fmExt.faqs as FAQItem[] | undefined;
+
   return (
     <>
       <SchemaScript data={schemaPaperPage(meta)} />
+      {faqData && faqData.length > 0 && (
+        <SchemaScript data={schemaFAQ(faqData)} />
+      )}
 
       <PageShell
         leftMobile={<BlogSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" variant="mobile" />}
