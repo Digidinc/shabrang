@@ -7,6 +7,13 @@ perspective: both
 level: mu6
 tags: [shahnameh, ferdowsi, storage, myth, identity]
 abstract: "How 50,000 lines of verse functioned as history's most effective cultural operating system."
+faqs:
+  - question: "What is the Shahnameh?"
+    answer: "The Shahnameh (Book of Kings) is an epic poem of approximately 50,000 verses that chronicles the mythical and historical past of Persia from the creation of the world to the Islamic conquest. Written in pure Persian with minimal Arabic loanwords, it functions as a cultural operating system that preserved Persian identity and values across generations through memorable characters, archetypal stories, and rhythmic verse."
+  - question: "Who wrote the Shahnameh?"
+    answer: "The Shahnameh was written by Ferdowsi (Hakim Abul-Qasim Ferdowsi Tusi), a Persian poet who spent 30 years composing the epic between approximately 977 and 1010 CE. Ferdowsi deliberately refined the Persian language by removing excessive foreign influences, creating a literary work that would serve as both a linguistic standard and a repository of Persian cultural memory during the 'Two Centuries of Silence' following Arab conquest."
+  - question: "Why is the Shahnameh important?"
+    answer: "The Shahnameh is important because it maintained Persian cultural coherence across a millennium of political upheaval, invasions, and regime changes by encoding essential values and archetypes into memorable verse. Its rhythmic, rhyming structure enabled oral transmission without requiring physical infrastructure, making it the most durable form of cultural storage—a civilizational hard drive with 100% uptime that preserved Persian identity even when cities burned and empires fell."
 ---
 
 # Shahnameh: The Civilizational Hard Drive

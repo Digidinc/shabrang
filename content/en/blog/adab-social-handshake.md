@@ -7,6 +7,13 @@ perspective: both
 level: mu3
 tags: [ethics, adab, sociology, protocol, communication]
 abstract: "Analyzing Adab and Taarof as complexity-reduction tools for maintaining civilizational coherence in high-traffic environments."
+faqs:
+  - question: "What is Adab?"
+    answer: "Adab is a Persian ethical framework that functions as a social handshake protocol, providing standardized rules for interactions between people from different cultural backgrounds. Rather than mere politeness, it is a complexity-reduction algorithm that minimizes social friction and prevents conflict through ritualized courtesy called Taarof."
+  - question: "Why is Adab important?"
+    answer: "Adab is important because it enables high-efficiency social interactions in diverse environments by establishing a shared protocol for communication. In historical Persia, positioned on global trade routes, Adab prevented the system from overheating due to constant cultural negotiations, allowing civilizational coherence to persist even without physical infrastructure."
+  - question: "How is Adab different from Western politeness?"
+    answer: "While Western politeness focuses on individual manners and etiquette, Adab is a systemic protocol designed for complexity reduction in high-traffic civilizational corridors. It employs ritualized exchanges (Taarof) to verify integrity between parties, establish communication buffers, and resolve disagreements through phase-shifting rather than direct confrontation, functioning more like a technical handshake protocol than simple courtesy."
 ---
 
 # Adab: The Social Handshake Protocol

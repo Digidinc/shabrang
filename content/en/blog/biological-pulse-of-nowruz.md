@@ -7,6 +7,13 @@ perspective: both
 level: mu2
 tags: [ritual, rhythm, nowruz, biology, resonance]
 abstract: "Nowruz is not just a holiday; it is a bio-rhythmic synchronization event that re-aligns the swarm with the cosmic field."
+faqs:
+  - question: "When is Nowruz?"
+    answer: "Nowruz occurs at the exact moment of the Spring Equinox, typically on March 20th or 21st each year, when day and night are of equal length. This astronomical event marks the beginning of spring and the Persian New Year, serving as a cosmic synchronization point when millions of people align their internal rhythms with the solar calendar's absolute clock."
+  - question: "What is Nowruz?"
+    answer: "Nowruz (meaning 'new day') is the Persian New Year celebration that has been observed for over 3,000 years as a phase-locking protocol between human civilization and cosmic cycles. It is both a cultural festival and a biological calibration event that resets communal coherence through ritualized cleaning, visiting, and symbolic table settings, synchronizing individual and collective consciousness with the rhythms of nature."
+  - question: "How is Nowruz celebrated?"
+    answer: "Nowruz is celebrated through several ritual practices including Haft-Sin (a table with seven symbolic items starting with 'S'), Khaneh-tekani (spring cleaning to purge entropic debt), and Did-o-Bazdid (visiting family and friends to repair social bonds). These traditions occur over a 13-day period beginning at the spring equinox, culminating in Sizdah Be-dar when people spend the 13th day outdoors to complete the renewal cycle and release accumulated negativity back to nature."
 ---
 
 # The Biological Pulse of Nowruz

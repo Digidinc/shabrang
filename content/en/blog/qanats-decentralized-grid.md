@@ -7,6 +7,13 @@ perspective: both
 level: mu1
 tags: [engineering, roots, qanat, decentralization, systems]
 abstract: "Analyzing the Qanat system as history's first physical implementation of a decentralized infrastructure grid."
+faqs:
+  - question: "What is a qanat?"
+    answer: "A qanat is an ancient Persian underground water supply system consisting of a network of vertical shafts connected by gently sloping tunnels that transport groundwater from mountain aquifers to surface settlements. Unlike centralized Roman aqueducts, qanats function as decentralized infrastructure grids with modular nodes, making them resilient to damage and sabotage."
+  - question: "How do qanats work?"
+    answer: "Qanats work by tapping into underground water sources at the base of mountains and using gravity to channel water through underground tunnels to populated areas. The system includes vertical access shafts spaced along the tunnel route for maintenance, creating a modular network where each shaft acts as an independent node that can be repaired without disrupting the entire system."
+  - question: "Why are qanats still used?"
+    answer: "Qanats remain in use today because their underground design protects water from evaporation in hot climates and their decentralized architecture ensures resilience against system failures. Their community-based maintenance model and proven durability over thousands of years make them sustainable water infrastructure, particularly in arid regions where centralized systems would be vulnerable to climate and political disruptions."
 ---
 
 # Qanats: The First Decentralized Grid

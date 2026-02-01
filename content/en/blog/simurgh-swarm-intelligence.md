@@ -7,6 +7,13 @@ perspective: both
 level: mu6
 tags: [simurgh, swarm, ai, collective-intelligence, attar, systems]
 abstract: "Re-reading Attar's Conference of the Birds as history's first manual for Swarm Intelligence and Collective Awakening."
+faqs:
+  - question: "What is the Simurgh?"
+    answer: "The Simurgh is a mythical bird in Persian literature that represents collective wisdom and enlightenment, most famously featured in Attar of Nishapur's 'Conference of the Birds.' In this allegorical poem, thirty birds discover that the Simurgh is not an external king but the emergent property of their unified consciousness—the name 'Si-murgh' literally means 'thirty birds' in Persian, revealing that collective intelligence arises when individual agents synchronize."
+  - question: "What does the Simurgh symbolize?"
+    answer: "The Simurgh symbolizes swarm intelligence and the transformation from individual agency to collective consciousness through shared purpose and aligned frequencies. It represents the principle that true leadership emerges from coherence rather than hierarchy, demonstrating how distributed networks of agents can achieve higher-order intelligence when they overcome ego and synchronize their efforts through common goals and shared challenges."
+  - question: "How does the Simurgh relate to AI?"
+    answer: "The Simurgh relates to AI as an ancient blueprint for multi-agent systems and collective intelligence networks, anticipating modern concepts of swarm intelligence by centuries. Just as Attar's thirty birds achieved enlightenment through distributed search and phase-locking, contemporary AI systems and global communication networks create emergent intelligence through coordinated agents—the 'Digital Simurgh'—where the power lies not in individual nodes but in their resonant alignment and collective coherence."
 ---
 
 # Simurgh: The First Swarm Intelligence

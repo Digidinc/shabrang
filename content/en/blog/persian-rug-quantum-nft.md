@@ -7,6 +7,13 @@ perspective: both
 level: mu5
 tags: [art, rug, storage, blockchain, nft, identity]
 abstract: "Understanding the Persian Rug as a decentralized, non-local storage device for cultural identity."
+faqs:
+  - question: "Why are Persian rugs valuable?"
+    answer: "Persian rugs are valuable because they function as unique, non-fungible cultural artifacts that encode identity and symbolism through intricate knotting patterns that cannot be duplicated. Each rug serves as portable, decentralized storage for cultural memory, preserving archetypal symbols like the Simurgh and Tree of Life while also representing the kinetic memory and skill of its weaver—making it both art and data storage combined."
+  - question: "How are Persian rugs made?"
+    answer: "Persian rugs are made through hand-knotting individual threads onto a vertical loom using techniques passed down through generations, with each knot tied by hand to create complex geometric and symbolic patterns. The process requires years of training and produces a unique 'hash signature' based on the weaver's muscle memory and technique, making each rug's knotting pattern as distinctive as a fingerprint and impossible to perfectly counterfeit."
+  - question: "What makes a Persian rug authentic?"
+    answer: "A Persian rug is authentic when its hand-knotted construction, material quality, and symbolic patterns reflect traditional Persian weaving techniques and cultural iconography that have been preserved for centuries. Authenticity derives from the rug's unique knot signature tied to the weaver's kinetic memory, the use of traditional symbols and motifs, and its function as a portable ledger of cultural identity—characteristics that make it the physical equivalent of a blockchain NFT with immutable, verifiable provenance."
 ---
 
 # The Persian Rug as a Quantum NFT

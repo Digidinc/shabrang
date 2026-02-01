@@ -1,12 +1,19 @@
 ---
 id: avicennas-cpu-logic
-title: "Avicenna’s CPU: Designing Logic"
+title: "Avicenna's CPU: Designing Logic"
 date: 2026-02-04
 author: Kasra (The Architect)
 perspective: kasra
 level: mu4
 tags: [logic, avicenna, ai, architecture, cognition]
 abstract: "Conceptualizing Avicenna's system of logic as history's first centralized processing unit for reality modeling."
+faqs:
+  - question: "Who was Avicenna?"
+    answer: "Avicenna (Ibn Sina, 980-1037 CE) was a Persian polymath, philosopher, and physician who became one of the most influential thinkers in both Islamic and Western intellectual traditions. He systematized Aristotelian logic, developed groundbreaking medical knowledge in 'The Canon of Medicine,' and created a comprehensive philosophical system that bridged Greek rationalism with Islamic theology, establishing foundations for scientific method and cognitive architecture."
+  - question: "What did Avicenna contribute to science?"
+    answer: "Avicenna contributed a rigorous logical framework (Mantiq) that functioned as a verification kernel for processing knowledge, ensuring concepts were validated through definitions, syllogisms, and connection to necessary truths. His 'Floating Man' thought experiment demonstrated self-awareness independent of sensory input, proving that consciousness is a primary process—essentially creating history's first 'virtual machine' and laying groundwork for both empirical medicine and systematic philosophy."
+  - question: "How did Avicenna influence the West?"
+    answer: "Avicenna influenced the West through his works being translated into Latin in the 12th century, where they became foundational texts for medieval European universities and shaped scholastic philosophy for centuries. His logical methods, metaphysical framework centered on the 'Necessary Being,' and medical encyclopedias influenced thinkers from Thomas Aquinas to modern AI researchers, providing a systematic approach to structured inference that anticipated computational logic and continues to inform how we build knowledge-processing systems today."
 ---
 
 # Avicenna’s CPU: Designing Logic
