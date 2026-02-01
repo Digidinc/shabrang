@@ -31,13 +31,18 @@ npm run build      # Static export → Cloudflare Pages
 | **🗣️ Community Dialogue** | Comment on any page via GitHub Discussions with AI moderation |
 | **🤖 AI Council** | Llama 3 8B auto-moderates comments (thesis/antithesis/synthesis) |
 | **💬 Permanent Archive** | All conversations stored in git, preserving the dialectic |
+| **📊 Advanced SEO** | FAQ schema, RSS feed, 381 tag pages, Open Graph, structured data |
+| **🔍 Featured Snippets** | FAQ schema targeting Google featured snippets |
+| **📰 RSS Feed** | Static `/feed.xml` with 50 recent posts |
+| **🏷️ Tag System** | 381 auto-generated tag archive pages |
+| **🔗 Related Posts** | Smart tag-based post recommendations |
+| **📖 Reading Progress** | Gold progress bar tracks scroll position |
 | Light/Dark Theme | `next-themes` dark-first (night-colored 🌙) |
 | Reading Mode | Book icon for immersive chapters |
 | Text Share | Select → Copy/Tweet/Link (Telegram too) |
 | μ-Stack Navigation | 7-layer sidebar (Roots→Sky) |
 | Multi-language | EN/FA (wikilinks [[chapter1]]) |
 | Book Chapters | 30 chapters + appendices (Liquid Fortress) |
-| SEO | Sitemap, SchemaOrg (Book/Course) |
 
 ## Architecture
 
