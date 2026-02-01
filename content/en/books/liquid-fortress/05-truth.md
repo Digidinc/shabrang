@@ -7,7 +7,6 @@ perspective: both
 tags: [truth, thermodynamics, dynamics, ethics, cinematic]
 ---
 
-# Chapter 5: The Thermodynamics of Truth / Global Dynamics
 
 ![Morality as Thermodynamics](/images/books/liquid-fortress/05-truth/page-01.png)
 

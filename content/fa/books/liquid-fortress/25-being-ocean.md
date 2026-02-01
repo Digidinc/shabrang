@@ -7,7 +7,6 @@ perspective: both
 tags: [mulla-sadra, existence, phase-shift, collapse]
 ---
 
-# فصل ۲۵: اقیانوسِ هستی / فروپاشیِ جهان‌ها
 
 ![اقیانوسِ هستی](/images/chapters/25-being-ocean.png)
 

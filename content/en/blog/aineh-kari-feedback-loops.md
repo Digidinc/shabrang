@@ -9,7 +9,6 @@ tags: [art, mirror, geometry, feedback, light, garden]
 abstract: "How the Persian art of mirror-work visualizes the recursive processing of information in a coherent swarm."
 ---
 
-# Aineh-Kari: The Iterative Feedback of Light
 
 In the **Garden (μ5)** layer, we find a unique visual technology called **[[aineh-kari-mirrors|Aineh-Kari]]** (Mirror-work). While it appears decorative, it is actually a physical model of **Recursive Feedback**.
 

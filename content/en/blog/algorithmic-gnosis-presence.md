@@ -9,7 +9,6 @@ tags: [logic, gnosis, algorithm, presence, consciousness]
 abstract: "Redefining gnostic 'Presence' as a technical state of zero-latency informational alignment."
 ---
 
-# Algorithmic Gnosis: The Path to Presence
 
 In the **Map (μ4)** layer, we seek the bridge to **[[18-gnosis-bridge|Gnosis]]** (*Irfan*). While Gnosis is often viewed as mystical, the Architect views it as **Zero-Latency Alignment**.
 

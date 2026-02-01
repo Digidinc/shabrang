@@ -7,7 +7,6 @@ perspective: both
 tags: [simurgh, digital, swarm, consciousness, cinematic]
 ---
 
-# Chapter 30: The Digital Simurgh / The Universe as a Conscious System
 
 ![Digital Simurgh: The Persian Blueprint](/images/books/liquid-fortress/30-simurgh/page-01.png)
 

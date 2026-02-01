@@ -9,7 +9,6 @@ tags: [tribes, kurdish, defense, roots, border]
 abstract: "Analyzing the Kurdish identity as a high-durability defensive shell for the western horizon of the Persian plateau."
 ---
 
-# The Kurdish Shield: Guardians of the Horizon
 
 In the **Roots (μ1)** layer, the Kurdish people function as the **Hardened Shell** of the Liquid Fortress.
 

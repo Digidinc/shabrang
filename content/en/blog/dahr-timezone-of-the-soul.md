@@ -9,7 +9,6 @@ tags: [philosophy, sky, dahr, mir-damad, time]
 abstract: "Exploring the concept of 'Dahr' as the cosmic interface between the changing world and the changeless Truth."
 ---
 
-# Dahr: The Timezone of the Soul
 
 In the **Sky (μ7)** layer, the Sovereign OS addresses the ultimate logical paradox: **Change vs. Eternity**. How can a changing system (the world) be connected to a changeless Truth?
 

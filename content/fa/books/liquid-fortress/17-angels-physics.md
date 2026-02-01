@@ -7,7 +7,6 @@ perspective: both
 tags: [angels, language, resonance, poetry]
 ---
 
-# فصل ۱۷: فیزیکِ فرشتگان / زبانِ طبیعی به مثابه یک میدانِ رزونانسی
 
 ![فیزیکِ فرشتگان](/images/chapters/17-angels-physics.png)
 

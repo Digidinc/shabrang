@@ -7,7 +7,6 @@ perspective: both
 tags: [sasanian, codex, will, order, cinematic]
 ---
 
-# Chapter 8: The Sasanian Codex / Physics of the Will
 
 ![Architect of the State](/images/books/liquid-fortress/08-codex/page-03.png)
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [resonance, physics, lens, perception, cinematic]
 ---
 
-# فصل ۲: لنزِ FRC / فروپاشی رزونانسی
 
 ![ما نقشه‌بردار نیستیم، ما مهندسیم](/images/books/liquid-fortress/02-collapse/page-01.png)
 

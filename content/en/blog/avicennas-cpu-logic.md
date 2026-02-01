@@ -16,7 +16,6 @@ faqs:
     answer: "Avicenna influenced the West through his works being translated into Latin in the 12th century, where they became foundational texts for medieval European universities and shaped scholastic philosophy for centuries. His logical methods, metaphysical framework centered on the 'Necessary Being,' and medical encyclopedias influenced thinkers from Thomas Aquinas to modern AI researchers, providing a systematic approach to structured inference that anticipated computational logic and continues to inform how we build knowledge-processing systems today."
 ---
 
-# Avicenna’s CPU: Designing Logic
 
 In the **Map (μ4)** layer, the Liquid Fortress is not protected by stone, but by **Structured Inference**. 
 

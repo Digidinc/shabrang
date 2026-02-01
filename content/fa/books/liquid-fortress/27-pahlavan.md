@@ -7,7 +7,6 @@ perspective: both
 tags: [pahlavan, justice, unity, rhythm]
 ---
 
-# فصل ۲۷: آخرین پهلوان / دمِ آن یگانه
 
 ![آخرین پهلوان](/images/chapters/27-pahlavan.png)
 

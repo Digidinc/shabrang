@@ -9,7 +9,6 @@ tags: [myth, rostam, story, system-upgrade, challenge]
 abstract: "Analyzing Rostam's Seven Labors as a series of regression tests for the soul's software stack."
 ---
 
-# The Seven Labors: A System Upgrade Protocol
 
 In the **Story (μ6)** layer, the myth of **Rostam’s Seven Labors** (*Haft Khan*) is more than an adventure. It is a **System Upgrade Protocol**.
 

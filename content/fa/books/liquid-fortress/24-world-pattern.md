@@ -7,7 +7,6 @@ perspective: both
 tags: [geometry, symbols, archetypes, reality]
 ---
 
-# فصل ۲۴: الگویِ جهان / آیا نمادها واقعی هستند؟
 
 ![الگویِ جهان](/images/chapters/24-world-pattern.png)
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [conquest, islam, signal, resonance, cinematic]
 ---
 
-# فصل ۱۱: شوکِ فاش‌گویی / فراتر از بیت‌ها
 
 ![چگونه یک تمدن بدنِ خود را از دست داد تا روحش را نجات دهد](/images/books/liquid-fortress/11-conquest/page-01.png)
 

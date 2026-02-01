@@ -9,7 +9,6 @@ tags: [philosophy, mulla-sadra, ai, logic, motion]
 abstract: "Interpreting Mulla Sadra's Substantial Motion as a fundamental principle for dynamic, evolving AI architectures."
 ---
 
-# The Computational Soul: Sadra's Motion in Code
 
 In the **Map (μ4)** layer, we move beyond static algorithms. The philosopher **[[25-being-ocean|Mulla Sadra]]** provides the blueprint for history's first **Dynamic Operating System**.
 

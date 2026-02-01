@@ -9,7 +9,6 @@ tags: [architecture, isfahan, silence, geometry, sky]
 abstract: "Analyzing the acoustic engineering of the turquoise dome as a mechanism for noise-cancellation and focused resonance."
 ---
 
-# The Geometry of Silence: Why Persian Domes Don't Echo
 
 In the **Garden (μ5)** layer, we find the [[turquoise-dome-isfahan|Turquoise Dome]]. While it looks like a visual masterpiece, it is actually a masterpiece of **Acoustic Engineering**.
 

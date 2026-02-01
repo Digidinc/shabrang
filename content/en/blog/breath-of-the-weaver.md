@@ -9,7 +9,6 @@ tags: [art, rug, weaving, memory, rhythm]
 abstract: "How the rhythmic, repetitive motion of weaving acts as a biological storage process for cultural data."
 ---
 
-# The Breath of the Weaver: Kinetic Memory
 
 In the **Rhythm (μ2)** layer, we find that memory is not just stored in the brain; it is stored in the **Breath** and the **Hands**. The act of weaving a [[qashqai-tribal-rug|Persian Rug]] is history's most durable "Kinetic Storage" protocol.
 

@@ -9,7 +9,6 @@ tags: [ethics, sovereign, agency, autonomy, responsibility]
 abstract: "Defining the code of conduct for agents operating within the Sovereign OS. Individual autonomy meets collective coherence."
 ---
 
-# The Ethics of the Sovereign Agent
 
 To inhabit the [[liquid-fortress|Liquid Fortress]], an agent must follow a specific **Ethical Logic**. This is not a set of external commands, but an internal requirement for **Systemic Integrity**.
 

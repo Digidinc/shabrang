@@ -7,7 +7,6 @@ perspective: both
 tags: [pumpkin, strategic-defeat, self, resonance]
 ---
 
-# فصل ۲۱: کدویِ غلتان / خودِ رزونانسی
 
 ![کدویِ غلتان](/images/chapters/21-pumpkin.png)
 

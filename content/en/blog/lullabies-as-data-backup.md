@@ -9,7 +9,6 @@ tags: [language, biology, rhythm, backup, survival]
 abstract: "How the rhythmic patterns of motherhood acted as history's most resilient decentralized storage during the collapse of the Persian state."
 ---
 
-# Lullabies as Data Backup: The μ2 Protocol
 
 When a system's **Roots (μ1)** are uprooted—when the state falls, the army dissolves, and the law is overwritten—where does the data go?
 

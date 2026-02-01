@@ -7,7 +7,6 @@ perspective: both
 tags: [resonance, physics, lens, perception, cinematic]
 ---
 
-# Chapter 2: The Lens of FRC / Resonant Collapse
 
 ![We Are Not Surveyors, We Are Engineers](/images/books/liquid-fortress/02-collapse/page-01.png)
 

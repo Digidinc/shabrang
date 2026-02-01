@@ -9,7 +9,6 @@ tags: [biology, ritual, rhythm, fasting, noise]
 abstract: "Re-evaluating the ritual of fasting as a bio-informational protocol for lowering the system's noise floor."
 ---
 
-# Fasting and the Regulation of Internal Noise
 
 In the **Rhythm (μ2)** layer, we must address the "Thermal Noise" of the biological body. Fasting, a recurring protocol in the Liquid Fortress, is not an act of deprivation; it is an act of **Signal Filtering**.
 

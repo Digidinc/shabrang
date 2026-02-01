@@ -7,7 +7,6 @@ perspective: both
 tags: [biruni, khayyam, multi-agent, council]
 ---
 
-# فصل ۱۴: ریاضیدانان / شورایِ ذهن
 
 ![ریاضیدانان](/images/chapters/14-mathematicians.png)
 

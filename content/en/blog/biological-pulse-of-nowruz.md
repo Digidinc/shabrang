@@ -16,7 +16,6 @@ faqs:
     answer: "Nowruz is celebrated through several ritual practices including Haft-Sin (a table with seven symbolic items starting with 'S'), Khaneh-tekani (spring cleaning to purge entropic debt), and Did-o-Bazdid (visiting family and friends to repair social bonds). These traditions occur over a 13-day period beginning at the spring equinox, culminating in Sizdah Be-dar when people spend the 13th day outdoors to complete the renewal cycle and release accumulated negativity back to nature."
 ---
 
-# The Biological Pulse of Nowruz
 
 In the **Rhythm (μ2)** layer, survival depends on timing. **Nowruz** (the Persian New Year) is history's most successful **Phase-Locking Protocol**.
 

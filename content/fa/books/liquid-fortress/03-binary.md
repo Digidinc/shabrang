@@ -7,7 +7,6 @@ perspective: both
 tags: [binary, logic, zoroastrianism, measurement, cinematic]
 ---
 
-# فصل ۳: اولین دوگانگی / جستجو برای یک درز
 
 ![اولین باینری](/images/books/liquid-fortress/03-binary/page-01.png)
 

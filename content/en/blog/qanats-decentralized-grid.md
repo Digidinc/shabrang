@@ -16,7 +16,6 @@ faqs:
     answer: "Qanats remain in use today because their underground design protects water from evaporation in hot climates and their decentralized architecture ensures resilience against system failures. Their community-based maintenance model and proven durability over thousands of years make them sustainable water infrastructure, particularly in arid regions where centralized systems would be vulnerable to climate and political disruptions."
 ---
 
-# Qanats: The First Decentralized Grid
 
 In the realm of **Roots (μ1)**, centralization is often a single point of failure. The ancient Persians understood this and built their most vital infrastructure—the water supply—as a **Decentralized Grid**.
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [perfection, nihilism, state, meaning, cinematic]
 ---
 
-# Chapter 26: The Perfected State / The Problem of Nihilism
 
 ![Perfected State: Sickness of Static Perfection](/images/books/liquid-fortress/26-perfected-state/page-01.png)
 

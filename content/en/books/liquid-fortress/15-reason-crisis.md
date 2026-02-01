@@ -7,7 +7,6 @@ perspective: both
 tags: [ghazali, reason, creativity, phase-shift, cinematic]
 ---
 
-# Chapter 15: The Crisis of Reason / Logic of Creativity
 
 ![The Crisis of Reason: The Gilded Cage](/images/books/liquid-fortress/15-reason-crisis/page-01.png)
 

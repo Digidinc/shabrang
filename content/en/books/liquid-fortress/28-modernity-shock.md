@@ -7,7 +7,6 @@ perspective: both
 tags: [modernity, pahlavi, timelines, divergence, cinematic]
 ---
 
-# Chapter 28: The Shock of Modernity / Multiverse of Timelines
 
 ![Shock of Modernity](/images/books/liquid-fortress/28-modernity-shock/page-01.png)
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [border, myth, living-world, logic, cinematic]
 ---
 
-# فصل ۴: اسطوره‌یِ مرز / منطقِ یک جهانِ زنده
 
 ![دژِ متخلخل](/images/books/liquid-fortress/04-border/page-01.png)
 

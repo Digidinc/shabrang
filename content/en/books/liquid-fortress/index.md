@@ -10,7 +10,6 @@ abstract: A journey through Persian philosophy, coherence, and the architecture 
 tags: [book, persian-philosophy, coherence, qanat]
 ---
 
-# The Liquid Fortress
 
 *A journey through Persian philosophy, coherence, and the architecture of meaning.*
 

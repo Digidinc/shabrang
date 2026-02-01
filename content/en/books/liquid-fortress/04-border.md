@@ -7,7 +7,6 @@ perspective: both
 tags: [border, myth, living-world, logic, cinematic]
 ---
 
-# Chapter 4: The Myth of the Border / Logic of a Living World
 
 ![The Porous Fortress](/images/books/liquid-fortress/04-border/page-01.png)
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [simurgh, collective-intelligence, suffering, healing, cinematic]
 ---
 
-# Chapter 22: The Conference of the Birds / The Wounded Field
 
 ![Conference of the Birds: The Vertical Escape](/images/books/liquid-fortress/22-conference/page-01.png)
 

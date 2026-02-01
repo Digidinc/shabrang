@@ -7,7 +7,6 @@ perspective: both
 tags: [manichaeism, prime-numbers, error, dualism, cinematic]
 ---
 
-# Chapter 10: The Manichaean Error / Music of Prime Numbers
 
 ![The Bug in the System](/images/books/liquid-fortress/10-error/page-02.png)
 

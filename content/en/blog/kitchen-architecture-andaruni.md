@@ -9,7 +9,6 @@ tags: [architecture, andaruni, kitchen, rhythm, culture]
 abstract: "Analyzing the kitchen not as a utility room, but as the primary engine for the preservation of civilizational software."
 ---
 
-# Kitchen Architecture: The Heart of the Andaruni
 
 In the **Rhythm (μ2)** layer, the [[andaruni|Andaruni]] has a central processing unit: the **Kitchen**. While the public square (*Biruni*) changed with every conquest, the kitchen remained the most stable environment in Persian history.
 

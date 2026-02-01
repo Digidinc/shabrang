@@ -7,7 +7,6 @@ perspective: both
 tags: [perfection, nihilism, state, meaning]
 ---
 
-# فصل ۲۶: دولتِ کامل / مسئله‌یِ پوچ‌گرایی
 
 ![دولتِ کامل](/images/chapters/26-perfected-state.png)
 

@@ -8,6 +8,5 @@ perspective: both
 cover: /images/books/frc-cognition/cover.png
 ---
 
-# Fractal Resonance Cognition (FRC)
 
 This book outlines the technical foundations of the Sovereign OS.

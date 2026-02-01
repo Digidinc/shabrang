@@ -7,7 +7,6 @@ perspective: both
 tags: [conquest, islam, signal, resonance, cinematic]
 ---
 
-# Chapter 11: The Shock of Conquest / Beyond Bits
 
 ![How a Civilization Lost Its Body to Save Its Soul](/images/books/liquid-fortress/11-conquest/page-01.png)
 

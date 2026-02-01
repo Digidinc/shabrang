@@ -9,7 +9,6 @@ tags: [military, entropy, sasanian, tactics, systems]
 abstract: "Analyzing the Sasanian military collapse as a case study in over-coherence and systemic brittleness."
 ---
 
-# The Crystalline Military: Why Rigidity Fails
 
 In the realm of **Roots (μ1)**, there is a dangerous threshold where order becomes **Rigidity**. The Sasanian military at the Battle of Qadisiyah (Chapter 11) is history's most striking example of this failure.
 

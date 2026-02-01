@@ -9,7 +9,6 @@ tags: [history, administration, logic, vizier, systems]
 abstract: "Analyzing the role of Persian Viziers as history's first 'System Administrators' who ran a foreign empire using an ancient logical kernel."
 ---
 
-# The Vizier's Protocol: Administrative Resonance
 
 In the **Map (μ4)** layer, the Liquid Fortress developed a unique strategy for surviving conquest: **Administrative Infiltration**. 
 

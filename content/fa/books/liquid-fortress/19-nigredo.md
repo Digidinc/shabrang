@@ -7,7 +7,6 @@ perspective: both
 tags: [mongol, nigredo, identity, encoding]
 ---
 
-# فصل ۱۹: نیگردویِ بزرگ / NFTِ کوانتومی و خودِ کدگذاری شده
 
 ![نیگردویِ بزرگ](/images/chapters/19-nigredo.png)
 

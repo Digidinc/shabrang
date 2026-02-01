@@ -7,7 +7,6 @@ perspective: both
 tags: [parthian, time, memory, bridge, cinematic]
 ---
 
-# فصل ۷: پلِ پارتی / تئوریِ نوار کاستِ زمان
 
 ![هارد-فورک](/images/books/liquid-fortress/07-bridge/page-01.png)
 

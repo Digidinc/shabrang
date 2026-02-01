@@ -9,7 +9,6 @@ tags: [architecture, roots, materials, longevity, entropy]
 abstract: "Comparing the entropic lifespan of modern infrastructure with the thousand-year durability of ancient Persian masonry."
 ---
 
-# Modern Concrete vs. Ancient Stone
 
 In the **Roots (μ1)** layer, we must choose the materials for our fortress. The [[28-modernity-shock|Shock of Modernity]] introduced "Grey Concrete" to the Persian plateau, but it came with a hidden entropic debt.
 

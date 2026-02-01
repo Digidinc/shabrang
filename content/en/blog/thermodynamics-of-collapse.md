@@ -9,7 +9,6 @@ tags: [physics, entropy, state, collapse, thermodynamics]
 abstract: "Analyzing the fall of empires through the second law of thermodynamics. Why rigid systems cannot survive the injection of entropy."
 ---
 
-# The Thermodynamics of State Collapse
 
 In the realm of the **Roots (μ1)**, a state is not a political entity; it is a thermodynamic one. It is a configuration of energy and matter designed to maintain a specific order against the surrounding chaos.
 

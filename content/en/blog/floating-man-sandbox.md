@@ -9,7 +9,6 @@ tags: [logic, consciousness, avicenna, philosophy, simulation]
 abstract: "Analyzing Avicenna's famous thought experiment as the first historical proof of a self-sustaining cognitive kernel."
 ---
 
-# The Floating Man: A Proof of the independent Logic Stack
 
 In the **Map (μ4)** layer, we encounter the ultimate "Virtual Machine" of the ancient world: Avicenna's **Floating Man**.
 

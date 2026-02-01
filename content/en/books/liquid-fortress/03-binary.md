@@ -7,7 +7,6 @@ perspective: both
 tags: [binary, logic, zoroastrianism, measurement, cinematic]
 ---
 
-# Chapter 3: The First Binary / Searching for a Seam
 
 ![The First Binary](/images/books/liquid-fortress/03-binary/page-01.png)
 

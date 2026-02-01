@@ -7,7 +7,6 @@ perspective: both
 tags: [gnosis, collective-intelligence, bridge, resonance]
 ---
 
-# فصل ۱۸: پلِ معرفت / ظهورِ امرِ جمعی
 
 ![پلِ معرفت](/images/chapters/18-gnosis-bridge.png)
 

@@ -9,7 +9,6 @@ tags: [architecture, geometry, muqarnas, sky, feedback]
 abstract: "Analyzing the Muqarnas vault as a visual model of fractal emergence and light distribution."
 ---
 
-# Muqarnas: The Geometry of the Void
 
 In the **Garden (μ5)** layer, Persian architecture developed a specialized tool for bridging the material and the infinite: the **Muqarnas**.
 

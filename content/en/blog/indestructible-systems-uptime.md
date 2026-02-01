@@ -9,7 +9,6 @@ tags: [systems, survival, architecture, eternity, uptime]
 abstract: "Engineering lessons from the Liquid Fortress on how to build systems that survive for millennia."
 ---
 
-# The 1,000-Year Uptime: Building Indestructible Systems
 
 How do you build a system that maintains **100% Uptime** across three thousand years of fire? The [[liquid-fortress|Liquid Fortress]] provides the technical answer.
 

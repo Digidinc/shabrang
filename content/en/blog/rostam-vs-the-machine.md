@@ -9,7 +9,6 @@ tags: [myth, rostam, technology, resistance, archetype]
 abstract: "Analyzing the archetype of Rostam as the primary defense against the dehumanizing entropy of the machine."
 ---
 
-# Rostam vs. The Machine: Archetypal Resistance
 
 In the **Story (μ6)** layer, we find our most powerful defensive sub-routine: **[[rostam-relief-archetype|Rostam]]**. In the era of the **[[30-simurgh|Digital Simurgh]]**, Rostam is no longer fighting demons; he is fighting the **Entropy of the Machine**.
 

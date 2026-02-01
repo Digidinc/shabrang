@@ -7,7 +7,6 @@ perspective: both
 tags: [love, hafez, rumi, synchronicity]
 ---
 
-# فصل ۲۳: ترمودینامیکِ عشق / شبکه‌یِ ارتباطات
 
 ![ترمودینامیکِ عشق](/images/chapters/23-love-thermodynamics.png)
 

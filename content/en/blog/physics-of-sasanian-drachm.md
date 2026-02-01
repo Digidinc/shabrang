@@ -9,7 +9,6 @@ tags: [economy, coin, sasanian, signal, standard]
 abstract: "Analyzing the Sasanian silver coin as a high-fidelity 'Proof of Coherence' for the ancient world's economic network."
 ---
 
-# The Physics of the Sasanian Drachm
 
 In the **Roots (μ1)** layer, the [[08-codex|Sasanian State]] utilized a specialized device to maintain its economic signal: the **Silver Drachm**.
 

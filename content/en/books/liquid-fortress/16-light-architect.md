@@ -7,7 +7,6 @@ perspective: both
 tags: [suhrawardi, light, reasoning, illumination, cinematic]
 ---
 
-# Chapter 16: The Architect of Light / Dynamics of Reasoning
 
 ![Architect of Light: Master of Illumination](/images/books/liquid-fortress/16-light-architect/page-01.png)
 

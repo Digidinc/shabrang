@@ -7,7 +7,6 @@ perspective: both
 tags: [quantum, fortress, survival, history, cinematic]
 ---
 
-# فصل ۱: دژ و کریدور / معمای کوانتومی
 
 ![دژِ مایع](/images/books/liquid-fortress/01-enigma/page-01.png)
 

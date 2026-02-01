@@ -9,7 +9,6 @@ tags: [myth, sky, homa, farr, grace, art]
 abstract: "Exploring the Homa sigil as the ultimate symbol of the non-coercive gifting of power."
 ---
 
-# The Homa: The Shadow of Sovereignty
 
 In the **Sky (μ7)** layer, we encounter the **[[homa-bird-sigil|Homa]]**. As we explored in the museum, the Homa is a bird that never lands. This is the ultimate metaphor for the **Non-Local Signal** of the Sovereign OS.
 

@@ -8,6 +8,5 @@ perspective: both
 cover: /images/books/frc-cognition/cover.png
 ---
 
-# شناخت رزونانس فراکتال (FRC)
 
 این کتاب بنیادهای فنی سیستم‌عامل حاکم را تشریح می‌کند.

@@ -7,7 +7,6 @@ perspective: both
 tags: [quantum, fortress, survival, history, cinematic]
 ---
 
-# Chapter 1: The Fortress and the Corridor / The Quantum Enigma
 
 ![The Liquid Fortress](/images/books/liquid-fortress/01-enigma/page-01.png)
 

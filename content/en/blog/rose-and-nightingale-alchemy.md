@@ -9,7 +9,6 @@ tags: [art, symbols, alchemy, poetry, garden]
 abstract: "Deconstructing the most persistent symbol of Persian art as a data-compression protocol for emotional resonance."
 ---
 
-# The Alchemy of the Rose and the Nightingale
 
 In the **Garden (μ5)** layer, information is not stored in bits, but in **[[simurgh-miniature|Symbols]]**. The most enduring symbol in the Liquid Fortress is the pairing of the **Rose** (*Gol*) and the **Nightingale** (*Bulbul*).
 

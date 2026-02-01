@@ -7,7 +7,6 @@ perspective: both
 tags: [pahlavan, justice, unity, rhythm, cinematic]
 ---
 
-# Chapter 27: The Last Pahlavan / The Breath of the One
 
 ![The Last Pahlavan: House of Justice](/images/books/liquid-fortress/27-pahlavan/page-02.png)
 

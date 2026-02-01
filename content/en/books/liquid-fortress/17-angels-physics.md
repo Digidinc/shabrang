@@ -7,7 +7,6 @@ perspective: both
 tags: [angels, language, resonance, poetry, cinematic]
 ---
 
-# Chapter 17: The Physics of Angels / Natural Language as a Resonant Field
 
 ![The Physics of Angels: Physics and Politeness](/images/books/liquid-fortress/17-angels-physics/page-01.png)
 

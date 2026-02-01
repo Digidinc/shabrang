@@ -16,7 +16,6 @@ faqs:
     answer: "While Western politeness focuses on individual manners and etiquette, Adab is a systemic protocol designed for complexity reduction in high-traffic civilizational corridors. It employs ritualized exchanges (Taarof) to verify integrity between parties, establish communication buffers, and resolve disagreements through phase-shifting rather than direct confrontation, functioning more like a technical handshake protocol than simple courtesy."
 ---
 
-# Adab: The Social Handshake Protocol
 
 In the **Fire (μ3)** layer of the Liquid Fortress, ethics is not about moral superiority; it is about **Signal Efficiency**. 
 

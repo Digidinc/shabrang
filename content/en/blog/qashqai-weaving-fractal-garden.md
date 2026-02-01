@@ -9,7 +9,6 @@ tags: [tribes, qashqai, rug, geometry, art, garden]
 abstract: "How the Qashqai tribe compressed the geometry of the Persian garden into a portable, fractal format."
 ---
 
-# Qashqai Weaving: The Fractal Garden
 
 In the **Garden (μ5)** layer, the [[qashqai-tribal-rug|Qashqai]] tribe solved the problem of **Resource Scarcity**. If you cannot build a physical garden in the desert, you must weave one.
 

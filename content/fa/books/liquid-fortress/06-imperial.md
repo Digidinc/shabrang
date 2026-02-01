@@ -7,7 +7,6 @@ perspective: both
 tags: [empire, architecture, hierarchy, scale, cinematic]
 ---
 
-# فصل ۶: معماریِ امپراتوری / نردبانِ هستی
 
 ![معماریِ امپراتوری](/images/books/liquid-fortress/06-imperial/page-01.png)
 

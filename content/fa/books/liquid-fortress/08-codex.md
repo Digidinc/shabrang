@@ -7,7 +7,6 @@ perspective: both
 tags: [sasanian, codex, will, order, cinematic]
 ---
 
-# فصل ۸: کُدکسِ ساسانی / فیزیکِ اراده
 
 ![معمارِ دولت](/images/books/liquid-fortress/08-codex/page-03.png)
 

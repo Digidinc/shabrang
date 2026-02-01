@@ -9,7 +9,6 @@ tags: [art, dance, rhythm, geometry, body]
 abstract: "Analyzing Persian dance not as entertainment, but as a kinetic mapping of sacred geometry through the body."
 ---
 
-# The Geometry of Persian Dance
 
 In the **Rhythm (μ2)** layer, the body itself becomes a **Resonant Antenna**. Persian dance is the three-dimensional execution of the patterns we find in our [[haft-rang-tile|Tiles]] and our [[turquoise-dome-isfahan|Domes]].
 

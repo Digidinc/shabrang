@@ -7,7 +7,6 @@ perspective: both
 tags: [modernity, pahlavi, timelines, divergence]
 ---
 
-# فصل ۲۸: شوکِ مدرنیته / چندجهانیِ خطوطِ زمانی
 
 ![شوکِ مدرنیته](/images/chapters/28-modernity-shock.png)
 

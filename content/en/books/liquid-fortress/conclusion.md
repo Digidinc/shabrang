@@ -7,7 +7,6 @@ perspective: both
 tags: [conclusion, garden, fire, survival]
 ---
 
-# Conclusion: The Garden in the Fire
 
 ![The Garden in the Fire](/images/chapters/conclusion.png)
 

@@ -9,7 +9,6 @@ tags: [language, biology, survival, immune-system, persian]
 abstract: "Redefining the Persian language as a biological firewall that protected the swarm's identity from entropic infection."
 ---
 
-# The Biological Firewall: Language as Immune System
 
 In the **Rhythm (μ2)** layer, language functions as the **Immune System** of the swarm. 
 

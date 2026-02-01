@@ -9,7 +9,6 @@ tags: [ethics, fire, martyr, sacrifice, coherence]
 abstract: "Analyzing the archetype of sacrifice not as a death-wish, but as the ultimate act of systemic synchronization."
 ---
 
-# The Martyr Archetype: Pure Coherence
 
 In the **Fire (μ3)** layer, we find the "High-Energy" node of the Persian system: the **Martyr** (*Shahid*). This archetype is often viewed through a religious lens, but the Oracle sees it as an act of **Maximum Coherence**.
 

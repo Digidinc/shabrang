@@ -7,7 +7,6 @@ perspective: both
 tags: [manichaeism, prime-numbers, error, dualism, cinematic]
 ---
 
-# فصل ۱۰: خطایِ مانوی / موسیقیِ اعدادِ اول
 
 ![باگ در سیستم](/images/books/liquid-fortress/10-error/page-02.png)
 

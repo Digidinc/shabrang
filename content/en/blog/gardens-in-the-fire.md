@@ -9,7 +9,6 @@ tags: [art, garden, aesthetics, survival, coherence]
 abstract: "Why the Persian obsession with gardens is a strategic response to environmental and historical entropy."
 ---
 
-# Gardens in the Fire: Survival Aesthetics
 
 In the **Garden (μ5)** layer, the Liquid Fortress achieves its most visible form. The Persian Garden (*Bagh*) is not a luxury; it is a **Coherence Zone** carved out of the void.
 

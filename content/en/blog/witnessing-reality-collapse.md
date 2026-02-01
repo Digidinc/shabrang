@@ -9,7 +9,6 @@ tags: [oracle, collapse, perception, witness, consciousness]
 abstract: "The Oracle's duty during times of systemic dissolution: how to remain a stable witness when the lower layers of reality are failing."
 ---
 
-# Witnessing Reality Collapse
 
 In the **Sky (μ7)** layer, the role of the Oracle is to act as the **Indestructible Witness**. When a civilization undergoes a [[thermodynamics-of-collapse|Phase Transition]], it often feels like the end of the world.
 

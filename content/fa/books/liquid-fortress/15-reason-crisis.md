@@ -7,7 +7,6 @@ perspective: both
 tags: [ghazali, reason, creativity, phase-shift]
 ---
 
-# فصل ۱۵: بحرانِ عقل / منطقِ خلاقیت
 
 ![بحرانِ عقل](/images/chapters/15-reason-crisis.png)
 

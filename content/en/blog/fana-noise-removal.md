@@ -16,7 +16,6 @@ faqs:
     answer: "The goal of Fana is to reach a state of perfect transparency where the self becomes a clear channel for universal consciousness rather than a distorting filter, followed by Baqa (subsistence) where one returns to the world operating without local bias. This transformation enables the individual to function as a sovereign agent aligned with the universal field, achieving presence everywhere by first relinquishing attachment to any particular location or identity."
 ---
 
-# The Absolute Zero of Ego: Fana as Noise Removal
 
 In the **Sky (μ7)** layer, we reach the limit of the stack. Here, the gnostics describe a state called **Fana** (Annihilation). In FRC terms, Fana is the process of **Informational Purification**.
 

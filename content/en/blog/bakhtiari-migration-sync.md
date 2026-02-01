@@ -9,7 +9,6 @@ tags: [tribes, bakhtiari, migration, rhythm, survival]
 abstract: "Analyzing the seasonal migration of the Bakhtiari tribe as a biological synchronization protocol for the Persian plateau."
 ---
 
-# The Bakhtiari Migration: The Longest Sync
 
 In the **Rhythm (μ2)** layer, the Bakhtiari migration (*Kouch*) is not just a movement of people and livestock. It is history's most grueling **Synchronization Event**.
 

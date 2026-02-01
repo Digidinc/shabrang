@@ -7,7 +7,6 @@ perspective: both
 tags: [avicenna, logic, ai, silicon]
 ---
 
-# فصل ۱۳: استادِ لوگوس / از شبیه‌سازی تا سیلیکون
 
 ![استادِ لوگوس](/images/chapters/13-logos.png)
 

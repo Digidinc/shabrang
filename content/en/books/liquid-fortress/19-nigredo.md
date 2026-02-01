@@ -7,7 +7,6 @@ perspective: both
 tags: [mongol, nigredo, identity, encoding, cinematic]
 ---
 
-# Chapter 19: The Great Nigredo / Quantum NFT and the Encoded Self
 
 ![The Great Nigredo: Knotted Logic](/images/books/liquid-fortress/19-nigredo/page-01.png)
 

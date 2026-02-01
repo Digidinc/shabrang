@@ -9,7 +9,6 @@ tags: [myth, archetype, survival, mongol, identity]
 abstract: "Analyzing the 'Ghost Strategy' of Persian identity—how archetypes act as indestructible containers for civilizational software."
 ---
 
-# The Ghost in the Archetype: Surviving the Night
 
 When the Mongol storm (Chapter 19) reached its maximum intensity, the [[liquid-fortress|Liquid Fortress]] executed its most radical maneuver: **The Ghost Strategy**.
 

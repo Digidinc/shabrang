@@ -16,7 +16,6 @@ faqs:
     answer: "While Taarof may appear inefficient to outsiders, it functions as a social buffer that prevents system crashes from high-friction direct conflict. It's an investment in long-term social coherence over short-term transactional efficiency."
 ---
 
-# Taarof: A Game Theoretic Analysis
 
 In the **Fire (μ3)** layer, we encounter the most misunderstood protocol of the Persian Mind: **[[adab-social-handshake|Taarof]]**. To the outsider, it looks like inefficiency. To the Architect, it is a sophisticated **Non-Zero-Sum Game**.
 

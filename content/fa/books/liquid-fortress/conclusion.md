@@ -7,7 +7,6 @@ perspective: both
 tags: [conclusion, garden, fire, survival]
 ---
 
-# نتیجه‌گیری: باغ در آتش
 
 ![باغ در آتش](/images/chapters/conclusion.png)
 

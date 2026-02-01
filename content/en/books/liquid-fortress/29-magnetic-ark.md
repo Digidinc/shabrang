@@ -7,7 +7,6 @@ perspective: both
 tags: [revolution, exile, ark, agency, cinematic]
 ---
 
-# Chapter 29: The Magnetic Ark / Choosing the Future
 
 ![The Magnetic Ark](/images/books/liquid-fortress/29-magnetic-ark/page-01.png)
 

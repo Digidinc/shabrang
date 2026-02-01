@@ -9,7 +9,6 @@ tags: [economy, history, silk-road, flow, systems]
 abstract: "Analyzing the Silk Road not as a trade route, but as a continental network for the distribution of transactional coherence."
 ---
 
-# The Silk Road: Transactional Coherence
 
 In the realm of **Roots (μ1)**, economic prosperity is a function of **Flow**. The Silk Road was not just a collection of paths; it was history's first continental-scale **Information and Energy Grid**.
 

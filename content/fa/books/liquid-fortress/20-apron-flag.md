@@ -7,7 +7,6 @@ perspective: both
 tags: [kaveh, archetype, identity, ghost-in-the-shell]
 ---
 
-# فصل ۲۰: پیش‌بند و پرچم / شبح در کهن‌الگو
 
 ![پیش‌بند و پرچم](/images/chapters/20-apron-flag.png)
 

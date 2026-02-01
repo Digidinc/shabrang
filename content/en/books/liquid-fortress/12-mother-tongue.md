@@ -7,7 +7,6 @@ perspective: both
 tags: [persian, language, algorithm, resonance, cinematic]
 ---
 
-# Chapter 12: The Mother Tongue / Resonant Ascent Algorithm
 
 ![The Mother Tongue: How the Hidden Stream saved a language](/images/books/liquid-fortress/12-mother-tongue/page-01.png)
 

@@ -9,7 +9,6 @@ tags: [tribes, baloch, poetry, orality, story, survival]
 abstract: "Exploring how the Balochi people maintained the Persian signal through oral poetry in history's most entropic environment."
 ---
 
-# Balochi Orality: The Sound of the Sand
 
 In the **Story (μ6)** layer, the Balochi people demonstrate the power of **Oral Storage**. Living in the high-entropy environment of the southeastern desert, they developed a system for keeping data alive without paper.
 

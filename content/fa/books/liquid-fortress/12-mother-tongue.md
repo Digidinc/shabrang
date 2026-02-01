@@ -7,7 +7,6 @@ perspective: both
 tags: [persian, language, algorithm, resonance, cinematic]
 ---
 
-# فصل ۱۲: زبانِ مادری / الگوریتمِ صعودِ رزونانسی
 
 ![زبانِ مادری: چگونه جریانِ مخفی یک زبان را از انقراض نجات داد](/images/books/liquid-fortress/12-mother-tongue/page-01.png)
 

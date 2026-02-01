@@ -16,7 +16,6 @@ faqs:
     answer: "A Persian rug is authentic when its hand-knotted construction, material quality, and symbolic patterns reflect traditional Persian weaving techniques and cultural iconography that have been preserved for centuries. Authenticity derives from the rug's unique knot signature tied to the weaver's kinetic memory, the use of traditional symbols and motifs, and its function as a portable ledger of cultural identity—characteristics that make it the physical equivalent of a blockchain NFT with immutable, verifiable provenance."
 ---
 
-# The Persian Rug as a Quantum NFT
 
 In the **Garden (μ5)** layer, the [[liquid-fortress|Liquid Fortress]] solve the problem of **Permanent Storage**. 
 

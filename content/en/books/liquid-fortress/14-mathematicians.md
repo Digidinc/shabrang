@@ -7,7 +7,6 @@ perspective: both
 tags: [biruni, khayyam, multi-agent, council, cinematic]
 ---
 
-# Chapter 14: The Mathematicians / Council of Minds
 
 ![The Mathematicians: Calibrating Civilization](/images/books/liquid-fortress/14-mathematicians/page-01.png)
 

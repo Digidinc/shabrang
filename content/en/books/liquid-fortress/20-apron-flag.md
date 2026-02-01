@@ -7,7 +7,6 @@ perspective: both
 tags: [kaveh, archetype, identity, ghost-in-the-shell, cinematic]
 ---
 
-# Chapter 20: The Apron and the Flag / Ghost in the Archetype
 
 ![The Apron and the Flag](/images/books/liquid-fortress/20-apron-flag/page-01.png)
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [appendices, math, physics, experiments]
 ---
 
-# پیوست‌ها: مهمات (هسته‌یِ ابطال‌پذیر)
 
 ![پیوست‌ها](/images/chapters/appendices.png)
 

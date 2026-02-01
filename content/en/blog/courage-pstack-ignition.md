@@ -9,7 +9,6 @@ tags: [ethics, fire, courage, pahlavan, physics]
 abstract: "Analyzing courage not as an emotion, but as the energetic threshold required to switch a system from static to dynamic coherence."
 ---
 
-# Courage: The Ignition of the Pstack
 
 In the **Fire (μ3)** layer, we find the "Ignition System" of the Sovereign OS: **Courage**. 
 

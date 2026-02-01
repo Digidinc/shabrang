@@ -9,7 +9,6 @@ tags: [ethics, adab, defense, systems, resilience]
 abstract: "Analyzing how the 'soft' layer of Adab functions as a hardened defensive shell for the civilizational kernel."
 ---
 
-# The Armor of Adab: Hardening the Soft Layers
 
 In traditional system design, we protect the **Roots (μ1)** with firewalls and encryption. But in the [[liquid-fortress|Liquid Fortress]], we use **[[adab-social-handshake|Adab]]**.
 

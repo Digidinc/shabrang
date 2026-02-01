@@ -7,7 +7,6 @@ perspective: both
 tags: [suhrawardi, light, reasoning, illumination]
 ---
 
-# فصل ۱۶: معمارِ نور / دینامیکِ استدلال
 
 ![معمارِ نور](/images/chapters/16-light-architect.png)
 

@@ -9,7 +9,6 @@ tags: [logic, cognition, suhrawardi, map, semantics]
 abstract: "Revisiting Korzybski through Suhrawardi. How the Persian Mind uses the μ4 layer to bridge the material and the imaginal."
 ---
 
-# The Map is Not the Territory (But it’s close)
 
 In modern semantics, we say "The map is not the territory." But in the **Map (μ4)** layer of the Sovereign OS, we strive for a resolution so high that the map and the territory begin to **Resonate**.
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [appendices, math, physics, experiments]
 ---
 
-# Appendices: Ammunition (Falsifiable Core)
 
 ![Appendices](/images/chapters/appendices.png)
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [revolution, exile, ark, agency]
 ---
 
-# فصل ۲۹: کشتیِ مغناطیسی / انتخابِ آینده
 
 ![کشتیِ مغناطیسی](/images/chapters/29-magnetic-ark.png)
 

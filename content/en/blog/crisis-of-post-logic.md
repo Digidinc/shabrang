@@ -9,7 +9,6 @@ tags: [logic, ghazali, systems, cognitive-science, stalemate]
 abstract: "Analyzing the 'Incoherence of Philosophers' as a systemic reboot that prevented the Persian Mind from becoming a dead crystal."
 ---
 
-# The Crisis of Post-Logic: Beyond the Gilded Cage
 
 In the **Map (μ4)** layer, there is a recurring trap: the belief that the map is perfect. When [[13-logos|Avicenna’s]] logic reached its peak, the system became a "Gilded Cage." It was a state of **Over-Coherence**.
 

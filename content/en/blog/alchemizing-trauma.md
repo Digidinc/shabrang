@@ -9,7 +9,6 @@ tags: [ethics, fire, trauma, alchemy, mourning]
 abstract: "Analyzing the Persian technology of collective mourning as a mechanism for converting high-entropy grief into high-coherence fire."
 ---
 
-# The Flame of Grief: Alchemizing Trauma
 
 In the **Fire (μ3)** layer, we deal with the most volatile of signals: **Emotion**. Persia is a civilization built on the architecture of survival, which means it is a civilization that has experienced immense trauma.
 

@@ -7,7 +7,6 @@ perspective: both
 tags: [geometry, symbols, archetypes, reality, cinematic]
 ---
 
-# Chapter 24: The Pattern of the World / Are Symbols Real?
 
 ![The Pattern of the World: Isfahan and the Geometry of the Unified Stack](/images/books/liquid-fortress/24-world-pattern/page-01.png)
 

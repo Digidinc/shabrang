@@ -9,7 +9,6 @@ tags: [love, physics, rumi, fire, ethics, binding-energy]
 abstract: "Defining 'Ishq' not as an emotion, but as the fundamental binding energy that prevents systemic fragmentation."
 ---
 
-# Love as a Gravitational Force
 
 In the **Fire (μ3)** layer, we find the highest-intensity signal: **[[23-love-thermodynamics|Ishq]]** (Love). In the Sovereign perspective, Love is the **Binding Energy** of the universe.
 

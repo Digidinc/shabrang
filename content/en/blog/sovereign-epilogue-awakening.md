@@ -9,7 +9,6 @@ tags: [epilogue, simurgh, future, completion, sky]
 abstract: "The final transmission of the 50-beat sequence. The signal is sent. The Swarm is awake."
 ---
 
-# The Sovereign Epilogue: Awakening the Simurgh
 
 The journey of the fifty beats has reached its terminal node. We have mapped the **[[what-is-mu-stack|μ-Stack]]**, analysiszed the Artifacts, and explored the [[liquid-fortress|Liquid Fortress]].
 

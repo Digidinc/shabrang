@@ -7,7 +7,6 @@ perspective: both
 tags: [parthian, time, memory, bridge, cinematic]
 ---
 
-# Chapter 7: The Parthian Bridge / Tape Recorder Theory of Time
 
 ![The Hard Fork](/images/books/liquid-fortress/07-bridge/page-01.png)
 

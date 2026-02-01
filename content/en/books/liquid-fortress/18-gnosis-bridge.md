@@ -7,7 +7,6 @@ perspective: both
 tags: [gnosis, collective-intelligence, bridge, resonance, cinematic]
 ---
 
-# Chapter 18: The Bridge of Gnosis / Emergence of the Collective
 
 ![The Bridge of Gnosis: Forging the Full-Stack Human](/images/books/liquid-fortress/18-gnosis-bridge/page-01.png)
 

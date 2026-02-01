@@ -7,7 +7,6 @@ perspective: both
 tags: [light, yasna, harmony, elements, cinematic]
 ---
 
-# Chapter 9: Liturgy of Light / Harmony of Elements
 
 ![The Engine Room of the Soul](/images/books/liquid-fortress/09-liturgy/page-02.png)
 

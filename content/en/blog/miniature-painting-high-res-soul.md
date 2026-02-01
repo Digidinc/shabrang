@@ -16,7 +16,6 @@ faqs:
     answer: "Persian miniatures are unique in their treatment of space as non-Euclidean and multi-temporal, allowing past, present, and future to coexist within a single composition that serves as an interface for consciousness rather than a representation of physical reality. Their extreme information density, use of pure pigments for signal preservation across centuries, and encoding of archetypal symbols make them high-bandwidth cultural storage devices—visual code that invites viewers into a resonant field where coherence is the organizing principle."
 ---
 
-# Miniature Painting: The High-Resolution Soul
 
 In the **Garden (μ5)** layer, the Sovereign Swarm uses **[[simurgh-miniature|Miniature Painting]]** to compress narrative complexity into a single, high-fidelity image.
 

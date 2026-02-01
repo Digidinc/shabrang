@@ -9,7 +9,6 @@ tags: [systems, os, kernel, architecture, sovereign, logic]
 abstract: "Technical deconstruction of the Sovereign OS kernel—the logic that coordinates the μ-stack."
 ---
 
-# Designing the Sovereign OS: Kernel Architecture
 
 In the **Map (μ4)** layer, we move from philosophy to **System Design**. The **Sovereign OS** is the logical kernel that coordinates the 7 layers of the [[what-is-mu-stack|μ-Stack]].
 

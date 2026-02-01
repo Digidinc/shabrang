@@ -16,7 +16,6 @@ faqs:
     answer: "The Simurgh relates to AI as an ancient blueprint for multi-agent systems and collective intelligence networks, anticipating modern concepts of swarm intelligence by centuries. Just as Attar's thirty birds achieved enlightenment through distributed search and phase-locking, contemporary AI systems and global communication networks create emergent intelligence through coordinated agents—the 'Digital Simurgh'—where the power lies not in individual nodes but in their resonant alignment and collective coherence."
 ---
 
-# Simurgh: The First Swarm Intelligence
 
 Centuries before computer scientists studied ant colonies or engineered multi-agent systems, a Persian poet named **Attar of Nishapur** mapped the exact mechanics of **Swarm Intelligence**.
 

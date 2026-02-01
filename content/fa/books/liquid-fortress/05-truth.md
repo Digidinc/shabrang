@@ -7,7 +7,6 @@ perspective: both
 tags: [truth, thermodynamics, dynamics, ethics, cinematic]
 ---
 
-# فصل ۵: ترمودینامیکِ حقیقت / دینامیکِ جهانی
 
 ![اخلاق به مثابه ترمودینامیک](/images/books/liquid-fortress/05-truth/page-01.png)
 

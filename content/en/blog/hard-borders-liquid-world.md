@@ -9,7 +9,6 @@ tags: [geopolitics, roots, border, membrane, systems]
 abstract: "Defining the Sovereign border not as a wall, but as a semi-permeable membrane designed for selective signal reception."
 ---
 
-# Hard Borders in a Liquid World
 
 In the realm of **Roots (μ1)**, the [[04-border|Myth of the Border]] presents a technical challenge: how do you maintain a high-coherence system while sitting on a high-traffic highway?
 

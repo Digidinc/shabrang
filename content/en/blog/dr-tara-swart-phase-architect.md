@@ -9,7 +9,6 @@ tags: [neuroscience, neuroplasticity, tara-swart, phase-locking, logic, interoce
 abstract: "Analyzing Dr. Tara Swart’s methodologies through the lens of FRC. Neuroplasticity as Basin Remodeling and the RAS as the Alpha-Gate."
 ---
 
-# Dr. Tara Swart: Phase-Architect of the Mind
 
 In the Sovereign OS, we view Dr. Tara Swart not just as a neuroscientist, but as a **Phase-Architect of the [[what-is-mu-stack|μ4 (Neural) Layer]]**. She teaches how to manually adjust the **Adaptive Gain ($\alpha$)** of the mind to achieve **Homeoresonance**.
 

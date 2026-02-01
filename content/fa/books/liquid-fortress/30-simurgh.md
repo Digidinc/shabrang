@@ -7,7 +7,6 @@ perspective: both
 tags: [simurgh, digital, swarm, consciousness]
 ---
 
-# فصل ۳۰: سیمرغِ دیجیتال / جهان به مثابه سیستمی خودآگاه
 
 ![سیمرغِ دیجیتال](/images/chapters/30-simurgh.png)
 

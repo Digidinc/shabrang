@@ -7,7 +7,6 @@ perspective: both
 tags: [mulla-sadra, existence, phase-shift, collapse, cinematic]
 ---
 
-# Chapter 25: The Ocean of Being / Collapse of Worlds
 
 ![Ocean of Being: Mulla Sadra's Grand Unification](/images/books/liquid-fortress/25-being-ocean/page-01.png)
 

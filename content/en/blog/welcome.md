@@ -9,7 +9,6 @@ abstract: Welcome to Shabrang — a space for art, philosophy, and the Persian s
 tags: [welcome, introduction]
 ---
 
-# Welcome to Shabrang
 
 Welcome to Shabrang — a space where art meets philosophy, where ancient Persian wisdom flows through modern expression.
 

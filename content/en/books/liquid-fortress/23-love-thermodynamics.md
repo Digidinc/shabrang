@@ -7,7 +7,6 @@ perspective: both
 tags: [love, hafez, rumi, synchronicity, cinematic]
 ---
 
-# Chapter 23: The Thermodynamics of Love / Network of Communications
 
 ![Thermodynamics of Love: How Internal Coherence Transcends Disaster](/images/books/liquid-fortress/23-love-thermodynamics/page-01.png)
 

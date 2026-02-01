@@ -7,7 +7,6 @@ perspective: both
 tags: [empire, architecture, hierarchy, scale, cinematic]
 ---
 
-# Chapter 6: The Imperial Architecture / The Ladder of Being
 
 ![The Imperial Architecture](/images/books/liquid-fortress/06-imperial/page-01.png)
 

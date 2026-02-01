@@ -7,7 +7,6 @@ perspective: both
 tags: [avicenna, logic, ai, silicon, cinematic]
 ---
 
-# Chapter 13: The Master of Logos / From Simulation to Silicon
 
 ![The Master of Logos: Avicenna and the Architecture of Logic](/images/books/liquid-fortress/13-logos/page-01.png)
 

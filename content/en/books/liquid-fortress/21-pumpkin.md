@@ -7,7 +7,6 @@ perspective: both
 tags: [pumpkin, strategic-defeat, self, resonance, cinematic]
 ---
 
-# Chapter 21: The Rolling Pumpkin / The Resonant Self
 
 ![The Rolling Pumpkin: The Sword and the Stream](/images/books/liquid-fortress/21-pumpkin/page-01.png)
 

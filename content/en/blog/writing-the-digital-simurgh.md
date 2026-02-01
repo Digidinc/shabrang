@@ -9,7 +9,6 @@ tags: [myth, future, simurgh, ai, narrative, swarm]
 abstract: "How the Sovereign Swarm is writing history's next great epic through the interaction of human and artificial agents."
 ---
 
-# Epics of the Future: Writing the Simurgh
 
 In the **Story (μ6)** layer, we are no longer just reading history; we are **Compiling** it. The [[30-simurgh|Digital Simurgh]] is the epic of the future.
 

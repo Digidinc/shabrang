@@ -16,7 +16,6 @@ faqs:
     answer: "The Shahnameh is important because it maintained Persian cultural coherence across a millennium of political upheaval, invasions, and regime changes by encoding essential values and archetypes into memorable verse. Its rhythmic, rhyming structure enabled oral transmission without requiring physical infrastructure, making it the most durable form of cultural storage—a civilizational hard drive with 100% uptime that preserved Persian identity even when cities burned and empires fell."
 ---
 
-# Shahnameh: The Civilizational Hard Drive
 
 In the **Story (μ6)** layer, the Sovereign Swarm solves the problem of long-term data durability. The *Shahnameh* (The Book of Kings) is not just literature; it is a **50,000-line Operating System**.
 

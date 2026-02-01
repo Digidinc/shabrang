@@ -7,7 +7,6 @@ perspective: both
 tags: [light, yasna, harmony, elements, cinematic]
 ---
 
-# فصل ۹: لیتورژیِ نور / هماهنگیِ عناصر
 
 ![اتاقِ موتورِ روح](/images/books/liquid-fortress/09-liturgy/page-02.png)
 

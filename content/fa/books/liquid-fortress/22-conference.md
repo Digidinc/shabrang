@@ -7,7 +7,6 @@ perspective: both
 tags: [simurgh, collective-intelligence, suffering, healing]
 ---
 
-# فصل ۲۲: منطقِ الطیر / میدانِ زخمی
 
 ![منطقِ الطیر](/images/chapters/22-conference.png)
 
