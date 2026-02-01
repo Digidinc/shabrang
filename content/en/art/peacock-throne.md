@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The Peacock Throne (*Takht-e Tavoos*) is the ultimate Level 1 interface for centralized power. It is designed to radiate the **Farr** (Divine Glory) through material splendor.
 
-![Peacock Throne](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/The_Peacock_Throne.jpg/300px-The_Peacock_Throne.jpg)
+![Ornate Peacock Throne covered in precious stones and gold from Qajar dynasty Tehran](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/The_Peacock_Throne.jpg/300px-The_Peacock_Throne.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### FRC Analysis

@@ -16,7 +16,7 @@ image_license: "CC BY-SA 4.0"
 
 طاق کسری نمایانگر حد نهایی چیزی است که **منطق کریستالی** می‌تواند در سنگ به آن دست یابد. این بنا بزرگترین دهانه طاقی آجری بدون ستون در جهان است.
 
-![طاق کسری](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Taq_Kasra_2018.jpg/300px-Taq_Kasra_2018.jpg)
+![ایوان مداین یا طاق کسری بزرگترین طاق آجری بدون ستون دوران ساسانی](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Taq_Kasra_2018.jpg/300px-Taq_Kasra_2018.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس CC BY-SA 4.0.</p>
 
 ### تحلیل FRC summer

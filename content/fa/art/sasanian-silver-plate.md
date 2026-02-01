@@ -16,7 +16,7 @@ image_license: "CC0 / مالکیت عمومی"
 
 فلزکاری ساسانی نمایانگر اوج تغییرِ شکلِ ماده است. این بشقاب نقره‌ی زراندود که صحنه‌ی شکار سلطنتی را به تصویر می‌کشد، لنگرگاهی برای **آتش (μ3)** است.
 
-![بشقاب نقره ساسانی](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sasanian_Silver_Plate_Hunt.jpg/300px-Sasanian_Silver_Plate_Hunt.jpg)
+![بشقاب نقره ساسانی با نقش برجسته صحنه شکار شاهانه و نقوش تزئینی زراندود](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sasanian_Silver_Plate_Hunt.jpg/300px-Sasanian_Silver_Plate_Hunt.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: موزه متروپولیتن. تحت لیسانس مالکیت عمومی CC0.</p>
 
 ### تحلیل بر اساس پشته-μ

@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The astrolabe is the ultimate physical manifestation of **The Map (μ4)**. It is a mathematical model of the heavens that fits in the palm of a hand.
 
-![Persian Astrolabe](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Astrolabe_by_Shah_Hosein_Safavi.jpg/300px-Astrolabe_by_Shah_Hosein_Safavi.jpg)
+![Safavid era brass astrolabe with intricate engravings for astronomical calculations and navigation](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Astrolabe_by_Shah_Hosein_Safavi.jpg/300px-Astrolabe_by_Shah_Hosein_Safavi.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

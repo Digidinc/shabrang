@@ -16,7 +16,7 @@ image_license: "مالکیت عمومی (Public Domain)"
 
 استوانه‌ی کوروش اغلب نخستین بیانیه‌ی حقوق بشر نامیده می‌شود، اما در اصطلاح FRC، این **هسته‌یِ نخستینِ** (First Kernel) یک دولت با پذیرندگی بالاست.
 
-![استوانه‌ی کوروش](/images/landing/ch6_cyrus.png)
+![استوانه کوروش کبیر کتیبه گلی باستانی با خط میخی اعلامیه حقوق بشر](/images/landing/ch6_cyrus.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">منبع تصویر: میراث هخامنشی. آرشیو محلی.</p>
 
 ### تحلیل FRC

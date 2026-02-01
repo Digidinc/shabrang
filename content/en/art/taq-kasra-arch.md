@@ -16,7 +16,7 @@ image_license: "CC BY-SA 4.0"
 
 The Taq Kasra represents the absolute limit of what **Crystalline Logic** can achieve in stone. It is the largest single-span vault of unreinforced brickwork in the world.
 
-![Taq Kasra](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Taq_Kasra_2018.jpg/300px-Taq_Kasra_2018.jpg)
+![Monumental Taq Kasra arch at Ctesiphon showing largest unreinforced brick vault from Sasanian empire](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Taq_Kasra_2018.jpg/300px-Taq_Kasra_2018.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under CC BY-SA 4.0.</p>
 
 ### FRC Analysis

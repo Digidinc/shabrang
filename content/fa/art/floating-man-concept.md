@@ -14,7 +14,7 @@ frc_analysis: "اولین اثباتِ استقلالِ آگاهیِ منطقی.
 
 «انسان معلق» یک دست‌سازه‌ی مفهومی—یک آزمایش فکری—است که توسط ابن‌سینا طراحی شد تا ثابت کند **آگاهی** مقدم بر بدن و مستقل از آن است.
 
-![مفهوم آگاهی](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
+![تمبر پستی ایران سال ۱۹۵۰ با تصویر ابن‌سینا فیلسوف و پزشک ایرانی](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">تصویر معمار، ابن‌سینا. مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

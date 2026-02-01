@@ -16,7 +16,7 @@ In the **Garden (μ5)** layer, the Liquid Fortress achieves its most visible for
 ### The Void and the Grid
 The Iranian plateau is a high-entropy environment—arid, hot, and volatile. The garden is a deliberate "Injection of Asha." By using the [[fin-garden-layout|Grid]], the architect creates a space where every element (water, tree, shade) is a resonant node.
 
-![The Persian Garden](/images/books/liquid-fortress/24-world-pattern/page-06.png)
+![Persian paradise garden with geometric water channels and turquoise tiles creating coherence zone](https://upload.wikimedia.org/books/liquid-fortress/24-world-pattern/page-06.png)
 
 ### Survival Aesthetics
 1.  **Contrast as Signal:** In a brown desert, the turquoise tile and green leaf are high-contrast signals. They alert the system that "Coherence is present here."

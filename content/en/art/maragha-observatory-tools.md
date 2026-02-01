@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The instruments at the Maragha Observatory were the most advanced "Data Acquisition" tools of the 13th Century. They were used to create the *Zij-i Ilkhani*—the most accurate astronomical tables of the time.
 
-![Maragha Observatory reconstruction](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Maragha_Observatory.jpg/300px-Maragha_Observatory.jpg)
+![Reconstruction of Maragha Observatory showing astronomical instruments built by Nasir al-Din al-Tusi in 13th century](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Maragha_Observatory.jpg/300px-Maragha_Observatory.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

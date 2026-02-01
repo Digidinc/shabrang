@@ -16,7 +16,7 @@ image_license: "مالکیت عمومی"
 
 رباعیات خیام یک «آرشیو نرم‌افزاری» است که منطقِ زندگی در جهانی تحت حاکمیت آنتروپی را ذخیره می‌کند.
 
-![نسخه خطی رباعیات](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Khayyam_Rubaiyat_Manuscript.jpg/300px-Khayyam_Rubaiyat_Manuscript.jpg)
+![صفحه تذهیب‌شده نسخه خطی رباعیات خیام با خطاطی و نقوش رنگارنگ](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Khayyam_Rubaiyat_Manuscript.jpg/300px-Khayyam_Rubaiyat_Manuscript.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: کتابخانه بودلیان. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل FRC

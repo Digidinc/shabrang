@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The Gate of All Nations at Persepolis is not a defensive wall; it is a **Portal of Integration**. It served as the primary entry point for all subjects of the Achaemenid Empire.
 
-![Gate of All Nations](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Persepolis_Gate_of_all_Nations.jpg/300px-Persepolis_Gate_of_all_Nations.jpg)
+![Monumental Gate of All Nations at Persepolis with winged bull Lamassu guardians from Achaemenid era](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Persepolis_Gate_of_all_Nations.jpg/300px-Persepolis_Gate_of_all_Nations.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

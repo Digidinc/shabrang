@@ -17,7 +17,7 @@ From the subterranean [[qanats-decentralized-grid|Qanat]] networks that brought 
 
 ## The Qanat: History's First Decentralized Grid
 
-![Qanat System Cross-Section](/images/books/liquid-fortress/01-enigma/page-04.png)
+![Cross-section diagram of Persian qanat underground water system showing vertical shafts and tunnel network](/images/books/liquid-fortress/01-enigma/page-04.png)
 
 The [[qanats-decentralized-grid|Qanat]] is perhaps the most profound engineering achievement in human history—not for its scale, but for its **architecture of resilience**.
 
@@ -42,7 +42,7 @@ Today's decentralized networks (blockchain, mesh networks, peer-to-peer systems)
 
 ## Stone vs. Concrete: The Entropy of Modernity
 
-![Ancient Stone Construction](/images/books/liquid-fortress/28-modernity-shock/page-07.png)
+![Ancient Persian stone construction technique showing traditional masonry versus modern concrete architecture](/images/books/liquid-fortress/28-modernity-shock/page-07.png)
 
 The [[concrete-vs-stone|modern concrete revolution]] introduced a fundamental problem: **materials with expiration dates**.
 
@@ -80,7 +80,7 @@ The [[concrete-vs-stone|lesson]] is clear: **True durability comes from understa
 
 ## The Muqarnas: Computational Geometry Before Computers
 
-![Muqarnas Detail](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sheikh_Lotfollah_Mosque_Dome.jpg/300px-Sheikh_Lotfollah_Mosque_Dome.jpg)
+![Intricate muqarnas honeycomb vault with geometric Islamic patterns in Persian mosque architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sheikh_Lotfollah_Mosque_Dome.jpg/300px-Sheikh_Lotfollah_Mosque_Dome.jpg)
 
 The [[muqarnas-geometry-of-void|Muqarnas]] vault is one of the most sophisticated architectural innovations in history—a fractal solution to a geometric problem.
 
@@ -105,7 +105,7 @@ This is μ5 (Garden) level engineering—where mathematics becomes art, and stru
 
 ## The Persian Garden: Engineered Paradise
 
-![Fin Garden Layout](/images/books/liquid-fortress/15-light/page-08.png)
+![Persian paradise garden layout showing geometric water channels and quadrilateral design principles](/images/books/liquid-fortress/15-light/page-08.png)
 
 The [[fin-garden-layout|Persian Garden]] (*Bagh*) is not decoration—it's a **precision-engineered environment** for human coherence.
 

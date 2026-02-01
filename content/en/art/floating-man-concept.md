@@ -14,7 +14,7 @@ frc_analysis: "The first proof of the independence of Logical Consciousness."
 
 The "Floating Man" is a conceptual artifact—a thought experiment—designed by Avicenna to prove that **Consciousness** is primary and independent of the body.
 
-![Consciousness concept](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
+![Portrait of Persian philosopher Avicenna on 1950 Iranian stamp depicting founder of floating man thought experiment](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Portrait of the Architect, Avicenna. Public Domain.</p>
 
 ### μ-Stack Analysis

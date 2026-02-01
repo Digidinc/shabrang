@@ -16,7 +16,7 @@ image_license: "مالکیت عمومی / CC0"
 
 قالی اردبیل تنها یک زیرانداز نیست؛ بلکه یک **نسخه پشتیبان هولوگرافیک** از رویای ایرانی درباره بهشت است.
 
-![قالی اردبیل](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Ardabil_Carpet.jpg/300px-Ardabil_Carpet.jpg)
+![قالی اردبیل صفوی با طرح مدالیون و نقوش گیاهی متقارن از قرن شانزدهم](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Ardabil_Carpet.jpg/300px-Ardabil_Carpet.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: موزه V&A. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل FRC

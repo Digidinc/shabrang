@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 گنبدهای فیروزه‌ای اصفهان نقاطی هستند که **دژ مایع** در آن‌ها به پایان می‌رسد و در امرِ بی‌نهایت منحل می‌گردد.
 
-![گنبد فیروزه‌ای](/images/books/liquid-fortress/24-world-pattern/page-01.png)
+![گنبد فیروزه‌ای اصفهان با کاشی‌های آبی و نقوش هندسی اسلامی](/images/books/liquid-fortress/24-world-pattern/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">منبع تصویر: آرشیو صفویه. رندرینگ محلی.</p>
 
 ### تحلیل بر اساس پشته-μ

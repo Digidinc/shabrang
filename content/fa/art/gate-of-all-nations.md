@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 دروازه ملل در تخت جمشید یک دیوار دفاعی نیست؛ بلکه یک **دروازه‌ی یکپارچه‌سازی** است. این بنا به عنوان نقطه ورود اصلی برای تمام اتباع امپراتوری هخامنشی عمل می‌کرد.
 
-![دروازه ملل](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Persepolis_Gate_of_all_Nations.jpg/300px-Persepolis_Gate_of_all_Nations.jpg)
+![دروازه ملل تخت جمشید با مجسمه‌های گاو بالدار نگهبان ورودی امپراتوری هخامنشی](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Persepolis_Gate_of_all_Nations.jpg/300px-Persepolis_Gate_of_all_Nations.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

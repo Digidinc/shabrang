@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 کاشی هفت‌رنگ واحدِ پایه—«پیکسل»—میدان معماری ایرانی است.
 
-![کاشی ایرانی](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Persian_Tile_Detail.jpg/300px-Persian_Tile_Detail.jpg)
+![کاشی لعاب‌دار هفت‌رنگ ایرانی با نقوش هندسی و گل‌های اسلیمی](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Persian_Tile_Detail.jpg/300px-Persian_Tile_Detail.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

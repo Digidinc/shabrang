@@ -16,7 +16,7 @@ image_license: "CC0 مالکیت عمومی"
 
 سکّه کلاه نمدی بلندی است که درویشان مولویه بر سر می‌گذارند. این یک پوشاک نیست؛ بلکه یک **ابزار جنبشی** است که در مراسم سماع استفاده می‌شود.
 
-![سکه‌ی درویش](/images/books/liquid-fortress/22-conference/page-01.png)
+![کلاه سکه نمدی درویش مولوی در مراسم سماع رقص چرخان](/images/books/liquid-fortress/22-conference/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">منبع تصویر: آرشیو صوفیه. رندرینگ محلی.</p>
 
 ### تحلیل FRC summer

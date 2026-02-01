@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 هما پرنده‌ای اسطوره‌ای است که هرگز بر زمین نمی‌نشیند. این پرنده لنگرگاه نهایی **آسمان (μ7)** است.
 
-![نشان هما](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Homa_Persepolis.jpg/300px-Homa_Persepolis.jpg)
+![نقش برجسته پرنده هما در تخت جمشید نماد حاکمیت الهی هخامنشی](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Homa_Persepolis.jpg/300px-Homa_Persepolis.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

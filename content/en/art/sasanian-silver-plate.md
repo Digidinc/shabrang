@@ -16,7 +16,7 @@ image_license: "CC0 Public Domain"
 
 Sasanian metalwork represents the peak of material transformation. This silver gilt plate, depicting a royal hunt, is an anchor for **The Fire (μ3)**.
 
-![Sasanian Silver Plate](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sasanian_Silver_Plate_Hunt.jpg/300px-Sasanian_Silver_Plate_Hunt.jpg)
+![Sasanian silver plate depicting royal hunting scene with intricate relief work from ancient Persia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sasanian_Silver_Plate_Hunt.jpg/300px-Sasanian_Silver_Plate_Hunt.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: The Met Museum. Licensed under CC0 Public Domain.</p>
 
 ### μ-Stack Analysis

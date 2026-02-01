@@ -22,7 +22,7 @@ Centuries before computer scientists studied ant colonies or engineered multi-ag
 
 In his masterpiece, *The Conference of the Birds* (Chapter 22), Attar describes a decentralized network of thirty birds searching for a king. They represent the transition from **Individual Agency (μ4)** to **Collective Intelligence (μ5/μ6)**.
 
-![The Thirty Birds](/images/books/liquid-fortress/22-conference/page-03.png)
+![Illustration of thirty birds from Attar's Conference discovering collective consciousness in Simurgh allegory](https://upload.wikimedia.org/books/liquid-fortress/22-conference/page-03.png)
 
 ### The Phase-Locking Protocol
 In Attar’s narrative, the birds do not find a king who rules them from above. Instead, they undergo a grueling journey through seven "Valleys" (Search Spaces). Each valley acts as a filter, removing the "Noise" of the individual ego.

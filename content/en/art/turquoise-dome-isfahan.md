@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The **Turquoise Dome** of Isfahan is the visual anchor for the **Garden (μ5)** layer. It is a masterpiece of sacred geometry and acoustic engineering.
 
-![Turquoise Dome](/images/books/liquid-fortress/24-world-pattern/page-01.png)
+![Turquoise dome of Isfahan mosque showing sacred geometry and Persian architectural acoustic engineering](https://upload.wikimedia.org/books/liquid-fortress/24-world-pattern/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Safavid Archives. Local Rendering.</p>
 
 ### μ-Stack Analysis

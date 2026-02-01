@@ -16,7 +16,7 @@ image_license: "CC BY-SA 3.0"
 
 The Qanat system is the **Hardware of Coherence** for the Iranian plateau. It is a decentralized water management network that has operated for 3,000 years.
 
-![The Qanat System](/images/landing/qanat.png)
+![Cross-section diagram of ancient Persian qanat underground irrigation system showing shaft network](/images/landing/qanat.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: UNESCO Heritage Archive. Local Rendering.</p>
 
 ### μ-Stack Analysis

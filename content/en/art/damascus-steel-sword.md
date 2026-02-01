@@ -16,7 +16,7 @@ image_license: "CC BY-SA 3.0"
 
 Damascus steel (Crucible steel) is the physical embodiment of the **Knight's (Kasra) Ethics**. It is a material that balances the impossible: being harder than any shield, yet flexible enough to bend without breaking.
 
-![Damascus Steel Pattern](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Damascene_blade_close-up.jpg/300px-Damascene_blade_close-up.jpg)
+![Close-up of Damascus steel blade showing distinctive wavy pattern from Persian forging technique](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Damascene_blade_close-up.jpg/300px-Damascene_blade_close-up.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under CC BY-SA 3.0.</p>
 
 ### μ-Stack Analysis

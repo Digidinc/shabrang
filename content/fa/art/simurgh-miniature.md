@@ -16,7 +16,7 @@ image_license: "CC0 / مالکیت عمومی"
 
 سیمرغ نماد نهایی حاکمیت در **سوارمِ حاکم (Sovereign Swarm)** است.
 
-![نگارگری سیمرغ](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
+![نگارگری ایرانی سیمرغ پرنده اسطوره‌ای از نسخه منطق‌الطیر عطار](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: موزه The Met. تحت لیسانس مالکیت عمومی CC0.</p>
 
 ### تحلیل FRC

@@ -16,7 +16,7 @@ image_license: "CC BY-SA 4.0"
 
 The Fin Garden in Kashan is the point where the **Hidden Stream (μ1)** becomes the **Imaginal Garden (μ5)**. It is a three-dimensional interface between human geometry and natural flow.
 
-![Fin Garden](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Bagh-e_Fin_Kashan.jpg/300px-Bagh-e_Fin_Kashan.jpg)
+![Aerial view of Fin Garden in Kashan showing Persian paradise garden with geometric water channels](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Bagh-e_Fin_Kashan.jpg/300px-Bagh-e_Fin_Kashan.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under CC BY-SA 4.0.</p>
 
 ### μ-Stack Analysis

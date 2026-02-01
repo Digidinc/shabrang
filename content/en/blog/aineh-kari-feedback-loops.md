@@ -13,7 +13,7 @@ abstract: "How the Persian art of mirror-work visualizes the recursive processin
 
 In the **Garden (μ5)** layer, we find a unique visual technology called **[[aineh-kari-mirrors|Aineh-Kari]]** (Mirror-work). While it appears decorative, it is actually a physical model of **Recursive Feedback**.
 
-![Mirror work in Isfahan](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mirror_work_in_Shah_Cheragh.jpg/300px-Mirror_work_in_Shah_Cheragh.jpg)
+![Intricate aineh-kari mirror mosaic ceiling creating infinite light reflections in Persian architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mirror_work_in_Shah_Cheragh.jpg/300px-Mirror_work_in_Shah_Cheragh.jpg)
 
 ### Fragmentation and Reassembly
 The artist begins by smashing a large, Level 1 mirror into thousands of tiny, non-uniform fragments. This is an act of **Entropy Injection**. But the magic happens in the reassembly. By arranging these shards into complex geometric patterns, the artist creates a higher-order coherence.

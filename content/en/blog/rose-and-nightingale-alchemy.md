@@ -13,7 +13,7 @@ abstract: "Deconstructing the most persistent symbol of Persian art as a data-co
 
 In the **Garden (μ5)** layer, information is not stored in bits, but in **[[simurgh-miniature|Symbols]]**. The most enduring symbol in the Liquid Fortress is the pairing of the **Rose** (*Gol*) and the **Nightingale** (*Bulbul*).
 
-![Miniature Detail](/images/books/liquid-fortress/30-simurgh/page-01.png)
+![Persian miniature depicting rose and nightingale symbolizing eternal love in Islamic art tradition](https://upload.wikimedia.org/books/liquid-fortress/30-simurgh/page-01.png)
 
 ### The Symbol as Code
 The pairing is an alchemical formula for **Recursive Desire**:

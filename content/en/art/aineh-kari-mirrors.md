@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 *Aineh-Kari* (Mirror-work) is the art of breaking mirrors into thousands of tiny geometric fragments and reassembling them into a complex, reflective field.
 
-![Mirror work](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mirror_work_in_Shah_Cheragh.jpg/300px-Mirror_work_in_Shah_Cheragh.jpg)
+![Intricate aineh-kari mirror mosaic ceiling in Shah Cheragh mosque showing geometric Persian patterns](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mirror_work_in_Shah_Cheragh.jpg/300px-Mirror_work_in_Shah_Cheragh.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

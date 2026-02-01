@@ -16,7 +16,7 @@ image_license: "CC BY-SA 4.0"
 
 باغ فین در کاشان نقطه‌ای است که **جریان مخفی (μ1)** به **گلستانِ مثالی (μ5)** تبدیل می‌شود. این باغ یک رابط کاربریِ سه بعدی میانِ هندسه‌یِ انسانی و جریانِ طبیعی است.
 
-![باغ فین](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Bagh-e_Fin_Kashan.jpg/300px-Bagh-e_Fin_Kashan.jpg)
+![باغ فین کاشان با استخرهای فیروزه‌ای و کانال‌های آب طراحی صفوی](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Bagh-e_Fin_Kashan.jpg/300px-Bagh-e_Fin_Kashan.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس CC BY-SA 4.0.</p>
 
 ### تحلیل بر اساس پشته-μ

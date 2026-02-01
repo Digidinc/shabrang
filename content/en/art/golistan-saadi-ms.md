@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 Saadi’s *Golistan* (The Rose Garden) is the "Source Code" for the **Ethics (μ3)** layer of the Liquid Fortress.
 
-![Golistan Manuscript](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Sa%27di_Gulistan_Manuscript.jpg/300px-Sa%27di_Gulistan_Manuscript.jpg)
+![Illuminated manuscript page from Saadi's Golistan Rose Garden with Persian calligraphy and miniature paintings](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Sa%27di_Gulistan_Manuscript.jpg/300px-Sa%27di_Gulistan_Manuscript.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

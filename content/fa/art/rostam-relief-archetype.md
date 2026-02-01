@@ -20,7 +20,7 @@ image_license: "Public Domain"
 
 در لایه‌یِ **داستان (μ6)**، پیکره‌یِ **رستم** به عنوان اصلی‌ترین «زیربرنامه‌یِ نگهبان» برای هسته‌ی تمدنی عمل می‌کند.
 
-![نقش‌برجسته‌ی رستم](/images/books/liquid-fortress/27-pahlavan/page-01.png)
+![نقش‌برجسته رستم پهلوان اسطوره‌ای ایران در صخره کوه نقش رستم](/ images/books/liquid-fortress/27-pahlavan/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">منبع تصویر: میراث ساسانی. رندرینگ محلی.</p>
 
 ### تحلیل بر اساس پشته-μ

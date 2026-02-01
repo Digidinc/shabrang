@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 میل‌ها وزنه‌های چوبی سنگینی هستند که در زورخانه (خانه‌ی قدرت) استفاده می‌شوند. این‌ها ابزارهای فیزیکیِ پروتکل آموزشی **جنگجو-میزبان** (Warrior-Host) هستند.
 
-![میل زورخانه](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Zurkhaneh_Meels.jpg/300px-Zurkhaneh_Meels.jpg)
+![میل‌های چوبی زورخانه ابزار ورزش سنتی ایرانی برای تقویت قدرت و ریتم](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Zurkhaneh_Meels.jpg/300px-Zurkhaneh_Meels.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

@@ -25,7 +25,7 @@ Persia, sitting on the global highway, developed a sophisticated system called *
 ### The Traffic of History
 When you live in a "Corridor" (Chapter 1), you are constantly encountering agents from different "Kernels" (cultures). If every interaction required a negotiation of basic rules, the system would overheat from transactional entropy.
 
-![Adab and Taarof](/images/books/liquid-fortress/17-angels-physics/page-09.png)
+![Persian social gathering illustrating adab etiquette and taarof ritualized courtesy protocol](https://upload.wikimedia.org/books/liquid-fortress/17-angels-physics/page-09.png)
 
 ### The Handshake Protocol
 *Adab* provides a standardized "Handshake Protocol" (similar to TCP/IP). By following the rituals of *Taarof*, two agents can:

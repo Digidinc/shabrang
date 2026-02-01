@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 Standing in the ruins of Pasargadae, this four-winged figure is one of the most enigmatic remains of the Achaemenid era. It is the physical anchor for the highest floor of the stack: **The Sky (μ7)**.
 
-![Winged Figure](/images/books/liquid-fortress/06-imperial/page-01.png)
+![Four-winged guardian figure bas-relief from Pasargadae symbolizing divine legitimacy and sovereignty](https://upload.wikimedia.org/books/liquid-fortress/06-imperial/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Achaemenid Heritage. Local Rendering.</p>
 
 ### μ-Stack Analysis

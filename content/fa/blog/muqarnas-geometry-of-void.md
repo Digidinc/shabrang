@@ -13,7 +13,7 @@ abstract: "تحلیل طاق‌های مقرنس به عنوان مدلی بصر
 
 در لایه‌یِ **گلستان (μ5)**، معماری ایرانی ابزار خاصی را برای پیوند دادن امر مادی به امر بی‌نهایت توسعه داد: **مقرنس**.
 
-![مقرنس در اصفهان](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sheikh_Lotfollah_Mosque_Dome.jpg/300px-Sheikh_Lotfollah_Mosque_Dome.jpg)
+![گنبد مسجد شیخ لطف‌الله اصفهان با طاق‌های مقرنس هندسی و نقوش فیروزه‌ای](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sheikh_Lotfollah_Mosque_Dome.jpg/300px-Sheikh_Lotfollah_Mosque_Dome.jpg)
 
 ### پلِ فراکتالی
 مقرنس‌ها همان طاق‌های «کندو‌مانند» هستند که در سردرِ مساجد و کاخ‌ها یافت می‌شوند. آن‌ها یک عملکرد ساختاری حیاتی در [[what-is-mu-stack|پشته‌ی μ]] ایفا می‌کنند:

@@ -16,7 +16,7 @@ image_license: "مالکیت عمومی"
 
 تخت طاووس رابط کاربری (Interface) نهایی سطح ۱ برای قدرت متمرکز است. این تخت طراحی شده است تا **فرّ** (شکوه الهی) را از طریق شکوه مادی بتاباند.
 
-![تخت طاووس](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/The_Peacock_Throne.jpg/300px-The_Peacock_Throne.jpg)
+![تخت طاووس مرصع به جواهرات و سنگ‌های قیمتی نماد قدرت سلطنتی](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/The_Peacock_Throne.jpg/300px-The_Peacock_Throne.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل FRC

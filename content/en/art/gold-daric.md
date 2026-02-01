@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The Gold Daric was the "Reserve Currency" of the ancient world. It provided the first global **Standard Signal** for economic value.
 
-![Gold Daric](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Darius_I_gold_daric.jpg/300px-Darius_I_gold_daric.jpg)
+![Ancient Achaemenid gold daric coin featuring archer king Darius I from 6th century BCE](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Darius_I_gold_daric.jpg/300px-Darius_I_gold_daric.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: British Museum. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

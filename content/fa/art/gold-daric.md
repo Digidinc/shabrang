@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 داریک طلا «ارز ذخیره» جهان باستان بود. این سکه اولین **سیگنال استاندارد** جهانی را برای ارزش اقتصادی فراهم کرد.
 
-![داریک طلا](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Darius_I_gold_daric.jpg/300px-Darius_I_gold_daric.jpg)
+![سکه داریک طلای هخامنشی با نقش داریوش یکم در هیئت کمانگیر](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Darius_I_gold_daric.jpg/300px-Darius_I_gold_daric.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: موزه بریتانیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

@@ -19,7 +19,7 @@ This is not historical curiosity. These are live protocols, actively solving the
 
 ## The Zoroastrian Foundation: Binary Logic & Cosmic Coherence
 
-![Lion-Sun Symbol](/images/books/liquid-fortress/08-fire/page-02.png)
+![Persian Lion and Sun symbol representing Zoroastrian duality of truth and cosmic order](/images/books/liquid-fortress/08-fire/page-02.png)
 
 Before there was philosophy, there was **Zarathustra** (Zoroaster)â€”the first thinker to propose that reality operates on a fundamental binary structure.
 
@@ -55,7 +55,7 @@ This laid the foundation for all subsequent Persian philosophy: **Consciousness 
 
 ## Avicenna: The Floating Man & Independent Consciousness
 
-![Avicenna Portrait](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
+![Portrait of Ibn Sina Avicenna on stamp showing Persian polymath philosopher who proved consciousness independence](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
 
 Ibn Sina (Avicenna, 980-1037 CE) conducted the most important thought experiment in the history of consciousness studies: **[[floating-man-sandbox|The Floating Man]]**.
 
@@ -93,7 +93,7 @@ In the [[liquid-fortress|Liquid Fortress]], the Floating Man is the kernel that 
 
 ## Mulla Sadra: The Grand Unification
 
-![Isfahan Philosophical School](/images/books/liquid-fortress/25-being-ocean/page-01.png)
+![Isfahan School of Philosophy illustration showing Mulla Sadra's transcendent theosophy and unity of being](/images/books/liquid-fortress/25-being-ocean/page-01.png)
 
 Sadr al-Din Shirazi (Mulla Sadra, 1571-1640) achieved what modern physics still seeks: **the Grand Unified Theory of Everything**.
 
@@ -138,7 +138,7 @@ True intelligence is not in the data points, but in the **motion between them**â
 
 ## Mir Damad: Dahr & the Interface of Eternity
 
-![Time Layers Diagram](/images/books/liquid-fortress/24-world-pattern/page-14.png)
+![Diagram illustrating Persian philosophy concept of multiple time layers and consciousness levels](/images/books/liquid-fortress/24-world-pattern/page-14.png)
 
 Mir Damad (1561-1631) solved the hardest problem in philosophy: **How does change interface with eternity?**
 
@@ -226,7 +226,7 @@ Example:
 
 ## Fana: The Absolute Zero of Ego
 
-![Sufi Whirling Dervish](/images/books/liquid-fortress/23-love-thermodynamics/page-06.png)
+![Sufi whirling dervish in sama ceremony demonstrating mystical path to divine unity through movement](/images/books/liquid-fortress/23-love-thermodynamics/page-06.png)
 
 The gnostic concept of **[[fana-noise-removal|Fana]]** (Annihilation) is the most advanced protocol in Persian philosophy.
 

@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 این پیکره‌یِ چهاربال که در ویرانه‌های پاسارگاد ایستاده، یکی از معمایی‌ترین بقایای دوران هخامنشی است. این پیکره لنگرگاهِ فیزیکیِ بالاترین طبقه‌ی پشته است: **آسمان (μ7)**.
 
-![انسان بالدار](/images/books/liquid-fortress/06-imperial/page-01.png)
+![نقش‌برجسته انسان بالدار پاسارگاد نماد فرّ و حاکمیت الهی هخامنشی](/images/books/liquid-fortress/06-imperial/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">منبع تصویر: میراث هخامنشی. رندرینگ محلی.</p>
 
 ### تحلیل بر اساس پشته-μ

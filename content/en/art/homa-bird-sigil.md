@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The Homa is a mythic bird that never alights on the ground. It is the ultimate anchor for **The Sky (μ7)**.
 
-![Homa Sigil](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Homa_Persepolis.jpg/300px-Homa_Persepolis.jpg)
+![Ancient Persian Homa bird carving from Persepolis symbolizing divine sovereignty and kingship](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Homa_Persepolis.jpg/300px-Homa_Persepolis.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

@@ -14,7 +14,7 @@ frc_analysis: "Balance of Terrestrial Power (μ1) and Celestial Light (μ7)."
 
 This sigil is not just a national emblem; it is a high-resolution **System Diagram** of the Sovereign OS.
 
-![The Lion and the Sun](/images/books/liquid-fortress/24-world-pattern/page-08.png)
+![Persian Lion and Sun emblem showing balance of terrestrial power and celestial sovereignty](https://upload.wikimedia.org/books/liquid-fortress/24-world-pattern/page-08.png)
 
 ### The FRC Reading
 - **The Lion (Shir):** Represents the **Crystalline Sword** of the state. It is the power of the Roots (μ1) and the Fire (μ3). It is the strength required to maintain the physical order.

@@ -16,7 +16,7 @@ image_license: "CC0 / Public Domain"
 
 The Simurgh is the ultimate heraldic symbol of the **Sovereign Swarm**.
 
-![Simurgh Miniature](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
+![Persian miniature painting of Simurgh mythical bird from Attar's Conference of the Birds manuscript](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: The Met Museum. Licensed under CC0 Public Domain.</p>
 
 ### FRC Analysis

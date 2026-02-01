@@ -14,7 +14,7 @@ frc_analysis: "The search algorithm for Collective Phase-Locking."
 
 The "7 Valleys" described by Attar of Nishapur is a conceptual map of the journey from individual noise to collective signal (the Simurgh).
 
-![7 Valleys Concept](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
+![Illustration from Attar's Seven Valleys spiritual journey map showing path to divine unity](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: The Met Museum. Licensed under CC0 Public Domain.</p>
 
 ### μ-Stack Analysis

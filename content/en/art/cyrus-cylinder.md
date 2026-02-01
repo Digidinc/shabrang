@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The Cyrus Cylinder is often called the first declaration of human rights, but in FRC terms, it is the **First Kernel** of a High-Receptivity state.
 
-![Cyrus Cylinder](/images/landing/ch6_cyrus.png)
+![Ancient Cyrus Cylinder clay tablet with cuneiform inscription declaring human rights from 539 BCE](https://upload.wikimedia.org/landing/ch6_cyrus.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Achaemenid Legacy. Local Archive.</p>
 
 ### FRC Analysis

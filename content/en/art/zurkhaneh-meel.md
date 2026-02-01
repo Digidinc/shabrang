@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The *Meel* are heavy wooden clubs used in the *Zurkhaneh* (House of Strength). They are the physical instruments of the **Warrior-Host** training protocol.
 
-![Zurkhaneh Meel](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Zurkhaneh_Meels.jpg/300px-Zurkhaneh_Meels.jpg)
+![Traditional Persian zurkhaneh wooden exercise clubs used in rhythmic warrior training ritual](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Zurkhaneh_Meels.jpg/300px-Zurkhaneh_Meels.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

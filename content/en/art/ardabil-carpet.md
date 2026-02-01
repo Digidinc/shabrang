@@ -16,7 +16,7 @@ image_license: "Public Domain / CC0"
 
 The Ardabil Carpet is not a floor covering; it is a **Holographic Backup** of the Persian vision of Paradise.
 
-![Ardabil Carpet](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Ardabil_Carpet.jpg/300px-Ardabil_Carpet.jpg)
+![Famous Ardabil Carpet from 1539 showing paradise garden design with 300 knots per square inch](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Ardabil_Carpet.jpg/300px-Ardabil_Carpet.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: V&A Museum. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

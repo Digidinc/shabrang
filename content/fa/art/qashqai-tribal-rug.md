@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 در لایه‌یِ **گلستان (μ5)**، قالی ایل قشقایی به عنوان بادوام‌ترین **گلستانِ قابل‌حملِ** تاریخ عمل می‌کند.
 
-![قالی قشقایی](/images/books/liquid-fortress/24-world-pattern/page-06.png)
+![قالی دست‌بافت قشقایی با نقوش هندسی رنگارنگ و طرح‌های عشایری سنتی](/images/books/liquid-fortress/24-world-pattern/page-06.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">منبع تصویر: آرشیو ایلیاتی. رندرینگ محلی.</p>
 
 ### تحلیل بر اساس پشته-μ

@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The *Haft-Rang* (Seven-Color) tile is the basic unit—the "Pixel"—of the Persian architectural field.
 
-![Persian Tile](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Persian_Tile_Detail.jpg/300px-Persian_Tile_Detail.jpg)
+![Seven-color haft-rang glazed ceramic tile with intricate geometric Islamic patterns from Safavid era](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Persian_Tile_Detail.jpg/300px-Persian_Tile_Detail.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Wikimedia Commons. Licensed under Public Domain.</p>
 
 ### μ-Stack Analysis

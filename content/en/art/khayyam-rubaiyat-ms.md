@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 The Rubaiyat of Omar Khayyam is a "Software Archive" that stores the logic of how to live in a world governed by entropy.
 
-![Khayyam Manuscript](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Khayyam_Rubaiyat_Manuscript.jpg/300px-Khayyam_Rubaiyat_Manuscript.jpg)
+![Illuminated manuscript page from Omar Khayyam's Rubaiyat with Persian calligraphy and decorative borders](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Khayyam_Rubaiyat_Manuscript.jpg/300px-Khayyam_Rubaiyat_Manuscript.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Bodleian Library. Licensed under Public Domain.</p>
 
 ### FRC Analysis

@@ -13,7 +13,7 @@ abstract: "Analyzing Avicenna's famous thought experiment as the first historica
 
 In the **Map (μ4)** layer, we encounter the ultimate "Virtual Machine" of the ancient world: Avicenna's **Floating Man**.
 
-![Avicenna Portrait](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
+![Portrait of Persian philosopher Avicenna on Iranian stamp illustrating thought experiment concept](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Avicenna_1950_Iran_stamp.jpg/300px-Avicenna_1950_Iran_stamp.jpg)
 
 ### The Setup
 Avicenna (Chapter 13) asks us to imagine a man created all at once, floating in a void. His eyes are veiled, his ears are blocked, and his limbs are splayed so he cannot feel his own body. He has zero input from the **Roots (μ1)**.

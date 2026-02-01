@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 ابزارهای رصدخانه مراغه پیشرفته‌ترین ابزارهای «اکتساب داده» در قرن سیزدهم میلادی بودند. از این ابزارها برای خلق «زیج ایلخانی»—دقیق‌ترین جداول نجومی آن زمان—استفاده شد.
 
-![بازسازی رصدخانه مراغه](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Maragha_Observatory.jpg/300px-Maragha_Observatory.jpg)
+![بازسازی رصدخانه مراغه با ابزارهای نجومی نصیرالدین طوسی قرن سیزدهم](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Maragha_Observatory.jpg/300px-Maragha_Observatory.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

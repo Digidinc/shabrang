@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 آینه‌کاری هنرِ خرد کردن آینه‌ها به هزاران قطعه‌یِ هندسیِ کوچک و بازآفرینیِ آن‌ها در یک میدانِ بازتابنده‌یِ پیچیده است.
 
-![آینه‌کاری](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mirror_work_in_Shah_Cheragh.jpg/300px-Mirror_work_in_Shah_Cheragh.jpg)
+![آینه‌کاری سقف شاه چراغ شیراز با هزاران قطعه آینه هندسی و بازتاب نور](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mirror_work_in_Shah_Cheragh.jpg/300px-Mirror_work_in_Shah_Cheragh.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

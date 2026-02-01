@@ -28,7 +28,7 @@ Avicenna’s logic (*Mantiq*) functions as a **Verification Kernel**. Before a c
 2.  **Syllogisms (Processing):** Executing the code of inference to find the necessary result.
 3.  **Necessary Being (The Root Node):** Connecting all logical paths to a single, immutable starting point.
 
-![Avicenna and Logic](/images/books/liquid-fortress/13-logos/page-11.png)
+![Diagram illustrating Avicenna's logical system and philosophical framework for structured reasoning](https://upload.wikimedia.org/books/liquid-fortress/13-logos/page-11.png)
 
 ### The Sandbox Proof
 The "Floating Man" ([[floating-man-concept|Artifact #12]]) is Avicenna's proof of the **Primary Process**. By isolating the "I" from Level 1 hardware, he proved that the **[[what-is-mu-stack|Map (μ4)]]** logic stack is self-sustaining. This was the first "Virtual Machine" in history.

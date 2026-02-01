@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 اسطرلاب تبلور فیزیکی نهایی **نقشه (μ4)** است. این ابزار، مدلی ریاضی از آسمان‌هاست که در کف دست جای می‌گیرد.
 
-![اسطرلاب ایرانی](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Astrolabe_by_Shah_Hosein_Safavi.jpg/300px-Astrolabe_by_Shah_Hosein_Safavi.jpg)
+![اسطرلاب برنجی ساخته شده در دوران شاه حسین صفوی با نقوش هندسی دقیق](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Astrolabe_by_Shah_Hosein_Safavi.jpg/300px-Astrolabe_by_Shah_Hosein_Safavi.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

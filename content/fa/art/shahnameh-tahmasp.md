@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 اگر دژ مایع یک پایگاه داده مرکزی داشته باشد، آن شاهنامه است. این نسخه‌ی خاص از قرن شانزدهم، باکیفیت‌ترین (High-Res) کپی‌ای است که تا به حال ساخته شده است.
 
-![نگارگری شاهنامه](/images/books/liquid-fortress/30-simurgh/page-01.png)
+![صفحه نگارگری از شاهنامه شاه‌طهماسب با جزئیات رنگارنگ و نقوش ظریف صفوی](/ images/books/liquid-fortress/30-simurgh/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: موزه متروپولیتن. رندرینگ محلی.</p>
 
 ### تحلیل بر اساس پشته-μ

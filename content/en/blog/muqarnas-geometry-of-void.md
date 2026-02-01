@@ -13,7 +13,7 @@ abstract: "Analyzing the Muqarnas vault as a visual model of fractal emergence a
 
 In the **Garden (μ5)** layer, Persian architecture developed a specialized tool for bridging the material and the infinite: the **Muqarnas**.
 
-![Muqarnas in Isfahan](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sheikh_Lotfollah_Mosque_Dome.jpg/300px-Sheikh_Lotfollah_Mosque_Dome.jpg)
+![Intricate muqarnas honeycomb vault ceiling in Sheikh Lotfollah Mosque Isfahan showing fractal geometric patterns](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sheikh_Lotfollah_Mosque_Dome.jpg/300px-Sheikh_Lotfollah_Mosque_Dome.jpg)
 
 ### The Fractal Bridge
 Muqarnas are the "Honeycombed" vaults found in the portals of mosques and palaces. They serve a critical structural function in the [[what-is-mu-stack|μ-Stack]]:

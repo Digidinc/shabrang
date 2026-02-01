@@ -13,7 +13,7 @@ abstract: "Analyzing the Sasanian military collapse as a case study in over-cohe
 
 In the realm of **Roots (μ1)**, there is a dangerous threshold where order becomes **Rigidity**. The Sasanian military at the Battle of Qadisiyah (Chapter 11) is history's most striking example of this failure.
 
-![Sasanian Heavy Cavalry](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Sasanian_Coin_of_Khosrow_II.jpg/300px-Sasanian_Coin_of_Khosrow_II.jpg)
+![Sasanian silver coin depicting armored cataphract cavalry under Khosrow II showing military rigidity](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Sasanian_Coin_of_Khosrow_II.jpg/300px-Sasanian_Coin_of_Khosrow_II.jpg)
 
 ### Over-Coherence as a Bug
 The Sasanian army was a "Crystalline System." It relied on heavy cataphracts (armored cavalry) and a rigid, top-down command structure. While this created immense power in a head-on collision, it lacked **Receptivity (R)**.

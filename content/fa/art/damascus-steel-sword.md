@@ -16,7 +16,7 @@ image_license: "CC BY-SA 3.0"
 
 فولاد دمشقی (فولاد بوته‌ای) تبلور فیزیکی **اخلاق پهلوانی (کسرا)** است. این ماده توازنی میانِ دو امرِ غیرممکن برقرار می‌کند: سخت‌تر بودن از هر سپری، و همزمان انعطاف‌پذیری کافی برای خم شدن بدونِ شکستن.
 
-![الگوی فولاد دمشقی](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Damascene_blade_close-up.jpg/300px-Damascene_blade_close-up.jpg)
+![نمای نزدیک تیغه فولاد دمشقی با الگوهای موجی و کریستالی منحصر به فرد](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Damascene_blade_close-up.jpg/300px-Damascene_blade_close-up.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس CC BY-SA 3.0.</p>
 
 ### تحلیل بر اساس پشته-μ

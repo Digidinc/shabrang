@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 In the **Story (μ6)** layer, the figure of **Rostam** acts as the primary "Guardian Sub-routine" for the civilizational kernel.
 
-![Rostam Relief](/images/books/liquid-fortress/27-pahlavan/page-01.png)
+![Ancient Persian rock relief depicting Rostam the legendary knight hero from Shahnameh epic](https://upload.wikimedia.org/books/liquid-fortress/27-pahlavan/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Sasanian Heritage. Local Rendering.</p>
 
 ### μ-Stack Analysis

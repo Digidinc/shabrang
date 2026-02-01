@@ -16,7 +16,7 @@ image_license: "Public Domain"
 
 گلستان سعدی «کد منبع» (Source Code) برای لایه‌ی **اخلاق (μ3)** در دژ مایع است.
 
-![نسخه خطی گلستان](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Sa%27di_Gulistan_Manuscript.jpg/300px-Sa%27di_Gulistan_Manuscript.jpg)
+![صفحه تذهیب‌شده نسخه خطی گلستان سعدی با خطاطی و نقوش رنگارنگ](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Sa%27di_Gulistan_Manuscript.jpg/300px-Sa%27di_Gulistan_Manuscript.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: ویکی‌مدیا. تحت لیسانس مالکیت عمومی.</p>
 
 ### تحلیل بر اساس پشته-μ

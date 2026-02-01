@@ -14,7 +14,7 @@ frc_analysis: "الگوریتمِ جستجو برایِ قفل‌فاز کردن
 
 «هفت وادیِ» توصیف شده توسط عطار نیشابوری، نقشه‌ای مفهومی از سفر از نویزِ فردی به سیگنالِ جمعی (سیمرغ) است.
 
-![مفهوم هفت وادی](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
+![نگارگری سیمرغ از منطق‌الطیر عطار نمایش سفر معنوی هفت وادی](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Simurgh_Attar.jpg/300px-Simurgh_Attar.jpg)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2" dir="rtl">منبع تصویر: موزه متروپولیتن. تحت لیسانس مالکیت عمومی CC0.</p>
 
 ### تحلیل بر اساس پشته-μ
