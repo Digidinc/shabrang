@@ -1,0 +1,14 @@
+{
+  "original": {
+    "width": 1280,
+    "height": 720,
+    "format": "jpeg"
+  },
+  "optimized": {
+    "width": 1280,
+    "height": 720,
+    "format": "webp",
+    "size": 115138
+  },
+  "generatedAt": "2026-02-01T05:13:06.159Z"
+}

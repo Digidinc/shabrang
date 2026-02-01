@@ -1,0 +1,14 @@
+{
+  "original": {
+    "width": 1024,
+    "height": 1024,
+    "format": "png"
+  },
+  "optimized": {
+    "width": 1024,
+    "height": 1024,
+    "format": "webp",
+    "size": 313894
+  },
+  "generatedAt": "2026-02-01T04:54:57.657Z"
+}
