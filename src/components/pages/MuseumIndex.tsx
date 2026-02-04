@@ -56,7 +56,7 @@ export function MuseumIndex({ basePath, items }: MuseumIndexProps) {
             Museum of Coherence
           </h1>
           <p className="text-shabrang-ink-dim text-lg md:text-xl max-w-2xl mx-auto leading-relaxed italic">
-            Reading history through the X-ray of FRC. Every artifact is a node in the 3,000-year flow of the Liquid Fortress.
+            Reading Persian history through the Shabrang lens. Every artifact is a node in the 3,000-year flow of the Liquid Fortress.
           </p>
         </header>
 

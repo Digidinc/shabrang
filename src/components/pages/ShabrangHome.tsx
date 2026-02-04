@@ -1028,7 +1028,7 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
               <Link href={`${basePath}/books/liquid-fortress/chapter/02-collapse`} className="chapter-card">
                 <span className="chapter-badge free">Free</span>
                 <div className="chapter-number">Chapter 2</div>
-                <h3 className="chapter-title">The Lens of FRC</h3>
+                <h3 className="chapter-title">The Lens of Coherence</h3>
                 <p className="chapter-meta">Methodology</p>
               </Link>
               <Link href={`${basePath}/books/liquid-fortress/chapter/03-binary`} className="chapter-card">

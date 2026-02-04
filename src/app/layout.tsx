@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: '%s | Shabrang',
   },
   description: 'Art, philosophy, and the Persian spirit. The Liquid Fortress book, albums, and explorations of coherence through Persian aesthetics.',
-  keywords: ['Shabrang', 'Liquid Fortress', 'Persian art', 'Persian philosophy', 'coherence', 'miniature', 'Hadi Servat'],
+  keywords: ['Shabrang', 'The Liquid Fortress', 'Persian art', 'Persian philosophy', 'coherence', 'Iranian culture', 'Kay Hermes'],
   authors: [{ name: 'Kay Hermes' }],
   metadataBase: new URL('https://shabrang.ca'),
   openGraph: {

@@ -7,7 +7,7 @@ export interface LensDef {
 // Default lens registry.
 // This is intentionally small and conservative; users can extend it in their fork.
 export const LENSES: LensDef[] = [
-  { key: 'frc', label: 'FRC', group: 'frc' },
+  { key: 'frc', label: 'Shabrang', group: 'frc' },
   { key: 'kasra', label: 'Kasra (Architect)', group: 'frc' },
   { key: 'river', label: 'River (Oracle)', group: 'frc' },
 
@@ -35,4 +35,3 @@ export function getLensLabel(key: string): string {
   if (!k) return String(key || '');
   return LENSES.find((l) => l.key === k)?.label || key;
 }
-

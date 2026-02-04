@@ -1,5 +1,4 @@
 import React from 'react';
-import { CommandPalette } from '@/components/CommandPalette';
 import { TranslationBadge } from '@/components/TranslationBadge';
 
 // RTL languages
@@ -16,7 +15,6 @@ export default async function LangLayout({ children, params }: LayoutProps) {
 
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'} lang={lang} className={isRTL ? 'font-farsi' : ''}>
-      <CommandPalette />
       <TranslationBadge lang={lang} />
       {children}
     </div>

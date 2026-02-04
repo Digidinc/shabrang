@@ -61,12 +61,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!ch) return { title: 'Not Found' };
 
   const fm = book.frontmatter;
-  const author = fm.author || 'H. Servat';
+  const author = fm.author || 'Kay Hermes';
   
-  // Logical Canonical: Technical FRC books point to fractalresonance.com, 
-  // while the primary narrative (Liquid Fortress) is canonical to shabrang.ca
-  const isTechnicalFrc = fm.id.startsWith('frc-');
-  const canonicalBase = isTechnicalFrc ? 'https://fractalresonance.com' : 'https://shabrang.ca';
+  // Canonical URLs should reflect the domain we want indexed.
+  const canonicalBase = 'https://shabrang.ca';
   const langPrefix = lang === 'en' ? '' : `/${lang}`;
   const bookUrl = `${canonicalBase}${langPrefix}/books/${fm.id}`;
   const chapterUrl = `${bookUrl}/chapter/${ch.slug}`;
@@ -161,7 +159,7 @@ export default async function BookChapterPage({ params }: Props) {
               <h1 className="text-2xl text-shabrang-ink mb-3">{current.title}</h1>
 
               <div className="flex flex-wrap gap-4 text-sm text-shabrang-ink-dim mt-3">
-                <span>{book.frontmatter.author || 'H. Servat'}</span>
+                <span>{book.frontmatter.author || 'Kay Hermes'}</span>
                 {book.frontmatter.date && <span>{book.frontmatter.date}</span>}
                 <span className="font-mono text-xs">{readTime}</span>
                 <Link href={`${basePath}/books/${id}`} className="tag hover:text-shabrang-gold hover:border-shabrang-gold transition-colors">

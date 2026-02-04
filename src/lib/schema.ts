@@ -1,8 +1,8 @@
 /**
- * Schema.org JSON-LD generators for FRC
+ * Schema.org JSON-LD generators for Shabrang
  *
  * 13 schema types:
- * Site-level: WebSite, SearchAction, ResearchProject, Organization, Person
+ * Site-level: WebSite, Organization, Person
  * Paper-level: ScholarlyArticle, VideoObject, ImageObject, AggregateRating,
  *              BreadcrumbList, CreativeWorkSeries, LearningResource
  * Concept-level: DefinedTerm, DefinedTermSet
@@ -10,6 +10,8 @@
  */
 
 const SITE_URL = 'https://shabrang.ca';
+const SITE_NAME = 'Shabrang';
+const AUTHOR_NAME = 'Kay Hermes';
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -72,86 +74,145 @@ export interface BreadcrumbItem {
 
 // ─── Site-Level Schemas ────────────────────────────────────────────────────
 
-/** WebSite + SearchAction — enables sitelinks search box */
+/** WebSite — top-level site identity */
 export function schemaWebSite() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
-    name: 'Fractal Resonance Cognition',
+    name: SITE_NAME,
     url: SITE_URL,
-    description: 'Research platform for the Fractal Resonance Cognition framework — exploring consciousness, coherence, and quantum foundations.',
-    inLanguage: 'en',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
+    description: 'Persian wisdom through dialectic — a living conversation between opposing perspectives.',
   };
 }
 
-/** ResearchProject — FRC as an active research project */
-export function schemaResearchProject() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'ResearchProject',
-    '@id': `${SITE_URL}/#project`,
-    name: 'Fractal Resonance Cognition (FRC)',
-    url: SITE_URL,
-    description: 'A research framework formalizing the reciprocal relationship between entropy and coherence, with applications in quantum mechanics, thermodynamics, and consciousness studies.',
-    foundingDate: '2024',
-    founder: { '@id': `${SITE_URL}/#author` },
-    knowsAbout: [
-      'Quantum Coherence',
-      'Entropy-Coherence Reciprocity',
-      'Universal Coherence Condition',
-      'Consciousness',
-      'Thermodynamics',
-    ],
-  };
-}
-
-/** Organization — Fractal Resonance entity */
+/** Organization — Shabrang publisher */
 export function schemaOrganization() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#org`,
-    name: 'Fractal Resonance',
+    name: 'Shabrang',
     url: SITE_URL,
     logo: `${SITE_URL}/brand/logo.png`,
     sameAs: [
-      'https://github.com/servathadi/fractalresonance',
-      'https://zenodo.org/communities/frc',
+      'https://github.com/Digidinc/shabrang',
+      'https://github.com/Digidinc/shabrang-cms',
     ],
     founder: { '@id': `${SITE_URL}/#author` },
   };
 }
 
-/** Person — Author (Hadi Servat) */
+/** Person — Author */
 export function schemaPerson() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `${SITE_URL}/#author`,
-    name: 'Hadi Servat',
+    name: AUTHOR_NAME,
     url: SITE_URL,
-    sameAs: [
-      'https://orcid.org/0009-0004-7412-5129',
-      'https://www.researchgate.net/profile/Hadi-Servat',
-      'https://independent.academia.edu/HadiServat',
-      'https://github.com/servathadi',
-    ],
-    jobTitle: 'Researcher',
+    jobTitle: 'Writer',
     knowsAbout: [
-      'Fractal Resonance Coherence',
-      'Quantum Mechanics',
-      'Entropy',
-      'Coherence Theory',
+      'Persian philosophy',
+      'Iranian Plateau culture',
+      'Myth and symbolism',
+      'Dialectic',
     ],
+  };
+}
+
+// ─── Content-Level Schemas ─────────────────────────────────────────────────
+
+export interface BlogMeta {
+  id: string;
+  title: string;
+  description: string;
+  lang: string;
+  date?: string;
+  author?: string;
+  tags?: string[];
+  url?: string;
+  image?: string;
+}
+
+export function schemaBlogPosting(post: BlogMeta) {
+  const url = post.url || `${SITE_URL}/${post.lang}/blog/${post.id}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': url,
+    url,
+    headline: post.title,
+    name: post.title,
+    description: post.description,
+    datePublished: post.date,
+    inLanguage: post.lang,
+    author: post.author ? { '@type': 'Person', name: post.author } : { '@id': `${SITE_URL}/#author` },
+    publisher: { '@id': `${SITE_URL}/#org` },
+    keywords: post.tags,
+    ...(post.image ? { image: post.image } : {}),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  };
+}
+
+export interface BookMeta {
+  id: string;
+  title: string;
+  description: string;
+  lang: string;
+  author?: string;
+  date?: string;
+  tags?: string[];
+  url?: string;
+  image?: string;
+}
+
+export function schemaBook(book: BookMeta) {
+  const url = book.url || `${SITE_URL}/${book.lang}/books/${book.id}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    '@id': url,
+    url,
+    name: book.title,
+    description: book.description,
+    inLanguage: book.lang,
+    datePublished: book.date,
+    author: book.author ? { '@type': 'Person', name: book.author } : { '@id': `${SITE_URL}/#author` },
+    publisher: { '@id': `${SITE_URL}/#org` },
+    keywords: book.tags,
+    ...(book.image ? { image: book.image } : {}),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  };
+}
+
+export interface ArtworkMeta {
+  id: string;
+  title: string;
+  description: string;
+  lang: string;
+  author?: string;
+  date?: string;
+  tags?: string[];
+  url?: string;
+  image?: string;
+}
+
+export function schemaVisualArtwork(art: ArtworkMeta) {
+  const url = art.url || `${SITE_URL}/${art.lang}/art/${art.id}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VisualArtwork',
+    '@id': url,
+    url,
+    name: art.title,
+    description: art.description,
+    inLanguage: art.lang,
+    dateCreated: art.date,
+    creator: art.author ? { '@type': 'Person', name: art.author } : { '@id': `${SITE_URL}/#author` },
+    keywords: art.tags,
+    ...(art.image ? { image: art.image } : {}),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
   };
 }
 
@@ -295,7 +356,7 @@ export function schemaTopicPage(topic: TopicMeta) {
   };
 }
 
-/** CreativeWorkSeries — paper series (FRC 100, 200, etc.) */
+/** CreativeWorkSeries — paper series */
 export function schemaCreativeWorkSeries(
   seriesName: string,
   papers: PaperMeta[]
@@ -330,10 +391,10 @@ export function schemaLearningResource(paper: PaperMeta) {
     teaches: paper.tags.map(tag => ({
       '@type': 'DefinedTerm',
       name: tag,
-      inDefinedTermSet: { '@id': `${SITE_URL}/#termset-frc` },
+      inDefinedTermSet: { '@id': `${SITE_URL}/#termset-shabrang` },
     })),
     inLanguage: paper.lang,
-    isPartOf: { '@id': `${SITE_URL}/#project` },
+    isPartOf: { '@id': `${SITE_URL}/#website` },
   };
 }
 
@@ -353,14 +414,14 @@ export function schemaBreadcrumbList(items: BreadcrumbItem[]) {
 
 // ─── Concept-Level Schemas ─────────────────────────────────────────────────
 
-/** DefinedTermSet — the FRC glossary */
+/** DefinedTermSet — site glossary */
 export function schemaDefinedTermSet(concepts: ConceptMeta[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
-    '@id': `${SITE_URL}/#termset-frc`,
-    name: 'FRC Concepts',
-    description: 'Core concepts and terminology of the Fractal Resonance Cognition framework.',
+    '@id': `${SITE_URL}/#termset-shabrang`,
+    name: 'Shabrang Concepts',
+    description: 'Key terms and connective concepts used across Shabrang.',
     url: `${SITE_URL}/en/concepts`,
     creator: { '@id': `${SITE_URL}/#author` },
     hasDefinedTerm: concepts.map(c => ({
@@ -369,7 +430,7 @@ export function schemaDefinedTermSet(concepts: ConceptMeta[]) {
       name: c.title,
       description: c.description,
       termCode: c.id,
-      inDefinedTermSet: { '@id': `${SITE_URL}/#termset-frc` },
+      inDefinedTermSet: { '@id': `${SITE_URL}/#termset-shabrang` },
     })),
   };
 }
@@ -385,8 +446,8 @@ export function schemaDefinedTerm(concept: ConceptMeta) {
     termCode: concept.id,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
-      '@id': `${SITE_URL}/#termset-frc`,
-      name: 'FRC Concepts',
+      '@id': `${SITE_URL}/#termset-shabrang`,
+      name: 'Shabrang Concepts',
     },
     sameAs: concept.related.map(r => `${SITE_URL}/${concept.lang}/concepts/${r}`),
   };
@@ -400,47 +461,39 @@ export function schemaDataset() {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     '@id': `${SITE_URL}/#dataset`,
-    name: 'Fractal Resonance Cognition Research Data',
-    description: 'Structured research data from the FRC framework including papers, concepts, equations, and knowledge graph relationships.',
-    url: `${SITE_URL}/for-ai`,
+    name: 'Shabrang Site Index',
+    description: 'Machine-readable index files for Shabrang (site search index and LLM summary).',
+    url: `${SITE_URL}/llms.txt`,
     creator: { '@id': `${SITE_URL}/#author` },
-    license: 'https://opensource.org/licenses/BSL-1.1',
+    license: 'https://creativecommons.org/licenses/by-nc-nd/4.0/',
     distribution: [
       {
         '@type': 'DataDownload',
         encodingFormat: 'application/json',
-        contentUrl: `${SITE_URL}/api/concepts`,
-        name: 'FRC Concepts API',
-      },
-      {
-        '@type': 'DataDownload',
-        encodingFormat: 'application/json',
-        contentUrl: `${SITE_URL}/api/papers`,
-        name: 'FRC Papers API',
-      },
-      {
-        '@type': 'DataDownload',
-        encodingFormat: 'application/json',
-        contentUrl: `${SITE_URL}/api/graph`,
-        name: 'FRC Knowledge Graph API',
+        contentUrl: `${SITE_URL}/search-index.json`,
+        name: 'Site Search Index',
       },
       {
         '@type': 'DataDownload',
         encodingFormat: 'text/plain',
         contentUrl: `${SITE_URL}/llms.txt`,
-        name: 'FRC LLM Summary',
+        name: 'LLM Summary',
+      },
+      {
+        '@type': 'DataDownload',
+        encodingFormat: 'application/rss+xml',
+        contentUrl: `${SITE_URL}/feed.xml`,
+        name: 'RSS Feed',
       },
     ],
     keywords: [
-      'coherence',
-      'entropy',
-      'quantum mechanics',
-      'consciousness',
-      'FRC',
-      'fractal resonance',
+      'persian philosophy',
+      'iranian plateau',
+      'dialectic',
+      'shabrang',
+      'liquid fortress',
     ],
     isAccessibleForFree: true,
-    measurementTechnique: 'Theoretical framework with mathematical formalization',
   };
 }
 
@@ -452,7 +505,6 @@ export function schemaSiteGraph() {
     '@context': 'https://schema.org',
     '@graph': [
       { ...schemaWebSite(), '@context': undefined },
-      { ...schemaResearchProject(), '@context': undefined },
       { ...schemaOrganization(), '@context': undefined },
       { ...schemaPerson(), '@context': undefined },
     ],
@@ -462,8 +514,8 @@ export function schemaSiteGraph() {
 /** Generate all schemas for a paper page */
 export function schemaPaperPage(paper: PaperMeta) {
   const breadcrumbs = schemaBreadcrumbList([
-    { name: 'FRC', url: '/' },
-    { name: 'Papers', url: `/${paper.lang}/papers` },
+    { name: SITE_NAME, url: '/' },
+    { name: 'Library', url: '/' },
     { name: paper.title, url: `/${paper.lang}/papers/${paper.id}` },
   ]);
 
@@ -531,7 +583,7 @@ export function schemaChapter(chapter: ChapterMeta) {
 /** Generate all schemas for a concept page */
 export function schemaConceptPage(concept: ConceptMeta) {
   const breadcrumbs = schemaBreadcrumbList([
-    { name: 'FRC', url: '/' },
+    { name: SITE_NAME, url: '/' },
     { name: 'Concepts', url: `/${concept.lang}/concepts` },
     { name: concept.title, url: `/${concept.lang}/concepts/${concept.id}` },
   ]);

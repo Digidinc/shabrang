@@ -1,13 +1,21 @@
 import type { Metadata } from 'next';
-import { getLanguages } from '@/lib/content';
+import { getLanguages, getStaticPageAlternates } from '@/lib/content';
 import { BlogIndex } from '@/components/pages/BlogIndex';
 import { BlogSidebar } from '@/components/BlogSidebar';
 import { getLangBasePath } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Down-to-earth notes and field reports from the Fractal Resonance Cognition project.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const alternates = getStaticPageAlternates('blog');
+  return {
+    title: 'Blog',
+    description: 'Essays and field notes from Shabrang — Persian wisdom through dialogue.',
+    alternates: {
+      canonical: alternates[lang] || alternates.en,
+      languages: alternates,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return getLanguages().map((lang) => ({ lang }));

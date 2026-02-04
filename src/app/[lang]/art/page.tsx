@@ -1,12 +1,20 @@
 import type { Metadata } from 'next';
-import { getLanguages, getArtItems, matchesPerspectiveView } from '@/lib/content';
+import { getLanguages, getArtItems, matchesPerspectiveView, getStaticPageAlternates } from '@/lib/content';
 import { MuseumIndex, type ArtifactItem } from '@/components/pages/MuseumIndex';
 import { getLangBasePath } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'The Imaginal Gallery | Museum of Coherence',
-  description: 'Reading history through the Shabrang lens. A collection of Persian artifacts analyzed through the physics of resonance and survival.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const alternates = getStaticPageAlternates('art');
+  return {
+    title: 'The Imaginal Gallery',
+    description: 'A museum of artifacts and images — reading Persian history through the Shabrang lens.',
+    alternates: {
+      canonical: alternates[lang] || alternates.en,
+      languages: alternates,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return getLanguages().map(lang => ({ lang }));

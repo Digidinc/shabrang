@@ -1,4 +1,7 @@
-export { metadata } from '@/app/[lang]/contact/page';
-import ContactPage from '@/app/[lang]/contact/page';
+import ContactPage, { generateMetadata as generateLangMetadata } from '@/app/[lang]/contact/page';
 
-export default ContactPage;
+export const generateMetadata = () => generateLangMetadata({ params: Promise.resolve({ lang: 'en' }) });
+
+export default function Page() {
+  return ContactPage({ params: Promise.resolve({ lang: 'en' }) });
+}

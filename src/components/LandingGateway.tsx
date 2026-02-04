@@ -44,7 +44,7 @@ export function LandingGateway() {
 
         {/* Title */}
         <h1 className="animate-fade-up stagger-1 text-4xl sm:text-5xl lg:text-6xl font-light text-frc-gold mb-6 tracking-tight">
-          Fractal Resonance
+          Shabrang
         </h1>
 
         {/* The Equation */}
@@ -53,7 +53,7 @@ export function LandingGateway() {
             dS + k<span className="text-frc-gold">*</span> d ln C = 0
           </p>
           <p className="font-mono text-xs text-frc-steel mt-3 uppercase tracking-widest">
-            The Law of Reciprocity
+            A living dialectic
           </p>
         </div>
 

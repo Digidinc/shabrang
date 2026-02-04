@@ -57,7 +57,7 @@ export function TextSharePopover() {
 
   const shareTwitter = useCallback(() => {
     const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent(`"${popover.text.slice(0, 200)}${popover.text.length > 200 ? '...' : ''}" — FRC`);
+    const text = encodeURIComponent(`"${popover.text.slice(0, 200)}${popover.text.length > 200 ? '...' : ''}" — Shabrang`);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=550,height=420');
   }, [popover.text]);
 
