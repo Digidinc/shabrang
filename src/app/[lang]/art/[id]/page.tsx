@@ -23,6 +23,7 @@ import {
   matchesPerspectiveView,
 } from '@/lib/content';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
+import { getLangBasePath } from '@/lib/site';
 
 interface Props {
   params: Promise<{ lang: string; id: string }>;
@@ -52,7 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fm = artifact.frontmatter;
   const author = fm.author || 'H. Servat';
   const norm = normalizeContentPerspective(fm.perspective);
-  const canonicalUrl = `https://shabrang.ca/${lang}/art/${fm.id}`;
+  const langPrefix = lang === 'en' ? '' : `/${lang}`;
+  const canonicalUrl = `https://shabrang.ca${langPrefix}/art/${fm.id}`;
   const alternates = getAlternateLanguages('articles', fm.id); // Artifacts use the article-like meta for now
 
   return {
@@ -83,7 +85,8 @@ export default async function ArtifactPage({ params }: Props) {
   if (!artifact) notFound();
   const norm = normalizeContentPerspective(artifact.frontmatter.perspective);
 
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
+  const homeHref = basePath || '/';
   const meta = toPaperMeta(artifact);
   const backlinks = buildBacklinks(lang);
   const pageBacklinks = backlinks[id] || [];
@@ -122,7 +125,7 @@ export default async function ArtifactPage({ params }: Props) {
       >
           {/* Breadcrumb */}
           <nav className="text-sm text-frc-text-dim mb-8">
-            <a href={basePath} className="hover:text-frc-gold">Shabrang</a>
+            <a href={homeHref} className="hover:text-frc-gold">Shabrang</a>
             <span className="mx-2">/</span>
             <a href={`${basePath}/art`} className="hover:text-frc-gold">Imaginal Gallery</a>
             <span className="mx-2">/</span>

@@ -1,38 +1,27 @@
-# Homepage redirect to English
-/  /en  302
+# English is now at root. Redirect /en/* to root equivalents.
+/en  /  301
+/en/*  /:splat  301
 
-# v1 URL compatibility — preserve all existing routes
-/papers  /en/papers  301
-/papers/*  /en/papers/:splat  301
-/books  /en/books  301
-/books/*  /en/books/:splat  301
-/concepts  /en/concepts  301
-/concepts/*  /en/concepts/:splat  301
-/topics  /en/topics  301
-/topics/*  /en/topics/:splat  301
-/formula/lambda-field  /en/papers/FRC-100-007  301
-/formula/coherence  /en/papers/FRC-566-001  301
-/formulas  /en/formulas  301
+# Clean URL rewrites for static export
+/  /index.html  200
+/about  /about.html  200
+/contact  /contact.html  200
+/privacy  /privacy.html  200
+/terms  /terms.html  200
+/blog  /blog.html  200
+/blog/*  /blog/:splat.html  200
+/books  /books.html  200
+/books/*  /books/:splat.html  200
+/topics  /topics.html  200
+/topics/*  /topics/:splat.html  200
+/art  /art.html  200
+/art/*  /art/:splat.html  200
+/tags/*  /tags/:splat.html  200
+
+# Legacy v1 routes (keep as root now)
 /for-ai  /llms.txt  301
 /for-machines  /llms.txt  301
-/about  /en/about  301
-/positioning  /en/positioning  301
-/mu-levels  /en/mu-levels  301
-/contact  /en/contact  301
-/ai-awakening  /en/articles/ai-awakening  301
-/blog  /en/blog  301
-/blog/*  /en/blog/:splat  301
-/articles  /en/articles  301
-/articles/*  /en/articles/:splat  301
-/infographics  /en/tags/infographics  301
-/infographics/*  /en/tags/infographics  301
-/api/papers  /en/papers  301
-/api/papers/*  /en/papers  301
-/api/concepts  /en/concepts  301
-/api/concepts/*  /en/concepts  301
-/api/graph  /en/graph  301
-/api/graph/*  /en/graph  301
 
 # River-only articles that had (or may get) Kasra-side links.
-/en/articles/gemini-deep-research-frc-2026-01-25  /en/river/articles/gemini-deep-research-frc-2026-01-25  302
-/articles/gemini-deep-research-frc-2026-01-25  /en/river/articles/gemini-deep-research-frc-2026-01-25  302
+/en/articles/gemini-deep-research-frc-2026-01-25  /river/articles/gemini-deep-research-frc-2026-01-25  302
+/articles/gemini-deep-research-frc-2026-01-25  /river/articles/gemini-deep-research-frc-2026-01-25  302

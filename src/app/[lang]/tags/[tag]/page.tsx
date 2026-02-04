@@ -4,6 +4,7 @@ import { BlogGridClient, type BlogGridItem } from '@/components/pages/BlogGridCl
 import { PageShell } from '@/components/PageShell';
 import { BlogSidebar } from '@/components/BlogSidebar';
 import { getContentsByTag, getAllTags, getLanguages, estimateReadTime, matchesPerspectiveView } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
 interface Props {
   params: Promise<{ lang: string; tag: string }>;
@@ -36,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TagPage({ params }: Props) {
   const { lang, tag } = await params;
   const decodedTag = decodeURIComponent(tag);
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
+  const homeHref = basePath || '/';
 
   // Get all content with this tag
   const contents = getContentsByTag(lang, decodedTag);
@@ -83,7 +85,7 @@ export default async function TagPage({ params }: Props) {
     >
       {/* Breadcrumb */}
       <nav className="text-sm text-frc-text-dim mb-8">
-        <a href={basePath} className="hover:text-frc-gold">Shabrang</a>
+        <a href={homeHref} className="hover:text-frc-gold">Shabrang</a>
         <span className="mx-2">/</span>
         <a href={`${basePath}/blog`} className="hover:text-frc-gold">Blog</a>
         <span className="mx-2">/</span>

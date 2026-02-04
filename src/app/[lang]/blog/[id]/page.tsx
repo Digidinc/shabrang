@@ -15,6 +15,7 @@ import { RelatedPosts } from '@/components/RelatedPosts';
 import { FeaturedSidebar } from '@/components/FeaturedSidebar';
 import { estimateReadTime, getBlogPost, getBlogPosts, getLanguages, toPaperMeta, buildBacklinks, getGlossary, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
+import { getLangBasePath } from '@/lib/site';
 
 interface Props {
   params: Promise<{ lang: string; id: string }>;
@@ -42,7 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: 'Not Found' };
 
   const fm = post.frontmatter;
-  const postUrl = `https://shabrang.ca/${lang}/blog/${fm.id}`;
+  const langPrefix = lang === 'en' ? '' : `/${lang}`;
+  const postUrl = `https://shabrang.ca${langPrefix}/blog/${fm.id}`;
   const alternates = getAlternateLanguages('blog', fm.id);
 
   return {
@@ -69,7 +71,8 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
   if (!matchesPerspectiveView(post.frontmatter.perspective, 'kasra')) notFound();
 
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
+  const homeHref = basePath || '/';
   const meta = toPaperMeta(post);
   const backlinks = buildBacklinks(lang);
   const pageBacklinks = backlinks[id] || [];
@@ -137,7 +140,7 @@ export default async function BlogPostPage({ params }: Props) {
       >
         {/* Breadcrumb */}
         <nav className="text-sm text-frc-text-dim mb-8">
-          <a href={basePath} className="hover:text-frc-gold">Shabrang</a>
+          <a href={homeHref} className="hover:text-frc-gold">Shabrang</a>
           <span className="mx-2">/</span>
           <a href={`${basePath}/blog`} className="hover:text-frc-gold">Blog</a>
           <span className="mx-2">/</span>

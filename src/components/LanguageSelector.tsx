@@ -22,7 +22,7 @@ export function LanguageSelector() {
 
   // Extract current language from pathname
   const pathParts = pathname.split('/');
-  const currentLangCode = pathParts[1] || 'en';
+  const currentLangCode = LANGUAGES.some((l) => l.code === pathParts[1]) ? pathParts[1] : 'en';
   const currentLang = LANGUAGES.find(l => l.code === currentLangCode) || LANGUAGES[0];
   const isRTL = RTL_LANGUAGES.includes(currentLangCode);
 
@@ -40,9 +40,22 @@ export function LanguageSelector() {
 
   // Handle language switch
   function switchLanguage(langCode: string) {
+    const hasLangPrefix = LANGUAGES.some((l) => l.code === pathParts[1]);
+
+    if (!hasLangPrefix) {
+      const nextPath = langCode === 'en' ? pathname : `/${langCode}${pathname}`;
+      router.push(nextPath === '' ? '/' : nextPath);
+      setIsOpen(false);
+      return;
+    }
+
     const newPathParts = [...pathParts];
     newPathParts[1] = langCode;
-    const newPath = newPathParts.join('/') || `/${langCode}`;
+    let newPath = newPathParts.join('/') || `/${langCode}`;
+    if (langCode === 'en') {
+      newPath = newPath.replace(/^\/en(\/|$)/, '/');
+      if (newPath === '') newPath = '/';
+    }
     router.push(newPath);
     setIsOpen(false);
   }

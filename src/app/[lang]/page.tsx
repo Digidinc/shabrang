@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getLanguages, getBlogPosts, estimateReadTime, matchesPerspectiveView } from '@/lib/content';
 import { ShabrangHome } from '@/components/pages/ShabrangHome';
 
@@ -7,6 +8,21 @@ export function generateStaticParams() {
 
 interface Props {
   params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const languages = getLanguages();
+  const alternates = Object.fromEntries(
+    languages.map((code) => [code, code === 'en' ? '/' : `/${code}`]).concat([['x-default', '/']])
+  );
+
+  return {
+    alternates: {
+      canonical: lang === 'en' ? '/' : `/${lang}`,
+      languages: alternates,
+    },
+  };
 }
 
 export default async function ContentHub({ params }: Props) {

@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSelector } from './LanguageSelector';
 import { getDictionary } from '@/lib/dictionaries';
-import { getLangFromPathname } from '@/lib/site';
+import { getLangFromPathname, getLangBasePath } from '@/lib/site';
 
 // RTL languages
 const RTL_LANGUAGES = ['fa', 'ar', 'he'];
@@ -15,7 +15,8 @@ const RTL_LANGUAGES = ['fa', 'ar', 'he'];
 export function Header() {
   const pathname = usePathname();
   const lang = getLangFromPathname(pathname, 'en');
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
+  const homeHref = lang === 'en' && pathname === '/' ? '/' : basePath || '/';
   const isRTL = RTL_LANGUAGES.includes(lang);
   const dict = getDictionary(lang);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -297,7 +298,7 @@ export function Header() {
         {/* Main navigation */}
         <nav className="main-nav">
           <div className="main-nav-inner">
-            <Link href={basePath} className="logo-link">
+            <Link href={homeHref} className="logo-link">
               <Image
                 src="/brand/logo.png"
                 alt="Shabrang"

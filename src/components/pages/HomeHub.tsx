@@ -3,10 +3,7 @@ import Image from 'next/image';
 import { getGlossary, getHomeConfig, getPapers } from '@/lib/content';
 import type { PerspectiveView } from '@/lib/content';
 import { VideoSeries } from '@/components/VideoSeries';
-
-function getBasePath(lang: string, view: PerspectiveView): string {
-  return view === 'river' ? `/${lang}/river` : `/${lang}`;
-}
+import { getBasePath } from '@/lib/site';
 
 /** Map horse perspectives to their base UI layouts */
 function getLayoutKey(view: PerspectiveView): 'river' | 'kasra' {
@@ -16,7 +13,8 @@ function getLayoutKey(view: PerspectiveView): 'river' | 'kasra' {
 }
 
 export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveView }) {
-  const basePath = getBasePath(lang, view);
+  const basePath = getBasePath(lang, getLayoutKey(view));
+  const homeHref = basePath || '/';
   const layoutKey = getLayoutKey(view);
   const papers = getPapers(lang);
   const glossary = getGlossary(lang, { basePath, view });
@@ -26,7 +24,7 @@ export async function HomeHub({ lang, view }: { lang: string; view: PerspectiveV
 
   const resolveTarget = (target?: string, url?: string) => {
     if (url) return url;
-    if (!target) return basePath;
+    if (!target) return homeHref;
     if (staticTargets.has(target)) return `${basePath}/${target}`;
     const item = glossary[target];
     if (item?.url) return item.url;

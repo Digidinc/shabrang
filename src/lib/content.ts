@@ -9,6 +9,7 @@
 import fs from 'fs';
 import path from 'path';
 import type { PaperMeta, ConceptMeta } from './schema';
+import { getBasePath, getLangBasePath } from '@/lib/site';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
@@ -858,9 +859,9 @@ export function getGlossary(
   opts?: { basePath?: string; view?: PerspectiveView }
 ): Record<string, GlossaryItem> {
   const glossary: Record<string, GlossaryItem> = {};
-  const basePath = opts?.basePath || `/${lang}`;
+  const basePath = opts?.basePath ?? getLangBasePath(lang);
   const view = opts?.view;
-  const otherBasePath = view === 'river' ? `/${lang}` : `/${lang}/river`;
+  const otherBasePath = view === 'river' ? getBasePath(lang, 'kasra') : getBasePath(lang, 'river');
   const pickBase = (p: unknown) => (view ? (matchesPerspectiveView(p, view) ? basePath : otherBasePath) : basePath);
   
   // Process Papers
@@ -1226,7 +1227,8 @@ export function getAlternateLanguages(type: ContentType, id: string): Record<str
   const alternates: Record<string, string> = {};
 
   for (const lang of languages) {
-    alternates[lang] = `${SITE_URL}/${lang}/${type}/${id}`;
+    const langPrefix = lang === 'en' ? '' : `/${lang}`;
+    alternates[lang] = `${SITE_URL}${langPrefix}/${type}/${id}`;
   }
 
   // Add x-default pointing to English (or first available)
@@ -1245,10 +1247,11 @@ export function getStaticPageAlternates(page: string): Record<string, string> {
   const alternates: Record<string, string> = {};
 
   for (const lang of languages) {
-    alternates[lang] = `${SITE_URL}/${lang}/${page}`;
+    const langPrefix = lang === 'en' ? '' : `/${lang}`;
+    alternates[lang] = `${SITE_URL}${langPrefix}/${page}`;
   }
 
-  alternates['x-default'] = `${SITE_URL}/en/${page}`;
+  alternates['x-default'] = `${SITE_URL}/${page}`;
   return alternates;
 }
 

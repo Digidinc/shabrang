@@ -12,8 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage with language alternates
   const homeAlternates: Record<string, string> = {};
   for (const lang of languages) {
-    homeAlternates[lang] = `${SITE_URL}/${lang}`;
+    homeAlternates[lang] = lang === 'en' ? `${SITE_URL}/` : `${SITE_URL}/${lang}`;
   }
+  homeAlternates['x-default'] = `${SITE_URL}/`;
   entries.push({
     url: SITE_URL,
     lastModified: new Date(),
@@ -28,8 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const page of staticPages) {
     const alternates = getStaticPageAlternates(page);
     for (const lang of languages) {
+      const langPrefix = lang === 'en' ? '' : `/${lang}`;
       entries.push({
-        url: `${SITE_URL}/${lang}/${page}`,
+        url: `${SITE_URL}${langPrefix}/${page}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.8,
@@ -51,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         const alternates = getAlternateLanguages(type as any, id);
         for (const altLang of Object.keys(alternates).filter(l => l !== 'x-default')) {
           entries.push({
-            url: `${SITE_URL}/${altLang}/${type}/${id}`,
+            url: alternates[altLang],
             lastModified: item.frontmatter.date ? new Date(item.frontmatter.date) : new Date(),
             changeFrequency: 'monthly',
             priority,
@@ -71,9 +73,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Tag archive pages
   for (const lang of languages) {
     const tags = getAllTags(lang);
+    const langPrefix = lang === 'en' ? '' : `/${lang}`;
     for (const tag of tags) {
       entries.push({
-        url: `${SITE_URL}/${lang}/tags/${tag}`,
+        url: `${SITE_URL}${langPrefix}/tags/${tag}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.7,

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePerspective } from './PerspectiveProvider';
+import { getLangBasePath } from '@/lib/site';
 
 export function PerspectiveHomeIntro({
   intros,
@@ -40,6 +41,7 @@ export function PerspectiveStartHere({
   const { perspective } = usePerspective();
 
   const isRiver = perspective === 'river';
+  const basePath = getLangBasePath(lang) || '';
 
   const resolved = isRiver ? items?.river : items?.kasra;
   const fallback = isRiver
@@ -48,19 +50,19 @@ export function PerspectiveStartHere({
           k: '01',
           title: 'Read the Overture',
           desc: 'The Architect + Oracle framing from Prime 2.',
-          href: `/${lang}/books/the-resonance-code`,
+          href: `${basePath}/books/the-resonance-code`,
         },
         {
           k: '02',
           title: 'Time as coherence flow',
           desc: 'A gentle concept page that links to the UCC.',
-          href: `/${lang}/concepts/time`,
+          href: `${basePath}/concepts/time`,
         },
         {
           k: '03',
           title: 'Then: the foundations',
           desc: 'The technical spine (reciprocity + UCC) when ready.',
-          href: `/${lang}/papers/FRC-566-001`,
+          href: `${basePath}/papers/FRC-566-001`,
         },
       ]
     : [
@@ -68,19 +70,19 @@ export function PerspectiveStartHere({
           k: '01',
           title: 'Start with reciprocity',
           desc: 'Entropy-coherence law and the UCC flow equation.',
-          href: `/${lang}/papers/FRC-566-001`,
+          href: `${basePath}/papers/FRC-566-001`,
         },
         {
           k: '02',
           title: 'Scan the formulas',
           desc: 'Coherence, Lambda field, witness, and predictions.',
-          href: `/${lang}/formulas`,
+          href: `${basePath}/formulas`,
         },
         {
           k: '03',
           title: 'Get the big map',
           desc: 'Browse the knowledge graph and follow links.',
-          href: `/${lang}/graph`,
+          href: `${basePath}/graph`,
         },
       ];
   const list = resolved && resolved.length > 0 ? resolved : fallback;

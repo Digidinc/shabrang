@@ -1,3 +1,5 @@
+import { getLangBasePath } from '@/lib/site';
+
 /**
  * Minimal markdown to HTML renderer — no external dependencies.
  *
@@ -127,7 +129,7 @@ function resolveWikilinkHref(
   basePath?: string
 ): string {
   const { cleanId, section } = splitWikilinkId(id);
-  const base = basePath || `/${lang}`;
+  const base = basePath || getLangBasePath(lang) || '';
   const entry = getGlossaryEntry(glossary, cleanId);
   if (entry?.url) return `${entry.url}${section}`;
   const itemType = entry?.type;

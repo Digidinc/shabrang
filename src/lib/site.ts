@@ -2,6 +2,10 @@ export type SitePerspective = 'kasra' | 'river';
 
 const KNOWN_LANGS = new Set(['en', 'fa', 'fr', 'es']);
 
+export function getLangBasePath(lang: string): string {
+  return lang === 'en' ? '' : `/${lang}`;
+}
+
 export function getLangFromPathname(pathname: string, fallback: string = 'en'): string {
   const parts = String(pathname || '').split('/');
   const lang = parts[1] || fallback;
@@ -13,11 +17,12 @@ export function getPerspectiveFromPathname(pathname: string): SitePerspective {
   // /: ['', '']
   // /en: ['', 'en']
   // /en/river/...: ['', 'en', 'river', ...]
-  return parts[2] === 'river' ? 'river' : 'kasra';
+  return parts[1] === 'river' || parts[2] === 'river' ? 'river' : 'kasra';
 }
 
 export function getBasePath(lang: string, perspective: SitePerspective): string {
-  return perspective === 'river' ? `/${lang}/river` : `/${lang}`;
+  const base = getLangBasePath(lang);
+  return perspective === 'river' ? `${base}/river` : base;
 }
 
 export function togglePerspectivePathname(pathname: string, next: SitePerspective, fallbackLang: string = 'en'): string {
@@ -38,6 +43,5 @@ export function togglePerspectivePathname(pathname: string, next: SitePerspectiv
   }
 
   const out = parts.join('/');
-  return out === '' ? `/${lang}` : out;
+  return out === '' ? (getLangBasePath(lang) || '/') : out;
 }
-

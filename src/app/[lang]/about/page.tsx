@@ -5,6 +5,7 @@ import { getLanguages, getSitePage, getGlossary } from '@/lib/content';
 import { renderMarkdown } from '@/lib/markdown';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { PageShell } from '@/components/PageShell';
+import { getLangBasePath } from '@/lib/site';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -24,7 +25,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const page = getSitePage(lang, 'about');
   if (!page) notFound();
 
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
   const glossary = getGlossary(lang, { basePath, view: 'kasra' });
   const renderedBody = renderMarkdown(page.body, lang, glossary, basePath);
 

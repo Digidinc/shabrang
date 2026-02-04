@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getBooks, matchesPerspectiveView, type PerspectiveView } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 import type { DerivedChapterMeta } from '@/lib/bookChapters';
 
 interface BooksSidebarProps {
@@ -17,7 +18,7 @@ export function BooksSidebar({ lang, currentId, chapters, activeChapterSlug, bas
     .filter((b) => (view ? matchesPerspectiveView(b.frontmatter.perspective, view) : true))
     .sort((a, b) => (a.frontmatter.title || '').localeCompare(b.frontmatter.title || ''));
 
-  const base = basePath || `/${lang}`;
+  const base = basePath || getLangBasePath(lang) || '/';
   const isMobile = variant === 'mobile';
   const bookPath = currentId ? `${base}/books/${currentId}` : '';
   const showChapters = Boolean(

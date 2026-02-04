@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getBlogPosts, matchesPerspectiveView, type PerspectiveView } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
 interface BlogSidebarProps {
   lang: string;
@@ -14,7 +15,7 @@ export function BlogSidebar({ lang, currentId, basePath, view, variant = 'deskto
     .filter((p) => (view ? matchesPerspectiveView(p.frontmatter.perspective, view) : true))
     .sort((a, b) => (b.frontmatter.date || '').localeCompare(a.frontmatter.date || ''));
 
-  const base = basePath || `/${lang}`;
+  const base = basePath || getLangBasePath(lang) || '/';
   const isMobile = variant === 'mobile';
 
   return (

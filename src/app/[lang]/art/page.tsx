@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getLanguages, getArtItems, matchesPerspectiveView } from '@/lib/content';
 import { MuseumIndex, type ArtifactItem } from '@/components/pages/MuseumIndex';
+import { getLangBasePath } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'The Imaginal Gallery | Museum of Coherence',
@@ -17,7 +18,7 @@ interface Props {
 
 export default async function ArtPage({ params }: Props) {
   const { lang } = await params;
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
 
   // Fetch art items server-side and transform for client component
   const rawItems = getArtItems(lang)

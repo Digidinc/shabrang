@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
+import { getLangBasePath } from '@/lib/site';
 
 const VERSION = '5.0.0';
 const BUILD_DATE = '2026-01-30';
@@ -16,6 +17,7 @@ interface FeaturedPost {
 }
 
 export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featuredPosts?: FeaturedPost[] }) {
+  const basePath = getLangBasePath(lang) || '';
   return (
     <>
       <style jsx global>{`
@@ -749,7 +751,7 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
                   Discover the architecture of meaning that could not be burned.
                 </p>
                 <div className="hero-cta">
-                  <Link href={`/${lang}/books/liquid-fortress`} className="btn btn-primary">Read Free Chapters</Link>
+                  <Link href={`${basePath}/books/liquid-fortress`} className="btn btn-primary">Read Free Chapters</Link>
                   <a href="https://www.amazon.com/LIQUID-FORTRESS-Structural-History-Persian-ebook/dp/B0GBJ47F5X" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Get the Book</a>
                 </div>
               </div>
@@ -819,7 +821,7 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                  <Link href={`/${lang}/books/liquid-fortress`} className="btn btn-gold">Start Reading</Link>
+                  <Link href={`${basePath}/books/liquid-fortress`} className="btn btn-gold">Start Reading</Link>
                   <a href="https://www.amazon.com/LIQUID-FORTRESS-Structural-History-Persian-ebook/dp/B0GBJ47F5X" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Kindle Edition</a>
                 </div>
               </div>
@@ -836,9 +838,9 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
                 Start here: The core ideas of the Liquid Fortress explained through everyday Persian cultural artifacts.
               </p>
             </div>
-            <FeaturedPosts posts={featuredPosts} basePath={`/${lang}`} />
+            <FeaturedPosts posts={featuredPosts} basePath={`${basePath}`} />
             <div style={{ textAlign: 'center', marginTop: '48px' }}>
-              <Link href={`/${lang}/blog`} className="btn btn-primary">View All Blog Posts</Link>
+              <Link href={`${basePath}/blog`} className="btn btn-primary">View All Blog Posts</Link>
             </div>
           </div>
         </section>
@@ -886,7 +888,7 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
                   To survive, a system must be <strong>strong on all seven floors</strong>.
                 </p>
                 <div style={{ marginTop: '32px' }}>
-                  <Link href={`/${lang}/books/liquid-fortress`} className="btn btn-gold">Learn the Framework</Link>
+                  <Link href={`${basePath}/books/liquid-fortress`} className="btn btn-gold">Learn the Framework</Link>
                 </div>
               </div>
             </div>
@@ -905,43 +907,43 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
 
             {/* Guardian Grid */}
             <div className="guardian-grid">
-              <Link href={`/${lang}/books/liquid-fortress`} className="guardian-card" data-level="1">
+              <Link href={`${basePath}/books/liquid-fortress`} className="guardian-card" data-level="1">
                 <span className="guardian-mu">μ1</span>
                 <span className="guardian-icon">👑</span>
                 <h4 className="guardian-title">The King</h4>
                 <p className="guardian-persian">شاه</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress`} className="guardian-card" data-level="2">
+              <Link href={`${basePath}/books/liquid-fortress`} className="guardian-card" data-level="2">
                 <span className="guardian-mu">μ2</span>
                 <span className="guardian-icon">🌙</span>
                 <h4 className="guardian-title">The Mother</h4>
                 <p className="guardian-persian">مادر</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress`} className="guardian-card" data-level="3">
+              <Link href={`${basePath}/books/liquid-fortress`} className="guardian-card" data-level="3">
                 <span className="guardian-mu">μ3</span>
                 <span className="guardian-icon">⚔️</span>
                 <h4 className="guardian-title">The Knight</h4>
                 <p className="guardian-persian">پهلوان</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress`} className="guardian-card" data-level="4">
+              <Link href={`${basePath}/books/liquid-fortress`} className="guardian-card" data-level="4">
                 <span className="guardian-mu">μ4</span>
                 <span className="guardian-icon">📜</span>
                 <h4 className="guardian-title">The Vizier</h4>
                 <p className="guardian-persian">وزیر</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress`} className="guardian-card" data-level="5">
+              <Link href={`${basePath}/books/liquid-fortress`} className="guardian-card" data-level="5">
                 <span className="guardian-mu">μ5</span>
                 <span className="guardian-icon">🌹</span>
                 <h4 className="guardian-title">The Poet</h4>
                 <p className="guardian-persian">شاعر</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress`} className="guardian-card" data-level="6">
+              <Link href={`${basePath}/books/liquid-fortress`} className="guardian-card" data-level="6">
                 <span className="guardian-mu">μ6</span>
                 <span className="guardian-icon">📖</span>
                 <h4 className="guardian-title">The Storyteller</h4>
                 <p className="guardian-persian">گوسان</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress`} className="guardian-card" data-level="7">
+              <Link href={`${basePath}/books/liquid-fortress`} className="guardian-card" data-level="7">
                 <span className="guardian-mu">μ7</span>
                 <span className="guardian-icon">✨</span>
                 <h4 className="guardian-title">The Sage</h4>
@@ -1017,37 +1019,37 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
               <h2 className="section-title">The Chapters</h2>
             </div>
             <div className="chapters-grid">
-              <Link href={`/${lang}/books/liquid-fortress/chapter/01-enigma`} className="chapter-card">
+              <Link href={`${basePath}/books/liquid-fortress/chapter/01-enigma`} className="chapter-card">
                 <span className="chapter-badge free">Free</span>
                 <div className="chapter-number">Chapter 1</div>
                 <h3 className="chapter-title">The Fortress and the Corridor</h3>
                 <p className="chapter-meta">Roots &amp; Geometry</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress/chapter/02-collapse`} className="chapter-card">
+              <Link href={`${basePath}/books/liquid-fortress/chapter/02-collapse`} className="chapter-card">
                 <span className="chapter-badge free">Free</span>
                 <div className="chapter-number">Chapter 2</div>
                 <h3 className="chapter-title">The Lens of FRC</h3>
                 <p className="chapter-meta">Methodology</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress/chapter/03-binary`} className="chapter-card">
+              <Link href={`${basePath}/books/liquid-fortress/chapter/03-binary`} className="chapter-card">
                 <span className="chapter-badge free">Free</span>
                 <div className="chapter-number">Chapter 3</div>
                 <h3 className="chapter-title">The First Binary</h3>
                 <p className="chapter-meta">Asha &amp; Druj</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress/chapter/04-border`} className="chapter-card">
+              <Link href={`${basePath}/books/liquid-fortress/chapter/04-border`} className="chapter-card">
                 <span className="chapter-badge free">Free</span>
                 <div className="chapter-number">Chapter 4</div>
                 <h3 className="chapter-title">The Myth of the Border</h3>
                 <p className="chapter-meta">Arash &amp; Sacrifice</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress/chapter/11-conquest`} className="chapter-card">
+              <Link href={`${basePath}/books/liquid-fortress/chapter/11-conquest`} className="chapter-card">
                 <span className="chapter-badge premium">Premium</span>
                 <div className="chapter-number">Chapter 11</div>
                 <h3 className="chapter-title">The Shock of Conquest</h3>
                 <p className="chapter-meta">Qadisiyah</p>
               </Link>
-              <Link href={`/${lang}/books/liquid-fortress/chapter/16-light-architect`} className="chapter-card">
+              <Link href={`${basePath}/books/liquid-fortress/chapter/16-light-architect`} className="chapter-card">
                 <span className="chapter-badge premium">Premium</span>
                 <div className="chapter-number">Chapter 16</div>
                 <h3 className="chapter-title">The Architect of Light</h3>
@@ -1055,7 +1057,7 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
               </Link>
             </div>
             <div style={{ textAlign: 'center', marginTop: '48px' }}>
-              <Link href={`/${lang}/books/liquid-fortress`} className="btn btn-primary">View All 30 Chapters</Link>
+              <Link href={`${basePath}/books/liquid-fortress`} className="btn btn-primary">View All 30 Chapters</Link>
             </div>
           </div>
         </section>
@@ -1067,7 +1069,7 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
             <p className="section-description" style={{ color: 'var(--sand)', marginBottom: '40px' }}>
               The first 5 chapters are completely free. Start your journey into 3,000 years of Persian survival.
             </p>
-            <Link href={`/${lang}/books/liquid-fortress`} className="btn btn-gold">Start Reading Free</Link>
+            <Link href={`${basePath}/books/liquid-fortress`} className="btn btn-gold">Start Reading Free</Link>
           </div>
         </section>
 

@@ -23,6 +23,7 @@ import {
 } from '@/lib/content';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
 import { getLensLabel, normalizeLensKey } from '@/lib/lenses';
+import { getLangBasePath } from '@/lib/site';
 
 export const dynamicParams = false;
 
@@ -53,7 +54,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const fm = topic.frontmatter;
   const author = fm.author || 'Shabrang';
-  const url = `https://shabrang.ca/${lang}/topics/${fm.id}`;
+  const langPrefix = lang === 'en' ? '' : `/${lang}`;
+  const url = `https://shabrang.ca${langPrefix}/topics/${fm.id}`;
   const alternates = getAlternateLanguages('topics', fm.id);
 
   return {
@@ -98,7 +100,8 @@ export default async function TopicPage({ params }: Props) {
   if (!topic) notFound();
   if (!matchesPerspectiveView(topic.frontmatter.perspective, 'kasra')) notFound();
 
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
+  const homeHref = basePath || '/';
   const fm = topic.frontmatter;
   const glossary = getGlossary(lang, { basePath, view: 'kasra' });
   const backlinks = buildBacklinks(lang);
@@ -167,7 +170,7 @@ export default async function TopicPage({ params }: Props) {
         right={<TableOfContents items={tocItems} />}
       >
         <nav className="text-sm text-shabrang-ink-dim mb-8">
-          <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
+          <a href={homeHref} className="hover:text-shabrang-gold">Shabrang</a>
           <span className="mx-2">/</span>
           <a href={`${basePath}/topics`} className="hover:text-shabrang-gold">Topics</a>
           <span className="mx-2">/</span>

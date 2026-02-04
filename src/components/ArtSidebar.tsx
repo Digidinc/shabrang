@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getArtItems, matchesPerspectiveView, type PerspectiveView } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
 interface ArtSidebarProps {
   lang: string;
@@ -14,7 +15,7 @@ export function ArtSidebar({ lang, currentId, basePath, view, variant = 'desktop
     .filter((a) => (view ? matchesPerspectiveView(a.frontmatter.perspective, view) : true))
     .sort((a, b) => (a.frontmatter.title || '').localeCompare(b.frontmatter.title || ''));
 
-  const base = basePath || `/${lang}`;
+  const base = basePath || getLangBasePath(lang) || '/';
   const isMobile = variant === 'mobile';
 
   // Helper to safely access extended frontmatter properties

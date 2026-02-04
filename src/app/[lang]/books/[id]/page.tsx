@@ -7,6 +7,7 @@ import { PageShell } from '@/components/PageShell';
 import { getBook, getBooks, getLanguages, toPaperMeta, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
 import { schemaPaperPage } from '@/lib/schema';
 import { getChapterList } from '@/lib/bookChapters';
+import { getLangBasePath } from '@/lib/site';
 
 interface Props {
   params: Promise<{ lang: string; id: string }>;
@@ -40,7 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // while the primary narrative (Liquid Fortress) is canonical to shabrang.ca
   const isTechnicalFrc = fm.id.startsWith('frc-');
   const canonicalBase = isTechnicalFrc ? 'https://fractalresonance.com' : 'https://shabrang.ca';
-  const bookUrl = `${canonicalBase}/${lang}/books/${fm.id}`;
+  const langPrefix = lang === 'en' ? '' : `/${lang}`;
+  const bookUrl = `${canonicalBase}${langPrefix}/books/${fm.id}`;
   
   const alternates = getAlternateLanguages('books', fm.id);
 
@@ -69,7 +71,8 @@ export default async function BookPage({ params }: Props) {
   const book = getBook(lang, id);
   if (!book) notFound();
 
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
+  const homeHref = basePath || '/';
   const meta = toPaperMeta(book);
   const fm = book.frontmatter;
   const chapterItems = getChapterList(book.body);
@@ -84,7 +87,7 @@ export default async function BookPage({ params }: Props) {
       >
         {/* Breadcrumb */}
         <nav className="text-sm text-shabrang-ink-dim mb-6">
-          <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
+          <a href={homeHref} className="hover:text-shabrang-gold">Shabrang</a>
           <span className="mx-2">/</span>
           <a href={`${basePath}/books`} className="hover:text-shabrang-gold">Books</a>
           <span className="mx-2">/</span>

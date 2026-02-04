@@ -50,6 +50,23 @@
   --shabrang-crimson: #8B3535;
   --shabrang-green: #3D5C3D;
   --shabrang-white: #FFFEF9;
+
+  /* Legacy palette aliases used in older components */
+  --sand: var(--shabrang-parchment);
+  --sand-light: #FDF8EE;
+  --sand-dark: var(--shabrang-parchment-dark);
+  --parchment: #F9F3E3;
+  --gold: var(--shabrang-gold);
+  --gold-light: var(--shabrang-gold-light);
+  --gold-dark: #A68A1F;
+  --teal: var(--shabrang-teal-dark);
+  --teal-dark: var(--shabrang-teal);
+  --teal-light: #3D7A8B;
+  --crimson: var(--shabrang-crimson);
+  --crimson-dark: #6B2525;
+  --crimson-light: #A84545;
+  --ink: var(--shabrang-ink);
+  --ink-light: #2D2D2A;
 }
 
 .dark {
@@ -64,6 +81,23 @@
   --shabrang-crimson: #A04545;
   --shabrang-green: #4D6C4D;
   --shabrang-white: #1A1A18;
+
+  /* Legacy palette aliases used in older components */
+  --sand: var(--shabrang-parchment);
+  --sand-light: var(--shabrang-parchment-dark);
+  --sand-dark: #071212;
+  --parchment: var(--shabrang-parchment);
+  --gold: var(--shabrang-gold);
+  --gold-light: var(--shabrang-gold-light);
+  --gold-dark: #B8922B;
+  --teal: var(--shabrang-teal-dark);
+  --teal-dark: var(--shabrang-teal);
+  --teal-light: #4D8A9B;
+  --crimson: var(--shabrang-crimson);
+  --crimson-dark: #8B3535;
+  --crimson-light: #B55555;
+  --ink: var(--shabrang-ink);
+  --ink-light: var(--shabrang-parchment-dark);
 
   /* Override Tailwind theme variables for dark mode */
   --color-shabrang-parchment: #0D1A1A;
@@ -458,15 +492,19 @@ a:hover {
    CONTENT TYPOGRAPHY - LITERARY
    ═══════════════════════════════════════════════════════════════ */
 
-.content-body {
+.content-body,
+.prose,
+.markdown-content {
   max-width: 800px;
   margin: 0 auto;
   padding: 15px;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 2;
 }
 
-.content-body h1 {
+.content-body h1,
+.prose h1,
+.markdown-content h1 {
   font-family: var(--font-display);
   color: var(--color-shabrang-ink);
   font-size: 2.5rem;
@@ -478,7 +516,9 @@ a:hover {
   letter-spacing: 0.1em;
 }
 
-.content-body h2 {
+.content-body h2,
+.prose h2,
+.markdown-content h2 {
   font-family: var(--font-display);
   color: var(--color-shabrang-teal-dark);
   font-size: 1.85rem;
@@ -487,7 +527,9 @@ a:hover {
   letter-spacing: 0.08em;
 }
 
-.content-body h3 {
+.content-body h3,
+.prose h3,
+.markdown-content h3 {
   font-family: var(--font-display);
   color: var(--color-shabrang-ink);
   font-size: 1.5rem;
@@ -496,12 +538,15 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
-.content-body p {
+.content-body p,
+.prose p,
+.markdown-content p {
   margin-bottom: 1.75rem;
   text-align: justify;
 }
 
-.content-body p:first-of-type::first-letter {
+.content-body p:first-of-type::first-letter,
+.prose p:first-of-type::first-letter {
   font-family: var(--font-display);
   font-size: 4rem;
   float: left;
@@ -511,7 +556,9 @@ a:hover {
   font-weight: 600;
 }
 
-.content-body blockquote {
+.content-body blockquote,
+.prose blockquote,
+.markdown-content blockquote {
   margin: 3rem 0;
   padding: 2rem 2.5rem;
   background: color-mix(in srgb, var(--color-shabrang-gold) 10%, transparent);
@@ -523,7 +570,9 @@ a:hover {
   position: relative;
 }
 
-.content-body blockquote::before {
+.content-body blockquote::before,
+.prose blockquote::before,
+.markdown-content blockquote::before {
   content: '"';
   font-family: var(--font-display);
   font-size: 4rem;
@@ -534,32 +583,47 @@ a:hover {
   opacity: 0.5;
 }
 
-.content-body ul, .content-body ol {
+.content-body ul,
+.content-body ol,
+.prose ul,
+.prose ol,
+.markdown-content ul,
+.markdown-content ol {
   margin-bottom: 2rem;
   padding-left: 2rem;
 }
 
-.content-body li {
+.content-body li,
+.prose li,
+.markdown-content li {
   margin-bottom: 0.75rem;
 }
 
-.content-body li::marker {
+.content-body li::marker,
+.prose li::marker,
+.markdown-content li::marker {
   color: var(--color-shabrang-gold);
   font-weight: 600;
 }
 
-.content-body a {
+.content-body a,
+.prose a,
+.markdown-content a {
   color: var(--color-shabrang-teal);
   border-bottom: 1px solid var(--color-shabrang-gold);
   transition: all 0.3s ease;
 }
 
-.content-body a:hover {
+.content-body a:hover,
+.prose a:hover,
+.markdown-content a:hover {
   color: var(--color-shabrang-crimson);
   border-bottom-color: var(--color-shabrang-crimson);
 }
 
-.content-body img {
+.content-body img,
+.prose img,
+.markdown-content img {
   display: block;
   max-width: 100%;
   margin: 3rem auto;
@@ -567,13 +631,17 @@ a:hover {
   box-shadow: 8px 8px 0 var(--color-shabrang-gold);
 }
 
-.content-body hr {
+.content-body hr,
+.prose hr,
+.markdown-content hr {
   border: none;
   margin: 4rem auto;
   text-align: center;
 }
 
-.content-body hr::before {
+.content-body hr::before,
+.prose hr::before,
+.markdown-content hr::before {
   content: '❖ ❖ ❖';
   color: var(--color-shabrang-gold);
   font-size: 1.25rem;
@@ -949,6 +1017,16 @@ a:hover {
     font-size: 3rem;
   }
 
+  .prose,
+  .markdown-content {
+    padding: 15px;
+    font-size: 1.05rem;
+  }
+
+  .prose p:first-of-type::first-letter {
+    font-size: 3rem;
+  }
+
   .card-manuscript {
     padding: 1.5rem;
   }
@@ -998,8 +1076,17 @@ a:hover {
 .text-frc-blue { color: var(--color-shabrang-teal); }
 .text-frc-text { color: var(--color-shabrang-ink); }
 .text-frc-text-dim { color: var(--color-shabrang-ink-dim); }
+.text-frc-steel { color: var(--color-frc-steel); }
+.text-frc-void { color: var(--color-frc-void); }
+.bg-frc-void-light { background-color: var(--color-frc-void-light); }
 .border-frc-blue { border-color: var(--color-shabrang-teal); }
 .border-frc-gold { border-color: var(--color-shabrang-gold); }
+
+/* Utility gap-fills for missing tailwind classes */
+.border-l-3 { border-left-width: 3px; }
+
+/* Typography fallbacks when prose-invert is used without plugin */
+.prose-invert { color: var(--color-shabrang-ink); }
 
 /* ═══════════════════════════════════════════════════════════════
    SHABRANG PAGE LAYOUT
@@ -1020,11 +1107,13 @@ a:hover {
 .shabrang-layout {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 @media (min-width: 1024px) {
   .shabrang-layout {
     flex-direction: row;
+    align-items: flex-start;
   }
 }
 
@@ -1080,6 +1169,12 @@ a:hover {
     overflow-y: auto;
     padding-left: 1rem;
   }
+
+  .bifocal-signal.bifocal-solo {
+    max-width: none;
+    border-right: none;
+    padding-right: 0;
+  }
 }
 
 .drama-card {
@@ -1114,6 +1209,8 @@ a:hover {
 html.reading-mode header,
 html.reading-mode footer,
 html.reading-mode [data-sidebar],
+html.reading-mode [data-toc],
+html.reading-mode .dialectic-panel,
 html.reading-mode nav[aria-label="Breadcrumb"],
 html.reading-mode .breadcrumb {
   display: none !important;

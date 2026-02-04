@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getTopics, matchesPerspectiveView, type PerspectiveView } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
 interface TopicsSidebarProps {
   lang: string;
@@ -35,7 +36,7 @@ export function TopicsSidebar({ lang, currentId, basePath, view, variant = 'desk
     general: 'Foundations',
   };
 
-  const base = basePath || `/${lang}`;
+  const base = basePath || getLangBasePath(lang) || '/';
   const isMobile = variant === 'mobile';
 
   return (

@@ -43,9 +43,13 @@ export function CommandPalette() {
     }
 
     // Adjust path for current language/perspective
-    if (url.startsWith(`/${lang}/`)) {
-      const tail = url.slice(`/${lang}`.length);
-      router.push(`${basePath}${tail}`);
+    if (url.startsWith(`/${lang}/`) || url === `/${lang}`) {
+      let tail = url.slice(`/${lang}`.length);
+      if (basePath.endsWith('/river') && tail.startsWith('/river')) {
+        tail = tail.slice('/river'.length);
+      }
+      const next = `${basePath}${tail}` || '/';
+      router.push(next);
       return;
     }
 

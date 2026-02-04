@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getPapers, getConcepts, matchesPerspectiveView, type PerspectiveView } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
 interface SidebarProps {
   lang: string;
@@ -12,7 +13,7 @@ interface SidebarProps {
 export function Sidebar({ lang, currentId, basePath, view, variant = 'desktop' }: SidebarProps) {
   const papers = getPapers(lang).filter((p) => (view ? matchesPerspectiveView(p.frontmatter.perspective, view) : true));
   const concepts = getConcepts(lang).filter((c) => (view ? matchesPerspectiveView(c.frontmatter.perspective, view) : true));
-  const base = basePath || `/${lang}`;
+  const base = basePath || getLangBasePath(lang) || '/';
 
   const series100 = papers.filter(p => p.frontmatter.id?.startsWith('FRC-100'));
   const series566 = papers.filter(p => p.frontmatter.id?.startsWith('FRC-566'));

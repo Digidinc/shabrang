@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getLanguages } from '@/lib/content';
 import { TopicsIndex } from '@/components/pages/TopicsIndex';
 import { TopicsSidebar } from '@/components/TopicsSidebar';
+import { getLangBasePath } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Topics',
@@ -18,7 +19,7 @@ interface Props {
 
 export default async function TopicsPage({ params }: Props) {
   const { lang } = await params;
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
 
   return (
     <main className="shabrang-page">
@@ -34,4 +35,3 @@ export default async function TopicsPage({ params }: Props) {
     </main>
   );
 }
-

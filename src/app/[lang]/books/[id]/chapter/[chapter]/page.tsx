@@ -7,8 +7,6 @@ import { ContentDigest } from '@/components/ContentDigest';
 import { BooksSidebar } from '@/components/BooksSidebar';
 import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
-import { DramaStream } from '@/components/DramaStream';
-import { GitHubDialectic } from '@/components/GitHubDialectic';
 import {
   estimateReadTime,
   getBook,
@@ -24,6 +22,7 @@ import { findChapterBySlug, deriveChaptersFromMarkdown } from '@/lib/bookChapter
 import { schemaPaperPage, schemaChapter } from '@/lib/schema';
 import { getChapterList } from '@/lib/bookChapters';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
+import { getLangBasePath } from '@/lib/site';
 
 interface Props {
   params: Promise<{ lang: string; id: string; chapter: string }>;
@@ -68,7 +67,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // while the primary narrative (Liquid Fortress) is canonical to shabrang.ca
   const isTechnicalFrc = fm.id.startsWith('frc-');
   const canonicalBase = isTechnicalFrc ? 'https://fractalresonance.com' : 'https://shabrang.ca';
-  const bookUrl = `${canonicalBase}/${lang}/books/${fm.id}`;
+  const langPrefix = lang === 'en' ? '' : `/${lang}`;
+  const bookUrl = `${canonicalBase}${langPrefix}/books/${fm.id}`;
   const chapterUrl = `${bookUrl}/chapter/${ch.slug}`;
   
   const alternates = getAlternateLanguages('books', fm.id);
@@ -103,7 +103,8 @@ export default async function BookChapterPage({ params }: Props) {
   if (!book) notFound();
   if (!matchesPerspectiveView(book.frontmatter.perspective, 'kasra')) notFound();
 
-  const basePath = `/${lang}`;
+  const basePath = getLangBasePath(lang);
+  const homeHref = basePath || '/';
   const meta = toPaperMeta(book);
   const glossary = getGlossary(lang, { basePath, view: 'kasra' });
   const fm = book.frontmatter;
@@ -144,9 +145,9 @@ export default async function BookChapterPage({ params }: Props) {
       >
         <div className="bifocal-container">
           {/* Left Column: The Signal (Untouched Book Content) */}
-          <div className="bifocal-signal">
+          <div className="bifocal-signal bifocal-solo">
             <nav className="text-sm text-shabrang-ink-dim mb-8">
-              <a href={basePath} className="hover:text-shabrang-gold">Shabrang</a>
+              <a href={homeHref} className="hover:text-shabrang-gold">Shabrang</a>
               <span className="mx-2">/</span>
               <a href={`${basePath}/books`} className="hover:text-shabrang-gold">Books</a>
               <span className="mx-2">/</span>
@@ -215,14 +216,6 @@ export default async function BookChapterPage({ params }: Props) {
             )}
           </div>
 
-          {/* Right Column: The Drama (Opinions & Perspectives) */}
-          <div className="bifocal-drama">
-            <GitHubDialectic
-              pageId={`chapter-${current.slug}`}
-              pageTitle={current.title}
-            />
-            <DramaStream drama={drama} lang={lang} />
-          </div>
         </div>
       </PageShell>
     </>

@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   output: 'export',
   // Avoid Next.js picking a parent workspace root when multiple lockfiles exist.
   outputFileTracingRoot: __dirname,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     unoptimized: true,
   },

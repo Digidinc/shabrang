@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getConcepts, matchesPerspectiveView, type PerspectiveView } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
 interface ConceptsSidebarProps {
   lang: string;
@@ -14,7 +15,7 @@ export function ConceptsSidebar({ lang, currentId, basePath, view, variant = 'de
     .filter((c) => (view ? matchesPerspectiveView(c.frontmatter.perspective, view) : true))
     .sort((a, b) => (a.frontmatter.title || '').localeCompare(b.frontmatter.title || ''));
 
-  const base = basePath || `/${lang}`;
+  const base = basePath || getLangBasePath(lang) || '/';
   const isMobile = variant === 'mobile';
 
   return (

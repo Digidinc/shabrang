@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { estimateReadTime, getArticles, getPaper, matchesPerspectiveView, type ParsedContent } from '@/lib/content';
+import { getBasePath } from '@/lib/site';
 
 function excerptOf(item: ParsedContent): string {
   const fm = item.frontmatter;
@@ -15,8 +16,8 @@ function excerptOf(item: ParsedContent): string {
 }
 
 export function RiverMagazineHome({ lang }: { lang: string }) {
-  const basePath = `/${lang}/river`;
-  const kasraBase = `/${lang}`;
+  const basePath = getBasePath(lang, 'river');
+  const kasraBase = getBasePath(lang, 'kasra');
   const pinnedCandidates = [
     { type: 'article' as const, id: 'river-welcome', title: 'River Digest: How To Read FRC' },
     { type: 'article' as const, id: 'gemini-deep-research-frc-2026-01-25', title: 'Gemini Deep Research on FRC (Jan 25, 2026)' },
