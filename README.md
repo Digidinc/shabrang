@@ -20,7 +20,7 @@ git clone https://github.com/Digidinc/shabrang-cms.git
 cd shabrang-cms
 
 npm install
-npm run dev        # localhost:3000
+npm run dev        # localhost:3000 (dev server)
 npm run build      # Static export → Cloudflare Pages
 ```
 
@@ -31,14 +31,14 @@ npm run build      # Static export → Cloudflare Pages
 | **🗣️ Community Dialogue** | Comment on any page via GitHub Discussions with AI moderation |
 | **🤖 AI Council** | Llama 3 8B auto-moderates comments (thesis/antithesis/synthesis) |
 | **💬 Permanent Archive** | All conversations stored in git, preserving the dialectic |
-| **📊 Advanced SEO** | FAQ schema (30 questions), RSS feed, 381 tag pages, OG images, structured data |
+| **📊 Advanced SEO** | FAQ schema (30 questions), RSS feed, tag pages, OG images, structured data |
 | **🔍 Featured Snippets** | FAQ schema on 10 posts targeting Google featured snippets |
 | **🖼️ Open Graph Images** | 14 social sharing cards (1200x630) for posts and topic hubs |
 | **⚡ Image Optimization** | 745 images converted to WebP format (128MB optimized, <100KB target) |
 | **♿ Alt Text Coverage** | 100% descriptive alt text in English and Farsi (95+ files) |
 | **📚 Topic Hub Pages** | 4 pillar content guides (3,000-5,000 words each) for Persian culture |
 | **📰 RSS Feed** | Static `/feed.xml` with 50 recent posts |
-| **🏷️ Tag System** | 381 auto-generated tag archive pages |
+| **🏷️ Tag System** | Auto-generated tag archive pages |
 | **🔗 Related Posts** | Smart tag-based post recommendations (3 per page) |
 | **📖 Reading Progress** | Gold progress bar tracks scroll position |
 | Light/Dark Theme | `next-themes` dark-first (night-colored 🌙) |
@@ -47,6 +47,8 @@ npm run build      # Static export → Cloudflare Pages
 | μ-Stack Navigation | 7-layer sidebar (Roots→Sky) |
 | Multi-language | EN/FA (wikilinks [[chapter1]]) |
 | Book Chapters | 30 chapters + appendices (Liquid Fortress) |
+| **🧭 English Root** | English pages live at `/`, `/en/*` redirects to root |
+| **📚 Single-Column Chapters** | Chapter pages remove the right panel for focus |
 
 ## Architecture
 
@@ -193,7 +195,7 @@ See [Deployment Guide](docs/DEPLOYMENT_DIALECTIC.md) for:
 ## Key Links
 
 ### Live Site
-- **Website:** [shabrang.ca](https://shabrang.ca)
+- **Website:** [shabrang.ca](https://shabrang.ca) (English at `/`, Farsi at `/fa`)
 - **Discussions:** [GitHub Discussions](https://github.com/Digidinc/shabrang/discussions)
 - **Book:** [Amazon Kindle](https://amazon.com/dp/B0GBJ47F5X)
 
@@ -232,10 +234,10 @@ cd shabrang
 npm install
 
 # Development
-npm run dev          # localhost:3000
+npm run dev          # localhost:3000 (dev server)
 
 # Build
-npm run build        # Static export to out/
+npm run build        # Static export to out/ (production)
 
 # Deploy
 git push origin main # Auto-deploys to Cloudflare Pages
@@ -286,4 +288,4 @@ shabrang-cms/
 
 ---
 
-🐴 **Shabrang** - The night-colored horse carrying both mystic and scientist through the dialectic.
+**Shabrang** - The night-colored horse carrying both mystic and scientist through the dialectic.
