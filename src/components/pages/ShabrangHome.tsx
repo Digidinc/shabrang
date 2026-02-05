@@ -745,13 +745,14 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
                   <span>Art, Philosophy &amp; The Persian Spirit</span>
                 </div>
                 <h1 className="hero-title">The Liquid Fortress</h1>
-                <p className="hero-subtitle">A Structural History of the Persian Mind</p>
+                <p className="hero-subtitle">Shabrang’s Structural History of the Persian Mind</p>
                 <p className="hero-description">
-                  Why did Persia survive 3,000 years of invasion when every other ancient civilization died?
-                  Discover the architecture of meaning that could not be burned.
+                  Shabrang explores why Persia survived 3,000 years of invasion when other ancient civilizations disappeared —
+                  the architecture of meaning that could not be burned.
                 </p>
                 <div className="hero-cta">
-                  <Link href={`${basePath}/books/liquid-fortress`} className="btn btn-primary">Read Free Chapters</Link>
+                  <Link href={`${basePath}/start`} className="btn btn-primary">Start Here</Link>
+                  <Link href={`${basePath}/books/liquid-fortress`} className="btn btn-secondary">Read Free Chapters</Link>
                   <a href="https://www.amazon.com/LIQUID-FORTRESS-Structural-History-Persian-ebook/dp/B0GBJ47F5X" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Get the Book</a>
                 </div>
               </div>
@@ -835,7 +836,11 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
             <div className="section-header">
               <h2 className="section-title">Essential Reading</h2>
               <p className="section-description">
-                Start here: The core ideas of the Liquid Fortress explained through everyday Persian cultural artifacts.
+                New to Shabrang?{' '}
+                <Link href={`${basePath}/start`} className="underline hover:no-underline">
+                  Start here
+                </Link>
+                : the core ideas of the Liquid Fortress explained through everyday Persian cultural artifacts.
               </p>
             </div>
             <FeaturedPosts posts={featuredPosts} basePath={`${basePath}`} />
@@ -1028,7 +1033,7 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
               <Link href={`${basePath}/books/liquid-fortress/chapter/02-collapse`} className="chapter-card">
                 <span className="chapter-badge free">Free</span>
                 <div className="chapter-number">Chapter 2</div>
-                <h3 className="chapter-title">The Lens of FRC</h3>
+                <h3 className="chapter-title">The Lens of Coherence</h3>
                 <p className="chapter-meta">Methodology</p>
               </Link>
               <Link href={`${basePath}/books/liquid-fortress/chapter/03-binary`} className="chapter-card">

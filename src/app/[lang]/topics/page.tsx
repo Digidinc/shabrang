@@ -1,13 +1,21 @@
 import type { Metadata } from 'next';
-import { getLanguages } from '@/lib/content';
+import { getLanguages, getStaticPageAlternates } from '@/lib/content';
 import { TopicsIndex } from '@/components/pages/TopicsIndex';
 import { TopicsSidebar } from '@/components/TopicsSidebar';
 import { getLangBasePath } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Topics',
-  description: 'Questions, summaries, and spectrum views across the Fractal Resonance Cognition corpus.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const alternates = getStaticPageAlternates('topics');
+  return {
+    title: 'Topics',
+    description: 'Guides and question-led hubs across Shabrang (culture, philosophy, myth).',
+    alternates: {
+      canonical: alternates[lang] || alternates.en,
+      languages: alternates,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return getLanguages().map((lang) => ({ lang }));

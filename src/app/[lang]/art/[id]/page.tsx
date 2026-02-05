@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SchemaScript } from '@/components/SchemaScript';
-import { schemaPaperPage } from '@/lib/schema';
+import { schemaVisualArtwork } from '@/lib/schema';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { ArtSidebar } from '@/components/ArtSidebar';
 import { TableOfContents } from '@/components/TableOfContents';
@@ -15,7 +15,6 @@ import {
   getArtItem,
   getArtItems,
   getLanguages,
-  toPaperMeta,
   buildBacklinks,
   getGlossary,
   getAlternateLanguages,
@@ -51,11 +50,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!artifact) return { title: 'Not Found' };
 
   const fm = artifact.frontmatter;
-  const author = fm.author || 'H. Servat';
+  const author = fm.author || 'Kay Hermes';
   const norm = normalizeContentPerspective(fm.perspective);
   const langPrefix = lang === 'en' ? '' : `/${lang}`;
   const canonicalUrl = `https://shabrang.ca${langPrefix}/art/${fm.id}`;
-  const alternates = getAlternateLanguages('articles', fm.id); // Artifacts use the article-like meta for now
+  const alternates = getAlternateLanguages('art', fm.id);
 
   return {
     title: `${fm.title} | Imaginal Gallery`,
@@ -87,13 +86,13 @@ export default async function ArtifactPage({ params }: Props) {
 
   const basePath = getLangBasePath(lang);
   const homeHref = basePath || '/';
-  const meta = toPaperMeta(artifact);
   const backlinks = buildBacklinks(lang);
   const pageBacklinks = backlinks[id] || [];
   const glossary = getGlossary(lang, { basePath, view: 'kasra' });
   const fm = artifact.frontmatter;
   const fmExt = fm as unknown as Record<string, unknown>;
   const readTime = fm.read_time || estimateReadTime(artifact.body);
+  const description = fm.abstract || (typeof fmExt.frc_analysis === 'string' ? fmExt.frc_analysis : '') || 'Artifact analysis.';
 
   const renderedBody = renderMarkdown(artifact.body, lang, glossary, basePath);
   const tocItems = extractTocItems(artifact.body).filter((t) => t.level === 2);
@@ -108,7 +107,18 @@ export default async function ArtifactPage({ params }: Props) {
 
   return (
     <>
-      <SchemaScript data={schemaPaperPage(meta)} />
+      <SchemaScript
+        data={schemaVisualArtwork({
+          id: fm.id,
+          title: fm.title,
+          description,
+          author: fm.author,
+          date: fm.date,
+          lang,
+          tags: fm.tags,
+          url: `https://shabrang.ca${basePath}/art/${fm.id}`,
+        })}
+      />
 
       <PageShell
         leftMobile={<ArtSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" variant="mobile" />}
@@ -146,7 +156,7 @@ export default async function ArtifactPage({ params }: Props) {
               {artifact.frontmatter.title}
             </h1>
             <div className="flex flex-wrap gap-4 text-sm text-frc-text-dim">
-              <span>{artifact.frontmatter.author || 'H. Servat'}</span>
+              <span>{artifact.frontmatter.author || 'Kay Hermes'}</span>
               <span>{artifact.frontmatter.date}</span>
             </div>
           </header>

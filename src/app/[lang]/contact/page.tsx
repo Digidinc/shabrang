@@ -1,16 +1,28 @@
 import type { Metadata } from 'next';
-import { getLanguages } from '@/lib/content';
+import { getLanguages, getStaticPageAlternates } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Connect with Shabrang for inquiries and collaborations.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const alternates = getStaticPageAlternates('contact');
+  return {
+    title: 'Contact',
+    description: 'Connect with Shabrang for inquiries and collaborations.',
+    alternates: {
+      canonical: alternates[lang] || alternates.en,
+      languages: alternates,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return getLanguages().map((lang) => ({ lang }));
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const basePath = getLangBasePath(lang);
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <div className="flex items-center gap-4 mb-12">
@@ -45,6 +57,13 @@ export default function ContactPage() {
 
         <p className="text-xs text-frc-text-dim leading-relaxed">
           Thank you for your interest in Shabrang.
+        </p>
+
+        <p className="text-xs text-frc-text-dim leading-relaxed">
+          Prefer to start with context? See the{' '}
+          <a className="hover:text-frc-gold" href={`${basePath}/about`}>
+            About page
+          </a>.
         </p>
       </section>
     </main>

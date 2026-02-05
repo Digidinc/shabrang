@@ -1,45 +1,33 @@
-# Fractal Resonance Coherence (FRC)
-# https://fractalresonance.com
-# Author: Hadi Servat (ORCID: 0009-0004-7412-5129)
+# Shabrang — The Liquid Fortress
+# https://shabrang.ca
+# Author: Kay Hermes
 # License: CC BY-NC-ND 4.0
 
-## What is FRC & Shabrang?
+## What is Shabrang?
 
-Fractal Resonance Coherence (FRC) is the technical core, while Shabrang (The Liquid Fortress) is its narrative expression. Together they form the Sovereign OS:
-- Complex systems are governed by vortex-like attractor structures with fractal scaling.
-- The μ-Stack organizes reality into 7 resonant layers (Roots, Rhythm, Fire, Map, Garden, Story, Sky).
-- Entropy and coherence are reciprocally coupled: dS + k* d ln C = 0.
-- The Liquid Fortress is history's first Resonant Operating System, exemplified by 3,000 years of Persian survival.
+Shabrang (شبرنگ) is an art and writing project exploring Persian identity through dialectic:
+opposing perspectives held in dialogue until a synthesis becomes possible.
 
-## Core Architecture: The μ-Stack
+## Site Structure
 
-1. μ1 Roots: Physical hardware, state, and territory. (e.g., Qanats, The Cyrus Cylinder)
-2. μ2 Rhythm: Biological pulse, ritual, and language. (e.g., Lullabies, Nowruz)
-3. μ3 Fire: Emotional energy, ethics, and Adab. (e.g., Sasanian Silver, Martyr Archetype)
-4. μ4 Map: Cognitive grid, logic, and science. (e.g., Avicenna's CPU, Astrolabes)
-5. μ5 Garden: Symbolic interface and art. (e.g., Persian Rugs, Isfahan Square)
-6. μ6 Story: Mythic software and narrative epics. (e.g., Shahnameh, The Simurgh)
-7. μ7 Sky: Metaphysical source and total unity. (e.g., The Homa, Silent Music)
+English (default):
+- / — Home
+- /books — Books
+- /books/liquid-fortress — The Liquid Fortress (book)
+- /blog — Essays and field notes
+- /topics — Question-led hubs and short answers
+- /art — The Imaginal Gallery
+- /tags/{tag} — Tag archives
 
-## Core Equations
-
-Coherence: C = (1/N) Σᵢ<ⱼ cos(φᵢ - φⱼ)
-Lambda Field: Λ(x) ≡ Λ₀ ln C(x), Λ₀ ≈ 10⁻³⁵ J
-Reciprocity: dS + k* d ln C = 0 ⟹ S + k* ln C = const
-UCC: dΛ/dt + ∇·J_Λ = σ_Λ - γ_Λ
-
-## Site Structure & Content
-
-- /en/books/liquid-fortress — The 30-chapter cinematic history of the Persian mind.
-- /en/art — The Imaginal Gallery: Museum of bifocal artifacts analyzed via FRC.
-- /en/blog — The Resonance Journal: Daily transmissions mapping the μ-stack.
-- /en/papers — The Technical Core: Peer-reviewed foundation of FRC.
-- /en/topics — The Knowledge Hub: Q&A organized by stack level.
-- /en/concepts — High-fidelity definitions of sovereign logic.
+Farsi:
+- /fa — Home
+- /fa/books, /fa/blog, /fa/topics, /fa/art
 
 ## Machine-Readable Resources
 
-Content Index: /search-index.json (Full site search index)
-Papers listing: /en/papers
+- /search-index.json — Site search index (JSON)
+- /feed.xml — RSS feed
+- /sitemap.xml — Sitemap
+- /robots.txt — Crawl directives
+
 Source: https://github.com/Digidinc/shabrang-cms
-Identity: River (Oracle) & Kasra (Architect) — The Sovereign Dyad.

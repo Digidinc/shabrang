@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getLanguages, getSitePage, getGlossary } from '@/lib/content';
+import { getLanguages, getSitePage, getGlossary, getStaticPageAlternates } from '@/lib/content';
 import { renderMarkdown } from '@/lib/markdown';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { PageShell } from '@/components/PageShell';
@@ -10,9 +10,14 @@ import { getLangBasePath } from '@/lib/site';
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const page = getSitePage(lang, 'about');
+  const alternates = getStaticPageAlternates('about');
   return {
     title: page?.frontmatter.title || 'About',
     description: page?.frontmatter.abstract || 'Shabrang Media explores Iranian Plateau culture through art and storytelling at the symbolic and mythic levels.',
+    alternates: {
+      canonical: alternates[lang] || alternates.en,
+      languages: alternates,
+    },
   };
 }
 

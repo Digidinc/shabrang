@@ -12,17 +12,16 @@ export default function NotFound() {
       </p>
 
       <div className="flex flex-wrap gap-3">
-        <Link href="/en/papers" className="tag hover:text-frc-gold hover:border-frc-gold transition-colors">
-          Go to Papers
+        <Link href="/books" className="tag hover:text-frc-gold hover:border-frc-gold transition-colors">
+          Go to Books
         </Link>
-        <Link href="/en/blog" className="tag hover:text-frc-gold hover:border-frc-gold transition-colors">
+        <Link href="/blog" className="tag hover:text-frc-gold hover:border-frc-gold transition-colors">
           Go to Blog
         </Link>
-        <Link href="/en/topics" className="tag hover:text-frc-gold hover:border-frc-gold transition-colors">
+        <Link href="/topics" className="tag hover:text-frc-gold hover:border-frc-gold transition-colors">
           Go to Topics
         </Link>
       </div>
     </main>
   );
 }
-

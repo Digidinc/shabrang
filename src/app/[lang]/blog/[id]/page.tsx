@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SchemaScript } from '@/components/SchemaScript';
-import { schemaPaperPage, schemaFAQ, type FAQItem } from '@/lib/schema';
+import { schemaBlogPosting, schemaFAQ, type FAQItem } from '@/lib/schema';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { ContentDigest } from '@/components/ContentDigest';
 import { BlogSidebar } from '@/components/BlogSidebar';
@@ -13,7 +13,7 @@ import { VoiceTag } from '@/components/VoiceTag';
 import { GitHubDialectic } from '@/components/GitHubDialectic';
 import { RelatedPosts } from '@/components/RelatedPosts';
 import { FeaturedSidebar } from '@/components/FeaturedSidebar';
-import { estimateReadTime, getBlogPost, getBlogPosts, getLanguages, toPaperMeta, buildBacklinks, getGlossary, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
+import { estimateReadTime, getBlogPost, getBlogPosts, getLanguages, buildBacklinks, getGlossary, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
 import { renderMarkdown, extractTocItems } from '@/lib/markdown';
 import { getLangBasePath } from '@/lib/site';
 
@@ -73,7 +73,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   const basePath = getLangBasePath(lang);
   const homeHref = basePath || '/';
-  const meta = toPaperMeta(post);
   const backlinks = buildBacklinks(lang);
   const pageBacklinks = backlinks[id] || [];
   const glossary = getGlossary(lang, { basePath, view: 'kasra' });
@@ -113,7 +112,18 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <SchemaScript data={schemaPaperPage(meta)} />
+      <SchemaScript
+        data={schemaBlogPosting({
+          id: fm.id,
+          title: fm.title,
+          description: fm.abstract || '',
+          lang,
+          date: fm.date,
+          author: fm.author,
+          tags: fm.tags,
+          url: `https://shabrang.ca${basePath}/blog/${fm.id}`,
+        })}
+      />
       {faqData && faqData.length > 0 && (
         <SchemaScript data={schemaFAQ(faqData)} />
       )}

@@ -1,13 +1,21 @@
 import type { Metadata } from 'next';
-import { getLanguages } from '@/lib/content';
+import { getLanguages, getStaticPageAlternates } from '@/lib/content';
 import { BooksIndex } from '@/components/pages/BooksIndex';
 import { BooksSidebar } from '@/components/BooksSidebar';
 import { getLangBasePath } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Books',
-  description: 'Longer-form writing for Shabrang (primers, textbooks, and narrative frames).',
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const alternates = getStaticPageAlternates('books');
+  return {
+    title: 'Books',
+    description: 'Long-form reading in Shabrang: The Liquid Fortress and other works.',
+    alternates: {
+      canonical: alternates[lang] || alternates.en,
+      languages: alternates,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return getLanguages().map((lang) => ({ lang }));

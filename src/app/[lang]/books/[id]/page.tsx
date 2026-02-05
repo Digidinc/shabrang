@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import { SchemaScript } from '@/components/SchemaScript';
 import { BooksSidebar } from '@/components/BooksSidebar';
 import { PageShell } from '@/components/PageShell';
-import { getBook, getBooks, getLanguages, toPaperMeta, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
-import { schemaPaperPage } from '@/lib/schema';
+import { getBook, getBooks, getLanguages, getAlternateLanguages, matchesPerspectiveView } from '@/lib/content';
+import { schemaBook } from '@/lib/schema';
 import { getChapterList } from '@/lib/bookChapters';
 import { getLangBasePath } from '@/lib/site';
 
@@ -35,12 +35,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!book) return { title: 'Not Found' };
 
   const fm = book.frontmatter;
-  const author = fm.author || 'H. Servat';
+  const author = fm.author || 'Kay Hermes';
   
-  // Logical Canonical: Technical FRC books point to fractalresonance.com, 
-  // while the primary narrative (Liquid Fortress) is canonical to shabrang.ca
-  const isTechnicalFrc = fm.id.startsWith('frc-');
-  const canonicalBase = isTechnicalFrc ? 'https://fractalresonance.com' : 'https://shabrang.ca';
+  // Canonical URLs should reflect the domain we want indexed.
+  const canonicalBase = 'https://shabrang.ca';
   const langPrefix = lang === 'en' ? '' : `/${lang}`;
   const bookUrl = `${canonicalBase}${langPrefix}/books/${fm.id}`;
   
@@ -73,13 +71,24 @@ export default async function BookPage({ params }: Props) {
 
   const basePath = getLangBasePath(lang);
   const homeHref = basePath || '/';
-  const meta = toPaperMeta(book);
   const fm = book.frontmatter;
   const chapterItems = getChapterList(book.body);
 
   return (
     <>
-      <SchemaScript data={schemaPaperPage(meta)} />
+      <SchemaScript
+        data={schemaBook({
+          id: fm.id,
+          title: fm.title,
+          description: fm.abstract || '',
+          author: fm.author,
+          date: fm.date,
+          lang,
+          tags: fm.tags,
+          url: `https://shabrang.ca${basePath}/books/${fm.id}`,
+          image: fm.cover,
+        })}
+      />
 
       <PageShell
         leftMobile={<BooksSidebar lang={lang} currentId={id} chapters={chapterItems} basePath={basePath} view="kasra" variant="mobile" />}

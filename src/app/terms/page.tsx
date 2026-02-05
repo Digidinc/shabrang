@@ -1,4 +1,7 @@
-export { metadata } from '@/app/[lang]/terms/page';
-import TermsPage from '@/app/[lang]/terms/page';
+import TermsPage, { generateMetadata as generateLangMetadata } from '@/app/[lang]/terms/page';
 
-export default TermsPage;
+export const generateMetadata = () => generateLangMetadata({ params: Promise.resolve({ lang: 'en' }) });
+
+export default function Page() {
+  return TermsPage({ params: Promise.resolve({ lang: 'en' }) });
+}

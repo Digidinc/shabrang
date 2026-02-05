@@ -1,16 +1,28 @@
 import type { Metadata } from 'next';
-import { getLanguages } from '@/lib/content';
+import { getLanguages, getStaticPageAlternates } from '@/lib/content';
+import { getLangBasePath } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'Terms of Service for Shabrang (shabrang.ca)',
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const alternates = getStaticPageAlternates('terms');
+  return {
+    title: 'Terms of Service',
+    description: 'Terms of Service for Shabrang (shabrang.ca)',
+    alternates: {
+      canonical: alternates[lang] || alternates.en,
+      languages: alternates,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return getLanguages().map(lang => ({ lang }));
 }
 
-export default function TermsPage() {
+export default async function TermsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const basePath = getLangBasePath(lang);
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <div className="flex items-center gap-4 mb-12">
@@ -112,7 +124,7 @@ export default function TermsPage() {
           <p className="text-frc-text-dim leading-relaxed">
             For questions about these Terms of Service, please contact us through the
             channels listed on our
-            <a href="/en/about" className="text-frc-gold hover:underline ml-1">About page</a>.
+            <a href={`${basePath}/about`} className="text-frc-gold hover:underline ml-1">About page</a>.
           </p>
         </section>
       </div>

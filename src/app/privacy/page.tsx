@@ -1,4 +1,7 @@
-export { metadata } from '@/app/[lang]/privacy/page';
-import PrivacyPage from '@/app/[lang]/privacy/page';
+import PrivacyPage, { generateMetadata as generateLangMetadata } from '@/app/[lang]/privacy/page';
 
-export default PrivacyPage;
+export const generateMetadata = () => generateLangMetadata({ params: Promise.resolve({ lang: 'en' }) });
+
+export default function Page() {
+  return PrivacyPage({ params: Promise.resolve({ lang: 'en' }) });
+}
