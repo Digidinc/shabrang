@@ -90,7 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // Static pages with language alternates (only pages that exist)
-  const staticPages = ['about', 'books', 'art', 'blog', 'topics', 'concepts', 'articles', 'people', 'papers', 'contact', 'privacy', 'terms'];
+  const staticPages = ['start', 'about', 'books', 'art', 'blog', 'topics', 'concepts', 'articles', 'people', 'papers', 'contact', 'privacy', 'terms'];
 
   for (const page of staticPages) {
     const alternates = getStaticPageAlternates(page);
@@ -99,7 +99,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       if (!url) continue;
 
       const lastMs =
-        page === 'about'
+        page === 'start'
+          ? safeFileMtimeMs('src/app/[lang]/start/page.tsx')
+          : page === 'about'
           ? safeContentFileMtimeMs(lang, 'about')
           : page === 'privacy'
             ? safeFileMtimeMs('src/app/[lang]/privacy/page.tsx')

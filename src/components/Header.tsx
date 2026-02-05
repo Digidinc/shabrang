@@ -23,6 +23,7 @@ export function Header() {
 
   // Shabrang navigation
   const navLinks = [
+    { path: '/start', label: 'Start Here' },
     { path: '/books/liquid-fortress', label: 'Book' },
     { path: '/art', label: 'Art' },
     { path: '/blog', label: 'Blog' },
