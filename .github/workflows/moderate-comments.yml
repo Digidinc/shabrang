@@ -160,17 +160,19 @@ jobs:
               const emoji = decision === 'rejected' ? '❌' : '⏳';
               const status = decision === 'rejected' ? 'REJECTED' : 'PENDING REVIEW';
 
-              const moderationComment = `${emoji} **Comment ${status}**
-
-**AI Council Decision:** ${decision}
-**Confidence:** ${(confidence * 100).toFixed(0)}%
-**Reason:** ${reason}
-
-${decision === 'pending'
-  ? 'This comment will be reviewed by a human moderator within 24 hours.'
-  : 'This comment does not meet the dialectic standards. Please review the [contribution guidelines](https://github.com/${repository.owner.login}/${repository.name}/blob/main/docs/DIALECTIC_GUIDE.md).'}
-
-If you believe this decision is incorrect, please reply with \`@appeal\` and explain why.`;
+              const moderationComment = [
+                `${emoji} **Comment ${status}**`,
+                '',
+                `**AI Council Decision:** ${decision}`,
+                `**Confidence:** ${(confidence * 100).toFixed(0)}%`,
+                `**Reason:** ${reason}`,
+                '',
+                decision === 'pending'
+                  ? 'This comment will be reviewed by a human moderator within 24 hours.'
+                  : `This comment does not meet the dialectic standards. Please review the [contribution guidelines](https://github.com/${repository.owner.login}/${repository.name}/blob/main/docs/DIALECTIC_GUIDE.md).`,
+                '',
+                'If you believe this decision is incorrect, please reply with `@appeal` and explain why.',
+              ].join('\\n');
 
               try {
                 await github.rest.issues.createComment({
@@ -207,16 +209,18 @@ If you believe this decision is incorrect, please reply with \`@appeal\` and exp
                 owner: repository.owner.login,
                 repo: repository.name,
                 title: `[Moderation] Review comment in ${issue.title}`,
-                body: `A comment requires human review.
-
-**Issue:** ${issue.title}
-**Author:** @${author}
-**Link:** ${issue.html_url}
-
-**AI Reason:** ${reason}
-**Confidence:** ${confidence}
-
-Please review the comment and add the appropriate label (\`approved\`, \`rejected\`, or leave as \`pending-review\`).`,
+                body: [
+                  'A comment requires human review.',
+                  '',
+                  `**Issue:** ${issue.title}`,
+                  `**Author:** @${author}`,
+                  `**Link:** ${issue.html_url}`,
+                  '',
+                  `**AI Reason:** ${reason}`,
+                  `**Confidence:** ${confidence}`,
+                  '',
+                  'Please review the comment and add the appropriate label (`approved`, `rejected`, or leave as `pending-review`).',
+                ].join('\\n'),
                 labels: ['moderation', 'pending-review']
               });
               console.log('Created moderation review issue');
