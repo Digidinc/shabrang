@@ -3,6 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQYLJTB32Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MQYLJTB32Z');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 13: The Master of Logos — The Liquid Fortress</title>
 
@@ -130,7 +139,7 @@
             <div class="paywall-content glass-panel">
                 <h2>Premium Content</h2>
                 <p>Join the Shabrang community to unlock this chapter and get access to audiobook, video explainers, and discussion.</p>
-                <a href="https://app.gohighlevel.com/checkout/shabrang" class="paywall-btn">
+                <a href="/api/ghl/checkout" class="paywall-btn">
                     Unlock Now
                 </a>
                 <p class="paywall-note">Already a member? <a href="#" id="login-link">Log in</a></p>
@@ -177,6 +186,7 @@
     </script>
 
     <script src="js/book.js" defer></script>
+    <script src="js/auth.js" defer></script>
     <script src="js/experience.js" defer></script>
     <script src="js/social.js" defer></script>
     <script src="js/viral.js" defer></script>

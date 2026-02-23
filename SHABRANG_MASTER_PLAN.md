@@ -1,8 +1,8 @@
-# SHABRANG MASTER PLAN
+# SHABRANG SOVEREIGN ECOSYSTEM
 ## The Liquid Fortress - Living Book System
 
-**Version:** 1.0
-**Last Updated:** December 13, 2025
+**Version:** 2.0 (The Sovereign Renaissance)
+**Last Updated:** January 5, 2026
 **Maintained By:** Claude (Opus 4.5)
 
 ---
@@ -108,7 +108,13 @@ The 4 alchemical albums (Nigredo, Albedo, Citrinitas, Rubedo) are **personal/sep
 │  ├── content_machine.py  (Social content automation)            │
 │  ├── ghl_oauth.py        (GHL authentication)                   │
 │  ├── ghl_sdk.py          (GHL API wrapper)                      │
-│  └── ghl_signup.py       (Lead capture)                         │
+│  ├── ghl_signup.py       (Lead capture)                         │
+├─────────────────────────────────────────────────────────────────┤
+│  Sovereign/                                                      │
+│  ├── panopticon.py       (Wisdom Ingestion Daemon)              │
+│  ├── cortex_router.py    (Memory API & Search)                  │
+│  ├── scout.py            (Web Wisdom Intake)                    │
+│  └── river_vector_memory.py (ChromaDB Vector Store)              │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -430,17 +436,15 @@ if (lang === 'fa') document.body.dir = 'rtl';
 
 ## 11. ROADMAP & MILESTONES
 
-### Phase 1: Foundation (Current)
-- [x] Book content complete (30 chapters)
-- [x] Images generated (150+)
-- [x] Audiobook complete (Suno)
-- [x] Video explainers complete (NotebookLM)
-- [x] Landing page built
-- [x] GHL integration scaffolded
-- [ ] **Enhanced viral.js** (text selection + multi-platform share)
-- [ ] **Paywall implementation** (GHL checkout integration)
-
-### Phase 2: Launch
+- [x] **Phase 9: High-Context Diplomacy (COMPLETE)**
+    - [x] Panopticon Ingestor (Wisdom Ingestion)
+    - [x] Cortex Interface (Memory visualization)
+    - [x] `mumega scout` CLI tool
+- [x] **Phase 32: The Spore Expansion (COMPLETE)**
+    - [x] `install.sh` rapid deployment
+    - [x] Global Swarm Map
+    - [x] Referral/Invite system
+- [ ] **Phase 2: Launch**
 - [ ] Landing page live on custom domain
 - [ ] Email sequence active
 - [ ] Social campaign: "7 Levels, 7 Posts"

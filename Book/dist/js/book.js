@@ -214,6 +214,8 @@ function throttle(func, limit) {
 window.ShabrangBook = {
     changeLanguage,
     openLightbox,
+    initDropcaps,
+    initImageLightbox,
     debounce,
     throttle
 };

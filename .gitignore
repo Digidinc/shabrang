@@ -1,0 +1,21 @@
+# Secrets / local config
+.env
+**/.env
+*.pem
+
+# GHL tokens / logs
+repo/marketing/.ghl_tokens.json
+repo/marketing/*log*.json
+repo/marketing/*.log
+
+# Python artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Virtual environments
+venv/
+repo/marketing/venv/
+
+# OS/editor noise
+.DS_Store

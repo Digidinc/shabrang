@@ -10,13 +10,15 @@ Run:
 Endpoints:
   GET  /api/health                    - Health check
   GET  /api/ghl/auth                  - Start OAuth flow
-  GET  /api/ghl/callback              - OAuth callback (receives code)
+  GET  /api/auth/callback              - OAuth callback (receives code)
   POST /api/ghl/signup                - Add contact from landing page
 """
 
 import json
 import os
 import logging
+import re
+import asyncio
 from pathlib import Path
 from datetime import datetime
 from functools import wraps
@@ -24,10 +26,19 @@ from functools import wraps
 from flask import Flask, request, jsonify, redirect
 from flask_cors import CORS
 import requests
+import sys
+import stripe
+
+# Ensure shabrang_core is importable
+sys.path.append(str(Path(__file__).parent.parent))
+from shabrang_core.agent.sovereign import ShabrangSovereign
 
 # Configuration
 app = Flask(__name__)
 CORS(app, origins=["https://shabrang.ca", "https://www.shabrang.ca", "http://localhost:*"])
+
+# Initialize Shabrang Sovereign Agent
+sovereign = ShabrangSovereign()
 
 # Logging
 logging.basicConfig(level=logging.INFO)
@@ -43,14 +54,16 @@ GHL_AUTH_URL = "https://marketplace.gohighlevel.com/oauth/chooselocation"
 GHL_TOKEN_URL = "https://services.leadconnectorhq.com/oauth/token"
 GHL_API_BASE = "https://services.leadconnectorhq.com"
 
+# Stripe Constants (Loaded from env in endpoint)
+STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
+stripe.api_key = os.getenv("STRIPE_API_KEY")
+
 # Default tags for Liquid Fortress signups
 DEFAULT_TAGS = ["liquid-fortress", "landing-page", "chapter-1-free"]
 
 
 def load_env():
-    """Load environment variables from .env file."""
-    env = dict(os.environ)
-
+    """Load environment variables from .env file into os.environ."""
     # Check multiple .env locations
     env_paths = [
         ENV_FILE,
@@ -61,15 +74,20 @@ def load_env():
     for dotenv_path in env_paths:
         if dotenv_path.exists():
             logger.info(f"Loading env from: {dotenv_path}")
-            for line in dotenv_path.read_text(encoding="utf-8").splitlines():
-                line = line.strip()
-                if not line or line.startswith("#") or "=" not in line:
-                    continue
-                key, value = line.split("=", 1)
-                env.setdefault(key.strip(), value.strip())
+            try:
+                for line in dotenv_path.read_text(encoding="utf-8").splitlines():
+                    line = line.strip()
+                    if not line or line.startswith("#") or "=" not in line:
+                        continue
+                    key, value = line.split("=", 1)
+                    # Update process environment
+                    os.environ[key.strip()] = value.strip()
+            except Exception as e:
+                logger.error(f"Failed to read env file: {e}")
             break
 
-    return env
+# Load env immediately so global constants work (e.g. Stripe)
+load_env()
 
 
 def load_tokens():
@@ -142,6 +160,107 @@ def refresh_token():
 
 
 # =============================================================================
+# GHL HELPERS
+# =============================================================================
+
+def get_ghl_headers(access_token: str) -> dict:
+    return {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json",
+        "Version": "2021-07-28",
+    }
+
+def ghl_request(method: str, path: str, params: dict | None = None, json_body: dict | None = None):
+    """Call GHL API with automatic refresh on 401."""
+    access_token = get_access_token()
+    if not access_token:
+        return None, {"error": "Not authorized"}
+
+    headers = get_ghl_headers(access_token)
+    url = f"{GHL_API_BASE}{path}"
+    resp = requests.request(method, url, headers=headers, params=params, json=json_body, timeout=30)
+
+    if resp.status_code == 401:
+        new_token = refresh_token()
+        if new_token:
+            headers = get_ghl_headers(new_token)
+            resp = requests.request(method, url, headers=headers, params=params, json=json_body, timeout=30)
+
+    try:
+        payload = resp.json()
+    except Exception:
+        payload = {"raw": resp.text}
+
+    return resp, payload
+
+def extract_chapter_html(chapter_path: Path) -> str | None:
+    """Extract the inner container HTML for a chapter."""
+    if not chapter_path.exists():
+        return None
+
+    text = chapter_path.read_text(encoding="utf-8")
+    start_marker = '<div class="container">'
+    start_idx = text.find(start_marker)
+    if start_idx == -1:
+        return None
+    start_idx += len(start_marker)
+    end_idx = text.rfind("</div>")
+    if end_idx == -1 or end_idx <= start_idx:
+        return None
+
+    body = text[start_idx:end_idx].strip()
+
+    # Remove top home icon and first H1 to avoid duplication in preview pages.
+    body = re.sub(r'<div style="text-align: center;.*?</div>', '', body, flags=re.S)
+    body = re.sub(r'<h1>.*?</h1>', '', body, count=1, flags=re.S)
+    body = re.sub(r'<div class="nav-footer">.*?</div>', '', body, flags=re.S)
+
+    return body.strip()
+
+def validate_access_token(token: str) -> dict:
+    """Validate a token against GHL contact + tags/custom field."""
+    env = load_env()
+    if not token:
+        return {"valid": False, "error": "No token provided"}
+
+    contact_id = token.split("_")[0]
+    resp, payload = ghl_request("GET", f"/contacts/{contact_id}")
+    if resp is None or resp.status_code >= 400:
+        return {"valid": False, "error": "Contact not found"}
+
+    contact = payload.get("contact", payload)
+    if not isinstance(contact, dict):
+        return {"valid": False, "error": "Invalid contact payload"}
+
+    required_tag = env.get("GHL_PREMIUM_TAG", "shabrang-premium")
+    tags = contact.get("tags", []) or []
+    if required_tag and required_tag not in tags:
+        return {"valid": False, "error": "No premium access"}
+
+    token_field_key = env.get("GHL_TOKEN_FIELD_KEY", "book_access_token")
+    allow_contact_id = env.get("GHL_ALLOW_CONTACT_ID_TOKEN", "true").lower() == "true"
+    field_value = None
+    for field in contact.get("customFields", []) or []:
+        if field.get("key") == token_field_key:
+            field_value = field.get("value")
+            break
+
+    if field_value:
+        if field_value != token:
+            return {"valid": False, "error": "Token mismatch"}
+    elif not allow_contact_id:
+        return {"valid": False, "error": "Token not provisioned"}
+    elif token != contact_id and "_" not in token:
+        return {"valid": False, "error": "Token mismatch"}
+
+    return {
+        "valid": True,
+        "contact_id": contact_id,
+        "name": contact.get("firstName") or contact.get("name"),
+        "email": contact.get("email")
+    }
+
+# =============================================================================
 # API ENDPOINTS
 # =============================================================================
 
@@ -163,8 +282,8 @@ def start_oauth():
     env = load_env()
 
     client_id = env.get("GHL_CLIENT_ID")
-    redirect_uri = env.get("GHL_REDIRECT_URI", "https://shabrang.ca/api/ghl/callback")
-    scopes = "contacts.readonly contacts.write locations.readonly"
+    redirect_uri = env.get("GHL_REDIRECT_URI", "https://shabrang.ca/api/auth/callback")
+    scopes = env.get("GHL_SCOPES", "contacts.readonly contacts.write locations.readonly")
 
     if not client_id:
         return jsonify({"error": "GHL_CLIENT_ID not configured"}), 500
@@ -180,7 +299,7 @@ def start_oauth():
     return redirect(auth_url)
 
 
-@app.route("/api/ghl/callback", methods=["GET"])
+@app.route("/api/auth/callback", methods=["GET"])
 def oauth_callback():
     """OAuth callback - exchanges code for tokens."""
     env = load_env()
@@ -209,8 +328,13 @@ def oauth_callback():
         "client_secret": env.get("GHL_CLIENT_SECRET"),
         "grant_type": "authorization_code",
         "code": code,
-        "redirect_uri": env.get("GHL_REDIRECT_URI", "https://shabrang.ca/api/ghl/callback"),
+        "redirect_uri": env.get("GHL_REDIRECT_URI", "https://shabrang.ca/api/auth/callback"),
     }
+
+    # Debug logging
+    logger.info(f"Token exchange - Client ID: {env.get('GHL_CLIENT_ID')}")
+    logger.info(f"Token exchange - Redirect URI: {payload['redirect_uri']}")
+    logger.info(f"Token exchange - Code: {code[:20]}...")
 
     try:
         resp = requests.post(
@@ -219,6 +343,8 @@ def oauth_callback():
             headers={"Content-Type": "application/x-www-form-urlencoded"},
             timeout=30
         )
+        logger.info(f"Token exchange response status: {resp.status_code}")
+        logger.info(f"Token exchange response: {resp.text[:200]}")
         result = resp.json()
 
         if "access_token" in result:
@@ -341,6 +467,20 @@ def signup():
         if resp.status_code == 200 or resp.status_code == 201:
             contact = result.get("contact", result)
             logger.info(f"Contact added/updated: {email}")
+            
+            # Trigger Sovereign Fulfillment (Bridge Sync Flask -> Async Agent)
+            try:
+                customer_data = {
+                    "email": email,
+                    "name": f"{contact.get('firstName', '')} {contact.get('lastName', '')}".strip(),
+                    "contactId": contact.get("id"),
+                    "source": "api-signup"
+                }
+                # Create a new loop for this thread if needed, or use asyncio.run
+                asyncio.run(sovereign.handle_new_customer(customer_data))
+            except Exception as e:
+                logger.error(f"Failed to trigger sovereign fulfillment: {e}")
+
             return jsonify({
                 "success": True,
                 "message": "Welcome to The Liquid Fortress! Check your email for Chapter 1.",
@@ -404,6 +544,184 @@ def ghl_status():
         "location_id": tokens.get("locationId") or env.get("GHL_LOCATION_ID"),
         "has_refresh_token": bool(tokens.get("refresh_token")),
     })
+
+
+@app.route("/api/ghl/validate", methods=["POST"])
+def ghl_validate():
+    """Validate a premium access token."""
+    data = request.get_json() or {}
+    token = data.get("token") or request.args.get("token")
+    result = validate_access_token(token)
+    status = 200 if result.get("valid") else 403
+    return jsonify(result), status
+
+
+@app.route("/api/ghl/resend", methods=["POST"])
+def ghl_resend():
+    """Resend access link via GHL workflow (requires workflow id)."""
+    env = load_env()
+    data = request.get_json() or {}
+    email = (data.get("email") or "").strip()
+
+    if not email:
+        return jsonify({"success": False, "error": "Email required"}), 400
+
+    workflow_id = env.get("GHL_RESEND_WORKFLOW_ID")
+    if not workflow_id:
+        return jsonify({"success": False, "error": "Resend workflow not configured"}), 501
+
+    location_id = env.get("GHL_LOCATION_ID")
+    if not location_id:
+        return jsonify({"success": False, "error": "Location ID not configured"}), 500
+
+    resp, payload = ghl_request(
+        "GET",
+        "/contacts/search",
+        params={"locationId": location_id, "email": email}
+    )
+    if resp is None or resp.status_code >= 400:
+        return jsonify({"success": False, "error": "Contact lookup failed"}), 502
+
+    contacts = payload.get("contacts", [])
+    if not contacts:
+        return jsonify({"success": True})  # avoid leaking membership info
+
+    contact = contacts[0]
+    required_tag = env.get("GHL_PREMIUM_TAG", "shabrang-premium")
+    if required_tag and required_tag not in (contact.get("tags", []) or []):
+        return jsonify({"success": True})
+
+    resp, payload = ghl_request(
+        "POST",
+        f"/contacts/{contact.get('id')}/workflow/{workflow_id}"
+    )
+    if resp is None or resp.status_code >= 400:
+        return jsonify({"success": False, "error": "Workflow trigger failed"}), 502
+
+    return jsonify({"success": True})
+
+
+@app.route("/api/ghl/checkout", methods=["GET"])
+def ghl_checkout():
+    """Redirect to the configured GHL checkout URL."""
+    env = load_env()
+    checkout_url = env.get("GHL_CHECKOUT_URL")
+    if not checkout_url:
+        return jsonify({
+            "error": "Checkout URL not configured",
+            "details": "Set GHL_CHECKOUT_URL in /opt/shabrang/repo/api/.env"
+        }), 404
+    return redirect(checkout_url)
+
+
+@app.route("/api/book/chapter/<int:chapter_num>", methods=["GET"])
+def book_chapter(chapter_num: int):
+    """Return full chapter HTML for premium users."""
+    token = request.args.get("token") or request.headers.get("X-Access-Token")
+    access = validate_access_token(token)
+    if not access.get("valid"):
+        return jsonify(access), 403
+
+    chapter_path = Path(f"/opt/shabrang/repo/Book/chapter{chapter_num}.html")
+    content = extract_chapter_html(chapter_path)
+    if not content:
+        return jsonify({"valid": True, "error": "Chapter not found"}), 404
+
+    return jsonify({
+        "valid": True,
+        "chapter": chapter_num,
+        "html": content
+    })
+
+
+@app.route("/api/checkout", methods=["POST"])
+def checkout():
+    """
+    Handle checkout for books or academy.
+    Supports Stripe, TON, and SOL.
+    """
+    data = request.get_json() or {}
+    email = data.get("email")
+    plan = data.get("plan", "book-physical")
+    currency = data.get("currency", "STRIPE")
+    
+    if not email:
+        return jsonify({"success": False, "error": "Email is required"}), 400
+
+    logger.info(f"Checkout initiated: {email} for {plan} via {currency}")
+    
+    # Process through Sovereign Agent (orchestrates payments and fulfillment)
+    # Note: Flask is sync, sovereign methods are async. Use asyncio.run or loop.
+    try:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        result = loop.run_until_complete(sovereign.process_checkout(plan, currency, data))
+        loop.close()
+        
+        return jsonify(result)
+    except Exception as e:
+        logger.error(f"Checkout error: {e}")
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
+@app.route("/api/checkout/status", methods=["GET"])
+def checkout_status():
+    """Check payment/fulfillment status for a user."""
+    email = request.args.get("email")
+    if not email:
+        return jsonify({"error": "Email required"}), 400
+        
+    # Query Notion or GHL via Sovereign Agent
+    return jsonify({"status": "processing", "email": email})
+
+
+@app.route("/api/stripe/webhook", methods=["POST"])
+def stripe_webhook():
+    """
+    Handle Stripe Webhooks (e.g. successful payments).
+    """
+    payload = request.get_data()
+    sig_header = request.headers.get("Stripe-Signature")
+    webhook_secret = os.getenv("STRIPE_WEBHOOK_SECRET")
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, webhook_secret
+        )
+    except ValueError as e:
+        logger.error(f"Invalid payload: {e}")
+        return "Invalid payload", 400
+    except stripe.error.SignatureVerificationError as e:
+        logger.error(f"Invalid signature: {e}")
+        return "Invalid signature", 400
+
+    # Handle the event
+    if event["type"] == "checkout.session.completed":
+        session = event["data"]["object"]
+        
+        # Extract customer info
+        customer_email = session.get("customer_details", {}).get("email")
+        customer_name = session.get("customer_details", {}).get("name")
+        client_ref = session.get("client_reference_id")
+        
+        logger.info(f"💰 Payment Received: {customer_email} ({customer_name})")
+        
+        # Trigger Sovereign
+        try:
+             # Use the same event loop strategy or asyncio.run
+             asyncio.run(sovereign.handle_new_customer({
+                 "email": customer_email,
+                 "name": customer_name,
+                 "source": "stripe-checkout",
+                 "client_ref": client_ref,
+                 "amount_total": session.get("amount_total"),
+                 "currency": session.get("currency")
+             }))
+        except Exception as e:
+             logger.error(f"Sovereign trigger failed: {e}")
+             return jsonify(success=False), 500
+
+    return jsonify(success=True)
 
 
 # =============================================================================

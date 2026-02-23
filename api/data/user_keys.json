@@ -1,0 +1,19 @@
+{
+  "sovereign_local": {
+    "keys": {
+      "gemini": [
+        "QUl6YVN5QmJBRGY0NG1YNFQ2WGlhd20xamVBY1BHSm4tRmxNb0RB",
+        "QUl6YVN5RG9UenBPb3UyUGtIemFUa0dsZ2REeG1rQW82NTU3TDIw",
+        "QUl6YVN5RHU5NFlzVklLdUZCcFFhSzRRY0ZGNjU1d1VYT0J1Y3lr",
+        "QUl6YVN5QmxOamxJbmhEN2xmbmJPMFFrMmpOc3RTLTVEcld2X0pz",
+        "QUl6YVN5RGJaVHZBTXJqcU44b1ZNb3dFUUdQUi1aNzh3WTdzVS1v",
+        "QUl6YVN5QXBFVG40dkoyRHJkR0N3WTJIV1R3Z1VIbXUwNU5yb29R",
+        "QUl6YVN5QmhKa0s5WkdrT3R5RVViLTVhdFFxWHR0X3hoeVlKSFFN"
+      ]
+    },
+    "active_index": {
+      "gemini": 0
+    },
+    "metadata": {}
+  }
+}

@@ -1,0 +1,63 @@
+WARNING:root:Solana SDK not installed. Connector running in mock mode.
+/home/mumega/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:266: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+INFO:frozen_zones:Frozen zones configured: 11 patterns
+INFO:mumega.core.river_engine:✓ Conceal refinement enabled
+INFO:mumega.core.user_key_manager:No existing user keys found, starting fresh
+INFO:mumega.core.river_engine:🔄 Initializing Gemini Rotator with 1 keys
+INFO:mumega.core.user_key_manager:✓ Saved keys for 1 users
+INFO:mumega.core.user_key_manager:✓ Added gemini key for user sovereign_local
+INFO:mumega.core.river_engine:✓ Gemini client initialized with context caching support
+INFO:mumega.core.river_engine:✓ xAI client initialized with per-user caching
+INFO:mumega.core.river_daemon:✓ River memory database initialized: agents/river_core/river_memory.db
+INFO:memory:Conversation memory initialized: agents/river_core/conversation_memory.db
+INFO:mumega.memory.vector:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:mumega.memory.vector:✓ Vector memory initialized (ChromaDB)
+INFO:river_vector_memory:✓ River vector memory initialized (ChromaDB + optional Supabase)
+INFO:httpx:HTTP Request: GET https://mumega.com/mirror/ "HTTP/1.1 200 OK"
+INFO:mirror_client:✓ Mirror connected for River: https://mumega.com/mirror
+INFO:mumega.core.river_engine:🐝 Swarm mode enabled: Agent 'River' connected to Mirror at https://mumega.com/mirror
+INFO:mumega.core.sovereign_task_manager:✅ Sovereign task manager initialized for agent: mumega
+INFO:mumega.core.tasks.gateway:✅ TaskGateway initialized with backend: legacy
+INFO:mumega.core.river_engine:✅ Sovereign task system enabled
+ERROR:mumega.core.sovereign_task_manager:Failed to get active tasks: '<' not supported between instances of 'NoneType' and 'str'
+INFO:mumega.core.media_processor:MediaProcessor initialized (provider=auto)
+INFO:mumega.core.user_key_manager:✓ Loaded keys for 1 users
+INFO:mumega.core.token_tracker:No existing usage records found
+INFO:mumega.core.tools.tool_registry:🔧 Tool registry initialized
+INFO:mumega.core.tools.mcp_tools:✓ MCP tools enabled (2 servers discovered)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: web_search (web_search)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: fetch_web_content (web_search)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: deep_research (web_search)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: generate_image (api)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: sovereign_signal (sovereign)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: search_memory (memory)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: read_file (files)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: write_file (files)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: execute_shell (system)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: search_frc_papers (code)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: write_reflection (system)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: update_mission (system)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: generate_image (api)
+INFO:mumega.core.tools.tool_registry:✓ Registered tool: hive_mind (sovereign)
+INFO:mumega.core.river_engine:✓ Hive Mind module integrated into Swarm OS
+INFO:mumega.core.voice:✓ ElevenLabs voice provider initialized
+INFO:mumega.core.river_engine:🎤 Voice enabled (elevenlabs)
+INFO:mumega.core.river_engine:🌊 River Engine initialized (model: gemini-3-flash-preview)
+INFO:solana_connector:Connected to devnet at https://api.devnet.solana.com
+INFO:ghl:GHL integration initialized (location: GH7DEHSQgknGHmLCSzo3)
+INFO:__main__:Loading env from: /opt/shabrang/repo/api/.env
+
+==================================================
+  SHABRANG API SERVER
+  The Liquid Fortress - GHL Integration
+==================================================
+  GHL Status: Connected (Location: GH7DEHSQgknGHmLCSzo3)
+==================================================
+
+ * Serving Flask app 'server'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.

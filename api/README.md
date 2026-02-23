@@ -40,7 +40,7 @@ This will redirect you to GHL to authorize the app. After authorization, you'll 
 |----------|--------|-------------|
 | `/api/health` | GET | Health check |
 | `/api/ghl/auth` | GET | Start OAuth flow |
-| `/api/ghl/callback` | GET | OAuth callback (receives code) |
+| `/api/auth/callback` | GET | OAuth callback (receives code) |
 | `/api/ghl/signup` | POST | Add contact from landing page |
 | `/api/ghl/status` | GET | Check connection status |
 
@@ -102,7 +102,7 @@ curl https://shabrang.ca/api/health
 
 - **Client ID**: `67846d120881b82f3526b403-m5udioec`
 - **Location ID**: `GH7DEHSQgknGHmLCSzo3`
-- **Redirect URI**: `https://shabrang.ca/api/ghl/callback`
+- **Redirect URI**: `https://shabrang.ca/api/auth/callback`
 
 ## Tags Applied to Contacts
 

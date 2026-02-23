@@ -922,6 +922,64 @@ th {
     border-radius: 16px;
 }
 
+/* Login modal */
+.login-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+}
+
+.login-modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.login-modal-content h2 {
+    margin-top: 0;
+}
+
+.login-modal-content input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.login-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.login-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 12px;
+}
+
+body.is-authenticated .paywall-section {
+    display: none;
+}
+
+body.is-authenticated .chapter-preview .preview-fade {
+    display: none;
+}
+
 /* =============================================================================
    RTL SUPPORT
    ============================================================================= */
