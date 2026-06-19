@@ -15,7 +15,6 @@ In the realm of the **Roots (μ1)**, a state is not a political entity; it is a 
 ### The Entropy Injection
 Every empire faces the same universal adversary: the Second Law of Thermodynamics. Entropy ($S$) always increases. For a state to remain coherent, it must constantly export entropy to its environment. When the cost of this export exceeds the system's energy production, the state reaches a point of "Thermal Exhaustion."
 
-![Diagram showing thermodynamic system collapse and entropy injection in state dissolution](https://upload.wikimedia.org/chapters/02-collapse.png)
 
 ### The Sasanian Case
 The Sasanian Empire (Chapter 8) reached a peak of **Static Coherence**. It was a brilliant, rigid crystal. However, a crystal cannot flow. When the Arab forces injected high-kinetic entropy into the system at Qadisiyah, the crystal could not bend. It shattered.

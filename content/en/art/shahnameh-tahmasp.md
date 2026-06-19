@@ -16,7 +16,6 @@ image_license: "Public Domain"
 
 The **Shahnameh of Shah Tahmasp** is the high-water mark of Persian book arts. It is history's most sophisticated **Data Container** for Level 6 mythic software.
 
-![Illuminated miniature from Shah Tahmasp Shahnameh showing Court of Gayumars with intricate Persian details](https://upload.wikimedia.org/books/liquid-fortress/30-simurgh/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Metropolitan Museum of Art. Local Rendering.</p>
 
 ### μ-Stack Analysis

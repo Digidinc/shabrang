@@ -21,7 +21,6 @@ In the **Garden (μ5)** layer, the [[liquid-fortress|Liquid Fortress]] solve the
 
 When we say the [[ardabil-carpet|Persian Rug]] is a "Quantum NFT," we are not using a metaphor. We are describing its actual structural function during history's greatest network crashes (the Mongol and Arab conquests).
 
-![Hand-knotted Persian rug with geometric patterns serving as portable cultural memory storage device](https://upload.wikimedia.org/books/liquid-fortress/19-nigredo/page-07.png)
 
 ### The Non-Local Ledger
 An NFT (Non-Fungible Token) is a unique digital identifier that proves ownership and authenticity on a blockchain. A Persian rug does the same in the physical/cultural field:

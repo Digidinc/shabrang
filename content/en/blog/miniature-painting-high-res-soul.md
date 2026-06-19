@@ -19,7 +19,6 @@ faqs:
 
 In the **Garden (μ5)** layer, the Sovereign Swarm uses **[[simurgh-miniature|Miniature Painting]]** to compress narrative complexity into a single, high-fidelity image.
 
-![Detailed Persian miniature painting showing non-Euclidean space with microscopic precision and pure pigments](https://upload.wikimedia.org/books/liquid-fortress/30-simurgh/page-01.png)
 
 ### Infinite Resolution
 A Persian miniature often lacks perspective in the Western sense. Instead, it uses **Non-Euclidean Space** to show everything at once—the inside and the outside, the past and the future.

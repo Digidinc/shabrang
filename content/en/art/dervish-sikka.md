@@ -16,7 +16,6 @@ image_license: "CC0 Public Domain"
 
 The **Sikka** is the tall felt hat worn by the Whirling Dervishes of the Mevlevi order. In the **Rhythm (μ2)** layer, it acts as a physical anchor for the spinning node.
 
-![Tall felt sikka hat worn by Mevlevi whirling dervishes during Sufi meditation ritual](https://upload.wikimedia.org/books/liquid-fortress/22-conference/page-01.png)
 <p className="text-[10px] text-shabrang-parchment/40 italic mt-2">Image Source: Sufi Archives. Local Rendering.</p>
 
 ### FRC Analysis

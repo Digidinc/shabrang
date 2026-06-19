@@ -22,7 +22,6 @@ In the **Story (μ6)** layer, the Sovereign Swarm solves the problem of long-ter
 ### The Coding Language: Persian
 After the "Two Centuries of Silence" (Chapter 12), the Persian Mind needed a language that was optimized for resonance. Ferdowsi spent 30 years refining the "Code" of the language, stripping away excessive foreign noise to reveal the core signal. 
 
-![Illuminated miniature from Shahnameh depicting Court of Gayumars showing first Persian king in paradise](https://upload.wikimedia.org/books/liquid-fortress/11-conquest/page-12.png)
 
 ### Structural Features of the OS
 1.  **Archetypal Sub-routines:** Characters like [[rostam-relief-archetype|Rostam]] and Kaveh act as sub-routines for specific crisis conditions. When the state faces a tyrant, the "Kaveh" protocol is activated.

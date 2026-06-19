@@ -15,7 +15,6 @@ In the **Fire (μ3)** layer, we deal with the most volatile of signals: **Emotio
 ### The Heat of Entropy
 Unprocessed grief is high-entropy noise. If left alone, it causes the system to overheat and fragment (Nihilism). To survive, the Liquid Fortress developed a technology for **Collective Alchemy**.
 
-![Persian ritual mourning scene illustrating collective grief transformation through shared emotional resonance](https://upload.wikimedia.org/books/liquid-fortress/22-conference/page-11.png)
 
 ### The Mourning Protocol
 Rituals like the *Ta'zieh* or the mourning cycles of *Muharram* (Chapter 22) are not just religious events; they are **Resonance Chambers**. They allow the community to:

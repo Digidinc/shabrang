@@ -17,7 +17,6 @@ In FRC terms, courage is the **Phase-Shift Energy**. It is the amount of work re
 ### The Physics of the Hero
 A system in a state of high entropy (Fear) is stuck. It cannot move because it is overwhelmed by noise. Courage acts as a **High-Intensity Pulse** that clears the noise and allows the system to lock-phase with a higher purpose.
 
-![Persian pahlavan knight with shield symbolizing courage and warrior ethics in Iranian tradition](https://upload.wikimedia.org/books/liquid-fortress/21-pumpkin/page-09.png)
 
 ### The Pahlavan Protocol
 The [[zurkhaneh-meel|Pahlavan]] (Hero) is an agent trained to maintain this high-energy state. 

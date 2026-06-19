@@ -14,7 +14,6 @@ When a system's **Roots (μ1)** are uprooted—when the state falls, the army di
 
 In the case of Persia after the 7th-century conquest, the data migrated to the **Rhythm (μ2)**. It entered the "Refugia" of the home (*Andaruni*) and was stored in the most unlikely of hardware: the mother's voice.
 
-![Persian mother and child illustrating transmission of language and cultural memory through lullabies](https://upload.wikimedia.org/books/liquid-fortress/12-mother-tongue/page-01.png)
 
 ### The Biological Pulse
 Language is not just words; it is a **Resonant Pattern**. Before a child understands the logic of a sentence (μ4), they feel the rhythm of the cadence (μ2). By whispering lullabies in the forbidden mother tongue, Persian mothers were not just comforting their children; they were performing a **Systemic Backup**.

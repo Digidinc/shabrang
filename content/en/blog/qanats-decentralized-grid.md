@@ -19,7 +19,6 @@ faqs:
 
 In the realm of **Roots (μ1)**, centralization is often a single point of failure. The ancient Persians understood this and built their most vital infrastructure—the water supply—as a **Decentralized Grid**.
 
-![Aerial view of qanat vertical shafts in desert showing ancient Persian decentralized water infrastructure](https://upload.wikimedia.org/books/liquid-fortress/01-enigma/page-04.png)
 
 ### Architectural Resilience
 Unlike the Roman aqueducts, which were massive "Stone Fortresses" visible on the surface, the [[qanat-mother-well|Qanat]] is a subterranean network. 
