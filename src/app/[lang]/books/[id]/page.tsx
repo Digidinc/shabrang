@@ -132,12 +132,23 @@ export default async function BookPage({ params }: Props) {
 
         {/* CTA */}
         <div className="mt-16 mb-8 text-center">
-          <Link
-            href={`${basePath}/books/${id}/chapter/${chapterItems[0]?.slug}`}
-            className="inline-block px-10 py-4 bg-shabrang-teal text-shabrang-sand font-display text-lg uppercase tracking-wider hover:bg-shabrang-gold hover:text-shabrang-ink transition-all shadow-lg"
-          >
-            Start Reading →
-          </Link>
+          {fm.reader_url ? (
+            <a
+              href={fm.reader_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-10 py-4 bg-shabrang-teal text-shabrang-sand font-display text-lg uppercase tracking-wider hover:bg-shabrang-gold hover:text-shabrang-ink transition-all shadow-lg"
+            >
+              Start Reading →
+            </a>
+          ) : (
+            <Link
+              href={`${basePath}/books/${id}/chapter/${chapterItems[0]?.slug}`}
+              className="inline-block px-10 py-4 bg-shabrang-teal text-shabrang-sand font-display text-lg uppercase tracking-wider hover:bg-shabrang-gold hover:text-shabrang-ink transition-all shadow-lg"
+            >
+              Start Reading →
+            </Link>
+          )}
         </div>
       </PageShell>
     </>

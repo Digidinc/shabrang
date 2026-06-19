@@ -92,6 +92,7 @@ export interface RawFrontmatter {
   avatar?: string;
   links?: Array<{ label?: string; url?: string }>;
   aliases?: string[];
+  reader_url?: string;
 }
 
 export interface ParsedContent {
