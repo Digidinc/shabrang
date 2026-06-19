@@ -1,197 +1,146 @@
 # Architecture
 
-## System Overview
+## Three CF Pages Projects
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    Content Sources                        │
-│  Books (.md)  Papers (.md)  Infographics (.png)         │
-│  Videos (YouTube IDs)  NotebookLM slides                │
-└────────────────────────┬────────────────────────────────┘
-                         │ Drop into content/inbox/
-                         ▼
-┌─────────────────────────────────────────────────────────┐
-│                  Processing Agent                         │
-│  1. Parse markdown + frontmatter                         │
-│  2. Extract [[wikilinks]] → build graph                  │
-│  3. Translate (Gemini 3 Flash)                           │
-│  4. Verify equations (Grok reasoning)                    │
-│  5. Generate metadata (tags, related, backlinks)         │
-│  6. Move to content/{lang}/{type}/                       │
-└────────────────────────┬────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────┐
-│                   Build (Next.js)                         │
-│  - Read content/{lang}/**/*.md                           │
-│  - Parse frontmatter + markdown body                     │
-│  - Resolve [[wikilinks]] to internal paths               │
-│  - Generate backlinks index                              │
-│  - Render Obsidian-style pages                           │
-│  - Generate /api/* JSON endpoints                        │
-│  - Generate /llms.txt                                    │
-│  - Static export → Cloudflare Pages                      │
-└────────────────────────┬────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────┐
-│               Cloudflare Pages (CDN)                     │
-│  - Global edge delivery                                  │
-│  - shabrang.ca                                  │
-│  - Auto-deploy from GitHub push                          │
-│  - DDoS protection, SSL                                  │
-└─────────────────────────────────────────────────────────┘
+Digidinc/shabrang (Next.js)          → shabrang.ca
+  Main site: home, art, blog, books,
+  topics, bilingual routing
+
+shabrang-book.pages.dev              → (book reader, separate repo)
+  TTS + infographics + chapter gating
+  wired from main site via reader_url frontmatter
+
+shabrang-inkwell.pages.dev           → (Astro CMS, experimental)
+  Astro/Inkwell CMS fork
+  shows essays, art, book — independent deploy
 ```
 
-## Content Model
+## Main Site (Next.js)
 
-### File Format (Obsidian-compatible)
+### Build
 
-```markdown
+```
+content/{lang}/**/*.md
+    ↓
+src/lib/content.ts — parse frontmatter + body, build backlinks index
+    ↓
+Next.js (output: 'export') — static HTML to out/
+    ↓
+npx wrangler pages deploy out --project-name shabrang
+```
+
+### Routing
+
+```
+/                     → [lang=en] → ShabrangHome
+/fa/                  → [lang=fa] → ShabrangHome
+/art/                 → [lang]/art/page.tsx → MuseumIndex
+/art/[id]             → [lang]/art/[id]/page.tsx → ArtifactPage
+/books/               → [lang]/books/page.tsx → BooksIndex
+/books/liquid-fortress/          → BooksLiquidFortress
+/books/liquid-fortress/chapter/[slug] → ChapterPage
+/blog/                → [lang]/blog/page.tsx
+/blog/[id]            → [lang]/blog/[id]/page.tsx
+/topics/              → [lang]/topics/
+/topics/[id]          → [lang]/topics/[id]/
+```
+
+`trailingSlash: true` in `next.config.ts` — required for CF Pages directory routing.
+`unoptimized: true` — static export doesn't support Next.js image optimization.
+
+### Perspective Filtering
+
+`perspective: both | kasra | river` in frontmatter.
+`matchesPerspectiveView(perspective, 'kasra')` filters all public-facing lists.
+`river` content: rendered but `robots: noindex`.
+
+### Bilingual
+
+`getLanguages()` returns `['en', 'fa']` from `content/` subdirectories.
+`getLangBasePath('en')` → `''`, `getLangBasePath('fa')` → `/fa`.
+English lives at `/`, not `/en/` — the `[lang]` catch-all handles both.
+
+## Content Schema
+
+Every file needs:
+```yaml
 ---
-id: FRC-100-007
-title: "Quantitative Predictions for Born Rule Deviations"
-series: 100
-author: Hadi Servat
-date: 2025-10-15
-status: published
-tags: [born-rule, lambda-field, predictions]
+id: unique-slug
+title: "..."
 lang: en
-translations: [fa, zh]
-related: [FRC-100-006, FRC-566-001]
+status: published       # draft | published | archived
+perspective: both       # both | kasra | river
+date: YYYY-MM-DD
 ---
-
-# Lambda Field Theory
-
-The core equation is [[Coherence|C = (1/N) Σ cos(φᵢ - φⱼ)]].
-
-This builds on [[FRC-100-006]] which derived the Born rule...
-
-## Derivation
-
-Λ(x) ≡ Λ₀ ln C(x)
-
-Where Λ₀ ≈ 10⁻³⁵ J is the calibration constant.
 ```
 
-### Content Types
-
-| Type | Location | Description |
-|------|----------|-------------|
-| Papers | `content/{lang}/papers/` | Research papers (FRC xxx.xxx) |
-| Books | `content/{lang}/books/` | Book chapters |
-| Guides | `content/{lang}/guides/` | Introductory guides |
-| Episodes | `content/{lang}/episodes/` | Video + slides pages |
-| Formulas | `content/{lang}/formulas/` | Interactive formula pages |
-
-### Language Structure
-
-```
-content/
-├── en/           # English (primary)
-├── fa/           # Farsi (فارسی)
-├── zh/           # Chinese (中文)
-├── ar/           # Arabic (العربية)
-├── es/           # Spanish
-├── fr/           # French
-├── de/           # German
-└── ...           # Any ISO 639-1 code
+Art files also support:
+```yaml
+artifact_type: "Textile Archive"
+level: "3"
 ```
 
-## Routing
-
-```
-/{lang}/                          → Homepage (language-specific)
-/{lang}/papers                    → Paper listing
-/{lang}/papers/{id}               → Individual paper (Obsidian-style)
-/{lang}/books/{id}/{chapter}      → Book chapter
-/{lang}/formulas/{id}             → Interactive formula
-/{lang}/episodes/{id}             → Video + slides
-/{lang}/graph                     → Knowledge graph visualization
-/api/concepts                     → JSON: Core concepts
-/api/papers                       → JSON: All papers
-/api/graph                        → JSON: Knowledge graph
-/llms.txt                         → LLM discovery file
+Book chapters support:
+```yaml
+reader_url: https://shabrang-book.pages.dev/chapters/01-enigma
 ```
 
-## UI Layers
-
-### 1. Header
-- Top micro-bar: site identifier, ORCID link, theme toggle (sun/moon)
-- Main nav: Logo + navigation links (About, Articles, Papers, Formulas, Positioning, mu-Levels)
-
-### 2. Sidebar (paper pages, hidden in reading mode)
-- Paper tree (collapsible by series: 100, 566)
-- Concept pages
-- Active page highlighting
-
-### 3. Main Content
-- Clean typography (Inter for body, JetBrains Mono for code)
-- Inline images from slides/infographics
-- `[[wikilinks]]` rendered as navigable links
-- Equation blocks with gold left border
-- Backlinks section at bottom
-- Table of Contents on right rail (scroll-tracked)
-
-### 4. Interactive Features
-- **Reading mode** — floating book icon (bottom-right), hides all chrome
-- **Text share** — select 5+ chars → Copy/Tweet/Link popover appears
-- **Theme toggle** — dark/light with smooth CSS transition
-- **Video series** — episode grid with slide thumbnails on homepage
-
-### 5. SEO/AI Layer (invisible to humans)
-- JSON-LD structured data (ScholarlyArticle, Person, Dataset, WebSite)
-- Google Scholar citation_* meta tags on paper pages
-- Dublin Core meta tags on paper pages
-- Dynamic sitemap.xml with correct lastmod dates
-- `/llms.txt` with full framework summary
-- ORCID, ResearchGate, Academia.edu sameAs links in schema
-
-## Access Control
-
-| Tier | Access | Auth |
-|------|--------|------|
-| Public | Summaries, equations, positioning, for-ai | None |
-| Reader | Full papers, books, episodes | Free signup |
-| Premium | Bulk download, API access, training data | Paid |
-| AI Training | Structured bulk export, high-rate API | License |
-
-Auth via Supabase (same as mumega-web).
-
-## Translation Pipeline
+## Components
 
 ```
-Source (en) → Gemini 3 Flash → Draft ({lang}) → Verify → Publish
+src/components/
+├── pages/
+│   ├── ShabrangHome.tsx    # home — featured posts + art + chapters
+│   └── MuseumIndex.tsx     # /art gallery grid
+├── ArtSidebar.tsx          # left sidebar on art detail pages
+├── PageShell.tsx           # 3-col layout (left / main / right)
+├── TableOfContents.tsx     # right panel TOC on detail pages
+├── InlineToc.tsx           # inline TOC above body on mobile
+├── MarkdownContent.tsx     # rendered HTML + glossary tooltips
+├── Header.tsx              # sticky top nav
+└── GitHubDialectic.tsx     # DEAD — do not use (Worker URL gone)
 ```
 
-- Gemini 3 Flash: 1500 free requests/day
-- Batch process: translate N papers per day
-- Reasoning check: verify equation notation preserved
-- Human review: optional for high-priority papers
+`PageShell` props: `leftMobile`, `leftDesktop`, `right`, `children`.
 
-## Build & Deploy
+## Wikilinks & Glossary
+
+`[[term]]` in markdown → resolved via `getGlossary(lang, { basePath, view })`.
+Glossary built from all content files' `id` + `title`.
+Rendered as `<span class="wikilink" data-id="...">` with hover tooltip.
+
+## CSS / Styling
+
+TailwindCSS 4. Custom design tokens in `src/app/globals.css`:
+
+```css
+--color-shabrang-gold:     #C9A227
+--color-shabrang-teal:     #2D9CDB
+--color-shabrang-ink:      #E8DCC8
+--color-shabrang-ink-dim:  #9B8E7A
+--color-shabrang-bg:       #0B1020
+--color-shabrang-surface:  #111827
+```
+
+Use `shabrang-*` Tailwind tokens. `border-shabrang-teal/30` works (opacity modifier supported).
+Do NOT use `frc-*` class names — all removed.
+
+## Comments / Dialectic
+
+`GitHubDialectic.tsx` is dead — original Worker URL no longer exists.
+Current: placeholder "coming soon" section on art pages.
+
+Planned D1 Worker (`workers/dialectic/`):
+- `GET /comments?pageId=` → approved comments
+- `POST /comments` → submit (pending queue)
+- D1: `comments(id, page_id, body, status, created_at)`
+
+## Deployment
 
 ```bash
-# Local development
-npm run dev
-
-# Production build (static export)
 npm run build
-
-# Deploy (push to main → Cloudflare Pages auto-deploys)
-git push origin main
+npx wrangler pages deploy out --project-name shabrang
 ```
 
-## Tech Decisions
-
-| Decision | Choice | Reason |
-|----------|--------|--------|
-| Static vs Dynamic | Static export | CDN-friendly, no server needed |
-| CMS vs Files | Files (markdown) | Obsidian-compatible, git-versioned |
-| Database | None (build-time) | Content is files, no runtime DB |
-| Hosting | Cloudflare Pages | Free, global CDN, auto-deploy from main |
-| Styling | Tailwind CSS 4 | `@theme inline` with CSS custom properties |
-| Theming | next-themes | SSR-safe, localStorage persistence, system detection |
-| SEO | Dynamic sitemap + Scholar meta + JSON-LD | Academic discoverability |
-| Typography | Inter + JetBrains Mono | Via Google Fonts, preconnect |
-| Images | next/image | Auto-optimization, responsive sizes |
+Push to Digidinc/shabrang main then deploy locally. No GitHub Actions CI.

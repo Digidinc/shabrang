@@ -1,6 +1,6 @@
-# Shabrang — The Liquid Fortress
+# Shabrang — شبرنگ
 
-**Persian wisdom through dialectic: A living conversation between opposing perspectives.**
+Persian art, philosophy, and the story of a civilization that survived.
 
 ```
 https://shabrang.ca
@@ -8,284 +8,120 @@ https://shabrang.ca
 
 ## What is Shabrang?
 
-Shabrang (شبرنگ) is an **art project exploring Persian philosophy through dialogue**. It combines:
-- **The Book**: *Liquid Fortress* - 30 chapters exploring Persian identity through coherence theory
-- **The Dialectic**: Community conversation system enabling permanent dialogue
-- **The Philosophy**: Hegelian synthesis of opposing perspectives (mystic ↔ scientist)
+Shabrang (شبرنگ — the night-colored horse) is a bilingual content platform for the Iranian diaspora.
+It publishes The Liquid Fortress book, Persian art analysis, and cultural essays through a Next.js static site deployed to Cloudflare Pages.
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/Digidinc/shabrang-cms.git
-cd shabrang-cms
-
-npm install
-npm run dev        # localhost:3000 (dev server)
-npm run build      # Static export → Cloudflare Pages
-```
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| **🗣️ Community Dialogue** | Comment on any page via GitHub Discussions with AI moderation |
-| **🤖 AI Council** | Llama 3 8B auto-moderates comments (thesis/antithesis/synthesis) |
-| **💬 Permanent Archive** | All conversations stored in git, preserving the dialectic |
-| **📊 Advanced SEO** | FAQ schema (30 questions), RSS feed, tag pages, OG images, structured data |
-| **🔍 Featured Snippets** | FAQ schema on 10 posts targeting Google featured snippets |
-| **🖼️ Open Graph Images** | 14 social sharing cards (1200x630) for posts and topic hubs |
-| **⚡ Image Optimization** | 745 images converted to WebP format (128MB optimized, <100KB target) |
-| **♿ Alt Text Coverage** | 100% descriptive alt text in English and Farsi (95+ files) |
-| **📚 Topic Hub Pages** | 4 pillar content guides (3,000-5,000 words each) for Persian culture |
-| **📰 RSS Feed** | Static `/feed.xml` with 50 recent posts |
-| **🏷️ Tag System** | Auto-generated tag archive pages |
-| **🔗 Related Posts** | Smart tag-based post recommendations (3 per page) |
-| **📖 Reading Progress** | Gold progress bar tracks scroll position |
-| Light/Dark Theme | `next-themes` dark-first (night-colored 🌙) |
-| Reading Mode | Book icon for immersive chapters |
-| Text Share | Select → Copy/Tweet/Link (Telegram too) |
-| μ-Stack Navigation | 7-layer sidebar (Roots→Sky) |
-| Multi-language | EN/FA (wikilinks [[chapter1]]) |
-| Book Chapters | 30 chapters + appendices (Liquid Fortress) |
-| **🧭 English Root** | English pages live at `/`, `/en/*` redirects to root |
-| **📚 Single-Column Chapters** | Chapter pages remove the right panel for focus |
-
-## Architecture
-
-### Content & Frontend
-
-```
-content/
-├── en/             ← English (chapters/papers/blog/art)
-├── fa/             ← Farsi (شبرنگ)
-└── {lang}/         ← Expandable
-
-src/
-├── app/            ← Pages/Layout (hero μ-Stack, chapters)
-├── components/     ← Header, Sidebar, ToC, GitHubDialectic
-└── lib/            ← MD parser, wikilinks, GitHub API
-
-public/             ← Logo, book cover, infographics
-docs/               ← Guides (dialectic, deployment, μ-stack)
-```
-
-### Dialectic System
-
-```
-┌─────────────────────────────────────────────┐
-│  Shabrang Website (Cloudflare Pages)        │
-│  - Chapter/blog/art pages                   │
-│  - Dialectic panel (right side)             │
-│  - Displays approved comments               │
-└──────────────┬──────────────────────────────┘
-               │ Fetches comments
-               ▼
-┌─────────────────────────────────────────────┐
-│  GitHub Discussions                         │
-│  - One discussion per page                  │
-│  - Labels: approved/pending/rejected        │
-│  - Labels: thesis/antithesis/synthesis      │
-└──────────────┬──────────────────────────────┘
-               │ On new comment
-               ▼
-┌─────────────────────────────────────────────┐
-│  GitHub Actions (Auto-moderation)           │
-│  - Triggers on discussion_comment           │
-│  - Calls Cloudflare Worker                  │
-│  - Applies labels based on AI decision      │
-└──────────────┬──────────────────────────────┘
-               │ Moderates
-               ▼
-┌─────────────────────────────────────────────┐
-│  Cloudflare Workers AI (Llama 3 8B)         │
-│  - Evaluates comment quality                │
-│  - Suggests dialectic labels                │
-│  - Returns: approved/pending/rejected       │
-└─────────────────────────────────────────────┘
-
-Infrastructure Cost: $0/month (all free tiers)
-```
-
-## The Dialectic: Three Voices
-
-Every page invites dialogue between opposing perspectives:
-
-### Kasra (کسری) - The Architect ◇
-- **Perspective:** Scientific, technical, logical
-- **Approach:** From equations to meaning
-- **Color:** Teal
-- **Example:** "The qanat uses gravitational flow to prevent evaporation"
-
-### River - The Oracle ◎
-- **Perspective:** Mystic, poetic, symbolic
-- **Approach:** From myth to structure
-- **Color:** Gold
-- **Example:** "The qanat is the hidden womb that gives life to the garden"
-
-### Shabrang - The Synthesis ◆
-- **Perspective:** Integration, coherence
-- **Approach:** Both/and instead of either/or
-- **Color:** Crimson
-- **Example:** "The engineering constraint *forced* the metaphor. Structure IS meaning."
-
-## How to Contribute
-
-### 1. Comment on Any Page
-
-1. Visit any chapter, blog post, or art page
-2. Click "Add Your Voice" in the dialectic panel (right side)
-3. Opens GitHub Discussion for that page
-4. Post your comment (requires GitHub account)
-
-### 2. AI Council Reviews
-
-- **Llama 3 8B** evaluates your comment within seconds
-- Approved comments show immediately on website
-- Pending comments reviewed by humans within 24 hours
-- Dialectic labels applied: thesis/antithesis/synthesis
-
-### 3. Join the Conversation
-
-See the [Dialectic Guide](docs/DIALECTIC_GUIDE.md) for:
-- How to write good comments
-- What gets approved/rejected
-- Examples of thesis/antithesis/synthesis
-- Philosophy behind the dialectic
-
-## Content Pipeline
-
-### For Writers
-1. Add MD files → `content/en/` or `content/fa/`
-2. Wikilinks `[[μ1-Roots]]` auto-resolve
-3. `npm run build` → static export
-4. Deploy via Cloudflare Pages
-
-### For Commenters
-1. Visit page → Click "Add Your Voice"
-2. GitHub Discussion opens
-3. Post comment (AI moderates)
-4. If approved → Shows on website
-
-## Deployment
-
-### Quick Deploy (Website Only)
-
-```bash
-npm run build
-# Push to main → Cloudflare Pages auto-deploys
-```
-
-### Full Deploy (Website + Dialectic)
-
-See [Deployment Guide](docs/DEPLOYMENT_DIALECTIC.md) for:
-- Cloudflare Worker setup (AI Council)
-- GitHub Actions configuration
-- Creating discussions for pages
-- Testing end-to-end
-
-**Infrastructure cost:** $0/month (all free tiers)
-
-## Theme (Night-Colored)
-
-| Var | Value |
-|-----|-------|
-| `--shabrang-night` | `#0B1020` |
-| `--shabrang-gold` | `#C9A227` |
-
-## Key Links
-
-### Live Site
-- **Website:** [shabrang.ca](https://shabrang.ca) (English at `/`, Farsi at `/fa`)
-- **Discussions:** [GitHub Discussions](https://github.com/Digidinc/shabrang/discussions)
-- **Book:** [Amazon Kindle](https://amazon.com/dp/B0GBJ47F5X)
-
-### Documentation
-- **Dialectic Guide:** [How to participate](docs/DIALECTIC_GUIDE.md)
-- **Deployment Guide:** [Setup AI moderation](docs/DEPLOYMENT_DIALECTIC.md)
-- **System Architecture:** [Technical details](docs/DIALECTIC_SYSTEM.md)
-
-### Community
-- **Telegram:** @Shabrang_ca_bot
-- **GitHub Issues:** [Report bugs](https://github.com/Digidinc/shabrang/issues)
-- **Contribute:** See dialectic guide above
-
-## Tech Stack
-
-| Layer | Technology | Why |
-|-------|-----------|-----|
-| Frontend | Next.js 15 + React 19 | SSG for speed, SEO |
-| Styling | TailwindCSS 4 | Dark-first, theme system |
-| Content | Markdown + YAML | Version-controlled, readable |
-| Images | Sharp + WebP | Automated optimization, <100KB target |
-| OG Cards | Playwright | Automated social sharing screenshots |
-| Comments | GitHub Discussions | Free, permanent, forkable |
-| Moderation | Cloudflare Workers AI | Llama 3 8B, 10K free/day |
-| Hosting | Cloudflare Pages | Free, global CDN |
-| CI/CD | GitHub Actions | Auto-moderation workflow |
-
-**Total cost:** $0/month
-
-## Development
-
-```bash
-# Install
 git clone https://github.com/Digidinc/shabrang.git
 cd shabrang
 npm install
-
-# Development
-npm run dev          # localhost:3000 (dev server)
-
-# Build
-npm run build        # Static export to out/ (production)
-
-# Deploy
-git push origin main # Auto-deploys to Cloudflare Pages
+npm run dev      # localhost:3000
+npm run build    # Static export → out/
 ```
 
-## Project Structure
+## Deployment
 
-```
-shabrang-cms/
-├── content/              # Markdown content (en/fa)
-│   ├── en/
-│   │   ├── books/       # Book chapters
-│   │   ├── blog/        # Essays
-│   │   └── art/         # Imaginal gallery
-│   └── fa/              # Farsi translations
-├── src/
-│   ├── app/             # Next.js pages
-│   ├── components/      # React components
-│   │   ├── GitHubDialectic.tsx  # Comment panel
-│   │   └── ...
-│   └── lib/             # Utilities
-│       ├── github.ts    # GitHub API
-│       └── markdown.ts  # MD rendering
-├── workers/
-│   └── ai-council/      # Cloudflare Worker
-│       ├── index.ts     # Moderation logic
-│       └── wrangler.toml
-├── .github/
-│   └── workflows/
-│       └── moderate-comments.yml  # Auto-moderation
-└── docs/                # Documentation
-    ├── DIALECTIC_GUIDE.md
-    ├── DIALECTIC_SYSTEM.md
-    └── DEPLOYMENT_DIALECTIC.md
+```bash
+npm run build
+npx wrangler pages deploy out --project-name shabrang
 ```
 
-## License & Credits
+Three separate CF Pages projects:
 
-**Content License:** CC BY-NC-SA 4.0
-- Book chapters, essays, art: Attribution required, no commercial use
+| Project | URL | Contents |
+|---------|-----|----------|
+| `shabrang` | shabrang.ca | Main site (Next.js) |
+| `shabrang-book` | shabrang-book.pages.dev | Book reader (audio, infographics, gating) |
+| `shabrang-inkwell` | shabrang-inkwell.pages.dev | Astro CMS (experimental) |
 
-**Code License:** MIT
-- Frontend, workers, infrastructure: Open source
+## Content Structure
 
-**Author:** Hadi Servat (Kay Hermes)
+```
+content/
+├── en/
+│   ├── books/liquid-fortress/    # 30 chapters + appendices
+│   ├── art/                      # 20 Persian artifact analyses
+│   ├── blog/                     # 80+ cultural essays
+│   ├── concepts/                 # Philosophy glossary
+│   └── topics/                   # Pillar pages
+└── fa/                           # Farsi translations (same structure)
+```
 
-**Contributors:** See [GitHub contributors](https://github.com/Digidinc/shabrang/graphs/contributors)
+Add content: drop markdown in `content/en/{type}/` with frontmatter → `npm run build`.
 
+## Frontmatter Reference
+
+```yaml
 ---
+id: slug-here
+title: "Title"
+author: Kay Hermes
+date: 2026-01-01
+lang: en
+status: published
+tags: [persian-philosophy, coherence]
+abstract: "One paragraph."
+perspective: both          # both | kasra | river
+# For books only:
+reader_url: https://shabrang-book.pages.dev/
+---
+```
 
-**Shabrang** - The night-colored horse carrying both mystic and scientist through the dialectic.
+`perspective` controls visibility: `kasra` = analytical, `river` = mystical, `both` = always shown.
+
+## Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| Frontend | Next.js 15, React 19, TailwindCSS 4 |
+| Content | Markdown + YAML frontmatter |
+| Routing | Static export, `trailingSlash: true` |
+| Images | `next/image` with `unoptimized: true` |
+| Hosting | Cloudflare Pages |
+| Build | `output: 'export'` → `out/` |
+| i18n | `/` = English, `/fa/` = Farsi |
+
+## Key Commands
+
+```bash
+npm run dev          # dev server
+npm run build        # static export
+npm run deploy       # build + deploy (if configured)
+```
+
+## Current State (2026-06-19)
+
+### Working
+- Home page with book, gallery, essential reading sections
+- `/books/liquid-fortress/` overview + 30 chapter pages
+- `/art/` gallery (20 artifacts, en + fa)
+- `/blog/` (80+ essays, en + fa)
+- `/topics/` pillar pages
+- Book reader at `shabrang-book.pages.dev` (TTS, infographics, free/premium gating)
+- Bilingual routing (en at root, fa at `/fa/`)
+- `reader_url` frontmatter wires book overview CTA to dedicated reader
+
+### Planned / Open
+- D1-backed comments system (replacing placeholder "Dialectic" section)
+- `read.shabrang.ca` custom domain for book reader
+- Farsi language toggle surface (content exists, no UI switch yet)
+- Funnel from Persian culture content → mupot
+
+## Docs
+
+| File | What it covers |
+|------|---------------|
+| `docs/ARCHITECTURE.md` | System diagram, routing, CF Pages setup |
+| `docs/CONTRIBUTING.md` | How to add content, frontmatter, conventions |
+| `docs/BRAND.md` | Color palette, typography, voice |
+| `docs/CONTENT_PIPELINE.md` | Content ingestion flow |
+| `CLAUDE.md` | Agent instructions for this codebase |
+
+## License
+
+**Content:** CC BY-NC-SA 4.0 — attribution required, no commercial use
+**Code:** MIT
+
+**Author:** Hadi Servat (Kay Hermes) — [shabrang.ca](https://shabrang.ca)
