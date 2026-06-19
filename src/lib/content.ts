@@ -500,7 +500,7 @@ export function getBook(lang: string, id: string): ParsedContent | null {
     // Render the index content followed by chapters in order for a single-page reading experience.
     const combined = [
       parsed.body,
-      ...chapters.map((c) => `\n\n## ${c.title}\n\n${c.body}`),
+      ...chapters.map((c) => `\n\n# ${c.title}\n\n${c.body}`),
     ].join('\n\n');
 
     return { frontmatter: parsed.frontmatter, body: combined };

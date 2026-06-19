@@ -37,7 +37,7 @@
 ┌─────────────────────────────────────────────────────────┐
 │               Cloudflare Pages (CDN)                     │
 │  - Global edge delivery                                  │
-│  - fractalresonance.com                                  │
+│  - shabrang.ca                                  │
 │  - Auto-deploy from GitHub push                          │
 │  - DDoS protection, SSL                                  │
 └─────────────────────────────────────────────────────────┘

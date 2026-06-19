@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQYLJTB32Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MQYLJTB32Z');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Liquid Fortress</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Why did Persia survive 3,000 years of invasion when every other ancient civilization died? This book applies Fractal Resonance Coherence (FRC) to reveal how Persian civilization built a Liquid Fortress.">
+    <meta property="og:title" content="The Liquid Fortress">
+    <meta property="og:description" content="Why did Persia survive 3,000 years of invasion when every other ancient civilization died? This book applies Fractal Resonance Coherence (FRC) to reveal how Persian civilization built a Liquid Fortress.">
+    <meta property="og:image" content="images/og-cover.png">
+    <meta property="og:type" content="book">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/experience.css">
+
+    <style>
+        :root {
+            --background: #F5E6C8;
+            --text: #1A1A18;
+            --accent1: #2D5A6B;
+            --accent2: #8B3535;
+            --gold: #C9A227;
+        }
+
+        .index-header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 3px solid var(--gold);
+            margin-bottom: 50px;
+        }
+
+        .book-logo-img {
+            width: 360px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+            border: none !important;
+        }
+
+        .book-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0 0 10px 0;
+            border: none;
+        }
+
+        .book-subtitle {
+            font-size: 1.1em;
+            color: var(--accent1);
+            font-style: italic;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        .toc-section {
+            margin-bottom: 50px;
+        }
+
+        .toc-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent2);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chapter-item {
+            padding: 0;
+            margin-bottom: 5px;
+        }
+
+        .chapter-item::before {
+            display: none;
+        }
+
+        .chapter-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .chapter-link:hover {
+            background: white;
+            border-color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .chapter-number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent1);
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .chapter-item.premium .chapter-number {
+            background: var(--gold);
+        }
+
+        .chapter-title {
+            flex-grow: 1;
+            font-size: 1.05em;
+            color: var(--text);
+        }
+
+        .chapter-badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: var(--gold);
+            color: white;
+        }
+
+        .chapter-badge.free {
+            background: var(--accent1);
+        }
+
+        .chapter-badge.premium {
+            background: var(--accent2);
+        }
+
+        .index-footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--background);
+            color: #666;
+            font-size: 14px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px auto 50px;
+            max-width: 820px;
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--accent1);
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: all 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            color: var(--accent1);
+        }
+    </style>
+
+    <!-- PWA -->
+    
+    <link rel="manifest" href="manifest.json">
+    
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Back to Landing Link -->
+        
+        <a href="https://shabrang.ca" class="back-to-landing" style="display: inline-block; margin-bottom: 20px; color: var(--accent1); font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+            ← Shabrang.ca
+        </a>
+        
+
+        <!-- Book Header -->
+        <header class="index-header">
+            <a href="https://shabrang.ca">
+                <img src="images/shabrang_565.png" alt="Shabrang" class="book-logo-img">
+            </a>
+            <h1 class="book-title">The Liquid Fortress</h1>
+            
+            <p class="book-subtitle">A Structural History of the Persian Mind</p>
+            
+        </header>
+
+        <!-- Free Chapters -->
+        <section class="toc-section">
+            <h2 class="toc-section-title">Free Chapters</h2>
+            <ul class="chapter-list">
+                
+                <li class="chapter-item">
+                    <a href="preface.html" class="chapter-link">
+                        <span class="chapter-number">1</span>
+                        <span class="chapter-title">Prologue: The Riderless Horse</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="introduction.html" class="chapter-link">
+                        <span class="chapter-number">2</span>
+                        <span class="chapter-title">Introduction: The Physics of Survival</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="chapter1.html" class="chapter-link">
+                        <span class="chapter-number">3</span>
+                        <span class="chapter-title">Chapter 1: The Fortress and the Corridor</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="chapter2.html" class="chapter-link">
+                        <span class="chapter-number">4</span>
+                        <span class="chapter-title">Chapter 2: The Lens of FRC</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="chapter3.html" class="chapter-link">
+                        <span class="chapter-number">5</span>
+                        <span class="chapter-title">Chapter 3: The First Binary</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="chapter4.html" class="chapter-link">
+                        <span class="chapter-number">6</span>
+                        <span class="chapter-title">Chapter 4: The Myth of the Border</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="chapter5.html" class="chapter-link">
+                        <span class="chapter-number">7</span>
+                        <span class="chapter-title">Chapter 5: The Thermodynamics of Truth</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="appendix-a.html" class="chapter-link">
+                        <span class="chapter-number">8</span>
+                        <span class="chapter-title">Appendix A: The Glossary of Coherence</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="appendix-b.html" class="chapter-link">
+                        <span class="chapter-number">9</span>
+                        <span class="chapter-title">Appendix B: The Seven Archetypes</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="appendix-c.html" class="chapter-link">
+                        <span class="chapter-number">10</span>
+                        <span class="chapter-title">Appendix C: The Four Fortresses</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="appendix-d.html" class="chapter-link">
+                        <span class="chapter-number">11</span>
+                        <span class="chapter-title">Appendix D: The Nursery Protocol</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="appendix-e.html" class="chapter-link">
+                        <span class="chapter-number">12</span>
+                        <span class="chapter-title">Appendix E: The Mathematics of Meaning</span>
+                        <span class="chapter-badge free">Free</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+
+        <!-- Premium CTA -->
+        
+        <section class="cta-section">
+            <h3>Unlock the Full Experience</h3>
+            <p>Get access to all 27 premium chapters, audiobook, and community discussion.</p>
+            <a href="/api/ghl/checkout" class="cta-btn">Join Now</a>
+        </section>
+        
+
+        <!-- Premium Chapters -->
+        
+        
+        <section class="toc-section">
+            <h2 class="toc-section-title">Premium Chapters</h2>
+            <ul class="chapter-list">
+                
+                <li class="chapter-item premium">
+                    <a href="chapter6.html" class="chapter-link">
+                        <span class="chapter-number">13</span>
+                        <span class="chapter-title">Chapter 6: The Imperial Architecture</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter7.html" class="chapter-link">
+                        <span class="chapter-number">14</span>
+                        <span class="chapter-title">Chapter 7: The Parthian Bridge</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter8.html" class="chapter-link">
+                        <span class="chapter-number">15</span>
+                        <span class="chapter-title">Chapter 8: The Sasanian Codex</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter9.html" class="chapter-link">
+                        <span class="chapter-number">16</span>
+                        <span class="chapter-title">Chapter 9: The Liturgy of Light</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter10.html" class="chapter-link">
+                        <span class="chapter-number">17</span>
+                        <span class="chapter-title">Chapter 10: The Manichaean Error</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter11.html" class="chapter-link">
+                        <span class="chapter-number">18</span>
+                        <span class="chapter-title">Chapter 11: The Shock of Conquest</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter12.html" class="chapter-link">
+                        <span class="chapter-number">19</span>
+                        <span class="chapter-title">Chapter 12: The Mother Tongue</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter13.html" class="chapter-link">
+                        <span class="chapter-number">20</span>
+                        <span class="chapter-title">Chapter 13: The Master of Logos</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter14.html" class="chapter-link">
+                        <span class="chapter-number">21</span>
+                        <span class="chapter-title">Chapter 14: The Mathematicians</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter15.html" class="chapter-link">
+                        <span class="chapter-number">22</span>
+                        <span class="chapter-title">Chapter 15: The Crisis of Reason</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter16.html" class="chapter-link">
+                        <span class="chapter-number">23</span>
+                        <span class="chapter-title">Chapter 16: The Architect of Light</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter17.html" class="chapter-link">
+                        <span class="chapter-number">24</span>
+                        <span class="chapter-title">Chapter 17: The Physics of Angels</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter18.html" class="chapter-link">
+                        <span class="chapter-number">25</span>
+                        <span class="chapter-title">Chapter 18: The Bridge of Gnosis</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter19.html" class="chapter-link">
+                        <span class="chapter-number">26</span>
+                        <span class="chapter-title">Chapter 19: The Great Nigredo</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter20.html" class="chapter-link">
+                        <span class="chapter-number">27</span>
+                        <span class="chapter-title">Chapter 20: The Apron and the Flag</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter21.html" class="chapter-link">
+                        <span class="chapter-number">28</span>
+                        <span class="chapter-title">Chapter 21: The Rolling Pumpkin</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter22.html" class="chapter-link">
+                        <span class="chapter-number">29</span>
+                        <span class="chapter-title">Chapter 22: The Conference of the Birds</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter23.html" class="chapter-link">
+                        <span class="chapter-number">30</span>
+                        <span class="chapter-title">Chapter 23: The Thermodynamics of Love</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter24.html" class="chapter-link">
+                        <span class="chapter-number">31</span>
+                        <span class="chapter-title">Chapter 24: The Pattern of the World</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter25.html" class="chapter-link">
+                        <span class="chapter-number">32</span>
+                        <span class="chapter-title">Chapter 25: The Ocean of Being</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter26.html" class="chapter-link">
+                        <span class="chapter-number">33</span>
+                        <span class="chapter-title">Chapter 26: The Perfected State</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter27.html" class="chapter-link">
+                        <span class="chapter-number">34</span>
+                        <span class="chapter-title">Chapter 27: The Last Pahlavan</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter28.html" class="chapter-link">
+                        <span class="chapter-number">35</span>
+                        <span class="chapter-title">Chapter 28: The Shock of Modernity</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter29.html" class="chapter-link">
+                        <span class="chapter-number">36</span>
+                        <span class="chapter-title">Chapter 29: The Magnetic Ark</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="chapter30.html" class="chapter-link">
+                        <span class="chapter-number">37</span>
+                        <span class="chapter-title">Chapter 30: The Digital Simurgh</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="conclusion.html" class="chapter-link">
+                        <span class="chapter-number">38</span>
+                        <span class="chapter-title">Conclusion: The Garden in the Fire</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+                <li class="chapter-item premium">
+                    <a href="app.html" class="chapter-link">
+                        <span class="chapter-number">39</span>
+                        <span class="chapter-title">app</span>
+                        <span class="chapter-badge premium">Premium</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+
+        <!-- Footer -->
+        <footer class="index-footer">
+            <p>The Liquid Fortress &copy; 2025</p>
+            <p>A <a href="https://kayhermes.com" target="_blank" style="color: var(--gold);">Kay Hermes</a> Project</p>
+        </footer>
+
+    </div>
+
+    <script src="js/experience.js" defer></script>
+</body>
+</html>

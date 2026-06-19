@@ -114,18 +114,17 @@ export function schemaResearchProject() {
   };
 }
 
-/** Organization — Fractal Resonance entity */
+/** Organization — Shabrang entity */
 export function schemaOrganization() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#org`,
-    name: 'Fractal Resonance',
+    name: 'Shabrang',
     url: SITE_URL,
     logo: `${SITE_URL}/brand/logo.png`,
     sameAs: [
-      'https://github.com/servathadi/fractalresonance',
-      'https://zenodo.org/communities/frc',
+      'https://github.com/Digidinc/shabrang',
     ],
     founder: { '@id': `${SITE_URL}/#author` },
   };

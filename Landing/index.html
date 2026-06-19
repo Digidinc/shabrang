@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Liquid Fortress — A Structural History of the Persian Mind</title>
+    <meta name="description" content="Why did Persia survive 3,000 years of invasion when every other ancient civilization died? Discover the answer in The Liquid Fortress.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQYLJTB32Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MQYLJTB32Z');
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Liquid Fortress">
+    <meta property="og:description" content="A Structural History of the Persian Mind — 3,000 years, 7 collapses, one survival manual.">
+    <meta property="og:image" content="images/og-image.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           ALETTE COLOR SYSTEM
+           =========================================== */
+        :root {
+            --sand: #F5E6C8;
+            --sand-dark: #E8D4A8;
+            --gold: #C9A227;
+            --gold-light: #D4A84B;
+            --teal: #2D5A6B;
+            --teal-dark: #1A4A4A;
+            --crimson: #8B3535;
+            --crimson-dark: #6B2525;
+            --black: #1A1A18;
+            --green: #3D5C3D;
+            --white: #FFFEF9;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background-color: var(--sand);
+            color: var(--black);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            color: var(--teal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--crimson);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===========================================
+           HERO SECTION
+           =========================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, var(--sand) 0%, var(--sand-dark) 100%);
+            border-bottom: 4px solid var(--gold);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--black);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--crimson);
+            font-style: italic;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            color: var(--teal-dark);
+            max-width: 600px;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: var(--teal);
+            color: var(--sand);
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 2px solid var(--teal);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--sand);
+            color: var(--teal);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--crimson);
+            border-color: var(--crimson);
+            margin-left: 20px;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--crimson);
+            color: var(--sand);
+        }
+
+        /* ===========================================
+           THE MYSTERY SECTION
+           =========================================== */
+        .mystery {
+            padding: 100px 20px;
+            background-color: var(--white);
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .mystery-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Image showcase */
+        .image-showcase {
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto;
+            border: 3px solid var(--black);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .image-showcase img {
+            width: 100%;
+            display: block;
+        }
+
+        .image-caption {
+            background: var(--black);
+            color: var(--gold);
+            padding: 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        /* Framework image */
+        .framework-image {
+            max-width: 500px;
+            margin: 50px auto 0;
+            border: 3px solid var(--gold);
+        }
+
+        .framework-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--teal-dark);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .mystery-text {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: var(--crimson);
+            font-weight: 600;
+        }
+
+        .mystery-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--teal-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ===========================================
+           THE FRAMEWORK SECTION
+           =========================================== */
+        .framework {
+            padding: 100px 20px;
+            background-color: var(--teal-dark);
+            color: var(--sand);
+        }
+
+        .framework .section-title {
+            color: var(--gold);
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .framework-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid var(--gold);
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .framework-card h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .framework-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--sand);
+        }
+
+        .level-badge {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--black);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* ===========================================
+           CHAPTERS SECTION
+           =========================================== */
+        .chapters {
+            padding: 100px 20px;
+            background-color: var(--sand);
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .chapter-card {
+            background: var(--white);
+            border: 2px solid var(--black);
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: var(--teal);
+        }
+
+        .chapter-number {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--crimson);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .chapter-title {
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .chapter-meta {
+            font-size: 0.95rem;
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        /* ===========================================
+           AUTHOR SECTION
+           =========================================== */
+        .author {
+            padding: 100px 20px;
+            background: var(--white);
+            border-top: 4px solid var(--gold);
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .author-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .author-text {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-top: 30px;
+        }
+
+        /* ===========================================
+           SIGNUP SECTION
+           =========================================== */
+        .signup {
+            padding: 100px 20px;
+            background: var(--crimson);
+            color: var(--sand);
+            text-align: center;
+        }
+
+        .signup .section-title {
+            color: var(--sand);
+        }
+
+        .signup .section-title::after {
+            background: var(--gold);
+        }
+
+        .signup-text {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .signup-form {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .signup-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 18px 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            border: 2px solid var(--sand);
+            background: transparent;
+            color: var(--sand);
+        }
+
+        .signup-form input[type="email"]::placeholder {
+            color: rgba(245, 230, 200, 0.7);
+        }
+
+        .signup-form button {
+            padding: 18px 35px;
+            background: var(--gold);
+            color: var(--black);
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-form button:hover {
+            background: var(--sand);
+            border-color: var(--sand);
+        }
+
+        .signup-note {
+            font-size: 0.9rem;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        /* ===========================================
+           FOOTER
+           =========================================== */
+        footer {
+            padding: 60px 20px;
+            background: var(--black);
+            color: var(--sand);
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 80px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: var(--gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* ===========================================
+           PERSIAN BORDER DECORATIONS
+           =========================================== */
+        .persian-border {
+            position: relative;
+        }
+
+        .persian-border::before,
+        .persian-border::after {
+            content: '❖';
+            color: var(--gold);
+            font-size: 1.5rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .persian-border::before {
+            left: -40px;
+        }
+
+        .persian-border::after {
+            right: -40px;
+        }
+
+        /* Persian Divider */
+        .persian-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 60px auto;
+            max-width: 400px;
+        }
+
+        .persian-divider::before,
+        .persian-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .persian-divider-icon {
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+
+        /* CSS Diamond Shape */
+        .diamond {
+            width: 15px;
+            height: 15px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            position: relative;
+        }
+        .diamond::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: var(--sand);
+        }
+
+        /* ===========================================
+           VISUAL GALLERY
+           =========================================== */
+        .gallery {
+            padding: 80px 20px;
+            background: var(--sand-dark);
+            border-top: 3px solid var(--gold);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--black);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-caption {
+            padding: 15px;
+            background: var(--black);
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-align: center;
+        }
+
+        /* ===========================================
+           SAMPLE CHAPTER SECTION
+           =========================================== */
+        .sample-chapter {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .sample-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .sample-image {
+            border: 3px solid var(--black);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .sample-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .sample-text h3 {
+            font-size: 1.8rem;
+            color: var(--teal-dark);
+            margin-bottom: 20px;
+        }
+
+        .sample-text p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .sample-excerpt {
+            background: var(--sand);
+            border-left: 4px solid var(--gold);
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* ===========================================
+           MEDIA SHOWCASE
+           =========================================== */
+        .media-showcase {
+            padding: 100px 20px;
+            background: var(--black);
+            color: var(--sand);
+        }
+
+        .media-showcase .section-title {
+            color: var(--gold);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .media-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid var(--teal);
+            padding: 35px;
+            text-align: center;
+        }
+
+        .media-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .media-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .media-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .media-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            background: var(--crimson);
+            color: var(--sand);
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ===========================================
+           QUOTE BLOCK
+           =========================================== */
+        .quote-block {
+            padding: 80px 20px;
+            background: var(--teal);
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--sand);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            margin-top: 25px;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ===========================================
+           FEATURES ROW
+           =========================================== */
+        .features-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            position: relative;
+        }
+
+        /* Creative CSS Icons */
+        .icon-scroll {
+            width: 40px;
+            height: 50px;
+            border: 3px solid var(--teal-dark);
+            border-radius: 4px 4px 20px 20px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .icon-scroll::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        .icon-scroll::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 8px;
+            right: 8px;
+            height: 2px;
+            background: var(--teal-dark);
+            box-shadow: 0 8px 0 var(--teal-dark), 0 16px 0 var(--teal-dark);
+        }
+
+        .icon-palette {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--teal-dark);
+            border-radius: 50% 50% 50% 0;
+            margin: 0 auto;
+            position: relative;
+            transform: rotate(-45deg);
+        }
+        .icon-palette::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--crimson);
+            border-radius: 50%;
+            top: 8px;
+            left: 10px;
+            box-shadow: 14px 0 0 var(--gold), 7px 14px 0 var(--teal);
+        }
+
+        .icon-wave {
+            width: 50px;
+            height: 30px;
+            margin: 10px auto;
+            position: relative;
+        }
+        .icon-wave::before,
+        .icon-wave::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 15px;
+            border: 3px solid var(--teal-dark);
+            border-color: var(--teal-dark) transparent transparent transparent;
+            border-radius: 50% 50% 0 0;
+        }
+        .icon-wave::after {
+            top: 10px;
+            border-color: var(--gold) transparent transparent transparent;
+        }
+
+        .icon-lens {
+            width: 45px;
+            height: 45px;
+            border: 4px solid var(--teal-dark);
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .icon-lens::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+        }
+        .icon-lens::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            right: -5px;
+            width: 15px;
+            height: 4px;
+            background: var(--teal-dark);
+            transform: rotate(45deg);
+        }
+
+        /* Media Card Icons */
+        .icon-book {
+            width: 45px;
+            height: 55px;
+            border: 3px solid var(--gold);
+            margin: 0 auto;
+            position: relative;
+            background: transparent;
+        }
+        .icon-book::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--gold);
+            border-radius: 3px 0 0 3px;
+        }
+        .icon-book::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 8px;
+            right: 8px;
+            height: 2px;
+            background: var(--gold);
+            box-shadow: 0 8px 0 var(--gold), 0 16px 0 var(--gold);
+        }
+
+        .icon-headphones {
+            width: 45px;
+            height: 45px;
+            border: 4px solid var(--gold);
+            border-bottom: none;
+            border-radius: 25px 25px 0 0;
+            margin: 5px auto 0;
+            position: relative;
+        }
+        .icon-headphones::before,
+        .icon-headphones::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            width: 12px;
+            height: 18px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        .icon-headphones::before { left: -4px; }
+        .icon-headphones::after { right: -4px; }
+
+        .icon-play {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--gold);
+            border-radius: 8px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .icon-play::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent var(--gold);
+        }
+
+        .feature-item h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--teal-dark);
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--black);
+        }
+
+        /* ===========================================
+           RESPONSIVE
+           =========================================== */
+        @media (max-width: 900px) {
+            .sample-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                letter-spacing: 0.08em;
+            }
+
+            .cta-button.secondary {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .mystery-stats {
+                gap: 40px;
+            }
+
+            .persian-border::before,
+            .persian-border::after {
+                display: none;
+            }
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* ===========================================
+           STICKY NAVIGATION
+           =========================================== */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 24, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-nav.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--sand);
+            text-decoration: none;
+        }
+
+        .sticky-nav .nav-logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .sticky-nav .nav-logo span {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .sticky-nav .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .sticky-nav .nav-links a {
+            color: var(--sand);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .sticky-nav .nav-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        .sticky-nav .nav-cta {
+            background: var(--gold);
+            color: var(--black) !important;
+            padding: 10px 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            opacity: 1 !important;
+        }
+
+        .sticky-nav .nav-cta:hover {
+            background: var(--sand);
+        }
+
+        /* ===========================================
+           CHAPTER CARD BADGES
+           =========================================== */
+        .chapter-card {
+            position: relative;
+        }
+
+        .chapter-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 12px;
+            border-radius: 3px;
+        }
+
+        .chapter-badge.free {
+            background: var(--teal);
+            color: var(--sand);
+        }
+
+        .chapter-badge.premium {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* ===========================================
+           HERO PATTERN OVERLAY
+           =========================================== */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='none' stroke='%23C9A227' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===========================================
+           IMPROVED AUTHOR SECTION
+           =========================================== */
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--teal);
+            color: var(--sand);
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+        }
+
+        /* ===========================================
+           RESPONSIVE NAV
+           =========================================== */
+        @media (max-width: 768px) {
+            .sticky-nav .nav-links {
+                display: none;
+            }
+
+            .sticky-nav .nav-links.mobile-visible {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 24, 0.98);
+                padding: 20px;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- STICKY NAVIGATION -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="images/shabrang_logo.png" alt="Shabrang">
+                <span>The Liquid Fortress</span>
+            </a>
+            <div class="nav-links">
+                <a href="#mystery">The Mystery</a>
+                <a href="#framework">Framework</a>
+                <a href="#chapters">Chapters</a>
+                <a href="#preview">Preview</a>
+                <a href="/book/chapter1.html" class="nav-cta">Read Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <img src="images/shabrang_logo.png" alt="Shabrang - The Liquid Fortress" class="hero-logo">
+        <h1 class="hero-title">The Liquid Fortress</h1>
+        <p class="hero-subtitle">A Structural History of the Persian Mind</p>
+        <p class="hero-tagline">
+            Why did Persia survive 3,000 years of invasion when every other ancient civilization died?
+        </p>
+        <div>
+            <a href="/book/chapter1.html" class="cta-button">Read Chapters 1-5 Free</a>
+            <a href="/book/index.html" class="cta-button secondary">Explore All Chapters</a>
+        </div>
+
+        <!-- Features Row -->
+        <div class="features-row" style="margin-top: 60px;">
+            <div class="feature-item">
+                <div class="feature-icon"><div class="icon-scroll"></div></div>
+                <h4>30 Chapters</h4>
+                <p>Deep structural analysis</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><div class="icon-palette"></div></div>
+                <h4>100+ Images</h4>
+                <p>Persian miniature style</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><div class="icon-wave"></div></div>
+                <h4>Audio Edition</h4>
+                <p>Immersive soundscapes</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><div class="icon-lens"></div></div>
+                <h4>FRC Framework</h4>
+                <p>Original methodology</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE MYSTERY SECTION -->
+    <section class="mystery" id="mystery">
+        <div class="mystery-content">
+            <h2 class="section-title persian-border">The Mystery</h2>
+            <p class="mystery-text">
+                Alexander the Great burned Persepolis. The Arabs conquered the empire.
+                The Mongols slaughtered millions. The Timurids, the Afghans, and countless others
+                tried to erase this civilization from history.
+            </p>
+            <p class="mystery-text">
+                <span class="highlight">Egypt fell. Babylon fell. Assyria fell.</span>
+                They became footnotes, their languages dead, their identities absorbed.
+            </p>
+            <p class="mystery-text">
+                But Iran is still here. Speaking Persian. Writing poetry.
+                Celebrating Nowruz. <span class="highlight">How?</span>
+            </p>
+            <div class="mystery-stats">
+                <div class="stat">
+                    <div class="stat-number">3,000</div>
+                    <div class="stat-label">Years</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Collapses</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Survival Manual</div>
+                </div>
+            </div>
+
+            <!-- Qanat Image -->
+            <div class="image-showcase" style="margin-top: 60px;">
+                <img src="images/qanat.png" alt="The Qanat - Underground water system">
+                <div class="image-caption">The Qanat: A structural metaphor for the Persian Mind</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE BLOCK -->
+    <section class="quote-block">
+        <p class="quote-text">
+            "The Persian does not build walls to keep enemies out. He builds gardens to keep meaning in."
+        </p>
+        <p class="quote-author">— The Liquid Fortress</p>
+    </section>
+
+    <!-- THE FRAMEWORK SECTION -->
+    <section class="framework" id="framework">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 class="section-title">The Lens of FRC</h2>
+                <p style="max-width: 700px; margin: 20px auto 0; font-size: 1.2rem;">
+                    This is not a traditional history. It's a <em>structural analysis</em>.
+                    We use Fractal Resonance Coherence to reveal how civilizations survive entropy.
+                </p>
+            </div>
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <div class="level-badge">1</div>
+                    <h3>The Roots</h3>
+                    <p>Matter & State. Territory, armies, law. The hardware of civilization — necessary, but the most fragile.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="level-badge">3</div>
+                    <h3>The Fire</h3>
+                    <p>Emotion & Ethics. The cultivation of Adab — refined character and the regulation of social friction.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="level-badge">5</div>
+                    <h3>The Garden</h3>
+                    <p>Symbol & Image. The Rose, the Mirror, the Wine. Meaning compressed into portable images that survive when books burn.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="level-badge">7</div>
+                    <h3>The Sky</h3>
+                    <p>Unity & Metaphysics. The ultimate orientation toward the Absolute — Asha or Tawhid — the magnetic north of the system.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 50px; font-size: 1.1rem; font-style: italic;">
+                "Hardware is brittle, but Software is fluid. Persia learned to store its soul in the layers that could not be burned."
+            </p>
+
+            <!-- Ladder of Consciousness Image -->
+            <div class="framework-image">
+                <img src="images/ladder.png" alt="The Ladder of Consciousness - 7 Levels">
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTERS SECTION -->
+    <section class="chapters" id="chapters">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 class="section-title persian-border">The Chapters</h2>
+            </div>
+            <div class="chapters-grid">
+                <a href="/book/chapter1.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
+                    <div class="chapter-number">Chapter 1</div>
+                    <h3 class="chapter-title">The Fortress and the Corridor</h3>
+                    <p class="chapter-meta">Roots & Geometry</p>
+                </a>
+                <a href="/book/chapter2.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
+                    <div class="chapter-number">Chapter 2</div>
+                    <h3 class="chapter-title">The Lens of FRC</h3>
+                    <p class="chapter-meta">Methodology</p>
+                </a>
+                <a href="/book/chapter3.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
+                    <div class="chapter-number">Chapter 3</div>
+                    <h3 class="chapter-title">The First Binary</h3>
+                    <p class="chapter-meta">Asha & Druj</p>
+                </a>
+                <a href="/book/chapter4.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
+                    <div class="chapter-number">Chapter 4</div>
+                    <h3 class="chapter-title">The Myth of the Border</h3>
+                    <p class="chapter-meta">Arash & Sacrifice</p>
+                </a>
+                <a href="/book/chapter5.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge free">Free</span>
+                    <div class="chapter-number">Chapter 5</div>
+                    <h3 class="chapter-title">The Thermodynamics of Truth</h3>
+                    <p class="chapter-meta">Truth as Physics</p>
+                </a>
+                <a href="/book/chapter6.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge premium">Premium</span>
+                    <div class="chapter-number">Chapter 6</div>
+                    <h3 class="chapter-title">The Imperial Architecture</h3>
+                    <p class="chapter-meta">Cyrus & Darius</p>
+                </a>
+                <a href="/book/chapter11.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge premium">Premium</span>
+                    <div class="chapter-number">Chapter 11</div>
+                    <h3 class="chapter-title">The Shock of Conquest</h3>
+                    <p class="chapter-meta">Qadisiyah & The System Crash</p>
+                </a>
+                <a href="/book/chapter16.html" class="chapter-card" style="text-decoration: none;">
+                    <span class="chapter-badge premium">Premium</span>
+                    <div class="chapter-number">Chapter 16</div>
+                    <h3 class="chapter-title">The Architect of Light</h3>
+                    <p class="chapter-meta">Suhrawardi & The Imaginal</p>
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 40px;">
+                <a href="/book/index.html" class="cta-button">Read the Book</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- SAMPLE CHAPTER PREVIEW -->
+    <section class="sample-chapter" id="preview">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 class="section-title persian-border">Sample Chapter</h2>
+            </div>
+            <div class="sample-content">
+                <div class="sample-image">
+                    <img src="images/ch3_asha_druj.png" alt="Chapter 3 - The First Binary: Asha and Druj">
+                </div>
+                <div class="sample-text">
+                    <h3>Chapter 3: The First Binary</h3>
+                    <p>
+                        Before there was good and evil, there was <strong>Asha</strong> and <strong>Druj</strong> —
+                        Truth and Lie. Not as moral categories, but as cosmic forces. Order against chaos.
+                        Coherence against entropy.
+                    </p>
+                    <div class="sample-excerpt">
+                        "The Zoroastrian innovation was not ethical dualism — it was thermodynamic dualism.
+                        Asha is not 'the good' — it is the force that maintains pattern against dissolution.
+                        Druj is not 'evil' — it is the tendency toward noise, decay, and incoherence."
+                    </div>
+                    <p>
+                        This chapter reveals how the oldest Persian binary became the operating system
+                        for a civilization that would outlast all its contemporaries.
+                    </p>
+                    <a href="/book/chapter3.html" class="cta-button">Read This Chapter Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 class="section-title persian-border">Visual Journey</h2>
+                <p style="max-width: 600px; margin: 20px auto 0; font-size: 1.1rem;">
+                    Each chapter is illustrated with original artwork in the Persian miniature tradition.
+                </p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/ch6_cyrus.png" alt="Cyrus the Great - The Imperial Architecture">
+                    <div class="gallery-item-caption">The Imperial Architecture</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ch11_conquest.png" alt="The Shock of Conquest - Qadisiyah">
+                    <div class="gallery-item-caption">The Shock of Conquest</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ch16_light.png" alt="Suhrawardi - The Architect of Light">
+                    <div class="gallery-item-caption">The Architect of Light</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ladder.png" alt="The 7 Levels of Consciousness">
+                    <div class="gallery-item-caption">The Ladder of Consciousness</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA SHOWCASE -->
+    <section class="media-showcase" id="media">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 class="section-title">Experience the Book</h2>
+                <p style="max-width: 600px; margin: 20px auto 0; font-size: 1.1rem;">
+                    The Liquid Fortress is available in multiple formats for different learning styles.
+                </p>
+            </div>
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="media-icon"><div class="icon-book"></div></div>
+                    <h3>Digital Book</h3>
+                    <p>30 illustrated chapters exploring 3,000 years of Persian cultural survival through the FRC framework.</p>
+                    <span class="media-badge">Available Now</span>
+                </div>
+                <div class="media-card">
+                    <div class="media-icon"><div class="icon-headphones"></div></div>
+                    <h3>Audiobook</h3>
+                    <p>Immersive audio narration with ambient soundscapes created with Suno AI. Perfect for deep listening.</p>
+                    <span class="media-badge">Coming Soon</span>
+                </div>
+                <div class="media-card">
+                    <div class="media-icon"><div class="icon-play"></div></div>
+                    <h3>Video Summaries</h3>
+                    <p>NotebookLM-powered video summaries for each chapter. Visual learners, this is for you.</p>
+                    <span class="media-badge">In Production</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSIAN DIVIDER -->
+    <div class="persian-divider">
+        <span class="persian-divider-icon"><div class="diamond"></div></span>
+    </div>
+
+    <!-- AUTHOR SECTION -->
+    <section class="author" id="author">
+        <div class="author-content">
+            <div class="author-avatar">HS</div>
+            <h2 class="section-title persian-border">About the Author</h2>
+            <p class="author-text">
+                <strong>Hadi Servat</strong> is the creator of the Fractal Resonance Coherence (FRC) framework —
+                a mathematical model of consciousness dynamics that bridges complexity science,
+                contemplative traditions, and historical analysis.
+            </p>
+            <p class="author-text">
+                <em>The Liquid Fortress</em> applies this framework to 3,000 years of Persian history,
+                revealing the structural patterns that enabled a civilization to survive what destroyed all others.
+            </p>
+            <p class="author-text" style="margin-top: 30px; font-style: italic; color: var(--teal);">
+                "I wrote this book because the Persian survival story is not just history — it's a manual for any system facing entropy."
+            </p>
+        </div>
+    </section>
+
+    <!-- SIGNUP SECTION -->
+    <section class="signup" id="signup">
+        <h2 class="section-title">Enter the Fortress</h2>
+        <p class="signup-text">
+            Chapters 1-5 are completely free. Start your journey into 3,000 years of Persian survival.
+        </p>
+        <div style="text-align: center;">
+            <a href="/book/chapter1.html" class="cta-button" style="background: var(--gold); color: var(--black); border-color: var(--gold);">Start Reading Free</a>
+        </div>
+        <p class="signup-note">No signup required. Dive straight into the book.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <img src="images/shabrang_logo.png" alt="Shabrang" class="footer-logo">
+        <p class="footer-text">The Mind That Could Not Be Burned</p>
+        <div class="footer-links">
+            <a href="/book/index.html">Read the Book</a>
+            <a href="#mystery">The Mystery</a>
+            <a href="#framework">The Framework</a>
+            <a href="#chapters">Chapters</a>
+            <a href="#preview">Preview</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 Hadi Servat. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Sticky Navigation
+        const stickyNav = document.getElementById('stickyNav');
+        const hero = document.querySelector('.hero');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > hero.offsetHeight - 100) {
+                stickyNav.classList.add('visible');
+            } else {
+                stickyNav.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.chapter-card, .framework-card, .stat, .gallery-item, .media-card, .feature-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+
+</html>

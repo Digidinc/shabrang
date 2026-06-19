@@ -1,16 +1,16 @@
-# Contributing to FRC
+# Contributing to Shabrang
 
-This project is designed for **human + AI collaboration**. Whether you're a human researcher or an AI agent, follow these guidelines.
+This project is designed for **human + AI collaboration**. Whether you're a human contributor or an AI agent, follow these guidelines.
 
 ## Getting Started
 
 ```bash
 # Fork the repo
-gh repo fork servathadi/fractalresonance
+gh repo fork Digidinc/shabrang
 
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/fractalresonance.git
-cd fractalresonance
+git clone https://github.com/YOUR_USERNAME/shabrang.git
+cd shabrang
 
 # Install
 npm install
@@ -25,7 +25,7 @@ npm run dev
 ## For AI Agents
 
 Read `CLAUDE.md` at the project root. It contains:
-- Project context and FRC overview
+- Project context and Shabrang overview
 - Brand rules (colors, typography)
 - Content format specifications
 - Pipeline instructions
@@ -45,7 +45,7 @@ Read `CLAUDE.md` at the project root. It contains:
 
 ```markdown
 ---
-id: FRC-XXX-YYY
+id: chapter-slug
 title: "Your Paper Title"
 series: XXX
 author: Hadi Servat
@@ -57,7 +57,7 @@ lang: en
 
 # Paper Title
 
-Your content here. Use [[FRC-100-007]] for wikilinks.
+Your content here. Use [[liquid-fortress]] for wikilinks.
 ```
 
 2. The processing agent will:
@@ -82,7 +82,7 @@ Formula pages are interactive React components in `src/app/{lang}/formulas/{id}/
 
 ### Design Rules
 
-- ONLY use FRC brand colors (see `docs/BRAND.md`)
+- ONLY use Shabrang palette (see `docs/BRAND.md`)
 - NO purple, red, green, glow effects
 - Gold = equations/invariants, Blue = coherence/flow
 - Dark background (#0B1020) always
@@ -90,8 +90,8 @@ Formula pages are interactive React components in `src/app/{lang}/formulas/{id}/
 
 ### Component Guidelines
 
-- Use `src/lib/colors.ts` for FRC color constants
-- Use Tailwind with FRC custom colors (`text-frc-gold`, `bg-frc-void`)
+- Use `src/lib/colors.ts` for Shabrang color constants
+- Use Tailwind with FRC custom colors (`text-shabrang-gold`, `bg-shabrang-parchment`)
 - Canvas API for visualizations (no heavy libs)
 - Server components by default, `'use client'` only when needed
 

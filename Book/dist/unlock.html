@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQYLJTB32Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MQYLJTB32Z');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Access — The Liquid Fortress</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        body {
+            background: var(--background, #F5E6C8);
+            color: var(--text, #1A1A18);
+        }
+        .unlock-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .unlock-card {
+            background: white;
+            border: 2px solid var(--gold, #C9A227);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+        }
+        .unlock-card h1 {
+            margin-top: 0;
+        }
+        .unlock-status {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .unlock-status .success {
+            color: #3D5C3D;
+        }
+        .unlock-status .error {
+            color: #8B3535;
+        }
+        .unlock-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: var(--gold, #C9A227);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body data-page="unlock">
+    <div class="unlock-container">
+        <div class="unlock-card">
+            <h1>The Liquid Fortress</h1>
+            <p>Validating your access...</p>
+            <div id="unlock-status" class="unlock-status"></div>
+            <a class="unlock-link" href="index.html">Return to the Book</a>
+        </div>
+    </div>
+
+    <script src="js/auth.js" defer></script>
+</body>
+</html>
