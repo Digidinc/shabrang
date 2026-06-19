@@ -16,7 +16,13 @@ interface FeaturedPost {
   tags: string[];
 }
 
-export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featuredPosts?: FeaturedPost[] }) {
+interface FeaturedArtItem {
+  id: string;
+  title: string;
+  artifact_type?: string;
+}
+
+export function ShabrangHome({ lang, featuredPosts = [], featuredArt = [] }: { lang: string; featuredPosts?: FeaturedPost[]; featuredArt?: FeaturedArtItem[] }) {
   const basePath = getLangBasePath(lang) || '';
   return (
     <>
@@ -1011,6 +1017,54 @@ export function ShabrangHome({ lang, featuredPosts = [] }: { lang: string; featu
             </div>
           </div>
         </section>
+
+        {/* GALLERY SECTION */}
+        {featuredArt.length > 0 && (
+          <section className="section section-dark">
+            <div className="container">
+              <div className="section-header">
+                <h2 className="section-title">The Persian Gallery</h2>
+                <p className="section-description" style={{ color: 'var(--sand)' }}>
+                  3,000 years of civilization preserved in artifacts. Each one a key to understanding the Liquid Fortress.
+                </p>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px', marginBottom: '48px' }}>
+                {featuredArt.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`${basePath}/art/${item.id}`}
+                    style={{
+                      display: 'block',
+                      textDecoration: 'none',
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(201,162,39,0.2)',
+                      padding: '24px',
+                      transition: 'border-color 0.3s, background 0.3s',
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,162,39,0.6)';
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.07)';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,162,39,0.2)';
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)';
+                    }}
+                  >
+                    <div style={{ fontSize: '10px', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '10px' }}>
+                      {item.artifact_type || 'Artifact'}
+                    </div>
+                    <h3 style={{ color: 'var(--sand)', fontFamily: 'var(--font-display, serif)', fontSize: '15px', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0, lineHeight: 1.4 }}>
+                      {item.title}
+                    </h3>
+                  </Link>
+                ))}
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href={`${basePath}/art`} className="btn btn-gold">Explore the Gallery →</Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CHAPTERS SECTION */}
         <section className="section section-sand">

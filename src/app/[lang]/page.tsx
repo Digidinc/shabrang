@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getLanguages, getBlogPosts, estimateReadTime, matchesPerspectiveView } from '@/lib/content';
+import { getLanguages, getBlogPosts, getArtItems, estimateReadTime, matchesPerspectiveView } from '@/lib/content';
 import { ShabrangHome } from '@/components/pages/ShabrangHome';
 
 export function generateStaticParams() {
@@ -56,5 +56,23 @@ export default async function ContentHub({ params }: Props) {
     .filter((p) => p !== null)
     .slice(0, 6);
 
-  return <ShabrangHome lang={lang} featuredPosts={featuredPosts} />;
+  const featuredArtIds = [
+    'ardabil-carpet',
+    'simurgh-miniature',
+    'shahnameh-tahmasp',
+    'qanat-mother-well',
+    'turquoise-dome-isfahan',
+    'cyrus-cylinder',
+  ];
+  const allArt = getArtItems(lang).filter((a) => matchesPerspectiveView(a.frontmatter.perspective, 'kasra'));
+  const featuredArt = featuredArtIds
+    .map((artId) => allArt.find((a) => a.frontmatter.id === artId))
+    .filter((a): a is NonNullable<typeof a> => a != null)
+    .map((a) => ({
+      id: a.frontmatter.id,
+      title: a.frontmatter.title,
+      artifact_type: (a.frontmatter as unknown as Record<string, unknown>).artifact_type as string | undefined,
+    }));
+
+  return <ShabrangHome lang={lang} featuredPosts={featuredPosts} featuredArt={featuredArt} />;
 }
