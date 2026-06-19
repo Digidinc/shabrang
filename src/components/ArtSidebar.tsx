@@ -36,7 +36,7 @@ export function ArtSidebar({ lang, currentId, basePath, view, variant = 'desktop
             <span className="text-xs uppercase tracking-wider text-shabrang-ink-dim">Browse artifacts</span>
           </summary>
         )}
-        <nav className={isMobile ? 'py-3 px-4 text-sm' : 'py-6 px-4 text-sm sticky top-0'}>
+        <nav className={isMobile ? 'py-3 px-4 text-sm' : 'py-6 px-4 text-sm sticky top-14'}>
           <div className="mb-4">
             <h3 className="text-xs uppercase tracking-wider text-shabrang-ink-dim mb-3 px-2">Imaginal Gallery</h3>
             <ul className="space-y-0.5 max-h-[70vh] overflow-y-auto pr-1">

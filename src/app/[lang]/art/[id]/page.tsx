@@ -9,7 +9,6 @@ import { TableOfContents } from '@/components/TableOfContents';
 import { InlineToc } from '@/components/InlineToc';
 import { PageShell } from '@/components/PageShell';
 import { VoiceTag } from '@/components/VoiceTag';
-import { GitHubDialectic } from '@/components/GitHubDialectic';
 import {
   estimateReadTime,
   getArtItem,
@@ -55,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const norm = normalizeContentPerspective(fm.perspective);
   const langPrefix = lang === 'en' ? '' : `/${lang}`;
   const canonicalUrl = `https://shabrang.ca${langPrefix}/art/${fm.id}`;
-  const alternates = getAlternateLanguages('articles', fm.id); // Artifacts use the article-like meta for now
+  const alternates = getAlternateLanguages('articles', fm.id);
 
   return {
     title: `${fm.title} | Imaginal Gallery`,
@@ -83,7 +82,6 @@ export default async function ArtifactPage({ params }: Props) {
   const { lang, id } = await params;
   const artifact = getArtItem(lang, id);
   if (!artifact) notFound();
-  const norm = normalizeContentPerspective(artifact.frontmatter.perspective);
 
   const basePath = getLangBasePath(lang);
   const homeHref = basePath || '/';
@@ -93,12 +91,10 @@ export default async function ArtifactPage({ params }: Props) {
   const glossary = getGlossary(lang, { basePath, view: 'kasra' });
   const fm = artifact.frontmatter;
   const fmExt = fm as unknown as Record<string, unknown>;
-  const readTime = fm.read_time || estimateReadTime(artifact.body);
 
   const renderedBody = renderMarkdown(artifact.body, lang, glossary, basePath);
   const tocItems = extractTocItems(artifact.body).filter((t) => t.level === 2);
 
-  // Navigation Logic
   const allArtifacts = getArtItems(lang).filter(a => matchesPerspectiveView(a.frontmatter.perspective, 'kasra'));
   const currentIndex = allArtifacts.findIndex(a => a.frontmatter.id === id);
   const prev = currentIndex > 0 ? allArtifacts[currentIndex - 1] : null;
@@ -113,91 +109,108 @@ export default async function ArtifactPage({ params }: Props) {
       <PageShell
         leftMobile={<ArtSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" variant="mobile" />}
         leftDesktop={<ArtSidebar lang={lang} currentId={id} basePath={basePath} view="kasra" />}
-        right={
-          <>
-            <GitHubDialectic
-              pageId={`art-${id}`}
-              pageTitle={fm.title as string}
-            />
-            <TableOfContents items={tocItems} />
-          </>
-        }
+        right={<TableOfContents items={tocItems} />}
       >
-          {/* Breadcrumb */}
-          <nav className="text-sm text-frc-text-dim mb-8">
-            <a href={homeHref} className="hover:text-frc-gold">Shabrang</a>
-            <span className="mx-2">/</span>
-            <a href={`${basePath}/art`} className="hover:text-frc-gold">Imaginal Gallery</a>
-            <span className="mx-2">/</span>
-            <span className="text-frc-text">{artifact.frontmatter.title}</span>
-          </nav>
+        {/* Breadcrumb */}
+        <nav className="text-sm text-shabrang-ink-dim mb-8">
+          <a href={homeHref} className="hover:text-shabrang-gold transition-colors">Shabrang</a>
+          <span className="mx-2">/</span>
+          <a href={`${basePath}/art`} className="hover:text-shabrang-gold transition-colors">Imaginal Gallery</a>
+          <span className="mx-2">/</span>
+          <span className="text-shabrang-ink">{artifact.frontmatter.title}</span>
+        </nav>
 
-          {/* Header */}
-          <header className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="bg-frc-gold text-frc-void px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded">
-                {(fmExt.level as string) || 'μ-STACK'}
-              </span>
-              <span className="text-[10px] text-frc-steel uppercase tracking-widest">
-                {(fmExt.artifact_type as string) || 'Artifact'}
-              </span>
-            </div>
-            <h1 className="text-4xl font-display text-frc-gold mb-3 uppercase tracking-wide">
-              {artifact.frontmatter.title}
-            </h1>
-            <div className="flex flex-wrap gap-4 text-sm text-frc-text-dim">
-              <span>{artifact.frontmatter.author || 'H. Servat'}</span>
-              <span>{artifact.frontmatter.date}</span>
-            </div>
-          </header>
-
-          <InlineToc items={tocItems} />
-
-          {/* Body */}
-          <div className="content-body" suppressHydrationWarning>
-            <MarkdownContent html={renderedBody} glossary={glossary} />
+        {/* Header */}
+        <header className="mb-10">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="bg-shabrang-gold text-shabrang-ink px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider">
+              {(fmExt.level as string) || 'Artifact'}
+            </span>
+            <span className="text-[10px] text-shabrang-ink-dim uppercase tracking-widest">
+              {(fmExt.artifact_type as string) || 'Persian Heritage'}
+            </span>
           </div>
-
-          {/* Walkthrough Navigation */}
-          <div className="mt-20 pt-10 border-t border-frc-blue/30 flex items-center justify-between">
-            {prev ? (
-              <Link href={`${basePath}/art/${prev.frontmatter.id}`} className="group flex flex-col items-start gap-2">
-                <span className="text-[10px] text-frc-steel uppercase tracking-widest">Previous Artifact</span>
-                <span className="text-frc-text group-hover:text-frc-gold transition-colors font-display text-sm uppercase">← {prev.frontmatter.title}</span>
-              </Link>
-            ) : <div />}
-            
-            {next ? (
-              <Link href={`${basePath}/art/${next.frontmatter.id}`} className="group flex flex-col items-end gap-2 text-right">
-                <span className="text-[10px] text-frc-steel uppercase tracking-widest">Next Artifact</span>
-                <span className="text-frc-text group-hover:text-frc-gold transition-colors font-display text-sm uppercase">{next.frontmatter.title} →</span>
-              </Link>
-            ) : <div />}
+          <h1 className="font-display text-4xl md:text-5xl text-shabrang-gold mb-4 uppercase tracking-wide leading-tight">
+            {artifact.frontmatter.title}
+          </h1>
+          <div className="flex flex-wrap gap-6 text-sm text-shabrang-ink-dim border-b border-shabrang-teal/20 pb-6">
+            <span>{artifact.frontmatter.author || 'Kay Hermes'}</span>
+            <span>{artifact.frontmatter.date}</span>
+            {fm.tags && fm.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {fm.tags.slice(0, 4).map((tag: string) => (
+                  <span key={tag} className="text-[10px] px-2 py-0.5 border border-shabrang-teal/30 text-shabrang-teal uppercase tracking-wider">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
+        </header>
 
-          {/* Backlinks */}
-          {pageBacklinks.length > 0 && (
-            <section className="mt-20 pt-10 border-t border-frc-blue/10">
-              <h3 className="text-xs font-medium text-frc-steel uppercase tracking-[0.2em] mb-6">
-                Connected Nodes
-              </h3>
-              <ul className="grid sm:grid-cols-2 gap-4">
-                {pageBacklinks.map(linkId => {
-                  const item = glossary[linkId];
-                  const href = item?.url || `${basePath}/papers/${linkId}`;
-                  return (
-                    <li key={linkId}>
-                      <Link href={href} className="card block p-4 group">
-                        <span className="text-frc-text group-hover:text-frc-gold transition-colors text-sm">
-                          {item?.title || linkId}
-                        </span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          )}
+        <InlineToc items={tocItems} />
+
+        {/* Body */}
+        <div className="content-body" suppressHydrationWarning>
+          <MarkdownContent html={renderedBody} glossary={glossary} />
+        </div>
+
+        {/* Prev / Next Navigation */}
+        <div className="mt-20 pt-10 border-t border-shabrang-teal/20 flex items-center justify-between gap-4">
+          {prev ? (
+            <Link href={`${basePath}/art/${prev.frontmatter.id}`} className="group flex flex-col items-start gap-1 max-w-[45%]">
+              <span className="text-[10px] text-shabrang-ink-dim uppercase tracking-widest">Previous</span>
+              <span className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors font-display text-sm uppercase leading-snug">← {prev.frontmatter.title}</span>
+            </Link>
+          ) : <div />}
+
+          {next ? (
+            <Link href={`${basePath}/art/${next.frontmatter.id}`} className="group flex flex-col items-end gap-1 text-right max-w-[45%]">
+              <span className="text-[10px] text-shabrang-ink-dim uppercase tracking-widest">Next</span>
+              <span className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors font-display text-sm uppercase leading-snug">{next.frontmatter.title} →</span>
+            </Link>
+          ) : <div />}
+        </div>
+
+        {/* Backlinks */}
+        {pageBacklinks.length > 0 && (
+          <section className="mt-20 pt-10 border-t border-shabrang-teal/10">
+            <h3 className="text-xs font-medium text-shabrang-ink-dim uppercase tracking-[0.2em] mb-6">
+              Connected Nodes
+            </h3>
+            <ul className="grid sm:grid-cols-2 gap-4">
+              {pageBacklinks.map(linkId => {
+                const item = glossary[linkId];
+                const href = item?.url || `${basePath}/papers/${linkId}`;
+                return (
+                  <li key={linkId}>
+                    <Link href={href} className="block p-4 border border-shabrang-teal/20 hover:border-shabrang-gold transition-colors group">
+                      <span className="text-shabrang-ink group-hover:text-shabrang-gold transition-colors text-sm">
+                        {item?.title || linkId}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+
+        {/* Comments placeholder */}
+        <section className="mt-20 pt-10 border-t border-shabrang-teal/10">
+          <h3 className="font-display text-shabrang-gold text-sm uppercase tracking-widest mb-2">
+            The Dialectic
+          </h3>
+          <p className="text-xs text-shabrang-ink-dim italic mb-6">Thesis · Antithesis · Synthesis</p>
+          <div className="border border-shabrang-teal/30 p-8 text-center">
+            <p className="text-shabrang-ink-dim text-sm italic mb-2">
+              Community discussion coming soon.
+            </p>
+            <p className="text-shabrang-ink-dim text-xs">
+              A moderated space for thesis, antithesis, and synthesis on this artifact.
+            </p>
+          </div>
+        </section>
       </PageShell>
     </>
   );
